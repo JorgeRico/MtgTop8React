@@ -1,0 +1,99 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: rgb(33,33,33);
+    color: white;
+}
+
+#root  {
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+.container {
+    max-width: 1260px;
+    margin: 0 auto;
+    height: 99vh;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+    color: white;
+}
+
+li {
+    padding-bottom: 10px;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.w100 {
+    width: 100%;
+}
+
+.wAuto {
+    width: auto;
+}
+
+h1 {
+    font-size: 24px;
+    margin: 0 0 10px 0;
+}
+
+h3 {
+    margin-bottom: 0px;
+}
+
+.mt10 {
+    margin-top: 10px;
+}
+
+.mt20 {
+    margin-top: 20px;
+}
+
+.ml10 {
+    margin-left: 10px;
+}
+
+.ml15 {
+    margin-left: 15px;
+}
+
+.ml25 {
+    margin-left: 25px;
+}
+
+.ml70 {
+    margin-left: 70px;
+}
+
+.mb20 {
+    margin-bottom: 20px;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.relative {
+    position: relative;
+}

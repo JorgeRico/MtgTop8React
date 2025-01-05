@@ -1,0 +1,170 @@
+.backLink {
+    padding: 5px;
+    float: left;
+}
+
+.logos {
+    width: 100px;
+}
+
+.invertColor {
+    filter: brightness(0) invert(1);
+}
+
+.titleSection {
+    margin-top: 35px;
+    margin-left: 0px;
+
+    & .backLink {
+        width: 20px;
+        margin-top: 1px;
+        margin-right: 5px;
+
+        & img {
+            width: 20px;
+        }
+    }
+}
+
+.home, .league {
+    & li.title {        
+        & a {
+            text-decoration: none;
+        }
+
+        & a:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.home {
+    & li {
+        width: 135px;
+    }
+
+    & .footer {
+        position: fixed;
+    }
+}
+
+.league {
+    & li {
+        width: 205px;
+    }
+
+    & .footer {
+        float: left;
+        width: 100%;
+    }
+}
+
+.stats {
+    & li {
+        list-style: none;
+    }
+
+    & ul {
+        margin-left: -20px;
+    }
+}
+
+.cards {
+    & li {
+        list-style: none;
+    }
+}
+
+.header {
+    padding: 40px 20px 20px 20px;
+}
+
+.footer {
+    bottom: 0px;
+    margin-top: 55px;
+    font-size: 10px;
+    padding-bottom: 15px;
+    width: 100%;
+    max-width: 1260px;
+
+    & .social {
+        margin-bottom: 20px;
+        text-align: center;
+        
+        & img {
+            width: 35px;
+            margin-right: 15px;
+        }
+    }
+
+    & .message {
+        text-align: center;
+    }
+}
+
+@media (max-width: 1080px) {
+    .footer {
+        width: 95%;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 780px) {
+    .footer {
+        width: 93%;
+    }
+}
+
+@media (max-width: 500px) {
+    .footer {
+        width: 90%;
+    }
+
+    .ml70.cards {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .showStatsCards {
+        width: 100%;
+    }
+}
+
+.rounded {
+    border-radius: 50px;
+}
+
+.statsBox {
+    width: 220px;
+
+    & p {
+        margin: 0;
+    }
+    
+    & .line {
+        width: 155px;
+
+        & p:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+ol {
+    & li:hover {
+        text-decoration: underline;
+    }    
+}
+
+.statsSpinner {
+    margin: 75px 50px;
+    width: 100px;
+}
+
+.settings {
+    width: 20px;
+    color: white;
+    margin-left: 10px;
+    cursor: pointer;
+    margin-top: 3px;
+}
