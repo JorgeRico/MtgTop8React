@@ -3,6 +3,7 @@ React
 
 #### React on local
 - /react-website
+- rename .env_example to .env
 - npm install
 - npm run start
 
