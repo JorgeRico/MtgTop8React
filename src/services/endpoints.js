@@ -1,4 +1,4 @@
-const host_url  = process.env.REACT_APP_API_URL;
+const host_url  = import.meta.env.VITE_APP_API_URL;
 
 const endpoints = {
     API_HOME        : '/',
