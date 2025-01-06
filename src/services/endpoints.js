@@ -1,4 +1,4 @@
-const host_url  = 'http://localhost:8000/';
+const host_url  = process.env.REACT_APP_API_URL;
 
 const endpoints = {
     API_HOME        : '/',
