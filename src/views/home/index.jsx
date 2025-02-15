@@ -5,15 +5,30 @@ import ListLink from "/src/components/List/Link";
 import Layout from "/src/views/layout";
 
 function Home() {
-    const api       = useApi();
-    const effectRan = useRef(false);
-    const [ renderElements, setRenderElements]  = useState(null);
+    const api                                          = useApi();
+    const effectRan                                    = useRef(false);
+    const [ renderElements, setRenderElements]         = useState(null);
+    const [ renderPastElements, setRenderPastElements] = useState(null);
+
 
     // api call
-    async function apiCall() {
-        await api.getAxiosEndpoint(endpoints.API_LEAGUES)
+    async function apiCurrentCall() {
+        await api.getAxiosEndpoint(endpoints.API_LEAGUES + '/current')
         .then((response) => {
+            console.log(response.data)
             setRenderElements(response.data);
+        })
+        .catch((err) => { 
+            console.log('error')
+        });
+    }
+
+    // api call
+    async function apiPastCall() {
+        await api.getAxiosEndpoint(endpoints.API_LEAGUES + '/past')
+        .then((response) => {
+            console.log(response.data)
+            setRenderPastElements(response.data);
         })
         .catch((err) => { 
             console.log('error')
@@ -22,7 +37,8 @@ function Home() {
 
     useEffect(() => {
         if (!effectRan.current) {
-            apiCall();
+            apiCurrentCall();
+            apiPastCall();
         }
         
         return () => effectRan.current = true;
@@ -35,6 +51,10 @@ function Home() {
                 <div className="left w100 mt20">
                     {renderElements != null && (
                         <ListLink url="/leagues/" items={renderElements} />
+                    )}
+                    <h2 className="mt40 ml33">Past Events</h2>
+                    {renderPastElements != null && (
+                        <ListLink url="/leagues/" items={renderPastElements} />
                     )}
                 </div>
             </Layout>

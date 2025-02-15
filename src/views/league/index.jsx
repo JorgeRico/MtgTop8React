@@ -11,7 +11,7 @@ import HTag from "/src/components/HTag";
 function League() {
     const api                                  = useApi();
     const effectRan                            = useRef(false);
-    const [ leagueName, setLEagueName]         = useState(null);
+    const [ leagueName, setLeagueName]         = useState(null);
     const [ renderElements, setRenderElements] = useState(null);
     const { id }                               = useParams();
     
@@ -19,7 +19,7 @@ function League() {
     async function apiCall() {
         await api.getAxiosEndpoint(endpoints.API_LEAGUES + '/' + id)
             .then((response) => {
-                setLEagueName(response.data.name)
+                setLeagueName(response.data.name)
             })
             .catch((err) => { 
                 console.log('error')

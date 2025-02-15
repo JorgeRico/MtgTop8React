@@ -70,6 +70,10 @@ h3 {
     margin-top: 20px;
 }
 
+.mt40 {
+    margin-top: 40px;
+}
+
 .ml10 {
     margin-left: 10px;
 }
@@ -80,6 +84,10 @@ h3 {
 
 .ml25 {
     margin-left: 25px;
+}
+
+.ml33 {
+    margin-left: 33px;
 }
 
 .ml70 {

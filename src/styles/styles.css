@@ -27,7 +27,9 @@
 }
 
 .home, .league {
-    & li.title {        
+    & li.title {       
+        width: 220px;
+
         & a {
             text-decoration: none;
         }
