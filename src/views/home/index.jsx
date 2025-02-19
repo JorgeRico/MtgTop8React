@@ -3,20 +3,22 @@ import endpoints from "/src/services/endpoints.js"
 import { useApi } from '/src/hooks/use-api.js';
 import ListLink from "/src/components/List/Link";
 import Layout from "/src/views/layout";
+import Spinner from "/src/components/Spinner";
 
 function Home() {
-    const api                                          = useApi();
-    const effectRan                                    = useRef(false);
-    const [ renderElements, setRenderElements]         = useState(null);
-    const [ renderPastElements, setRenderPastElements] = useState(null);
-
+    const api                                             = useApi();
+    const effectRan                                       = useRef(false);
+    const [ renderElements, setRenderElements]            = useState(null);
+    const [ renderPastElements, setRenderPastElements]    = useState(null);
+    const [ waitingElements, setWaitingElements ]         = useState(true);
+    const [ waitingPastElements, setWaitingPastElements ] = useState(true);
 
     // api call
     async function apiCurrentCall() {
         await api.getAxiosEndpoint(endpoints.API_LEAGUES + '/current')
         .then((response) => {
-            console.log(response.data)
             setRenderElements(response.data);
+            setWaitingElements(false);
         })
         .catch((err) => { 
             console.log('error')
@@ -27,8 +29,8 @@ function Home() {
     async function apiPastCall() {
         await api.getAxiosEndpoint(endpoints.API_LEAGUES + '/past')
         .then((response) => {
-            console.log(response.data)
             setRenderPastElements(response.data);
+            setWaitingPastElements(false);
         })
         .catch((err) => { 
             console.log('error')
@@ -49,13 +51,27 @@ function Home() {
         <>
             <Layout name="home">
                 <div className="left w100 mt20">
-                    {renderElements != null && (
-                        <ListLink url="/leagues/" items={renderElements} />
-                    )}
+                    {waitingElements === true ? (
+                            <Spinner></Spinner>
+                        ) : (
+                            <>
+                                {renderElements != null && (
+                                    <ListLink url="/leagues/" items={renderElements} />
+                                )}
+                            </>
+                        )
+                    }
                     <h2 className="mt40 ml33">Past Events</h2>
-                    {renderPastElements != null && (
-                        <ListLink url="/leagues/" items={renderPastElements} />
-                    )}
+                    {waitingPastElements === true ? (
+                            <Spinner></Spinner>
+                        ) : (
+                            <>
+                                {renderPastElements != null && (
+                                    <ListLink url="/leagues/" items={renderPastElements} />
+                                )}
+                            </>
+                        )
+                    }
                 </div>
             </Layout>
         </>

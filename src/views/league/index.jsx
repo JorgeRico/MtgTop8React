@@ -7,19 +7,23 @@ import BackLink from "/src/components/Link/BackLink";
 import Layout from "/src/views/layout";
 import StatsBox from "/src/components/Stats/League";
 import HTag from "/src/components/HTag";
+import Spinner from "/src/components/Spinner";
 
 function League() {
-    const api                                  = useApi();
-    const effectRan                            = useRef(false);
-    const [ leagueName, setLeagueName]         = useState(null);
-    const [ renderElements, setRenderElements] = useState(null);
-    const { id }                               = useParams();
+    const api                                   = useApi();
+    const effectRan                             = useRef(false);
+    const [ leagueName, setLeagueName]          = useState(null);
+    const [ renderElements, setRenderElements]  = useState(null);
+    const { id }                                = useParams();
+    const [ showLeagueName, setShowLeagueName ] = useState(false);
+    const [ showElements, setShowElements ]     = useState(false);
     
     // api call
     async function apiCall() {
         await api.getAxiosEndpoint(endpoints.API_LEAGUES + '/' + id)
             .then((response) => {
-                setLeagueName(response.data.name)
+                setLeagueName(response.data.name);
+                showLeague(true);
             })
             .catch((err) => { 
                 console.log('error')
@@ -28,6 +32,7 @@ function League() {
         await api.getAxiosEndpoint(endpoints.API_LEAGUES + '/' + id + '/tournaments')
             .then((response) => {
                 setRenderElements(response.data);
+                setShowElements(true);
             })
             .catch((err) => { 
                 console.log('error')
@@ -46,16 +51,31 @@ function League() {
     return (
         <>
             <Layout name="league">
-                <BackLink endpoint={endpoints.API_HOME} title={leagueName}></BackLink>
+                {showLeagueName == true ? (
+                    <Spinner></Spinner>
+                ) : (
+                    <BackLink endpoint={endpoints.API_HOME} title={leagueName}></BackLink>
+                )}
                  <div className="left w100">
-                    {renderElements != null && (
-                        <div className="left w100">
-                            <ListLink url="/tournaments/" items={renderElements}/>
-                        </div>
+                    {showElements === false ? (
+                        <Spinner></Spinner>
+                    ) : (
+                        <>
+                            {renderElements != null && (
+                                <div className="left w100">
+                                    <ListLink url="/tournaments/" items={renderElements}/>
+                                </div>
+                            )}
+                        </>
                     )}
                     <HTag Tag="h3" text="Stats" className="left w100 ml25" />
                     <div className="left w100 ml25 mt10">
-                        <StatsBox></StatsBox>
+                        {showElements === false ? (
+                                <Spinner></Spinner>
+                            ) : (
+                                <StatsBox></StatsBox>
+                            )
+                        }
                     </div>
                 </div>
             </Layout>
