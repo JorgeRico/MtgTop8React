@@ -48,7 +48,11 @@ function Tournament() {
     return (
         <>
             <Layout name="tournaments">
-                <BackLink endpoint={"/leagues/" + tournament.idLeague} title={tournament.name + " - " + tournament.date}></BackLink>
+                {showTournament === false ? (
+                    <Spinner></Spinner>
+                ) : (
+                    <BackLink endpoint={"/leagues/" + tournament.idLeague} title={tournament.name + " - " + tournament.date}></BackLink>
+                )}
                 <div className="left w100 mt20">
                     {showTournament === false ? (
                             <Spinner></Spinner>
