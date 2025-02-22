@@ -46,7 +46,7 @@ export default function StatsBox() {
             setPlayers(response.data.players);
         })
         .catch((err) => { 
-            console.log('error')
+            console.log('error League stats')
         });
     }
 
@@ -63,7 +63,7 @@ export default function StatsBox() {
             setLands(response.data.lands);
         })
         .catch((err) => { 
-            console.log('error')
+            console.log('error League card stats')
         });
     }
 

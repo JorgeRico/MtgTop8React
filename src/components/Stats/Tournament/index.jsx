@@ -43,7 +43,7 @@ export default function StatsBox() {
             setSideboard(response.data.sb);
         })
         .catch((err) => { 
-            console.log('error')
+            console.log('error tournament stats')
         });
     }
 
@@ -60,7 +60,7 @@ export default function StatsBox() {
             setLands(response.data.lands);
         })
         .catch((err) => { 
-            console.log('error')
+            console.log('error tournament card stats')
         });
     }
 

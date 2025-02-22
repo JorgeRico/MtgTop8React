@@ -21,7 +21,7 @@ function Home() {
             setWaitingElements(false);
         })
         .catch((err) => { 
-            console.log('error')
+            console.log('error current tournaments')
         });
     }
 
@@ -33,7 +33,7 @@ function Home() {
             setWaitingPastElements(false);
         })
         .catch((err) => { 
-            console.log('error')
+            console.log('error past tournaments')
         });
     }
 

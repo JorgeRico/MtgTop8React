@@ -23,10 +23,11 @@ function League() {
         await api.getAxiosEndpoint(endpoints.API_LEAGUES + '/' + id)
             .then((response) => {
                 setLeagueName(response.data.name);
-                showLeague(true);
+                setShowLeagueName(true);
             })
             .catch((err) => { 
-                console.log('error')
+                console.log(err)
+                console.log('error league id')
             });
 
         await api.getAxiosEndpoint(endpoints.API_LEAGUES + '/' + id + '/tournaments')
@@ -35,7 +36,7 @@ function League() {
                 setShowElements(true);
             })
             .catch((err) => { 
-                console.log('error')
+                console.log('error league tournament')
             });
     }
 
