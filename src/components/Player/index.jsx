@@ -77,14 +77,14 @@ export default function StatsPlayer(props) {
 
     return (
         <>
-            <div className="left w30">
+            <div className="left w25">
                 <ol className="ml25">
                     {(items.length > 0) && (
                         renderItems
                     )}
                 </ol>
             </div>
-            <div className="right w70 cards">
+            <div className="right w75 cards">
                 {showSpinner === true &&
                     <div className="statsSpinner">
                         <Spinner></Spinner>
