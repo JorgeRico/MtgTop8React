@@ -9,7 +9,12 @@ import {  } from 'react-router-dom';
 export default function App() {
     return (
         <ApiProvider>
-            <BrowserRouter>
+            <BrowserRouter
+                future={{
+                    v7_startTransition: true,
+                    v7_relativeSplatPath: true,
+                }}
+            >
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="leagues/:id" element={<League />} />
