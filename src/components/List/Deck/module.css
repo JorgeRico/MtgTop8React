@@ -1,0 +1,23 @@
+@media (max-width: 1200px) {
+    .maindeck {
+        width: 49%;
+        float: left;
+    }
+    
+    .sideboard {
+       width: 49%;
+       float: left;
+    }
+}
+
+@media (max-width: 1000px) {
+    .cards {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .maindeck, .sideboard {
+        width: 100%;
+    }
+}

@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import PropTypes from 'prop-types';
+import "./module.css";
 
 // TODO: component needs refactor
 export default function Deck(props) {
@@ -73,7 +74,7 @@ export default function Deck(props) {
         <>
             {items.length > 0 && (
                 <>
-                    <div className="left">
+                    <div className="left maindeck">
                         <ul>
                             {(creatureItems.length > 0) && (
                                 <>
@@ -95,7 +96,7 @@ export default function Deck(props) {
                             )}
                         </ul>
                     </div>
-                    <div className="left">
+                    <div className="left maindeck">
                         <ul>
                             {(planeswalkerItems.length > 0) && (
                                 <>
@@ -117,7 +118,7 @@ export default function Deck(props) {
                             )}
                         </ul>
                     </div>
-                    <div className="left">
+                    <div className="left maindeck">
                         <ul>
                             {(landItems.length > 0) && (
                                 <>
@@ -127,7 +128,7 @@ export default function Deck(props) {
                             )}
                         </ul>
                     </div>
-                    <div className="left">
+                    <div className="left sideboard">
                         <ul>
                             {(sideItems.length > 0) && (
                                 <>

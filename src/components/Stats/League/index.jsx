@@ -6,6 +6,7 @@ import { useApi } from '/src/hooks/use-api.js';
 import { useParams } from 'react-router-dom';
 import Spinner from "/src/components/Spinner";
 import Settings from "/src/assets/images/settings.png";
+import "./../module.css";
 
 export default function StatsBox() {
     const { id }                                      = useParams();
@@ -167,14 +168,14 @@ export default function StatsBox() {
         setTimeout(() => {setShowLands(true)}, 1500);
     }
 
-    const optionStats = (topText) => {
+    const optionStats = (option, topText) => {
         return (
             <>
                 <div className="left line">
-                    <HTag Tag="p" text={topText} className="left wAuto pointer" />
+                    <HTag Tag="p" text={topText} className={option === true ? "color-selected left wAuto pointer" : "left wAuto pointer"} />
                 </div>
                 <div className="right">
-                    <img src={Settings} alt="" className="invertColor settings absolute"/>
+                    <img src={Settings} alt="" className={option === true ? "color-selected settings absolute" : "invertColor settings absolute"} />
                 </div>
             </>
         )
@@ -184,38 +185,38 @@ export default function StatsBox() {
         return (
             <>
                 <ul>
-                    <li className="left line" onClick={handleClickPlayers}>
-                        {optionStats("Top Players")}
+                    <li className={showPlayers === true ? "color-selected left line" : "left line"} onClick={handleClickPlayers}>
+                        {optionStats(showPlayers, "Top Players")}
                     </li>
-                    <li className="left line" onClick={handleClickCards}>
-                        {optionStats("Top Cards")}
+                    <li className={showTop10 === true ? "color-selected left line" : "left line"} onClick={handleClickCards}>
+                        {optionStats(showTop10, "Top Cards")}
                     </li>
-                    <li className="left line" onClick={handleClickMainboard}>
-                        {optionStats("Top Mainboard Cards")}
+                    <li className={showMainboard === true ? "color-selected left line" : "left line"} onClick={handleClickMainboard}>
+                        {optionStats(showMainboard, "Top Mainboard Cards")}
                     </li>
-                    <li className="left line" onClick={handleClickSideboard}>
-                        {optionStats("Top Sideboard Cards")}
+                    <li className={showSideboard === true ? "color-selected left line" : "left line"} onClick={handleClickSideboard}>
+                        {optionStats(showSideboard, "Top Sideboard Cards")}
                     </li>
-                    <li className="left line" onClick={handleClickCreatures}>
-                        {optionStats("Top Creatures")}
+                    <li className={showCreatures === true ? "color-selected left line" : "left line"} onClick={handleClickCreatures}>
+                        {optionStats(showCreatures, "Top Creatures")}
                     </li>
-                    <li className="left line" onClick={handleClickInstants}>
-                        {optionStats("Top Instants")}
+                    <li className={showInstants === true ? "color-selected left line" : "left line"} onClick={handleClickInstants}>
+                        {optionStats(showInstants, "Top Instants")}
                     </li>
-                    <li className="left line" onClick={handleClickSorceries}>
-                        {optionStats("Top Sorceries")}
+                    <li className={showSorceries === true ? "color-selected left line" : "left line"} onClick={handleClickSorceries}>
+                        {optionStats(showSorceries, "Top Sorceries")}
                     </li>
-                    <li className="left line" onClick={handleClickArtifacts}>
-                        {optionStats("Top Artifacts")}
+                    <li className={showArtifacts === true ? "color-selected left line" : "left line"} onClick={handleClickArtifacts}>
+                        {optionStats(showArtifacts, "Top Artifacts")}
                     </li>
-                    <li className="left line" onClick={handleClickEnchantments}>
-                        {optionStats("Top Enchantments")}
+                    <li className={showEnchantments === true ? "color-selected left line" : "left line"} onClick={handleClickEnchantments}>
+                        {optionStats(showEnchantments, "Top Enchantments")}
                     </li>
-                    <li className="left line" onClick={handleClickPlaneswalkers}>
-                        {optionStats("Top Planeswalkers")}
+                    <li className={showPlaneswalkers === true ? "color-selected left line" : "left line"} onClick={handleClickPlaneswalkers}>
+                        {optionStats(showPlaneswalkers, "Top Planeswalkers")}
                     </li>
-                    <li className="left line" onClick={handleClickLands}>
-                        {optionStats("Top Lands")}
+                    <li className={showLands === true ? "color-selected left line" : "left line"} onClick={handleClickLands}>
+                        {optionStats(showLands, "Top Lands")}
                     </li>
                 </ul>
             </>

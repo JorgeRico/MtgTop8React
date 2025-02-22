@@ -1,0 +1,19 @@
+.statsBox {
+    width: 220px;
+
+    & p {
+        margin: 0;
+    }
+    
+    & .line {
+        width: 155px;
+
+        & p {
+            text-decoration: none !important;
+        }
+
+        & p:hover {
+            color: deepskyblue;
+        }
+    }
+}

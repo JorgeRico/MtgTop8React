@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import HTag from "/src/components/HTag";
 import ImageNoBlankLink from "/src/components/Link/ImageNoBlankLink";
 import BackImg from "/src/assets/images/back.png";
+import "./module.css";
 
 export default function BackLink(props) {
     BackLink.propTypes = {

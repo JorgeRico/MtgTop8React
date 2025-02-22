@@ -61,7 +61,7 @@ function Tournament() {
                         )
                     }
                 </div>
-                <HTag Tag="h3" text="Stats" className="left w100 ml25" />
+                <HTag Tag="h3" text="Stats" className="left ml15 titlePadding" />
                 <div className="left w100 ml25 mt10">
                     {showTournament === false ? (
                             <Spinner></Spinner>

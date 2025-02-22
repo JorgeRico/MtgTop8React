@@ -8,7 +8,7 @@ function Layout(props) {
     useEffect(() => {
         if (!effectRan.current) {
             var height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-            console.log(height)
+            // console.log(height)
         }
         
         return () => effectRan.current = true;
@@ -24,7 +24,7 @@ function Layout(props) {
                         {props.children}
                     </div>
                     <Footer></Footer>
-                </div> 
+                </div>
             </>
         )
     );

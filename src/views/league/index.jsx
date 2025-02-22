@@ -68,7 +68,7 @@ function League() {
                             )}
                         </>
                     )}
-                    <HTag Tag="h3" text="Stats" className="left w100 ml25" />
+                    <HTag Tag="h3" text="Stats" className="left ml15 titlePadding" />
                     <div className="left w100 ml25 mt10">
                         {showElements === false ? (
                                 <Spinner></Spinner>

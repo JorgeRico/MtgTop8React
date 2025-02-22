@@ -1,0 +1,10 @@
+.logos {
+    width: 100px;
+}
+
+.header {
+    padding: 40px 20px 20px 20px;
+    overflow: hidden;
+    position: relative;
+    float: left;
+}

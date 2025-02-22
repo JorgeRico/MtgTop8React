@@ -13,7 +13,7 @@ body {
 }
 
 .container {
-    max-width: 1260px;
+    width: 1260px;
     margin: 0 auto;
     height: 99vh;
 }
@@ -49,12 +49,20 @@ li {
     width: 100%;
 }
 
+.w30 {
+    width: 30%;
+}
+
+.w70 {
+    width: 70%;
+}
+
 .wAuto {
     width: auto;
 }
 
 h1 {
-    font-size: 24px;
+    font-size: 20px;
     margin: 0 0 10px 0;
 }
 
@@ -104,4 +112,39 @@ h3 {
 
 .relative {
     position: relative;
+}
+
+.rounded {
+    border-radius: 50px;
+}
+
+.invertColor {
+    filter: brightness(0) invert(1);
+}
+
+.statsSpinner {
+    margin: 75px 50px;
+    width: 100px;
+}
+
+@media (max-width: 1260px) {
+    .container {
+        width: 95%;
+    }
+}
+
+.settings {
+    width: 20px;
+    color: white;
+    margin-left: 10px;
+    cursor: pointer;
+    margin-top: 3px;
+}
+
+.titlePadding {
+    padding: 0px 20px;
+}
+
+.color-selected {
+    color: deepskyblue;
 }

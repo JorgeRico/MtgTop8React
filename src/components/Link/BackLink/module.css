@@ -1,0 +1,19 @@
+.backLink {
+    padding: 5px;
+    float: left;
+}
+
+.titleSection {
+    margin-top: 35px;
+    margin-left: 0px;
+
+    & .backLink {
+        width: 20px;
+        margin-top: 1px;
+        margin-right: 5px;
+
+        & img {
+            width: 20px;
+        }
+    }
+}

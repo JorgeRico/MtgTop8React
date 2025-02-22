@@ -1,0 +1,7 @@
+ol {
+    width: 200px;
+    
+    & li:hover {
+        text-decoration: underline;
+    }    
+}
