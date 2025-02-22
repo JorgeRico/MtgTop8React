@@ -52,7 +52,7 @@ function League() {
     return (
         <>
             <Layout name="league">
-                {showLeagueName == true ? (
+                {showLeagueName === false ? (
                     <Spinner></Spinner>
                 ) : (
                     <BackLink endpoint={endpoints.API_HOME} title={leagueName}></BackLink>
