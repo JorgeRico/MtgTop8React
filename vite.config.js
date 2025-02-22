@@ -32,7 +32,7 @@ export default defineConfig({
         sourcemap: false,
         chunkSizeWarningLimit: 10000,
         rollupOptions: {
-            plugins: [commonjs()],
+            plugins: [],
         }
     },
 });
