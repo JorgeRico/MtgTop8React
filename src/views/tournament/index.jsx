@@ -8,6 +8,8 @@ import HTag from "/src/components/HTag";
 import BackLink from "/src/components/Link/BackLink";
 import Layout from "/src/views/layout";
 import Spinner from "/src/components/Spinner";
+import BluredBackLink from "/src/components/Blured/BackLink";
+import BluredBigList from "/src/components/Blured/FakeLists/BigList";
 
 function Tournament() {
     const api                                   = useApi();
@@ -45,34 +47,58 @@ function Tournament() {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    return (
-        <>
-            <Layout name="tournaments">
+    const showTitle = () => {
+        return (
+            <>
                 {showTournament === false ? (
-                    <Spinner></Spinner>
+                    <BluredBackLink></BluredBackLink>
                 ) : (
                     <BackLink endpoint={"/leagues/" + tournament.idLeague} title={tournament.name + " - " + tournament.date}></BackLink>
                 )}
+            </>
+        )
+    }
+
+    const showPlayers = () => {
+        return (
+            <>
+                {showTournament === false ? (
+                        <BluredBigList></BluredBigList>
+                    ) : (
+                        <>
+                            {renderPlayers.length > 0 && (
+                                <PlayerCard items={renderPlayers} />
+                            )}
+                        </>
+                    )
+                }
+            </>
+        )
+    }
+
+    const showStats = () => {
+        return (
+            <>
+                {showTournament === false ? (
+                        <BluredBigList></BluredBigList>
+                    ) : (
+                        <StatsTournamentBox></StatsTournamentBox>
+                    )
+                }
+            </>
+        )
+    }
+
+    return (
+        <>
+            <Layout name="tournaments">
+                {showTitle()}
                 <div className="left w100 mt20">
-                    {showTournament === false ? (
-                            <Spinner></Spinner>
-                        ) : (
-                            <>
-                                {renderPlayers.length > 0 && (
-                                    <PlayerCard items={renderPlayers} />
-                                )}
-                            </>
-                        )
-                    }
+                    {showPlayers()}
                 </div>
                 <HTag Tag="h3" text="Stats" className="left ml15 titlePadding" />
                 <div className="left w100 ml25 mt10">
-                    {showTournament === false ? (
-                            <Spinner></Spinner>
-                        ) : (
-                            <StatsTournamentBox></StatsTournamentBox>
-                        )
-                    }
+                    {showStats()}
                 </div>
             </Layout>
         </>

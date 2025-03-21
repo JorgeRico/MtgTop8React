@@ -7,7 +7,8 @@ import BackLink from "/src/components/Link/BackLink";
 import Layout from "/src/views/layout";
 import StatsBox from "/src/components/Stats/League";
 import HTag from "/src/components/HTag";
-import Spinner from "/src/components/Spinner";
+import BluredBigList from "/src/components/Blured/FakeLists/BigList";
+import BluredBackLink from "/src/components/Blured/BackLink";
 
 function League() {
     const api                                   = useApi();
@@ -49,35 +50,59 @@ function League() {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    return (
-        <>
-            <Layout name="league">
+    const showTitle = () => {
+        return (
+            <>
                 {showLeagueName === false ? (
-                    <Spinner></Spinner>
+                    <BluredBackLink></BluredBackLink>
                 ) : (
                     <BackLink endpoint={endpoints.API_HOME} title={leagueName}></BackLink>
                 )}
-                 <div className="left w100">
-                    {showElements === false ? (
-                        <Spinner></Spinner>
+            </>
+        )
+    }
+
+    const showTournaments = () => {
+        return (
+            <>
+                {showElements === false ? (
+                        <BluredBigList></BluredBigList>
                     ) : (
-                        <>
-                            {renderElements != null && (
-                                <div className="left w100">
-                                    <ListLink url="/tournaments/" items={renderElements}/>
-                                </div>
-                            )}
-                        </>
-                    )}
+                    <>
+                        {renderElements != null && (
+                            <div className="left w100">
+                                <ListLink url="/tournaments/" items={renderElements}/>
+                            </div>
+                        )}
+                    </>
+                )}
+            </>
+        )
+    }
+
+    const showStats = () => {
+        return (
+            <>
+                <div className="left w100 ml25 mt10">
+                    {showElements === false ? (
+                            <BluredBigList></BluredBigList>
+                        ) : (
+                            <StatsBox></StatsBox>
+                        )
+                    }
+                </div>
+            </>
+        )
+    }
+
+    return (
+        <>
+            <Layout name="league">
+                {showTitle()}
+                 <div className="left w100">
+                    {showTournaments()}
                     <HTag Tag="h3" text="Stats" className="left ml15 titlePadding" />
-                    <div className="left w100 ml25 mt10">
-                        {showElements === false ? (
-                                <Spinner></Spinner>
-                            ) : (
-                                <StatsBox></StatsBox>
-                            )
-                        }
-                    </div>
+                    {showStats()}
                 </div>
             </Layout>
         </>

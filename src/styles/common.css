@@ -102,6 +102,10 @@ h3 {
     margin-left: 70px;
 }
 
+.mb0{
+    margin-bottom: 0px
+}
+
 .mb20 {
     margin-bottom: 20px;
 }
@@ -147,4 +151,18 @@ h3 {
 
 .color-selected {
     color: deepskyblue;
+}
+
+.blured {
+    filter: blur(8px)
+}
+
+.blink {
+    animation: blinker 3s linear infinite;
+}
+  
+@keyframes blinker {
+    50% {
+      opacity: 0;
+    }
 }

@@ -2,8 +2,8 @@ import React, { useRef, useState, useEffect } from "react";
 import endpoints from "/src/services/endpoints.js"
 import { useApi } from '/src/hooks/use-api.js';
 import ListLink from "/src/components/List/Link";
+import BluredSmallList from "/src/components/Blured/FakeLists/SmallList";
 import Layout from "/src/views/layout";
-import Spinner from "/src/components/Spinner";
 
 function Home() {
     const api                                             = useApi();
@@ -47,31 +47,30 @@ function Home() {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [renderElements]);
 
+    const showElements = (waitingElements, renderElements) => {
+        return (
+            <>
+                {waitingElements === true ? (
+                        <BluredSmallList></BluredSmallList>
+                    ) : (
+                        <>
+                            {renderElements != null && (
+                                <ListLink url="/leagues/" items={renderElements} />
+                            )}
+                        </>
+                    )
+                }
+            </>
+        )
+    }
+
     return (
         <>
             <Layout name="home">
                 <div className="left w100 mt20">
-                    {waitingElements === true ? (
-                            <Spinner></Spinner>
-                        ) : (
-                            <>
-                                {renderElements != null && (
-                                    <ListLink url="/leagues/" items={renderElements} />
-                                )}
-                            </>
-                        )
-                    }
-                    <h2 className="mt40 ml33">Past Events</h2>
-                    {waitingPastElements === true ? (
-                            <Spinner></Spinner>
-                        ) : (
-                            <>
-                                {renderPastElements != null && (
-                                    <ListLink url="/leagues/" items={renderPastElements} />
-                                )}
-                            </>
-                        )
-                    }
+                    {showElements(waitingElements, renderElements)}
+                    <h2 className="mt40 ml33 mb0">Past Events</h2>
+                    {showElements(waitingPastElements, renderPastElements)}
                 </div>
             </Layout>
         </>
