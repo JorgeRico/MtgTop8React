@@ -7,7 +7,6 @@ import PlayerCard from "/src/components/Player";
 import HTag from "/src/components/HTag";
 import BackLink from "/src/components/Link/BackLink";
 import Layout from "/src/views/layout";
-import Spinner from "/src/components/Spinner";
 import BluredBackLink from "/src/components/Blured/BackLink";
 import BluredBigList from "/src/components/Blured/FakeLists/BigList";
 

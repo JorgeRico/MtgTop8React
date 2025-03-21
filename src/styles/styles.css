@@ -17,7 +17,7 @@
 }
 
 .home {
-    & li {
+    & li.title {
         width: 135px;
     }
 }
@@ -53,4 +53,8 @@
 .bluredDeck {
     width: 300px;
     line-height: 32px;
+}
+
+.big, .small {
+    width: 300px;
 }
