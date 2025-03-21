@@ -1,5 +1,5 @@
 import React from "react";
-import Settings from "/src/assets/images/settings.png";
+import More from "/src/assets/images/more.png";
 import { v4 as uuidv4 } from "uuid";
 
 export default function StatsCardBluredLink(props) {
@@ -11,7 +11,7 @@ export default function StatsCardBluredLink(props) {
                 {item.name} - {item.date}
             </div>
             <div className="right">
-                <img src={Settings} alt="" className="invertColor settings absolute"/>
+                <img src={More} alt="" className="invertColor settings absolute"/>
             </div>
         </li>
     );

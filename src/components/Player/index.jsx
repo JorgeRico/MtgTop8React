@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 import PropTypes from 'prop-types';
 import Deck from "/src/components/List/Deck";
 import Spinner from "/src/components/Spinner";
-import Settings from "/src/assets/images/settings.png";
+import More from "/src/assets/images/more.png";
 import "./module.css";
 
 export default function StatsPlayer(props) {
@@ -59,7 +59,7 @@ export default function StatsPlayer(props) {
                         {item.name}
                     </div>
                     <div className="right">
-                        <img src={Settings} alt="" className="invertColor settings absolute"/>
+                        <img src={More} alt="" className="invertColor settings absolute"/>
                     </div>
                 </li>   
             )));

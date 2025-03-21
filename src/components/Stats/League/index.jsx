@@ -4,8 +4,8 @@ import ListNoLink from "/src/components/List/NoLink";
 import endpoints from "/src/services/endpoints.js"
 import { useApi } from '/src/hooks/use-api.js';
 import { useParams } from 'react-router-dom';
-import Spinner from "/src/components/Spinner";
-import Settings from "/src/assets/images/settings.png";
+import More from "/src/assets/images/more.png";
+import BluredStatsList from "/src/components/Blured/FakeLists/StatsList";
 import "./../module.css";
 
 export default function StatsBox() {
@@ -175,7 +175,7 @@ export default function StatsBox() {
                     <HTag Tag="p" text={topText} className={option === true ? "color-selected left wAuto pointer" : "left wAuto pointer"} />
                 </div>
                 <div className="right">
-                    <img src={Settings} alt="" className={option === true ? "color-selected settings absolute" : "invertColor settings absolute"} />
+                    <img src={More} alt="" className={option === true ? "color-selected settings absolute" : "invertColor settings absolute"} />
                 </div>
             </>
         )
@@ -271,9 +271,7 @@ export default function StatsBox() {
                 </div>
                 <div className="right wAuto ml15 showStatsCards">
                     {showSpinner === true &&
-                        <div className="statsSpinner">
-                            <Spinner></Spinner>
-                        </div>
+                        <BluredStatsList></BluredStatsList>
                     }
                     <div className="wAuto cards">
                         {showStats()}

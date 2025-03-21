@@ -1,7 +1,7 @@
 import React from "react";
 import ListLink from "/src/components/Blured/Link";
 
-function Home() {
+function BluredSmallList() {
 
     const bluredItems = () => {
         return (
@@ -26,4 +26,4 @@ function Home() {
     );
 }
 
-export default Home;
+export default BluredSmallList;
