@@ -1,23 +1,21 @@
-@media (max-width: 1200px) {
-    .maindeck {
-        width: 49%;
-        float: left;
-    }
-    
-    .sideboard {
-       width: 49%;
-       float: left;
+.maindeck {
+    display: flex;
+    width: auto;
+
+    & ul {
+        padding: 0 20px;
     }
 }
 
 @media (max-width: 1000px) {
     .cards {
-        width: 100%;
+        width: 97%;
     }
 }
 
 @media (max-width: 600px) {
-    .maindeck, .sideboard {
+    .maindeck {
         width: 100%;
+        margin-left: 20px;
     }
 }

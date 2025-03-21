@@ -84,7 +84,7 @@ export default function StatsPlayer(props) {
                     )}
                 </ol>
             </div>
-            <div className="right w75 cards">
+            <div className="right w70 cards">
                 {showSpinner === true &&
                     <div className="bluredDeck">
                         <BluredBigList></BluredBigList>

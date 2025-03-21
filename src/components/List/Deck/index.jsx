@@ -76,6 +76,12 @@ export default function Deck(props) {
                 <>
                     <div className="left maindeck">
                         <ul>
+                            {(planeswalkerItems.length > 0) && (
+                                <>
+                                    <h4>Planeswalkers</h4>
+                                    {planeswalkerItems}
+                                </>
+                            )}
                             {(creatureItems.length > 0) && (
                                 <>
                                     <h4>Creatures</h4>
@@ -98,12 +104,6 @@ export default function Deck(props) {
                     </div>
                     <div className="left maindeck">
                         <ul>
-                            {(planeswalkerItems.length > 0) && (
-                                <>
-                                    <h4>Planeswalkers</h4>
-                                    {planeswalkerItems}
-                                </>
-                            )}
                             {(artifactItems.length > 0) && (
                                 <>
                                     <h4>Artifacts</h4>
@@ -116,10 +116,6 @@ export default function Deck(props) {
                                     {enchantmentItems}
                                 </>
                             )}
-                        </ul>
-                    </div>
-                    <div className="left maindeck">
-                        <ul>
                             {(landItems.length > 0) && (
                                 <>
                                     <h4>Lands</h4>
@@ -128,7 +124,7 @@ export default function Deck(props) {
                             )}
                         </ul>
                     </div>
-                    <div className="left sideboard">
+                    <div className="left maindeck">
                         <ul>
                             {(sideItems.length > 0) && (
                                 <>
