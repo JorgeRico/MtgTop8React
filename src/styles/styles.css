@@ -49,3 +49,8 @@
         width: 100%;
     }
 }
+
+.bluredDeck {
+    width: 300px;
+    line-height: 32px;
+}

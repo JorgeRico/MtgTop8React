@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import PropTypes from 'prop-types';
 import Deck from "/src/components/List/Deck";
-import Spinner from "/src/components/Spinner";
+import BluredBigList from "/src/components/Blured/FakeLists/BigList";
 import More from "/src/assets/images/more.png";
 import "./module.css";
 
@@ -86,8 +86,8 @@ export default function StatsPlayer(props) {
             </div>
             <div className="right w75 cards">
                 {showSpinner === true &&
-                    <div className="statsSpinner">
-                        <Spinner></Spinner>
+                    <div className="bluredDeck">
+                        <BluredBigList></BluredBigList>
                     </div>
                 }
                 {(items.length > 0) && (
