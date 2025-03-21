@@ -91,81 +91,55 @@ export default function StatsBox() {
         setShowLands(false);
     }
 
-    function handleClickPlayers() {
+    function changeItems(value, operator) {
         hideStats();
         setShowSpinner(true);
         setTimeout(() => {setShowSpinner(false)}, 1500);
-        setTimeout(() => {setShowPlayers(true)}, 1500);
+        setTimeout(() => {operator(!value)}, 1500);
+    }
+
+    function handleClickPlayers() {
+        changeItems(showPlayers, setShowPlayers);
     }
 
     const handleClickCards = () => {
-        hideStats();
-        setShowSpinner(true);
-        setTimeout(() => {setShowSpinner(false)}, 1500);
-        setTimeout(() => {setShowTop10(true)}, 1500);
+        changeItems(showTop10, setShowTop10);
     }
 
     const handleClickMainboard = () => {
-        hideStats();
-        setShowSpinner(true);
-        setTimeout(() => {setShowSpinner(false)}, 1500);
-        setTimeout(() => {setShowMainboard(true)}, 1500);
+        changeItems(showMainboard, setShowMainboard);
     }
 
     const handleClickSideboard = () => {
-        hideStats();
-        setShowSpinner(true);
-        setTimeout(() => {setShowSpinner(false)}, 1500);
-        setTimeout(() => {setShowSideboard(true)}, 1500);
+        changeItems(showSideboard, setShowSideboard);
     }
 
     const handleClickCreatures = () => {
-        hideStats();
-        setShowSpinner(true);
-        setTimeout(() => {setShowSpinner(false)}, 1500);
-        setTimeout(() => {setShowCreatures(true)}, 1500);
+        changeItems(showCreatures, setShowCreatures);
     }
 
     const handleClickInstants = () => {
-        hideStats();
-        setShowSpinner(true);
-        setTimeout(() => {setShowSpinner(false)}, 1500);
-        setTimeout(() => {setShowInstants(true)}, 1500);
+        changeItems(showInstants, setShowInstants);
     }
 
     const handleClickSorceries = () => {
-        hideStats();
-        setShowSpinner(true);
-        setTimeout(() => {setShowSpinner(false)}, 1500);
-        setTimeout(() => {setShowSorceries(true)}, 1500);
+        changeItems(showSorceries, setShowSorceries);
     }
 
     const handleClickArtifacts = () => {
-        hideStats();
-        setShowSpinner(true);
-        setTimeout(() => {setShowSpinner(false)}, 1500);
-        setTimeout(() => {setShowArtifacts(true)}, 1500);
+        changeItems(showArtifacts, setShowArtifacts);
     }
 
     const handleClickEnchantments = () => {
-        hideStats();
-        setShowSpinner(true);
-        setTimeout(() => {setShowSpinner(false)}, 1500);
-        setTimeout(() => {setShowEnchantments(true)}, 1500);
+        changeItems(showEnchantments, setShowEnchantments);
     }
 
     const handleClickPlaneswalkers = () => {
-        hideStats();
-        setShowSpinner(true);
-        setTimeout(() => {setShowSpinner(false)}, 1500);
-        setTimeout(() => {setShowPlaneswalkers(true)}, 1500);
+        changeItems(showPlaneswalkers, setShowPlaneswalkers);
     }
 
     const handleClickLands = () => {
-        hideStats();
-        setShowSpinner(true);
-        setTimeout(() => {setShowSpinner(false)}, 1500);
-        setTimeout(() => {setShowLands(true)}, 1500);
+        changeItems(showLands, setShowLands);
     }
 
     const optionStats = (option, topText) => {
