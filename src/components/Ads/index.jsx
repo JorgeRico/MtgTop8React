@@ -25,7 +25,7 @@ class GoogleAd extends Component {
                 style={style || { display: 'block', textAlign: "center" }}
                 data-ad-client={googleAdId}
                 data-ad-slot={slot}
-                data-ad-format={format || "auto"}
+                data-ad-format={format || "rectangle"}
                 data-full-width-responsive="true"
                 ></ins>
             </div>
