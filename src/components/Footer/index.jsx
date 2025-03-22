@@ -5,11 +5,13 @@ import CatMagic from "/src/assets/images/youtube.png";
 import Twitch from "/src/assets/images/twitch.png";
 import LinkImage from "/src/components/Link/Image";
 import "./module.css";
+import GoogleAd from '/src/components/Ads';            
 
 export default function Footer() {
     return (
         <>
             <div className="footer">
+                <GoogleAd slot="6035410401" googleAdId="ca-pub-9482818665347681"/>
                 <div className=" social mb20">
                     <LinkImage url="https://www.instagram.com/legacy.cat/" img={Instagram} />
                     <LinkImage url="https://x.com/Lliga_Legacy" img={XImg} />
