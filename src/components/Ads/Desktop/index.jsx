@@ -17,7 +17,7 @@ class GoogleAd extends Component {
     }
 
     render() {
-        const { classNames, slot, googleAdId, style, format } = this.props;
+        const { classNames, slot, googleAdId } = this.props;
         return (
             <div className={classNames}>
                 <ins
@@ -25,7 +25,6 @@ class GoogleAd extends Component {
                 style={{display: 'inline-block', textAlign: "center", width: '728px', height: '90px'}}
                 data-ad-client={googleAdId}
                 data-ad-slot={slot}
-                data-ad-format={format || "rectangle"}
                 data-full-width-responsive="true"
                 ></ins>
             </div>
