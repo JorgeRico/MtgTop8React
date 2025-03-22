@@ -7,8 +7,11 @@ import LinkImage from "/src/components/Link/Image";
 import "./module.css";
 import GoogleAdDesktop from '/src/components/Ads/Desktop';
 import GoogleAdMobile from '/src/components/Ads/Mobile';
+import { useMobile } from 'hooks/use-mobile'; 
 
 export default function Footer() {
+    const mobile = useMobile();
+
     return (
         <>
             <div className="footer">
@@ -19,8 +22,12 @@ export default function Footer() {
                     <LinkImage url="https://www.twitch.tv/catmagiclegacy" img={Twitch} />                    
                 </div>
                 <div className="message">
-                    <GoogleAdDesktop slot="6035410401" googleAdId="ca-pub-9482818665347681"/>
-                    <GoogleAdMobile slot="3978326343" googleAdId="ca-pub-9482818665347681"/>
+                    {mobile.getIsMobile() === false ? (
+                            <GoogleAdDesktop slot="6035410401" googleAdId="ca-pub-9482818665347681"/>
+                        ) : (
+                            <GoogleAdMobile slot="3978326343" googleAdId="ca-pub-9482818665347681"/>
+                        )
+                    }
                 </div>
                 <div className="message mt10">
                     The literal and graphical information presented on this site about Magic: The Gathering, including card images and mana symbols, is copyright Wizards of the Coast, LLC. Scryfall is not produced by or endorsed by Wizards of the Coast.
