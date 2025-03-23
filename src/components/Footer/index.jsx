@@ -16,10 +16,12 @@ export default function Footer() {
         <>
             <div className="footer">
                 <div className="social mb20">
-                    <LinkImage url="https://www.instagram.com/legacy.cat/" img={Instagram} />
-                    <LinkImage url="https://x.com/Lliga_Legacy" img={XImg} />
-                    <LinkImage url="https://www.youtube.com/@catmagiclegacy" img={CatMagic} />
-                    <LinkImage url="https://www.twitch.tv/catmagiclegacy" img={Twitch} />                    
+                    <div className="links">
+                        <LinkImage url="https://www.instagram.com/legacy.cat/" img={Instagram} />
+                        <LinkImage url="https://x.com/Lliga_Legacy" img={XImg} />
+                        <LinkImage url="https://www.youtube.com/@catmagiclegacy" img={CatMagic} />
+                        <LinkImage url="https://www.twitch.tv/catmagiclegacy" img={Twitch} />         
+                    </div>           
                 </div>
                 <div className="message">
                     {mobile.getIsMobile() === false ? (
