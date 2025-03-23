@@ -83,14 +83,16 @@ function League() {
     const showStats = () => {
         return (
             <>
-                <div className="left w100 ml25 mt10">
-                    {showElements === false ? (
+                {showElements === false ? (
+                        <div className="left w100 mt10">
                             <BluredBigList></BluredBigList>
-                        ) : (
+                        </div>
+                    ) : (
+                        <div className="left w100 ml25 mt10">
                             <StatsBox></StatsBox>
-                        )
-                    }
-                </div>
+                        </div>
+                    )
+                }
             </>
         )
     }

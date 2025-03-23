@@ -230,11 +230,13 @@ export default function StatsBox() {
                     {cardStats()}
                 </div>
                 <div className="right wAuto ml15 showStatsCards">
-                    {showSpinner === true &&
-                        <BluredStatsList></BluredStatsList>
-                    }
                     <div className="wAuto cards">
-                        {showStats()}
+                        {showSpinner === true ? (
+                                <BluredStatsList></BluredStatsList>
+                            ) : (
+                                showStats()
+                            )
+                        }
                     </div>
                 </div>
             </div>

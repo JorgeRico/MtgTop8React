@@ -79,9 +79,13 @@ function Tournament() {
         return (
             <>
                 {showTournament === false ? (
-                        <BluredBigList></BluredBigList>
+                        <div className="left w100 mt10">
+                            <BluredBigList></BluredBigList>
+                        </div>
                     ) : (
-                        <StatsTournamentBox></StatsTournamentBox>
+                        <div className="left w100 ml25 mt10">
+                            <StatsTournamentBox></StatsTournamentBox>
+                        </div>
                     )
                 }
             </>
@@ -95,8 +99,8 @@ function Tournament() {
                 <div className="left w100 mt20">
                     {showPlayers()}
                 </div>
-                <HTag Tag="h3" text="Stats" className="left ml15 titlePadding" />
-                <div className="left w100 ml25 mt10">
+                <div className="left w100">
+                    <HTag Tag="h3" text="Stats" className="left ml15 titlePadding" />
                     {showStats()}
                 </div>
             </Layout>
