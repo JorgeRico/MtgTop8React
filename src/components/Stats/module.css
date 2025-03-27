@@ -17,3 +17,10 @@
         }
     }
 }
+
+.cards {
+    & li.blured {
+        list-style: none;
+        line-height: 32px;
+    }
+}
