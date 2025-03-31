@@ -40,3 +40,12 @@
         width: auto;
     }
 }
+
+
+.home {
+    & .footer {
+        display: inline;
+        bottom: 0;
+        position: absolute;
+    }
+}
