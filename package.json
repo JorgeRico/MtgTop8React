@@ -5,6 +5,7 @@
     "npm": ">=6"
   },
   "dependencies": {
+    "@ctrl/react-adsense": "^1.8.0",
     "@vitejs/plugin-react": "^4.3.4",
     "prop-types": "15.8.1",
     "react": "19.0.0",

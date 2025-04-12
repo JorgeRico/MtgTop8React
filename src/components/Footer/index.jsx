@@ -7,6 +7,8 @@ import LinkImage from "/src/components/Link/Image";
 import "./module.css";
 import GoogleAdDesktop from '/src/components/Ads/Desktop';
 import GoogleAdMobile from '/src/components/Ads/Mobile';
+import {Adsense} from '@ctrl/react-adsense';
+
 import { useMobile } from 'hooks/use-mobile'; 
 
 export default function Footer() {
@@ -30,14 +32,10 @@ export default function Footer() {
                             <GoogleAdMobile slot="3978326343" googleAdId="ca-pub-9482818665347681"/>
                         )
                     } */}
-                    <amp-ad width="100vw" height="320"
-                        type="adsense"
-                        data-ad-client="ca-pub-9482818665347681"
-                        data-ad-slot="3978326343"
-                        data-auto-format="rspv"
-                        data-full-width="">
-                    <div overflow=""></div>
-                    </amp-ad>
+                    <Adsense
+                        client="ca-pub-9482818665347681"
+                        slot="6035410401"
+                    />
                 </div>
                 <div className="message mt10">
                     The literal and graphical information presented on this site about Magic: The Gathering, including card images and mana symbols, is copyright Wizards of the Coast, LLC. Scryfall is not produced by or endorsed by Wizards of the Coast.
