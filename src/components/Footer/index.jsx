@@ -27,7 +27,8 @@ export default function Footer() {
                     {mobile.getIsMobile() === false ? (
                             <GoogleAdDesktop slot="6035410401" googleAdId="ca-pub-9482818665347681"/>
                         ) : (
-                            <GoogleAdMobile slot="3978326343" googleAdId="ca-pub-9482818665347681"/>
+                            // <GoogleAdMobile slot="3978326343" googleAdId="ca-pub-9482818665347681"/>
+                            <></>
                         )
                     }
                 </div>
