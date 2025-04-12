@@ -2,19 +2,19 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class GoogleAd extends Component {
-    googleInit = null;
+    // googleInit = null;
 
-    componentDidMount() {
-        const { timeout } = this.props;
-        this.googleInit = setTimeout(() => {
-            if (typeof window !== 'undefined')
-                (window.adsbygoogle = window.adsbygoogle || []).push({});
-        }, timeout);
-    }
+    // componentDidMount() {
+    //     const { timeout } = this.props;
+    //     this.googleInit = setTimeout(() => {
+    //         if (typeof window !== 'undefined')
+    //             (window.adsbygoogle = window.adsbygoogle || []).push({});
+    //     }, timeout);
+    // }
 
-    componentWillUnmount() {
-        if (this.googleInit) clearTimeout(this.googleInit);
-    }
+    // componentWillUnmount() {
+    //     if (this.googleInit) clearTimeout(this.googleInit);
+    // }
 
     render() {
         const { classNames, slot, googleAdId } = this.props;
@@ -25,8 +25,10 @@ class GoogleAd extends Component {
                 style={{display: 'inline-block', textAlign: "center", width: '728px', height: '90px'}}
                 data-ad-client={googleAdId}
                 data-ad-slot={slot}
-                data-full-width-responsive="true"
                 ></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
             </div>
         );
     }
