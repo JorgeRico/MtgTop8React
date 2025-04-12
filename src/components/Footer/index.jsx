@@ -5,8 +5,6 @@ import CatMagic from "/src/assets/images/youtube.png";
 import Twitch from "/src/assets/images/twitch.png";
 import LinkImage from "/src/components/Link/Image";
 import "./module.css";
-import GoogleAdDesktop from '/src/components/Ads/Desktop';
-import GoogleAdMobile from '/src/components/Ads/Mobile';
 import {Adsense} from '@ctrl/react-adsense';
 
 import { useMobile } from 'hooks/use-mobile'; 
@@ -26,15 +24,9 @@ export default function Footer() {
                     </div>           
                 </div>
                 <div className="message">
-                    {/* {mobile.getIsMobile() === false ? (
-                            <GoogleAdDesktop slot="6035410401" googleAdId="ca-pub-9482818665347681"/>
-                        ) : (
-                            <GoogleAdMobile slot="3978326343" googleAdId="ca-pub-9482818665347681"/>
-                        )
-                    } */}
                     <Adsense
                         client="ca-pub-9482818665347681"
-                        slot="6035410401"
+                        slot="6966481569"
                     />
                 </div>
                 <div className="message mt10">
