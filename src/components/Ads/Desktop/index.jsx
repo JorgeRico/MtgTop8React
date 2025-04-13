@@ -3,16 +3,19 @@ import PropTypes from 'prop-types';
 
 function GoogleAd(props) {
     useEffect(() => {
-        window.adsbygoogle = window.adsbygoogle || []
-        window.adsbygoogle.push({})
-      }, [props.currentPath])
+        try {
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+        } catch (e) {
+            console.error("AdSense error:", e);
+        }
+    }, [props.currentPath])
 
     return (
         <div 
             key={props.currentPath}
             style={{display: 'inline-block', textAlign: "center", width: '728px', height: '90px'}}
         >
-            <script src="https://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+            {/* <script src="https://pagead2.googlesyndication.com/pagead/show_ads.js"></script> */}
             <ins
                 className="adsbygoogle"
                 style={{display: 'inline-block', textAlign: "center", width: '728px', height: '90px'}}
