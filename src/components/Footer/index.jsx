@@ -5,8 +5,7 @@ import CatMagic from "/src/assets/images/youtube.png";
 import Twitch from "/src/assets/images/twitch.png";
 import LinkImage from "/src/components/Link/Image";
 import "./module.css";
-import {Adsense} from '@ctrl/react-adsense';
-
+import GoogleAdDesktop from '/src/components/Ads/Desktop';
 import { useMobile } from 'hooks/use-mobile'; 
 
 export default function Footer() {
@@ -23,10 +22,11 @@ export default function Footer() {
                         <LinkImage url="https://www.twitch.tv/catmagiclegacy" img={Twitch} />         
                     </div>           
                 </div>
-                <div className="message banner">
-                    <Adsense
-                        client="ca-pub-9482818665347681"
-                        slot="6966481569"
+                <div className="message">
+                    <GoogleAdDesktop
+                        currentPath={window.location.href}
+                        googleAdId="ca-pub-9482818665347681"
+                        slot="6035410401"
                     />
                 </div>
                 <div className="message mt10">

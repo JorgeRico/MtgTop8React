@@ -1,36 +1,29 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-class GoogleAd extends Component {
-    render() {
-        const { classNames, slot, googleAdId } = this.props;
-        return (
-            <div className={classNames}>
-                <ins
+
+function GoogleAd(props) {
+    useEffect(() => {
+            window.adsbygoogle = window.adsbygoogle || []
+            window.adsbygoogle.push({})
+    }, []);
+
+    return (
+        <div key={props.currentPath}>
+            <ins
                 className="adsbygoogle"
-                style={{display: 'block'}}
-                data-ad-client={googleAdId}
-                data-ad-slot={slot}
-                data-ad-format="auto"
+                style={{display: 'inline-block', textAlign: "center", width: '728px', height: '90px'}}
+                data-ad-client={props.googleAdId}
+                data-ad-slot={props.slot}
                 data-full-width-responsive="true"
-                ></ins>
-                <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-            </div>
-        );
-    }
+            ></ins>
+        </div>
+    );
+    
 }
 
 GoogleAd.propTypes = {
-    classNames: PropTypes.string,
     slot: PropTypes.string,
-    timeout: PropTypes.number,
     googleAdId: PropTypes.string,
-};
-
-GoogleAd.defaultProps = {
-    classNames: '',
-    timeout: 200,
 };
 
 export default GoogleAd;
