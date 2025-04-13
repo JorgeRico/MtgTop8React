@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 function GoogleAd(props) {
     useEffect(() => {
             (adsbygoogle = window.adsbygoogle || []).push({});
+            console.log(props.slot)
+            console.log(props.googleAdId)
     }, []);
 
     return (
