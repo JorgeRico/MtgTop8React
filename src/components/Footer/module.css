@@ -33,6 +33,12 @@
     & .message {
         text-align: center;
     }
+
+    & .banner {
+        overflow: hidden;
+        width: 100%;
+        height: 90px;
+    }
 }
 
 @media (max-width: 1080px) {

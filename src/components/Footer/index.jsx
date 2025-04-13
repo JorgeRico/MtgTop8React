@@ -23,7 +23,7 @@ export default function Footer() {
                         <LinkImage url="https://www.twitch.tv/catmagiclegacy" img={Twitch} />         
                     </div>           
                 </div>
-                <div className="message">
+                <div className="message banner">
                     <Adsense
                         client="ca-pub-9482818665347681"
                         slot="6966481569"
