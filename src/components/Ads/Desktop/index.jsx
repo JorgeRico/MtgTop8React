@@ -5,7 +5,6 @@ function GoogleAd(props) {
     useEffect(() => {
         window.adsbygoogle = window.adsbygoogle || []
         window.adsbygoogle.push({})
-        console.log(props.currentPath)
       }, [props.currentPath])
 
     return (
