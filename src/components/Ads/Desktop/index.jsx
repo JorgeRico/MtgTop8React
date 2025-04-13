@@ -12,12 +12,14 @@ function GoogleAd(props) {
             key={props.currentPath}
             style={{display: 'inline-block', textAlign: "center", width: '728px', height: '90px'}}
         >
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9482818665347681" crossorigin="anonymous"></script>
+            <script src="https://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
             <ins
                 className="adsbygoogle"
                 style={{display: 'inline-block', textAlign: "center", width: '728px', height: '90px'}}
                 data-ad-client={props.googleAdId}
                 data-ad-slot={props.slot}
+                google_ad_width={728}
+                google_ad_height={90}
             ></ins>
         </div>
     );
