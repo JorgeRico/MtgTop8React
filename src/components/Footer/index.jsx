@@ -26,7 +26,7 @@ export default function Footer() {
                     <GoogleAdDesktop
                         currentPath={window.location.href}
                         googleAdId="ca-pub-9482818665347681"
-                        slot="6035410401"
+                        slot="6966481569"
                     />
                 </div>
                 <div className="message mt10">
