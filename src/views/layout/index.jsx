@@ -25,6 +25,13 @@ function Layout(props) {
                     </div>
                     <Footer></Footer>
                 </div>
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <script>
+                if (!adsbygoogle.loaded) {
+                // do something to alert the user
+                console.log('????')
+                }
+                </script>
             </>
         )
     );
