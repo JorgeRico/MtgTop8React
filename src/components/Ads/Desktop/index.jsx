@@ -3,13 +3,16 @@ import PropTypes from 'prop-types';
 
 function GoogleAd(props) {
     useEffect(() => {
-            (window.adsbygoogle = window.adsbygoogle || []).push({});
-            console.log(props.slot)
-            console.log(props.googleAdId)
-    }, []);
+        window.adsbygoogle = window.adsbygoogle || []
+        window.adsbygoogle.push({})
+        console.log(props.currentPath)
+      }, [props.currentPath])
 
     return (
-        <div key={props.currentPath}>
+        <div 
+            key={props.currentPath}
+            style={{display: 'inline-block', textAlign: "center", width: '728px', height: '90px'}}
+        >
             <ins
                 className="adsbygoogle"
                 style={{display: 'inline-block', textAlign: "center", width: '728px', height: '90px'}}
@@ -22,8 +25,8 @@ function GoogleAd(props) {
 }
 
 GoogleAd.propTypes = {
-    slot: PropTypes.string,
-    googleAdId: PropTypes.string,
+    slot       : PropTypes.string,
+    googleAdId : PropTypes.string,
 };
 
 export default GoogleAd;
