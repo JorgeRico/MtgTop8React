@@ -13,6 +13,7 @@ function GoogleAd(props) {
             key={props.currentPath}
             style={{display: 'inline-block', textAlign: "center", width: '728px', height: '90px'}}
         >
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9482818665347681" crossorigin="anonymous"></script>
             <ins
                 className="adsbygoogle"
                 style={{display: 'inline-block', textAlign: "center", width: '728px', height: '90px'}}
