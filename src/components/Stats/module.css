@@ -1,12 +1,16 @@
 .statsBox {
     width: 220px;
 
+    & ul {
+        overflow: hidden;
+    }
+
     & p {
         margin: 0;
     }
     
     & .line {
-        width: 155px;
+        width: 175px;
 
         & p {
             text-decoration: none !important;

@@ -159,37 +159,37 @@ export default function StatsBox() {
         return (
             <>
                 <ul>
-                    <li className={showPlayers === true ? "color-selected left line" : "left line"} onClick={handleClickPlayers}>
+                    <li className={showPlayers === true ? "color-selected left line mb5" : "left line mb5"} onClick={handleClickPlayers}>
                         {optionStats(showPlayers, "Top Players")}
                     </li>
-                    <li className={showTop10 === true ? "color-selected left line" : "left line"} onClick={handleClickCards}>
+                    <li className={showTop10 === true ? "color-selected left line mb5" : "left line mb5"} onClick={handleClickCards}>
                         {optionStats(showTop10, "Top Cards")}
                     </li>
-                    <li className={showMainboard === true ? "color-selected left line" : "left line"} onClick={handleClickMainboard}>
+                    <li className={showMainboard === true ? "color-selected left line mb5" : "left line mb5"} onClick={handleClickMainboard}>
                         {optionStats(showMainboard, "Top Mainboard Cards")}
                     </li>
-                    <li className={showSideboard === true ? "color-selected left line" : "left line"} onClick={handleClickSideboard}>
+                    <li className={showSideboard === true ? "color-selected left line mb5" : "left line mb5"} onClick={handleClickSideboard}>
                         {optionStats(showSideboard, "Top Sideboard Cards")}
                     </li>
-                    <li className={showCreatures === true ? "color-selected left line" : "left line"} onClick={handleClickCreatures}>
+                    <li className={showCreatures === true ? "color-selected left line mb5" : "left line mb5"} onClick={handleClickCreatures}>
                         {optionStats(showCreatures, "Top Creatures")}
                     </li>
-                    <li className={showInstants === true ? "color-selected left line" : "left line"} onClick={handleClickInstants}>
+                    <li className={showInstants === true ? "color-selected left line mb5" : "left line mb5"} onClick={handleClickInstants}>
                         {optionStats(showInstants, "Top Instants")}
                     </li>
-                    <li className={showSorceries === true ? "color-selected left line" : "left line"} onClick={handleClickSorceries}>
+                    <li className={showSorceries === true ? "color-selected left line mb5" : "left line mb5"} onClick={handleClickSorceries}>
                         {optionStats(showSorceries, "Top Sorceries")}
                     </li>
-                    <li className={showArtifacts === true ? "color-selected left line" : "left line"} onClick={handleClickArtifacts}>
+                    <li className={showArtifacts === true ? "color-selected left line mb5" : "left line mb5"} onClick={handleClickArtifacts}>
                         {optionStats(showArtifacts, "Top Artifacts")}
                     </li>
-                    <li className={showEnchantments === true ? "color-selected left line" : "left line"} onClick={handleClickEnchantments}>
+                    <li className={showEnchantments === true ? "color-selected left line mb5" : "left line mb5"} onClick={handleClickEnchantments}>
                         {optionStats(showEnchantments, "Top Enchantments")}
                     </li>
-                    <li className={showPlaneswalkers === true ? "color-selected left line" : "left line"} onClick={handleClickPlaneswalkers}>
+                    <li className={showPlaneswalkers === true ? "color-selected left line mb5" : "left line mb5"} onClick={handleClickPlaneswalkers}>
                         {optionStats(showPlaneswalkers, "Top Planeswalkers")}
                     </li>
-                    <li className={showLands === true ? "color-selected left line" : "left line"} onClick={handleClickLands}>
+                    <li className={showLands === true ? "color-selected left line mb5" : "left line mb5"} onClick={handleClickLands}>
                         {optionStats(showLands, "Top Lands")}
                     </li>
                 </ul>
@@ -239,11 +239,11 @@ export default function StatsBox() {
 
     return (
         <>
-            <div className='left wAuto'>
+            <div className='left w100'>
                 <div className="left wAuto mb20 statsBox">
                     {cardStats()}
                 </div>
-                <div className="right wAuto ml15 showStatsCards">
+                <div className="right w70 showStatsCards">
                     {showSpinner === true &&
                         <BluredStatsList></BluredStatsList>
                     }

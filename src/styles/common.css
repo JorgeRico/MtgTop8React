@@ -57,6 +57,10 @@ li {
     width: 70%;
 }
 
+.w74 {
+    width: 74%;
+}
+
 .wAuto {
     width: auto;
 }
@@ -102,8 +106,12 @@ h3 {
     margin-left: 70px;
 }
 
-.mb0{
-    margin-bottom: 0px
+.mb0 {
+    margin-bottom: 0px;
+}
+
+.mb5 {
+    margin-bottom: 5px;
 }
 
 .mb20 {

@@ -4,12 +4,12 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import More from "/src/assets/images/more.png";
 
-export default function StatsCardLink(props) {
+export default function TournamentLink(props) {
     const { url, items }                  = props;
     const effectRan                       = useRef(false);
     const [ renderItems, setRenderItems ] = useState(null)
 
-    StatsCardLink.propTypes = {
+    TournamentLink.propTypes = {
         url   : PropTypes.string,
         items : PropTypes.array
     };
@@ -17,10 +17,12 @@ export default function StatsCardLink(props) {
     useEffect(() => {
         if (!effectRan.current) {
             setRenderItems(items?.map((item) => (
-                <li key={uuidv4()} className="listItem pointer title mb5">
+                <li key={uuidv4()} className="listItem pointer title">
                     <Link to={url + item.id}>
                         <div className="left line">
-                            {item.name} {item.date && ( <> - {item.date}</>)}
+                            <div className="left w100">{item.name}</div>
+                            <div className="left w100">{item.date}</div>
+                            <div className="left w100">{item.players} players</div>
                         </div>
                         <div className="right">
                             <img src={More} alt="" className="invertColor settings absolute"/>
@@ -36,7 +38,7 @@ export default function StatsCardLink(props) {
 
     return (
         <>
-            <ul className="ml15">
+            <ul className="tournaments ml15">
                 {(items.length > 0) && (
                     renderItems
                 )}

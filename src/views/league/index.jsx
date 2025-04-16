@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import endpoints from "/src/services/endpoints.js"
 import { useApi } from '/src/hooks/use-api.js';
 import { useParams } from 'react-router-dom';
-import ListLink from "/src/components/List/Link";
+import TournamentLink from "/src/components/List/Tournament";
 import BackLink from "/src/components/Link/BackLink";
 import Layout from "/src/views/layout";
 import StatsBox from "/src/components/Stats/League";
@@ -71,7 +71,7 @@ function League() {
                     <>
                         {renderElements != null && (
                             <div className="left w100">
-                                <ListLink url="/tournaments/" items={renderElements}/>
+                                <TournamentLink url="/tournaments/" items={renderElements}/>
                             </div>
                         )}
                     </>

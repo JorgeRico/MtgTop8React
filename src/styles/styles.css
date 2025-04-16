@@ -3,9 +3,7 @@
 }
 
 .home, .league {
-    & li.title {       
-        width: 220px;
-
+    & li.title {
         & a {
             text-decoration: none;
         }
@@ -24,7 +22,13 @@
 
 .league {
     & li {
-        width: 205px;
+        width: 220px;
+    }
+
+    & .tournaments {
+        & li.title {
+            height: 65px;
+        }
     }
 }
 
