@@ -56,7 +56,7 @@ export default function StatsPlayer(props) {
             setRenderItems(items?.map((item, index) => (
                 <li key={uuidv4()} onClick={() => handleCards(index+1, item.idDeck)} id={'player-'+(index+1)} className="pointer">
                     <div className="left line">
-                        {item.name} {item.idDeck}
+                        {item.name}
                     </div>
                     <div className="right">
                         <img src={More} alt="" className="invertColor settings absolute"/>
