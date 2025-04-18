@@ -25,11 +25,11 @@ export default function Deck(props) {
 
         for (var i = 0; i < deck.length; i++) {
             if (deck[i].board === 'md' && deck[i].cardType === type) {
-                    itemsList.push(
-                        <li key={uuidv4()}>
-                            {deck[i].num} {deck[i].name}
-                        </li>
-                    )
+                itemsList.push(
+                    <li key={uuidv4()}>
+                        {deck[i].num} {deck[i].name}
+                    </li>
+                )
             }
         }
 
@@ -41,11 +41,11 @@ export default function Deck(props) {
 
         for (var i = 0; i < deck.length; i++) {
             if (deck[i].board === 'sb') {
-                    itemsList.push(
-                        <li key={uuidv4()}>
-                            {deck[i].num} {deck[i].name}
-                        </li>
-                    )
+                itemsList.push(
+                    <li key={uuidv4()}>
+                        {deck[i].num} {deck[i].name}
+                    </li>
+                )
             }
         }
 

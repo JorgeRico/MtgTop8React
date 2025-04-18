@@ -5,6 +5,8 @@ import Deck from "/src/components/List/Deck";
 import BluredBigList from "/src/components/Blured/FakeLists/BigList";
 import More from "/src/assets/images/more.png";
 import "./module.css";
+import { useApi } from '/src/hooks/use-api.js';
+import endpoints from "/src/services/endpoints.js"
 
 export default function StatsPlayer(props) {
     const { items }                               = props;
@@ -12,18 +14,30 @@ export default function StatsPlayer(props) {
     const [ renderItems, setRenderItems ]         = useState([]);
     const [ renderDeckItems, setRenderDeckItems ] = useState([]);
     const [ showSpinner, setShowSpinner ]         = useState(false);
+    const api                                     = useApi();
 
     StatsPlayer.propTypes = {
         items : PropTypes.array
     };
 
-    function handleCards(index) {
+    // api call
+    async function apiCall(id) {
+        await api.getAxiosEndpoint(endpoints.API_DECKS + '/' + id + '/cards')
+        .then((response) => {
+            setTimeout(() => {setShowSpinner(false)}, 1000);
+            setTimeout(() => {setRenderDeckItems(response.data)}, 1000);
+        })
+        .catch((err) => { 
+            console.log('error loading deck')
+        });
+    }
+
+    function handleCards(index, idDeck) {
+        setRenderDeckItems(null)
+        apiCall(idDeck)
         playersUnselected();
         playerSelected(index);
-        hideCards();
         setShowSpinner(true);
-        setTimeout(() => {setShowSpinner(false)}, 3000);
-        setTimeout(() => {displayBlockComponent(index)}, 3000);
     }
 
     function playersUnselected() {
@@ -37,37 +51,17 @@ export default function StatsPlayer(props) {
         document.querySelector('#player-' + index + ' img').classList.remove('invertColor');
     }
 
-    function displayBlockComponent(index) {
-        document.querySelector('#cards-'+index).style.display = 'block';
-    }
-
-    function displayNoneComponent(index) {
-        document.querySelector('#cards-'+index).style.display = 'none';
-    }
-
-    function hideCards() {
-        for (var i = 1; i <= items.length; i++) {
-            displayNoneComponent(i);
-        }
-    }
-
     useEffect(() => {
         if (!effectRan.current) {
             setRenderItems(items?.map((item, index) => (
-                <li key={uuidv4()} onClick={() => handleCards(index+1)} id={'player-'+(index+1)} className="pointer">
+                <li key={uuidv4()} onClick={() => handleCards(index+1, item.idDeck)} id={'player-'+(index+1)} className="pointer">
                     <div className="left line">
-                        {item.name}
+                        {item.name} {item.idDeck}
                     </div>
                     <div className="right">
                         <img src={More} alt="" className="invertColor settings absolute"/>
                     </div>
                 </li>   
-            )));
-
-            setRenderDeckItems(items?.map((item, index) => (
-                <div key={uuidv4()} className="pointer deck" id={`cards-${index+1}`} style={{display: 'none'}}>
-                    <Deck items={item.deck} />
-                </div>   
             )));
         }
         
@@ -90,8 +84,10 @@ export default function StatsPlayer(props) {
                         <BluredBigList></BluredBigList>
                     </div>
                 }
-                {(items.length > 0) && (
-                    renderDeckItems
+                {renderDeckItems && (
+                    <div className="pointer deck">
+                        <Deck items={renderDeckItems} />
+                    </div>   
                 )}
             </div>
         </>
