@@ -46,6 +46,7 @@ export default function StatsPlayer(props) {
             document.querySelector('#player-' + (i+1) + ' img').classList.add('invertColor');
         }
     }
+    
     function playerSelected(index) {
         document.querySelector('#player-' + index).classList.add('color-selected');
         document.querySelector('#player-' + index + ' img').classList.remove('invertColor');
