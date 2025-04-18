@@ -45,7 +45,7 @@ export default function StatsBox() {
     async function apiOptionsCall(id, options, value, operator) {
         hideStats(value, operator);
 
-        await api.getAxiosEndpoint(endpoints.API_TOURNAMENTS + '/' + id + '/stats/' + options)
+        await api.getAxiosEndpoint(endpoints.API_TOURNAMENT_STATS.replace('{id}', id).replace('{option}', options))
         .then((response) => {
             setTimeout(() => {setShowSpinner(false)}, 1000);
             setTimeout(() => {setRenderElements(response.data.stats)}, 1000);
@@ -59,7 +59,7 @@ export default function StatsBox() {
     async function apiCardTypeCall(id, cardType, value, operator) {
         hideStats(value, operator);
 
-        await api.getAxiosEndpoint(endpoints.API_TOURNAMENTS + '/' + id + '/cards/' + cardType + '/stats')
+        await api.getAxiosEndpoint(endpoints.API_TOURNAMENT_CARD_STATS.replace('{id}', id).replace('{cardType}', cardType))
         .then((response) => {
             console.log(response.data)
             setTimeout(() => {setShowSpinner(false)}, 1000);

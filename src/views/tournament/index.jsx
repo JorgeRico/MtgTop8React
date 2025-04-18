@@ -20,7 +20,7 @@ function Tournament() {
 
     // api call
     async function apiCall() {
-        await api.getAxiosEndpoint(endpoints.API_TOURNAMENTS + '/' + id + '/data')
+        await api.getAxiosEndpoint(endpoints.API_TOURNAMENT_DATA.replace('{id}', id))
         .then((response) => {
             setTournament(prevState => ({
                 ...prevState,
@@ -52,7 +52,7 @@ function Tournament() {
                 {showTournament === false ? (
                     <BluredBackLink></BluredBackLink>
                 ) : (
-                    <BackLink endpoint={"/leagues/" + tournament.idLeague} title={tournament.name + " - " + tournament.date}></BackLink>
+                    <BackLink endpoint={endpoints.API_LEAGUE + tournament.idLeague} title={tournament.name + " - " + tournament.date}></BackLink>
                 )}
             </>
         )

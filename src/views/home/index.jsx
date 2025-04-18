@@ -15,7 +15,7 @@ function Home() {
 
     // api call
     async function apiCurrentCall() {
-        await api.getAxiosEndpoint(endpoints.API_LEAGUES + '/current')
+        await api.getAxiosEndpoint(endpoints.API_LEAGUE_CURRENT)
         .then((response) => {
             setRenderElements(response.data);
             setWaitingElements(false);
@@ -27,7 +27,7 @@ function Home() {
 
     // api call
     async function apiPastCall() {
-        await api.getAxiosEndpoint(endpoints.API_LEAGUES + '/past')
+        await api.getAxiosEndpoint(endpoints.API_LEAGUE_PAST)
         .then((response) => {
             setRenderPastElements(response.data);
             setWaitingPastElements(false);
@@ -55,7 +55,7 @@ function Home() {
                     ) : (
                         <>
                             {renderElements != null && (
-                                <ListLink url="/leagues/" items={renderElements} />
+                                <ListLink url={endpoints.API_LEAGUE} items={renderElements} />
                             )}
                         </>
                     )

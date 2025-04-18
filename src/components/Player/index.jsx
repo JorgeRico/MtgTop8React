@@ -22,7 +22,7 @@ export default function StatsPlayer(props) {
 
     // api call
     async function apiCall(id) {
-        await api.getAxiosEndpoint(endpoints.API_DECKS + '/' + id + '/cards')
+        await api.getAxiosEndpoint(endpoints.API_DECK_CARDS.replace('{id}', id))
         .then((response) => {
             setTimeout(() => {setShowSpinner(false)}, 1000);
             setTimeout(() => {setRenderDeckItems(response.data)}, 1000);

@@ -21,7 +21,7 @@ function League() {
     
     // api call
     async function apiCall() {
-        await api.getAxiosEndpoint(endpoints.API_LEAGUES + '/' + id)
+        await api.getAxiosEndpoint(endpoints.API_LEAGUE_ID.replace('{id}', id))
             .then((response) => {
                 setLeagueName(response.data.name);
                 setShowLeagueName(true);
@@ -30,8 +30,9 @@ function League() {
                 console.log(err)
                 console.log('error league id')
             });
+            
 
-        await api.getAxiosEndpoint(endpoints.API_LEAGUES + '/' + id + '/tournaments')
+        await api.getAxiosEndpoint(endpoints.API_LEAGUE_TOURNAMENTS.replace('{id}', id))
             .then((response) => {
                 setRenderElements(response.data);
                 setShowElements(true);
@@ -71,7 +72,7 @@ function League() {
                     <>
                         {renderElements != null && (
                             <div className="left w100">
-                                <TournamentLink url="/tournaments/" items={renderElements}/>
+                                <TournamentLink url={endpoints.API_TOURNAMENT} items={renderElements}/>
                             </div>
                         )}
                     </>
