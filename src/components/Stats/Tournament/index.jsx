@@ -1,7 +1,8 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useState } from "react";
 import HTag from "/src/components/HTag";
 import ListNoLink from "/src/components/List/NoLink";
 import endpoints from "/src/services/endpoints.js"
+import statsTypes from "/src/services/statsTypes.js"
 import { useApi } from '/src/hooks/use-api.js';
 import { useParams } from 'react-router-dom';
 import More from "/src/assets/images/more.png";
@@ -94,34 +95,34 @@ export default function StatsBox() {
         return (
             <>
                 <ul>
-                    <li className={showTop10 === true ? "color-selected left line mb5" : "left line mb5"} onClick={() => handleClickOptions("top", showTop10, setShowTop10)}>
+                    <li className={showTop10 === true ? "color-selected left line mb5" : "left line mb5"} onClick={() => handleClickOptions(statsTypes.TOP, showTop10, setShowTop10)}>
                         {optionStats(showTop10, "Top Cards")}
                     </li>
-                    <li className={showMainboard === true ? "color-selected left line mb5" : "left line mb5"} onClick={() => handleClickOptions("mainboard", showMainboard, setShowMainboard)}>
+                    <li className={showMainboard === true ? "color-selected left line mb5" : "left line mb5"} onClick={() => handleClickOptions(statsTypes.MAINBOARD, showMainboard, setShowMainboard)}>
                         {optionStats(showMainboard, "Top Mainboard Cards")}
                     </li>
-                    <li className={showSideboard === true ? "color-selected left line mb5" : "left line mb5"} onClick={() => handleClickOptions("sideboard", showSideboard, setShowSideboard)}>
+                    <li className={showSideboard === true ? "color-selected left line mb5" : "left line mb5"} onClick={() => handleClickOptions(statsTypes.SIDEBOARD, showSideboard, setShowSideboard)}>
                         {optionStats(showSideboard, "Top Sideboard Cards")}
                     </li>
-                    <li className={showCreatures === true ? "color-selected left line mb5" : "left line mb5"} onClick={() => handleClickCardTypes("creature", showCreatures, setShowCreatures)}>
+                    <li className={showCreatures === true ? "color-selected left line mb5" : "left line mb5"} onClick={() => handleClickCardTypes(statsTypes.CREATURE, showCreatures, setShowCreatures)}>
                         {optionStats(showCreatures, "Top Creatures")}
                     </li>
-                    <li className={showInstants === true ? "color-selected left line mb5" : "left line mb5"} onClick={() => handleClickCardTypes("instant", showInstants, setShowInstants)}>
+                    <li className={showInstants === true ? "color-selected left line mb5" : "left line mb5"} onClick={() => handleClickCardTypes(statsTypes.INSTANT, showInstants, setShowInstants)}>
                         {optionStats(showInstants, "Top Instants")}
                     </li>
-                    <li className={showSorceries === true ? "color-selected left line mb5" : "left line mb5"} onClick={() => handleClickCardTypes("sorcery", showSorceries, setShowSorceries)}>
+                    <li className={showSorceries === true ? "color-selected left line mb5" : "left line mb5"} onClick={() => handleClickCardTypes(statsTypes.SORCERY, showSorceries, setShowSorceries)}>
                         {optionStats(showSorceries, "Top Sorceries")}
                     </li>
-                    <li className={showArtifacts === true ? "color-selected left line mb5" : "left line mb5"} onClick={() => handleClickCardTypes("artifact", showArtifacts, setShowArtifacts)}>
+                    <li className={showArtifacts === true ? "color-selected left line mb5" : "left line mb5"} onClick={() => handleClickCardTypes(statsTypes.ARTIFACT, showArtifacts, setShowArtifacts)}>
                         {optionStats(showArtifacts, "Top Artifacts")}
                     </li>
-                    <li className={showEnchantments === true ? "color-selected left line mb5" : "left line mb5"} onClick={() => handleClickCardTypes("enchantment", showEnchantments, setShowEnchantments)}>
+                    <li className={showEnchantments === true ? "color-selected left line mb5" : "left line mb5"} onClick={() => handleClickCardTypes(statsTypes.ENCHANTMENT, showEnchantments, setShowEnchantments)}>
                         {optionStats(showEnchantments, "Top Enchantments")}
                     </li>
-                    <li className={showPlaneswalkers === true ? "color-selected left line mb5" : "left line mb5"} onClick={() => handleClickCardTypes("planeswalker", showPlaneswalkers, setShowPlaneswalkers)}>
+                    <li className={showPlaneswalkers === true ? "color-selected left line mb5" : "left line mb5"} onClick={() => handleClickCardTypes(statsTypes.PLANESWALKER, showPlaneswalkers, setShowPlaneswalkers)}>
                         {optionStats(showPlaneswalkers, "Top Planeswalkers")}
                     </li>
-                    <li className={showLands === true ? "color-selected left line mb5" : "left line mb5"} onClick={() => handleClickCardTypes("land", showLands, setShowLands)}>
+                    <li className={showLands === true ? "color-selected left line mb5" : "left line mb5"} onClick={() => handleClickCardTypes(statsTypes.LAND, showLands, setShowLands)}>
                         {optionStats(showLands, "Top Lands")}
                     </li>
                 </ul>
