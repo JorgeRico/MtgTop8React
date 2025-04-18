@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import PropTypes from 'prop-types';
 import "./module.css";
+import statsTypes from "/src/services/statsTypes.js"
 
 // TODO: component needs refactor
 export default function Deck(props) {
@@ -55,13 +56,13 @@ export default function Deck(props) {
     useEffect(() => {
         if (!effectRan.current) {
             if (items.length > 0) {
-                setPlaneswalkerItems(getCardTypes(items, 'planeswalker'));
-                setCreatureItems(getCardTypes(items, 'creature'));
-                setInstantItems(getCardTypes(items, 'instant'));
-                setSorceryItems(getCardTypes(items, 'sorcery'));
-                setArtifactItems(getCardTypes(items, 'artifact'));
-                setEnchantmentItems(getCardTypes(items, 'enchantment'));
-                setLandItems(getCardTypes(items, 'land'));
+                setPlaneswalkerItems(getCardTypes(items, statsTypes.PLANESWALKER));
+                setCreatureItems(getCardTypes(items, statsTypes.CREATURE));
+                setInstantItems(getCardTypes(items, statsTypes.INSTANT));
+                setSorceryItems(getCardTypes(items, statsTypes.SORCERY));
+                setArtifactItems(getCardTypes(items, statsTypes.ARTIFACT));
+                setEnchantmentItems(getCardTypes(items, statsTypes.ENCHANTMENT));
+                setLandItems(getCardTypes(items, statsTypes.LAND));
                 setSideItems(getSideboard(items));
             }
         }
