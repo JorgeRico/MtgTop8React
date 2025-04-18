@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import "./module.css";
 import statsTypes from "/src/services/statsTypes.js"
 
-// TODO: component needs refactor
 export default function Deck(props) {
     const { items }                                   = props;
     const effectRan                                   = useRef(false);
