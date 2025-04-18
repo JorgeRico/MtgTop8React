@@ -9,9 +9,9 @@ import BluredStatsList from "/src/components/Blured/FakeLists/StatsList";
 import "./../module.css";
 
 export default function StatsBox() {
-    const { id }                                = useParams();
-    const api                                   = useApi();
-    const [ renderElements, setRenderElements ] = useState();
+    const { id }                                      = useParams();
+    const api                                         = useApi();
+    const [ renderElements, setRenderElements ]       = useState();
     const [ showTop10, setShowTop10 ]                 = useState(false);
     const [ showPlayers, setShowPlayers ]             = useState(false);
     const [ showMainboard, setShowMainboard ]         = useState(false);
@@ -37,10 +37,9 @@ export default function StatsBox() {
         setShowEnchantments(false);
         setShowPlaneswalkers(false);
         setShowLands(false);
-
+        operator(!value)
         setRenderElements(null);
         setShowSpinner(true);
-        setTimeout(() => {operator(!value)}, 1500);
     }
 
     // api call
@@ -64,7 +63,7 @@ export default function StatsBox() {
         await api.getAxiosEndpoint(endpoints.API_LEAGUES + '/' + id + '/cards/' + cardType + '/stats')
         .then((response) => {
             setTimeout(() => {setShowSpinner(false)}, 1000);
-            setTimeout(() => {setRenderElements(response.data.cards)}, 1000);
+            setTimeout(() => {setRenderElements(response.data.stats)}, 1000);
         })
         .catch((err) => { 
             console.log('error League card stats')
@@ -141,10 +140,10 @@ export default function StatsBox() {
                     {cardStats()}
                 </div>
                 <div className="right w70 showStatsCards">
-                    {showSpinner === true &&
-                        <BluredStatsList></BluredStatsList>
-                    }
                     <div className="wAuto cards">
+                        {showSpinner === true &&
+                            <BluredStatsList></BluredStatsList>
+                        }
                         {renderElements &&
                             <ListNoLink items={renderElements} />
                         }
