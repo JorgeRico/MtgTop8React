@@ -9,7 +9,9 @@ const statsTypes = {
     ENCHANTMENT  : "enchantment",
     PLANESWALKER : "planeswalker",
     LAND         : "land",
-    PLAYERS      : "players"
+    PLAYERS      : "players",
+    MD           : "md",
+    SB           : "sb"
 }
 
 export default statsTypes;

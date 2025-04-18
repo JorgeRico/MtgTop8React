@@ -91,40 +91,40 @@ export default function StatsBox() {
         )
     }
 
+    const leagueStatsElement = (option, statsType, optionOperator, text) => {
+        return (
+            <>
+                <li className={option === true ? "color-selected left line mb5" : "left line mb5"} onClick={() => handleClickOptions(statsType, option, optionOperator)}>
+                    {optionStats(option, text)}
+                </li>
+            </>
+        )
+    }
+
+    const cardStatsElement = (option, statsType, optionOperator, text) => {
+        return (
+            <>
+                <li className={option === true ? "color-selected left line mb5" : "left line mb5"} onClick={() => handleClickCardTypes(statsType, option, optionOperator)}>
+                    {optionStats(option, text)}
+                </li>
+            </>
+        )
+    }
+
     const cardStats = () => {
         return (
             <>
                 <ul>
-                    <li className={showTop10 === true ? "color-selected left line mb5" : "left line mb5"} onClick={() => handleClickOptions(statsTypes.TOP, showTop10, setShowTop10)}>
-                        {optionStats(showTop10, "Top Cards")}
-                    </li>
-                    <li className={showMainboard === true ? "color-selected left line mb5" : "left line mb5"} onClick={() => handleClickOptions(statsTypes.MAINBOARD, showMainboard, setShowMainboard)}>
-                        {optionStats(showMainboard, "Top Mainboard Cards")}
-                    </li>
-                    <li className={showSideboard === true ? "color-selected left line mb5" : "left line mb5"} onClick={() => handleClickOptions(statsTypes.SIDEBOARD, showSideboard, setShowSideboard)}>
-                        {optionStats(showSideboard, "Top Sideboard Cards")}
-                    </li>
-                    <li className={showCreatures === true ? "color-selected left line mb5" : "left line mb5"} onClick={() => handleClickCardTypes(statsTypes.CREATURE, showCreatures, setShowCreatures)}>
-                        {optionStats(showCreatures, "Top Creatures")}
-                    </li>
-                    <li className={showInstants === true ? "color-selected left line mb5" : "left line mb5"} onClick={() => handleClickCardTypes(statsTypes.INSTANT, showInstants, setShowInstants)}>
-                        {optionStats(showInstants, "Top Instants")}
-                    </li>
-                    <li className={showSorceries === true ? "color-selected left line mb5" : "left line mb5"} onClick={() => handleClickCardTypes(statsTypes.SORCERY, showSorceries, setShowSorceries)}>
-                        {optionStats(showSorceries, "Top Sorceries")}
-                    </li>
-                    <li className={showArtifacts === true ? "color-selected left line mb5" : "left line mb5"} onClick={() => handleClickCardTypes(statsTypes.ARTIFACT, showArtifacts, setShowArtifacts)}>
-                        {optionStats(showArtifacts, "Top Artifacts")}
-                    </li>
-                    <li className={showEnchantments === true ? "color-selected left line mb5" : "left line mb5"} onClick={() => handleClickCardTypes(statsTypes.ENCHANTMENT, showEnchantments, setShowEnchantments)}>
-                        {optionStats(showEnchantments, "Top Enchantments")}
-                    </li>
-                    <li className={showPlaneswalkers === true ? "color-selected left line mb5" : "left line mb5"} onClick={() => handleClickCardTypes(statsTypes.PLANESWALKER, showPlaneswalkers, setShowPlaneswalkers)}>
-                        {optionStats(showPlaneswalkers, "Top Planeswalkers")}
-                    </li>
-                    <li className={showLands === true ? "color-selected left line mb5" : "left line mb5"} onClick={() => handleClickCardTypes(statsTypes.LAND, showLands, setShowLands)}>
-                        {optionStats(showLands, "Top Lands")}
-                    </li>
+                    {leagueStatsElement(showTop10, statsTypes.TOP, setShowTop10, "Top Cards")}
+                    {leagueStatsElement(showMainboard, statsTypes.MAINBOARD, setShowMainboard, "Top Mainboard Cards")}
+                    {leagueStatsElement(showSideboard, statsTypes.SIDEBOARD, setShowSideboard, "Top Sideboard Cards")}
+                    {cardStatsElement(showCreatures, statsTypes.CREATURE, setShowCreatures, "Top Creatures")}
+                    {cardStatsElement(showInstants, statsTypes.INSTANT, setShowInstants, "Top Instants")}
+                    {cardStatsElement(showSorceries, statsTypes.SORCERY, setShowSorceries, "Top Sorceries")}
+                    {cardStatsElement(showArtifacts, statsTypes.ARTIFACT, setShowArtifacts, "Top Artifacts")}
+                    {cardStatsElement(showEnchantments, statsTypes.ENCHANTMENT, setShowEnchantments, "Top Enchantments")}
+                    {cardStatsElement(showPlaneswalkers, statsTypes.PLANESWALKER, setShowPlaneswalkers, "Top Planeswalkers")}
+                    {cardStatsElement(showLands, statsTypes.LAND, setShowLands, "Top Lands")}
                 </ul>
             </>
         )

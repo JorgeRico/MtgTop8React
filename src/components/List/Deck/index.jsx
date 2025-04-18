@@ -25,7 +25,7 @@ export default function Deck(props) {
         let itemsList = [];
 
         for (var i = 0; i < deck.length; i++) {
-            if (deck[i].board === 'md' && deck[i].cardType === type) {
+            if (deck[i].board === statsTypes.MD && deck[i].cardType === type) {
                 itemsList.push(
                     <li key={uuidv4()}>
                         {deck[i].num} {deck[i].name}
@@ -41,7 +41,7 @@ export default function Deck(props) {
         let itemsList = [];
 
         for (var i = 0; i < deck.length; i++) {
-            if (deck[i].board === 'sb') {
+            if (deck[i].board === statsTypes.SB) {
                 itemsList.push(
                     <li key={uuidv4()}>
                         {deck[i].num} {deck[i].name}
@@ -53,16 +53,18 @@ export default function Deck(props) {
         return itemsList;
     }
 
+    function setOptions(items) {
+        const statsType = [ statsTypes.PLANESWALKER, statsTypes.CREATURE, statsTypes.INSTANT, statsTypes.SORCERY, statsTypes.ARTIFACT, statsTypes.ENCHANTMENT, statsTypes.LAND ]
+        const operators = [ setPlaneswalkerItems, setCreatureItems, setInstantItems, setSorceryItems, setArtifactItems, setEnchantmentItems, setLandItems]
+        for (var i = 0; i < statsType.length; i++) {
+            operators[i](getCardTypes(items, statsType[i]))
+        }
+    }
+
     useEffect(() => {
         if (!effectRan.current) {
             if (items.length > 0) {
-                setPlaneswalkerItems(getCardTypes(items, statsTypes.PLANESWALKER));
-                setCreatureItems(getCardTypes(items, statsTypes.CREATURE));
-                setInstantItems(getCardTypes(items, statsTypes.INSTANT));
-                setSorceryItems(getCardTypes(items, statsTypes.SORCERY));
-                setArtifactItems(getCardTypes(items, statsTypes.ARTIFACT));
-                setEnchantmentItems(getCardTypes(items, statsTypes.ENCHANTMENT));
-                setLandItems(getCardTypes(items, statsTypes.LAND));
+                setOptions(items)
                 setSideItems(getSideboard(items));
             }
         }
@@ -71,68 +73,41 @@ export default function Deck(props) {
         // eslint-disable-next-line
     }, [items.length > 0]);
 
+    const showItems = (items, text) => {
+        return (
+            <>
+                {(items.length > 0) && (
+                    <>
+                        <h4>{text}</h4>
+                        {items}
+                    </>
+                )}
+            </>
+        )
+    }
+
     return (
         <>
             {items.length > 0 && (
                 <>
                     <div className="left maindeck">
                         <ul>
-                            {(planeswalkerItems.length > 0) && (
-                                <>
-                                    <h4>Planeswalkers</h4>
-                                    {planeswalkerItems}
-                                </>
-                            )}
-                            {(creatureItems.length > 0) && (
-                                <>
-                                    <h4>Creatures</h4>
-                                    {creatureItems}
-                                </>
-                            )}
-                            {(instantItems.length > 0) && (
-                                <>
-                                    <h4>Instants</h4>
-                                    {instantItems}
-                                </>
-                            )}
-                            {(sorceryItems.length > 0) && (
-                                <>
-                                    <h4>Sorceries</h4>
-                                    {sorceryItems}
-                                </>
-                            )}
+                            {showItems(planeswalkerItems, 'Planeswalkers')}
+                            {showItems(creatureItems, 'Creatures')}
+                            {showItems(instantItems, 'Instants')}
+                            {showItems(sorceryItems, 'Sorceries')}
                         </ul>
                     </div>
                     <div className="left maindeck">
                         <ul>
-                            {(artifactItems.length > 0) && (
-                                <>
-                                    <h4>Artifacts</h4>
-                                    {artifactItems}
-                                </>
-                            )}
-                            {(enchantmentItems.length > 0) && (
-                                <>
-                                    <h4>Enchantments</h4>
-                                    {enchantmentItems}
-                                </>
-                            )}
-                            {(landItems.length > 0) && (
-                                <>
-                                    <h4>Lands</h4>
-                                    {landItems}
-                                </>
-                            )}
+                            {showItems(artifactItems, 'Artifacts')}
+                            {showItems(enchantmentItems, 'Enchantments')}
+                            {showItems(landItems, 'Lands')}
                         </ul>
                     </div>
                     <div className="left maindeck">
                         <ul>
-                            {(sideItems.length > 0) && (
-                                <>
-                                    <h4>Sideboard</h4>
-                                    {sideItems}
-                                </>
-                            )}
+                            {showItems(sideItems, 'Sideboard')}
                         </ul>
                     </div>
                 </>
