@@ -3,5 +3,9 @@ ol {
     
     & li:hover {
         text-decoration: underline;
-    }    
+    }
+    
+    & .deckNameList {
+        height: 55px;
+    }
 }

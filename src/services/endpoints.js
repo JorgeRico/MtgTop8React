@@ -13,7 +13,8 @@ const endpoints = {
     API_LEAGUE_CARD_STATS     : host_url + 'leagues/{id}/cards/{cardType}/stats',
 
     API_TOURNAMENT            : '/tournaments/',
-    API_TOURNAMENT_DATA       : host_url + 'tournaments/{id}/data',
+    API_TOURNAMENT_DATA       : host_url + 'tournaments/{id}',
+    API_TOURNAMENT_PLAYERS    : host_url + 'tournaments/{id}/players',
     API_TOURNAMENT_STATS      : host_url + 'tournaments/{id}/stats/{option}',
     API_TOURNAMENT_CARD_STATS : host_url + 'tournaments/{id}/cards/{cardType}/stats',
 

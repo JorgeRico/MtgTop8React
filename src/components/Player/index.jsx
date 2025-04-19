@@ -55,9 +55,10 @@ export default function StatsPlayer(props) {
     useEffect(() => {
         if (!effectRan.current) {
             setRenderItems(items?.map((item, index) => (
-                <li key={uuidv4()} onClick={() => handleCards(index+1, item.idDeck)} id={'player-'+(index+1)} className="pointer">
-                    <div className="left line">
-                        {item.name}
+                <li key={uuidv4()} onClick={() => handleCards(index+1, item.idDeck)} id={'player-'+(index+1)} className="pointer deckNameList">
+                    <div className="left line w100">
+                        <div className="left line w100">{item.name}</div>
+                        <div className="left line w100 mt5">{item.deckName}</div>
                     </div>
                     <div className="right">
                         <img src={More} alt="" className="invertColor settings absolute"/>

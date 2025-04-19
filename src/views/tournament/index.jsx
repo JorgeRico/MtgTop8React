@@ -24,11 +24,22 @@ function Tournament() {
         .then((response) => {
             setTournament(prevState => ({
                 ...prevState,
-                'idLeague': response.data.tournament.idLeague,
-                'name': response.data.tournament.name,
-                'date': response.data.tournament.date
+                'idLeague': response.data.idLeague,
+                'name': response.data.name,
+                'date': response.data.date
             }));
-            setRenderPlayers(response.data.players);
+            setShowTournament(true);
+
+        })
+        .catch((err) => { 
+            console.log('error tournamnet')
+        });
+    }
+
+    async function apiPlayersCall() {
+        await api.getAxiosEndpoint(endpoints.API_TOURNAMENT_PLAYERS.replace('{id}', id))
+        .then((response) => {
+            setRenderPlayers(response.data);
             setShowTournament(true);
 
         })
@@ -40,6 +51,7 @@ function Tournament() {
     useEffect(() => {
         if (!effectRan.current) {
             apiCall();
+            apiPlayersCall();
         }
         
         return () => effectRan.current = true;
