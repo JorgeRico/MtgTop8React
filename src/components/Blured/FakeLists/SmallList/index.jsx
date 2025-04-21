@@ -1,5 +1,6 @@
 import React from "react";
 import ListLink from "/src/components/Blured/Link";
+import "./../module.css";
 
 function BluredSmallList() {
 
@@ -21,7 +22,9 @@ function BluredSmallList() {
 
     return (
         <>
-            {bluredItems()}
+            <div className="left w100 overflowHidden">
+                {bluredItems()}
+            </div>
         </>
     );
 }

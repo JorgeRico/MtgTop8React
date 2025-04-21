@@ -89,28 +89,29 @@ export default function Deck(props) {
         <>
             {items.length > 0 && (
                 <>
-                    <div className="left maindeck">
-                        <ul>
-                            {showItems(planeswalkerItems, 'Planeswalkers')}
-                            {showItems(creatureItems, 'Creatures')}
-                            {showItems(instantItems, 'Instants')}
-                            {showItems(sorceryItems, 'Sorceries')}
-                        </ul>
-                    </div>
-                    <div className="left maindeck">
-                        <ul>
-                            {showItems(artifactItems, 'Artifacts')}
-                            {showItems(enchantmentItems, 'Enchantments')}
-                            {showItems(landItems, 'Lands')}
-                        </ul>
-                    </div>
-                    <div className="left maindeck">
-                        <ul>
-                            {showItems(sideItems, 'Sideboard')}
-                        </ul>
+                    <div class="maindeck f16">
+                        <div>
+                            <ul>
+                                {showItems(planeswalkerItems, 'Planeswalkers')}
+                                {showItems(creatureItems, 'Creatures')}
+                                {showItems(instantItems, 'Instants')}
+                                {showItems(sorceryItems, 'Sorceries')}
+                            </ul>
+                        </div>
+                        <div>
+                            <ul>
+                                {showItems(artifactItems, 'Artifacts')}
+                                {showItems(enchantmentItems, 'Enchantments')}
+                                {showItems(landItems, 'Lands')}
+                            </ul>
+                        </div>
+                        <div>
+                            <ul>
+                                {showItems(sideItems, 'Sideboard')}
+                            </ul>
+                        </div>
                     </div>
                 </>
-            
             )}
         </>
     )

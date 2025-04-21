@@ -5,7 +5,7 @@ export default function Header() {
     return (
         <>
             <div className="header overflowHidden left p20 w100">
-                <div className="left ml10">
+                <div className="left">
                     <Logo></Logo>
                 </div>
             </div>

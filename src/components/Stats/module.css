@@ -1,5 +1,5 @@
 .statsBox {
-    width: 220px;
+    width: 325px;
 
     & ul {
         overflow: hidden;
@@ -10,7 +10,7 @@
     }
     
     & .line {
-        width: 175px;
+        height: 35px;
 
         & p {
             text-decoration: none !important;
@@ -22,9 +22,18 @@
     }
 }
 
-.cards {
-    & li.blured {
-        list-style: none;
-        line-height: 32px;
+.showStatsCards {
+    & .total {
+        width: 50px;
+    }
+
+    ul {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .showStatsCards {
+        width: 100%;
     }
 }

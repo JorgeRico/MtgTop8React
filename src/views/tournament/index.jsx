@@ -4,17 +4,18 @@ import { useApi } from '/src/hooks/use-api.js';
 import { useParams } from 'react-router-dom';
 import StatsTournamentBox from "/src/components/Stats/Tournament";
 import PlayerCard from "/src/components/Player";
+import Title from "/src/components/HTag/Title";
 import HTag from "/src/components/HTag";
-import BackLink from "/src/components/Link/BackLink";
 import Layout from "/src/views/layout";
-import BluredBackLink from "/src/components/Blured/BackLink";
+import BluredBreadcrumb from "/src/components/Blured/Breadcrumb";
 import BluredBigList from "/src/components/Blured/FakeLists/BigList";
+import BreadcrumbTournament from "components/Breadcrumb/Tournament";
 
 function Tournament() {
     const api                                   = useApi();
     const effectRan                             = useRef(false);
     const [ renderPlayers, setRenderPlayers]    = useState([]);
-    const [ tournament, setTournament]          = useState({idLeague: '', name:'', date:''});
+    const [ tournament, setTournament]          = useState({idLeague: '', name:'', date:'', players: ''});
     const [ showTournament, setShowTournament ] = useState(false)
     const { id }                                = useParams();
 
@@ -26,10 +27,10 @@ function Tournament() {
                 ...prevState,
                 'idLeague': response.data.idLeague,
                 'name': response.data.name,
-                'date': response.data.date
+                'date': response.data.date,
+                'players' : response.data.players
             }));
             setShowTournament(true);
-
         })
         .catch((err) => { 
             console.log('error tournamnet')
@@ -41,7 +42,6 @@ function Tournament() {
         .then((response) => {
             setRenderPlayers(response.data);
             setShowTournament(true);
-
         })
         .catch((err) => { 
             console.log('error tournamnet')
@@ -62,9 +62,21 @@ function Tournament() {
         return (
             <>
                 {showTournament === false ? (
-                    <BluredBackLink></BluredBackLink>
+                    <BluredBreadcrumb></BluredBreadcrumb>
                 ) : (
-                    <BackLink endpoint={endpoints.API_LEAGUE + tournament.idLeague} title={tournament.name + " - " + tournament.date}></BackLink>
+                    <>
+                        <BreadcrumbTournament title={tournament.name} endpoint={endpoints.API_LEAGUE + tournament.idLeague}></BreadcrumbTournament>
+                        <div className="left w100 mt20 pb0">
+                            <div className="left">
+                                <HTag Tag="h1" text={tournament.name} className="f20" />
+                            </div>
+                            <div className="left w100">Date: {tournament.date}</div>
+                            <div className="left w100">Players: {tournament.players}</div>
+                            <div className="left w100 mt20">
+                                <HTag Tag="h2" text={"Top Players"} className="left f20" />
+                            </div>
+                        </div>
+                    </>
                 )}
             </>
         )
@@ -90,16 +102,14 @@ function Tournament() {
     const showStats = () => {
         return (
             <>
-                {showTournament === false ? (
-                        <div className="left w100 mt10">
+                <div className="left w100 mt10">
+                    {showTournament === false ? (
                             <BluredBigList></BluredBigList>
-                        </div>
-                    ) : (
-                        <div className="left w100 ml25 mt10">
+                        ) : (
                             <StatsTournamentBox></StatsTournamentBox>
-                        </div>
-                    )
-                }
+                        )
+                    }
+                </div>
             </>
         )
     }
@@ -108,11 +118,11 @@ function Tournament() {
         <>
             <Layout name="tournaments">
                 {showTitle()}
-                <div className="left w100 mt20">
-                    {showPlayers()}
-                </div>
                 <div className="left w100">
-                    <HTag Tag="h3" text="Stats" className="left ml15 titlePadding" />
+                    {showPlayers()}
+                    <div className="left w100 mt20">
+                        <Title title="Tournament Stats" />
+                    </div>
                     {showStats()}
                 </div>
             </Layout>

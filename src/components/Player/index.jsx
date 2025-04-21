@@ -3,7 +3,6 @@ import { v4 as uuidv4 } from "uuid";
 import PropTypes from 'prop-types';
 import Deck from "/src/components/List/Deck";
 import BluredBigList from "/src/components/Blured/FakeLists/BigList";
-import More from "/src/assets/images/more.png";
 import "./module.css";
 import { useApi } from '/src/hooks/use-api.js';
 import endpoints from "/src/services/endpoints.js"
@@ -43,25 +42,23 @@ export default function StatsPlayer(props) {
     function playersUnselected() {
         for (var i = 0; i < items.length; i++) {
             document.querySelector('#player-' + (i+1)).classList.remove('color-selected');
-            document.querySelector('#player-' + (i+1) + ' img').classList.add('invertColor');
         }
     }
     
     function playerSelected(index) {
         document.querySelector('#player-' + index).classList.add('color-selected');
-        document.querySelector('#player-' + index + ' img').classList.remove('invertColor');
     }
 
     useEffect(() => {
         if (!effectRan.current) {
             setRenderItems(items?.map((item, index) => (
-                <li key={uuidv4()} onClick={() => handleCards(index+1, item.idDeck)} id={'player-'+(index+1)} className="pointer deckNameList">
+                <li key={uuidv4()} onClick={() => handleCards(index+1, item.idDeck)} id={'player-'+(index+1)} className="listItem pointer deckNameList">
                     <div className="left line w100">
-                        <div className="left line w100">{item.name}</div>
-                        <div className="left line w100 mt5">{item.deckName}</div>
+                        <div className="left line ">{item.name}</div>
                     </div>
-                    <div className="right">
-                        <img src={More} alt="" className="invertColor settings absolute"/>
+                    <div className="left line w100 ml15 mt10">
+                        <div className="circle blueCircle"></div>
+                        <div className="left line">{item.deckName}</div>
                     </div>
                 </li>   
             )));
@@ -73,14 +70,14 @@ export default function StatsPlayer(props) {
 
     return (
         <>
-            <div className="left w25">
-                <ol className="ml25">
+            <div className="left ml5">
+                <ol>
                     {(items.length > 0) && (
                         renderItems
                     )}
                 </ol>
             </div>
-            <div className="right w70 cards">
+            <div className="left w70 cards">
                 {showSpinner === true &&
                     <div className="bluredDeck">
                         <BluredBigList></BluredBigList>

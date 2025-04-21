@@ -1,21 +1,30 @@
 .maindeck {
     display: flex;
-    width: auto;
+    align-items: stretch;
+    flex-wrap: wrap;
+    margin-top: -10px;
+}
+  
+.maindeck > div {
+    padding: 0 10px;
+    flex-grow: 3;
+    flex: 1 1 200px;
+}
 
-    & ul {
-        padding: 0 20px;
+@media (max-width: 1250px) {
+    .cards {
+        width: 50%;
     }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 760px) {
     .cards {
-        width: 97%;
+        width: 40%;
     }
 }
 
 @media (max-width: 600px) {
-    .maindeck {
-        width: 100%;
-        margin-left: 20px;
+    .maindeck, .cards {
+        width: 90%;
     }
 }

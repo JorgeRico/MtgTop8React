@@ -1,71 +1,16 @@
-.logoText {
-    font-size: 24px;
-}
-
-.home {
-    & li.title {
-        width: 135px;
-    }
-}
-
-.league {
+.league, .home {
     & li {
-        width: 220px;
+        width: 325px;
+        height: 35px;
     }
 
     & .tournaments {
-        & li.title {
-            height: 65px;
+        overflow: hidden;
+
+        & li {
+            overflow: hidden;
         }
     }
-}
-
-.stats {
-    & li {
-        list-style: none;
-    }
-
-    & ul {
-        margin-left: -20px;
-    }
-}
-
-.cards {
-    & li {
-        list-style: none;
-    }
-}
-
-@media (max-width: 600px) {
-    .showStatsCards {
-        width: 100%;
-    }
-}
-
-.bluredDeck {
-    width: 300px;
-    line-height: 32px;
-}
-
-.big, .small {
-    width: 300px;
-}
-
-.statsSpinner {
-    margin: 75px 50px;
-    width: 100px;
-}
-
-.settings {
-    width: 20px;
-    color: white;
-    cursor: pointer;
-    margin-top: 5px;
-    height: 15px;
-}
-
-.titlePadding {
-    padding: 0px 20px;
 }
 
 .color-selected {
@@ -74,4 +19,25 @@
 
 .color-copyright {
     color: #878787;
+}
+
+.listItem {
+    & .circle {
+        border-radius: 30px;
+        height: 3px;
+        width: 3px;
+        float: left;
+        margin-right: 15px;
+        margin-top: 10px;
+    }
+
+    & .orangeCircle {
+        border: 1px solid brown;
+        background: orangered;
+    }
+
+    & .blueCircle {
+        border: 1px solid goldenrod;
+        background: black;
+    }
 }

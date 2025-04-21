@@ -1,0 +1,8 @@
+
+.blink li, .bluredDeck li, .showStatsCards li{
+    height: 35px;
+}
+
+.big, .small, .bluredDeck {
+    width: 300px;
+}

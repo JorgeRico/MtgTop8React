@@ -2,7 +2,6 @@ import React, { useRef, useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import More from "/src/assets/images/more.png";
 
 export default function TournamentLink(props) {
     const { url, items }                  = props;
@@ -17,18 +16,24 @@ export default function TournamentLink(props) {
     useEffect(() => {
         if (!effectRan.current) {
             setRenderItems(items?.map((item) => (
-                <li key={uuidv4()} className="listItem pointer title">
-                    <Link to={url + item.id}>
-                        <div className="left line">
-                            <div className="left w100">{item.name}</div>
-                            <div className="left w100">{item.date}</div>
-                            <div className="left w100">{item.players} players</div>
-                        </div>
-                        <div className="right">
-                            <img src={More} alt="" className="invertColor settings absolute"/>
-                        </div>
-                    </Link>
-                </li>
+                <>
+                    <li key={uuidv4()} className="listItem pointer title">
+                        <Link to={url + item.id}>
+                            <div className="left line">
+                                
+                                <div className="left w100 item"><div className="circle orangeCircle"></div>{item.name}</div>
+                            </div>
+                        </Link>
+                    </li>
+                    <li key={uuidv4()} className="listItem pointer mb20">
+                        <Link to={url + item.id}>
+                            <div className="left line ml40">
+                                <div className="left w100">Date: {item.date}</div>
+                                <div className="left w100mt5">Players: {item.players}</div>
+                            </div>
+                        </Link>
+                    </li>
+                </>
             )));
         }
         
@@ -38,7 +43,7 @@ export default function TournamentLink(props) {
 
     return (
         <>
-            <ul className="tournaments ml15">
+            <ul className="tournaments">
                 {(items.length > 0) && (
                     renderItems
                 )}

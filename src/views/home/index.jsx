@@ -1,10 +1,10 @@
 import React, { useRef, useState, useEffect } from "react";
 import endpoints from "/src/services/endpoints.js"
 import { useApi } from '/src/hooks/use-api.js';
-import ListLink from "/src/components/List/Link";
+import ListLeague from "/src/components/List/League";
 import BluredSmallList from "/src/components/Blured/FakeLists/SmallList";
 import Layout from "/src/views/layout";
-import HTag from "components/HTag";
+import Title from "components/HTag/Title";
 
 function Home() {
     const api                                             = useApi();
@@ -56,7 +56,7 @@ function Home() {
                     ) : (
                         <>
                             {renderElements != null && (
-                                <ListLink url={endpoints.API_LEAGUE} items={renderElements} />
+                                <ListLeague url={endpoints.API_LEAGUE} items={renderElements} />
                             )}
                         </>
                     )
@@ -69,8 +69,9 @@ function Home() {
         <>
             <Layout name="home">
                 <div className="left w100 mt20">
+                    <Title title="Current Events" />
                     {showElements(waitingElements, renderElements)}
-                    <HTag Tag="h2" className="mt40 ml30 mb0" text="Past Events" />
+                    <Title title="Past Events" />
                     {showElements(waitingPastElements, renderPastElements)}
                 </div>
             </Layout>

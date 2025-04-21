@@ -15,7 +15,7 @@ export default function ListNoLink(props) {
         if (!effectRan.current) {
             setRenderItems(items?.map((item) => (
                 <li key={uuidv4()}>
-                    {item.num} - {item.name}
+                    <span className="left total center">{item.num}</span>  <span className="left ml15">{item.name}</span>
                 </li>   
             )));
         }
@@ -27,6 +27,10 @@ export default function ListNoLink(props) {
     return (
         <>
             <ul>
+                <li className="titleStats">
+                    <span className="left total center color-selected">Total</span>
+                    <span className="left ml15 color-selected">Name</span>
+                </li>
                 {(items.length > 0) && (
                     renderItems
                 )}

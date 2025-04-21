@@ -1,5 +1,4 @@
 import React from "react";
-import More from "/src/assets/images/more.png";
 import { v4 as uuidv4 } from "uuid";
 
 export default function StatsCardBluredLink(props) {
@@ -10,15 +9,12 @@ export default function StatsCardBluredLink(props) {
             <div className="left line">
                 {item.name} - {item.date}
             </div>
-            <div className="right">
-                <img src={More} alt="" className="invertColor settings absolute"/>
-            </div>
         </li>
     );
 
     return (
         <>
-            <ul className="blink ml15">
+            <ul className="blink">
                 {listItems}
             </ul>
         </>

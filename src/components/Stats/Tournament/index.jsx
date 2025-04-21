@@ -5,7 +5,6 @@ import endpoints from "/src/services/endpoints.js"
 import statsTypes from "/src/services/statsTypes.js"
 import { useApi } from '/src/hooks/use-api.js';
 import { useParams } from 'react-router-dom';
-import More from "/src/assets/images/more.png";
 import BluredStatsList from "/src/components/Blured/FakeLists/StatsList";
 import "./../module.css";
 
@@ -79,32 +78,36 @@ export default function StatsBox() {
     }
 
     const optionStats = (option, topText) => {
+        let color = "left wAuto pointer" + (option === true ? " color-selected" : "")
+
         return (
             <>
-                <div className="left line">
-                    <HTag Tag="p" text={topText} className={option === true ? "color-selected left wAuto pointer" : "left wAuto pointer"} />
-                </div>
-                <div className="right">
-                    <img src={More} alt="" className={option === true ? "color-selected settings absolute" : "invertColor settings absolute"} />
+                <div className="left line w100">
+                    <div className="circle orangeCircle"></div>
+                    <HTag Tag="p" text={topText} className={color} />
                 </div>
             </>
         )
     }
-
+    
     const leagueStatsElement = (option, statsType, optionOperator, text) => {
+        let color = "listItem left line w100" + (option === true ? " color-selected" : "")
+
         return (
             <>
-                <li className={option === true ? "color-selected left line mb5" : "left line mb5"} onClick={() => handleClickOptions(statsType, option, optionOperator)}>
+                <li className={color} onClick={() => handleClickOptions(statsType, option, optionOperator)}>
                     {optionStats(option, text)}
                 </li>
             </>
         )
     }
-
+    
     const cardStatsElement = (option, statsType, optionOperator, text) => {
+        let color = "listItem left line w100" + (option === true ? " color-selected" : "")
+
         return (
             <>
-                <li className={option === true ? "color-selected left line mb5" : "left line mb5"} onClick={() => handleClickCardTypes(statsType, option, optionOperator)}>
+                <li className={color} onClick={() => handleClickCardTypes(statsType, option, optionOperator)}>
                     {optionStats(option, text)}
                 </li>
             </>
@@ -133,10 +136,10 @@ export default function StatsBox() {
     return (
         <>
             <div className='left w100'>
-                <div className="left wAuto mb20 statsBox">
+                <div className="left w25 mb20 statsBox">
                     {cardStats()}
                 </div>
-                <div className="right w74 showStatsCards">
+                <div className="left w50 showStatsCards">
                     <div className="wAuto cards">
                         {showSpinner === true &&
                             <BluredStatsList></BluredStatsList>

@@ -1,11 +1,8 @@
 ol {
-    width: 220px;
-    
-    & li:hover {
-        text-decoration: underline;
-    }
+    width: 325px;
     
     & .deckNameList {
-        height: 55px;
+        height: 65px;
+        list-style: decimal;
     }
 }

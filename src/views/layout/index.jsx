@@ -20,7 +20,7 @@ function Layout(props) {
             <>
                 <div className={`overflowHidden container ${props.name}`}>
                     <Header></Header>
-                    <div className={`left w100 ${props.name}`}>
+                    <div className={`left w100 p20 ${props.name}`}>
                         {props.children}
                     </div>
                 </div>

@@ -3,12 +3,12 @@ import endpoints from "/src/services/endpoints.js"
 import { useApi } from '/src/hooks/use-api.js';
 import { useParams } from 'react-router-dom';
 import TournamentLink from "/src/components/List/Tournament";
-import BackLink from "/src/components/Link/BackLink";
 import Layout from "/src/views/layout";
 import StatsBox from "/src/components/Stats/League";
-import HTag from "/src/components/HTag";
+import Title from "/src/components/HTag/Title";
 import BluredBigList from "/src/components/Blured/FakeLists/BigList";
-import BluredBackLink from "/src/components/Blured/BackLink";
+import BluredBreadcrumb from "/src/components/Blured/Breadcrumb";
+import BreadcrumbLeague from "components/Breadcrumb/League";
 
 function League() {
     const api                                   = useApi();
@@ -55,9 +55,9 @@ function League() {
         return (
             <>
                 {showLeagueName === false ? (
-                    <BluredBackLink></BluredBackLink>
+                    <BluredBreadcrumb></BluredBreadcrumb>
                 ) : (
-                    <BackLink endpoint={endpoints.API_HOME} title={leagueName}></BackLink>
+                    <BreadcrumbLeague title={leagueName} endpoint={endpoints.API_LEAGUE}></BreadcrumbLeague>
                 )}
             </>
         )
@@ -84,16 +84,14 @@ function League() {
     const showStats = () => {
         return (
             <>
-                {showElements === false ? (
-                        <div className="left w100 mt10">
+                <div className="left w100 mt10">
+                    {showElements === false ? (
                             <BluredBigList></BluredBigList>
-                        </div>
-                    ) : (
-                        <div className="left w100 ml25 mt10">
+                        ) : (
                             <StatsBox></StatsBox>
-                        </div>
-                    )
-                }
+                        )
+                    }
+                </div>
             </>
         )
     }
@@ -102,9 +100,9 @@ function League() {
         <>
             <Layout name="league">
                 {showTitle()}
-                 <div className="left w100">
+                 <div className="left w100 mt10">
                     {showTournaments()}
-                    <HTag Tag="h3" text="Stats" className="left ml15 titlePadding" />
+                    <Title title="Season Stats" />                    
                     {showStats()}
                 </div>
             </Layout>

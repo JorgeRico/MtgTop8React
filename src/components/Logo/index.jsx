@@ -8,8 +8,8 @@ export default function Logo() {
     return (
         <>
             <Link to="../">
-                <HTag Tag="h1" className="logoText" text="Stats" />
-                <img src={Logos} alt="" className="logos invertColor" />
+                <HTag Tag="h1" className="logoText f24" text="Stats" />
+                <img src={Logos} alt="" className="f20 logos invertColor" />
             </Link>
         </>
     );

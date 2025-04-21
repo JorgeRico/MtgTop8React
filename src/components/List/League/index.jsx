@@ -18,8 +18,9 @@ export default function StatsCardLink(props) {
             setRenderItems(items?.map((item) => (
                 <li key={uuidv4()} className="listItem pointer title mb10">
                     <Link to={url + item.id}>
-                        <div className="left line item w100">
-                            {item.name} {item.date && ( <> - {item.date}</>)}
+                        <div className="left line w100">
+                            <div className="circle orangeCircle"></div>
+                            {item.name}
                         </div>
                     </Link>
                 </li>
@@ -32,7 +33,7 @@ export default function StatsCardLink(props) {
 
     return (
         <>
-            <ul>
+            <ul className="left w100 overflowHidden">
                 {(items.length > 0) && (
                     renderItems
                 )}
