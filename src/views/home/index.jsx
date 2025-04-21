@@ -4,6 +4,7 @@ import { useApi } from '/src/hooks/use-api.js';
 import ListLink from "/src/components/List/Link";
 import BluredSmallList from "/src/components/Blured/FakeLists/SmallList";
 import Layout from "/src/views/layout";
+import HTag from "components/HTag";
 
 function Home() {
     const api                                             = useApi();
@@ -69,7 +70,7 @@ function Home() {
             <Layout name="home">
                 <div className="left w100 mt20">
                     {showElements(waitingElements, renderElements)}
-                    <h2 className="mt40 ml33 mb0">Past Events</h2>
+                    <HTag Tag="h2" className="mt40 ml30 mb0" text="Past Events" />
                     {showElements(waitingPastElements, renderPastElements)}
                 </div>
             </Layout>

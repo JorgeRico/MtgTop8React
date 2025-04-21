@@ -2,18 +2,6 @@
     font-size: 24px;
 }
 
-.home, .league {
-    & li.title {
-        & a {
-            text-decoration: none;
-        }
-
-        & a:hover {
-            text-decoration: underline;
-        }
-    }
-}
-
 .home {
     & li.title {
         width: 135px;
@@ -61,4 +49,29 @@
 
 .big, .small {
     width: 300px;
+}
+
+.statsSpinner {
+    margin: 75px 50px;
+    width: 100px;
+}
+
+.settings {
+    width: 20px;
+    color: white;
+    cursor: pointer;
+    margin-top: 5px;
+    height: 15px;
+}
+
+.titlePadding {
+    padding: 0px 20px;
+}
+
+.color-selected {
+    color: deepskyblue;
+}
+
+.color-copyright {
+    color: #878787;
 }

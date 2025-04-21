@@ -5,34 +5,40 @@ import CatMagic from "/src/assets/images/youtube.png";
 import Twitch from "/src/assets/images/twitch.png";
 import LinkImage from "/src/components/Link/Image";
 import "./module.css";
-// import GoogleAdDesktop from '/src/components/Ads/Desktop';
-import { useMobile } from 'hooks/use-mobile'; 
+import Logo from "/src/components/Logo";
+import HTag from 'components/HTag';
 
 export default function Footer() {
-    const mobile = useMobile();
-
     return (
         <>
-            <div className="footer">
-                <div className="social mb20">
-                    <div className="links">
-                        <LinkImage url="https://www.instagram.com/legacy.cat/" img={Instagram} />
-                        <LinkImage url="https://x.com/Lliga_Legacy" img={XImg} />
-                        <LinkImage url="https://www.youtube.com/@catmagiclegacy" img={CatMagic} />
-                        <LinkImage url="https://www.twitch.tv/catmagiclegacy" img={Twitch} />         
-                    </div>           
+            <div className="footer overflowHidden p20 mt60">
+                <div className="container">
+                    <div className="social overflowHidden ml40">
+                        <div className="left ml30 w100 mt10">
+                            <Logo></Logo>
+                        </div>
+                        <div className="left ml30 mt10">
+                            <div className="left w100 mt10 color-copyright">Legacy Catalan Tournaments Stats</div>
+                            <div className="left w100 mt10 color-copyright">Website to keep alive the memory of the tournaments in our area</div>
+                            <div className="left w100">
+                                <HTag Tag="h2" className="" text="Follow us" />
+                            </div>
+                        </div>
+                        <div className="left w100 links ml30 mb15">
+                            <LinkImage url="https://www.instagram.com/legacy.cat/" img={Instagram} />
+                            <LinkImage className="ml15" url="https://x.com/Lliga_Legacy" img={XImg} />
+                            <LinkImage className="ml15" url="https://www.youtube.com/@catmagiclegacy" img={CatMagic} />
+                            <LinkImage className="ml15" url="https://www.twitch.tv/catmagiclegacy" img={Twitch} />         
+                        </div>           
+                    </div>
                 </div>
-                {/* <div className="message">
-                    <GoogleAdDesktop
-                        currentPath={window.location.href}
-                        googleAdId="ca-pub-9482818665347681"
-                        slot="7691872894"
-                    />
-                </div> */}
-                <div className="message mt10">
-                    The literal and graphical information presented on this site about Magic: The Gathering, including card images and mana symbols, is copyright Wizards of the Coast, LLC. Scryfall is not produced by or endorsed by Wizards of the Coast.
+            </div>
+            <div className="copyright left w100 f10">
+                <div className="container">
+                    <div className="message mt10 center color-copyright">
+                        The literal and graphical information presented on this site about Magic: The Gathering, including card images and mana symbols, is copyright Wizards of the Coast, LLC. Scryfall is not produced by or endorsed by Wizards of the Coast.
+                    </div>
                 </div>
-                <div className="message mt10">Ugly design rules!!!</div>
             </div>
         </>
     );

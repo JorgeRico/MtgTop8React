@@ -1,18 +1,12 @@
 import React from 'react';
-import Logos from "/src/assets/images/logos.png";
-import HTag from "/src/components/HTag";
-import { Link } from 'react-router-dom';
-import "./module.css";
+import Logo from "/src/components/Logo";
 
 export default function Header() {
     return (
         <>
-            <div className="header">
-                <div className="left ml15">
-                    <Link to="../">
-                        <HTag Tag="h1" className="logoText" text="Stats" />
-                        <img src={Logos} alt="" className="logos invertColor" />
-                    </Link>
+            <div className="header overflowHidden left p20 w100">
+                <div className="left ml10">
+                    <Logo></Logo>
                 </div>
             </div>
         </>
