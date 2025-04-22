@@ -4,12 +4,11 @@ import ListNoLink from "/src/components/List/NoLink";
 import endpoints from "/src/services/endpoints.js"
 import statsTypes from "/src/services/statsTypes.js"
 import { useApi } from '/src/hooks/use-api.js';
-import { useParams } from 'react-router-dom';
 import BluredStatsList from "/src/components/Blured/FakeLists/StatsList";
 import "./../module.css";
 
-export default function StatsBox() {
-    const { id }                                      = useParams();
+export default function StatsBox(props) {
+    const { id }                                      = props;
     const api                                         = useApi();
     const [ renderElements, setRenderElements ]       = useState();
     const [ showTop10, setShowTop10 ]                 = useState(false);

@@ -9,6 +9,7 @@
 
         & li {
             overflow: hidden;
+            height: auto;
         }
     }
 }
