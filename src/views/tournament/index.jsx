@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 import Layout from "/src/views/layout";
 import TournamentPlayers from "/src/views/tournament/players";
 import TournamentStats from "/src/views/tournament/stats";
-// import TournamentBreadcrumb from "/src/views/tournament/breadcrumb";
 import TournamentTitle from "/src/views/tournament/title";
 
 

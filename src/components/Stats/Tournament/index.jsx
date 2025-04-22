@@ -1,132 +1,100 @@
 import React, { useState } from "react";
-import HTag from "/src/components/HTag";
 import ListNoLink from "/src/components/List/NoLink";
-import endpoints from "/src/services/endpoints.js"
 import statsTypes from "/src/services/statsTypes.js"
-import { useApi } from '/src/hooks/use-api.js';
 import BluredStatsList from "/src/components/Blured/FakeLists/StatsList";
 import "./../module.css";
+import CardStats from "/src/components/Stats/Cards";
+import endpoints from "/src/services/endpoints.js"
 
 export default function StatsBox(props) {
-    const { id }                                      = props;
-    const api                                         = useApi();
-    const [ showTop10, setShowTop10 ]                 = useState(false);
-    const [ showMainboard, setShowMainboard ]         = useState(false);
-    const [ showSideboard, setShowSideboard ]         = useState(false);
-    const [ showSpinner, setShowSpinner ]             = useState(false);
-    const [ showCreatures, setShowCreatures ]         = useState(false);
-    const [ showInstants, setShowInstants ]           = useState(false);
-    const [ showSorceries, setShowSorceries ]         = useState(false);
-    const [ showArtifacts, setShowArtifacts ]         = useState(false);
-    const [ showEnchantments, setShowEnchantments ]   = useState(false);
-    const [ showPlaneswalkers, setShowPlaneswalkers ] = useState(false);
-    const [ showLands, setShowLands ]                 = useState(false);
-    const [ renderElements, setRenderElements ]       = useState();
-    
-    function hideStats(value, operator) {
-        setShowTop10(false);
-        setShowMainboard(false);
-        setShowSideboard(false);
-        setShowCreatures(false);
-        setShowInstants(false);
-        setShowSorceries(false);
-        setShowArtifacts(false);
-        setShowEnchantments(false);
-        setShowPlaneswalkers(false);
-        setShowLands(false);
-        operator(!value)
-        setRenderElements(null);
-        setShowSpinner(true);
-    }
-    
-    // api call
-    async function apiOptionsCall(id, options, value, operator) {
-        hideStats(value, operator);
-
-        await api.getAxiosEndpoint(endpoints.API_TOURNAMENT_STATS.replace('{id}', id).replace('{option}', options))
-        .then((response) => {
-            setTimeout(() => {setShowSpinner(false)}, 1000);
-            setTimeout(() => {setRenderElements(response.data.stats)}, 1000);
-        })
-        .catch((err) => { 
-            console.log('error League stats')
-        });
-    }
-
-    // api call
-    async function apiCardTypeCall(id, cardType, value, operator) {
-        hideStats(value, operator);
-
-        await api.getAxiosEndpoint(endpoints.API_TOURNAMENT_CARD_STATS.replace('{id}', id).replace('{cardType}', cardType))
-        .then((response) => {
-            console.log(response.data)
-            setTimeout(() => {setShowSpinner(false)}, 1000);
-            setTimeout(() => {setRenderElements(response.data.stats)}, 1000);
-        })
-        .catch((err) => { 
-            console.log('error League card stats')
-        });
-    }
-
-    const handleClickCardTypes = (cardType, value, operator) => {
-        apiCardTypeCall(id, cardType, value, operator)
-    }
-
-    const handleClickOptions = (option, value, operator) => {
-        apiOptionsCall(id, option, value, operator)
-    }
-
-    const optionStats = (option, topText) => {
-        let color = "left wAuto pointer" + (option === true ? " color-selected" : "")
-
-        return (
-            <>
-                <div className="left line w100">
-                    <div className="circle orangeCircle"></div>
-                    <HTag Tag="p" text={topText} className={color} />
-                </div>
-            </>
-        )
-    }
-    
-    const leagueStatsElement = (option, statsType, optionOperator, text) => {
-        let color = "listItem left line w100" + (option === true ? " color-selected" : "")
-
-        return (
-            <>
-                <li className={color} onClick={() => handleClickOptions(statsType, option, optionOperator)}>
-                    {optionStats(option, text)}
-                </li>
-            </>
-        )
-    }
-    
-    const cardStatsElement = (option, statsType, optionOperator, text) => {
-        let color = "listItem left line w100" + (option === true ? " color-selected" : "")
-
-        return (
-            <>
-                <li className={color} onClick={() => handleClickCardTypes(statsType, option, optionOperator)}>
-                    {optionStats(option, text)}
-                </li>
-            </>
-        )
-    }
+    const { id }                                = props;
+    const [ loading, setLoading ]               = useState(false);
+    const [ renderElements, setRenderElements ] = useState();
 
     const cardStats = () => {
         return (
             <>
                 <ul>
-                    {leagueStatsElement(showTop10, statsTypes.TOP, setShowTop10, "Top Cards")}
-                    {leagueStatsElement(showMainboard, statsTypes.MAINBOARD, setShowMainboard, "Top Mainboard Cards")}
-                    {leagueStatsElement(showSideboard, statsTypes.SIDEBOARD, setShowSideboard, "Top Sideboard Cards")}
-                    {cardStatsElement(showCreatures, statsTypes.CREATURE, setShowCreatures, "Top Creatures")}
-                    {cardStatsElement(showInstants, statsTypes.INSTANT, setShowInstants, "Top Instants")}
-                    {cardStatsElement(showSorceries, statsTypes.SORCERY, setShowSorceries, "Top Sorceries")}
-                    {cardStatsElement(showArtifacts, statsTypes.ARTIFACT, setShowArtifacts, "Top Artifacts")}
-                    {cardStatsElement(showEnchantments, statsTypes.ENCHANTMENT, setShowEnchantments, "Top Enchantments")}
-                    {cardStatsElement(showPlaneswalkers, statsTypes.PLANESWALKER, setShowPlaneswalkers, "Top Planeswalkers")}
-                    {cardStatsElement(showLands, statsTypes.LAND, setShowLands, "Top Lands")}
+                    <CardStats
+                        id={id}
+                        text="Top Cards" 
+                        endpoint={endpoints.API_TOURNAMENT_STATS.replace('{id}', id).replace('{option}', statsTypes.TOP)}
+                        cardType={statsTypes.TOP} 
+                        setLoading={setLoading}
+                        setRenderElements={setRenderElements}
+                    />
+                    <CardStats
+                        id={id}
+                        text="Top Mainboard Cards" 
+                        endpoint={endpoints.API_TOURNAMENT_STATS.replace('{id}', id).replace('{option}', statsTypes.MAINBOARD)}
+                        cardType={statsTypes.MAINBOARD} 
+                        setLoading={setLoading}
+                        setRenderElements={setRenderElements}
+                    />
+                    <CardStats
+                        id={id}
+                        text="Top Sideboard Cards" 
+                        endpoint={endpoints.API_TOURNAMENT_STATS.replace('{id}', id).replace('{option}', statsTypes.SIDEBOARD)}
+                        cardType={statsTypes.SIDEBOARD} 
+                        setLoading={setLoading}
+                        setRenderElements={setRenderElements}
+                    />
+                    <CardStats
+                        id={id}
+                        text="Top Creatures" 
+                        endpoint={endpoints.API_TOURNAMENT_CARD_STATS.replace('{id}', id).replace('{cardType}', statsTypes.CREATURE)}
+                        cardType={statsTypes.CREATURE} 
+                        setLoading={setLoading}
+                        setRenderElements={setRenderElements}
+                    />
+                    <CardStats
+                        id={id}
+                        text="Top Instants" 
+                        endpoint={endpoints.API_TOURNAMENT_CARD_STATS.replace('{id}', id).replace('{cardType}', statsTypes.INSTANT)}
+                        cardType={statsTypes.INSTANT} 
+                        setLoading={setLoading}
+                        setRenderElements={setRenderElements}
+                    />
+                    <CardStats
+                        id={id}
+                        text="Top Sorceries" 
+                        endpoint={endpoints.API_TOURNAMENT_CARD_STATS.replace('{id}', id).replace('{cardType}', statsTypes.SORCERY)}
+                        cardType={statsTypes.SORCERY} 
+                        setLoading={setLoading}
+                        setRenderElements={setRenderElements}
+                    />
+                    <CardStats
+                        id={id}
+                        text="Top Artifacts" 
+                        endpoint={endpoints.API_TOURNAMENT_CARD_STATS.replace('{id}', id).replace('{cardType}', statsTypes.ARTIFACT)}
+                        cardType={statsTypes.ARTIFACT} 
+                        setLoading={setLoading}
+                        setRenderElements={setRenderElements}
+                    />
+                    <CardStats
+                        id={id}
+                        text="Top Enchantments" 
+                        endpoint={endpoints.API_TOURNAMENT_CARD_STATS.replace('{id}', id).replace('{cardType}', statsTypes.ENCHANTMENT)}
+                        cardType={statsTypes.ENCHANTMENT} 
+                        setLoading={setLoading}
+                        setRenderElements={setRenderElements}
+                    />
+                    <CardStats
+                        id={id}
+                        text="Top Planeswalkers" 
+                        endpoint={endpoints.API_TOURNAMENT_CARD_STATS.replace('{id}', id).replace('{cardType}', statsTypes.PLANESWALKER)}
+                        cardType={statsTypes.PLANESWALKER} 
+                        setLoading={setLoading}
+                        setRenderElements={setRenderElements}
+                    />
+                    <CardStats
+                        id={id}
+                        text="Top Lands" 
+                        endpoint={endpoints.API_TOURNAMENT_CARD_STATS.replace('{id}', id).replace('{cardType}', statsTypes.LAND)}
+                        cardType={statsTypes.LAND} 
+                        setLoading={setLoading}
+                        setRenderElements={setRenderElements}
+                    />
                 </ul>
             </>
         )
@@ -140,7 +108,7 @@ export default function StatsBox(props) {
                 </div>
                 <div className="left w50 showStatsCards">
                     <div className="wAuto cards">
-                        {showSpinner === true &&
+                        {loading === true &&
                             <BluredStatsList></BluredStatsList>
                         }    
                         {renderElements &&
