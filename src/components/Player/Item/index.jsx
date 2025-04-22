@@ -1,7 +1,8 @@
 import React from "react";
 import "./../module.css";
 import { useApi } from '/src/hooks/use-api.js';
-import endpoints from "/src/services/endpoints.js"
+import endpoints from "/src/services/endpoints.js";
+import PropTypes from "prop-types";
 
 export default function StatsPlayerItem(props) {
     const { item, index, setLoading, setRenderDeckItems } = props;
