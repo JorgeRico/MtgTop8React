@@ -3,10 +3,10 @@ import { v4 as uuidv4 } from "uuid";
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-export default function TournamentLink(props) {
+export default function TournamentList(props) {
     const { url, items } = props;
 
-    TournamentLink.propTypes = {
+    TournamentList.propTypes = {
         url   : PropTypes.string,
         items : PropTypes.array
     };

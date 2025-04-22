@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ListNoLink from "/src/components/List/NoLink";
+import StatsList from "/src/components/List/Stats";
 import statsTypes from "/src/services/statsTypes.js"
 import BluredBigList from "/src/components/Blured/FakeLists/BigList";
 import "./../module.css";
@@ -112,7 +112,7 @@ export default function StatsBox(props) {
                             <BluredBigList></BluredBigList>
                         }    
                         {renderElements &&
-                            <ListNoLink items={renderElements} />
+                            <StatsList items={renderElements} />
                         }
                     </div>
                 </div>

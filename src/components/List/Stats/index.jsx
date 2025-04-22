@@ -1,28 +1,22 @@
 import React, { useRef, useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 
-export default function StatsCardLink(props) {
-    const { url, items }                  = props;
+export default function StatsList(props) {
+    const { items }                       = props;
     const effectRan                       = useRef(false);
     const [ renderItems, setRenderItems ] = useState(null)
 
-    StatsCardLink.propTypes = {
-        url   : PropTypes.string,
+    StatsList.propTypes = {
         items : PropTypes.array
     };
 
     useEffect(() => {
         if (!effectRan.current) {
             setRenderItems(items?.map((item) => (
-                <li key={uuidv4()} className="listItem pointer title mb10">
-                    <Link to={url + item.id}>
-                        <div className="left line item w100">
-                            {item.name} {item.date && ( <> - {item.date}</>)}
-                        </div>
-                    </Link>
-                </li>
+                <li key={uuidv4()}>
+                    <span className="left total center">{item.num}</span>  <span className="left ml15">{item.name}</span>
+                </li>   
             )));
         }
         
@@ -33,6 +27,10 @@ export default function StatsCardLink(props) {
     return (
         <>
             <ul>
+                <li className="titleStats">
+                    <span className="left total center color-selected">Total</span>
+                    <span className="left ml15 color-selected">Name</span>
+                </li>
                 {(items.length > 0) && (
                     renderItems
                 )}
