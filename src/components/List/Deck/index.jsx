@@ -89,7 +89,7 @@ export default function Deck(props) {
         <>
             {items.length > 0 && (
                 <>
-                    <div class="maindeck f16">
+                    <div className="maindeck f16">
                         <div>
                             <ul>
                                 {showItems(planeswalkerItems, 'Planeswalkers')}
