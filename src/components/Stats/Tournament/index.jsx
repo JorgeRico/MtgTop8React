@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ListNoLink from "/src/components/List/NoLink";
 import statsTypes from "/src/services/statsTypes.js"
-import BluredStatsList from "/src/components/Blured/FakeLists/StatsList";
+import BluredBigList from "/src/components/Blured/FakeLists/BigList";
 import "./../module.css";
 import CardStats from "/src/components/Stats/Cards";
 import endpoints from "/src/services/endpoints.js"
@@ -109,7 +109,7 @@ export default function StatsBox(props) {
                 <div className="left w50 showStatsCards">
                     <div className="wAuto cards">
                         {loading === true &&
-                            <BluredStatsList></BluredStatsList>
+                            <BluredBigList></BluredBigList>
                         }    
                         {renderElements &&
                             <ListNoLink items={renderElements} />

@@ -1,5 +1,5 @@
 import React from "react";
-import ListLink from "/src/components/Blured/Link";
+import ListLink from "/src/components/Blured/FakeLists/Link";
 import "./../module.css";
 
 function BluredSmallList() {

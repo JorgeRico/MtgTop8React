@@ -1,7 +1,7 @@
 import React from "react";
 import { v4 as uuidv4 } from "uuid";
 
-export default function StatsCardBluredLink(props) {
+export default function BluredLink(props) {
     const { items } = props;
 
     const listItems = items.map(item =>
