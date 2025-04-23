@@ -12,6 +12,32 @@
             height: auto;
         }
     }
+
+    & .description {
+        & .name {
+            width: 135px;
+        }
+    }
+}
+
+@media (max-width: 440px) {
+    .home {
+        & .description {
+            & .format {
+                width: 100%;
+                margin-bottom: 12px;
+            }
+
+            & .separator {
+                display: none;
+            }
+
+            & .name {
+                margin-left: 20px;
+            }
+
+        }
+    }
 }
 
 .color-selected {

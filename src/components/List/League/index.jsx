@@ -18,10 +18,10 @@ export default function StatsCardLink(props) {
             setRenderItems(items?.map((item) => (
                 <div key={uuidv4()} className="leagueListItem listItem pointer title mb15 pb10 overflowHidden">
                     <Link to={url + item.id}>
-                        <div className="left line w100 mb10">
-                            <div className="left"><div className="circle orangeCircle"></div>Legacy</div>
-                            <div className="left ml15"> | </div>
-                            <div className="left ml15" style={{width: '135px'}}>{item.name}</div>
+                        <div className="left line w100 mb10 description">
+                            <div className="left format"><div className="circle orangeCircle"></div>Legacy</div>
+                            <div className="left ml15 separator"> | </div>
+                            <div className="left ml15 name">{item.name}</div>
                             <div className="left ml15"> | </div>
                             <div className="left ml25 color-selected f14">view league</div>
                         </div>
@@ -36,7 +36,7 @@ export default function StatsCardLink(props) {
 
     return (
         <>
-            <div className="left w100 overflowHidden">
+            <div className="left w100 overflowHidden leagueListItem">
                 {(items.length > 0) && (
                     renderItems
                 )}
