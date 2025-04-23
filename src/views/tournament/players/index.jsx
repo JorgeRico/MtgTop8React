@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import endpoints from "/src/services/endpoints.js"
 import { useApi } from '/src/hooks/use-api.js';
-import PlayerCard from "/src/components/Player";
+import PlayerList from "/src/components/List/Player";
 import BluredBigList from "/src/components/Blured/FakeLists/BigList";
 
 function TournamentPlayers(props) {
@@ -33,16 +33,18 @@ function TournamentPlayers(props) {
 
     return (
         <>
-            {showPlayers === false ? (
-                    <BluredBigList></BluredBigList>
-                ) : (
-                    <>
-                        {renderPlayers.length > 0 && (
-                            <PlayerCard items={renderPlayers} />
-                        )}
-                    </>
-                )
-            }
+            <div className="left w70 playerList">
+                {showPlayers === false ? (
+                        <BluredBigList></BluredBigList>
+                    ) : (
+                        <>
+                            {renderPlayers.length > 0 && (
+                                <PlayerList items={renderPlayers} />
+                            )}
+                        </>
+                    )
+                }
+            </div>
         </>
     )
 }

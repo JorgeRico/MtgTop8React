@@ -1,0 +1,15 @@
+.tournamentPlayer {
+    border-bottom: 1px solid rgba(135, 135, 135, 0.2);
+
+    & .index {
+        margin-left: -10px;
+    }
+}
+
+.tournamentPlayer > div {
+    padding: 13px 20px;
+}
+
+.deck {
+    margin: 10px 0 20px 0;
+}

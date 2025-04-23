@@ -2,29 +2,34 @@
     display: flex;
     align-items: stretch;
     flex-wrap: wrap;
-    margin-top: -10px;
 }
   
-.maindeck > div {
+.maindeck > .deckItems {
     padding: 0 10px;
     flex-grow: 3;
-    flex: 1 1 200px;
+    flex: 1 1 45%;
 }
 
-@media (max-width: 1250px) {
-    .cards {
-        width: 50%;
+h4 {
+     font-weight: 600;
+     background: rgba(135, 135, 135, 0.2);
+     padding: 5px 10px;
+     border-radius: 3px;
+     margin-bottom: 10px;
+}
+
+.cardItem {
+    padding: 5px 10px;
+}
+
+@media (max-width: 800px) {
+    .playerList {
+        width: 100%;
     }
 }
 
-@media (max-width: 760px) {
-    .cards {
-        width: 40%;
-    }
-}
-
-@media (max-width: 600px) {
-    .maindeck, .cards {
-        width: 90%;
+@media (max-width: 640px) {
+    .maindeck, .sideboard {
+        width: 100%;
     }
 }

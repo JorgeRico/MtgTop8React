@@ -3,6 +3,10 @@
     height: 35px;
 }
 
-.big, .small, .bluredDeck {
+.big, .small {
     width: 300px;
+}
+
+.bluredDeck {
+    width: 100%;
 }

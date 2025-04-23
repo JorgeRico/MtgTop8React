@@ -5,7 +5,7 @@ import "./module.css";
 import statsTypes from "/src/services/statsTypes.js"
 
 export default function Deck(props) {
-    const { items }                                   = props;
+    const { items, deckName }                         = props;
     const effectRan                                   = useRef(false);
     const [ sideItems, setSideItems ]                 = useState([]);
     const [ creatureItems, setCreatureItems ]         = useState([]);
@@ -16,19 +16,39 @@ export default function Deck(props) {
     const [ enchantmentItems, setEnchantmentItems ]   = useState([]);
     const [ landItems, setLandItems ]                 = useState([]);
 
+    const [ totalMaindeck, setTotalMaindeck ]         = useState(0);
+    const [ totalSideboard, setTotalSideboard ]       = useState(0);
+
     Deck.propTypes = {
         items : PropTypes.array
     };
 
-    function getCardTypes(deck, type) {
-        let itemsList = [];
+    function countTotalItems(deck) {
+        let totalMaindeck  = 0;
+        let totalSideboard = 0;
 
         for (var i = 0; i < deck.length; i++) {
-            if (deck[i].board === statsTypes.MD && deck[i].cardType === type) {
+            if (deck[i].board === statsTypes.MD) {
+                totalMaindeck = totalMaindeck + parseInt(deck[i].num);
+            }
+            if (deck[i].board === statsTypes.SB) {
+                totalSideboard = totalSideboard + parseInt(deck[i].num);
+            }
+        }
+
+        setTotalMaindeck(totalMaindeck);
+        setTotalSideboard(totalSideboard);
+    }
+
+    function getCardTypes(deck, type) {
+        let itemsList = [];
+        
+        for (var i = 0; i < deck.length; i++) {
+            if (deck[i].board === statsTypes.MD && deck[i].cardType === type) {                
                 itemsList.push(
-                    <li key={uuidv4()}>
+                    <div className="cardItem" key={uuidv4()}>
                         {deck[i].num} {deck[i].name}
-                    </li>
+                    </div>
                 )
             }
         }
@@ -41,10 +61,11 @@ export default function Deck(props) {
 
         for (var i = 0; i < deck.length; i++) {
             if (deck[i].board === statsTypes.SB) {
+                setTotalSideboard(totalSideboard+parseInt(deck[i].num))
                 itemsList.push(
-                    <li key={uuidv4()}>
+                    <div className="cardItem" key={uuidv4()}>
                         {deck[i].num} {deck[i].name}
-                    </li>
+                    </div>
                 )
             }
         }
@@ -65,6 +86,7 @@ export default function Deck(props) {
             if (items.length > 0) {
                 setOptions(items)
                 setSideItems(getSideboard(items));
+                countTotalItems(items);
             }
         }
         
@@ -77,8 +99,10 @@ export default function Deck(props) {
             <>
                 {(items.length > 0) && (
                     <>
-                        <h4>{text}</h4>
-                        {items}
+                        <div className="deckItems">
+                            <h4>{text}</h4>
+                            {items}
+                        </div>
                     </>
                 )}
             </>
@@ -89,27 +113,22 @@ export default function Deck(props) {
         <>
             {items.length > 0 && (
                 <>
-                    <div className="maindeck f16">
-                        <div>
-                            <ul>
-                                {showItems(planeswalkerItems, 'Planeswalkers')}
-                                {showItems(creatureItems, 'Creatures')}
-                                {showItems(instantItems, 'Instants')}
-                                {showItems(sorceryItems, 'Sorceries')}
-                            </ul>
-                        </div>
-                        <div>
-                            <ul>
-                                {showItems(artifactItems, 'Artifacts')}
-                                {showItems(enchantmentItems, 'Enchantments')}
-                                {showItems(landItems, 'Lands')}
-                            </ul>
-                        </div>
-                        <div>
-                            <ul>
-                                {showItems(sideItems, 'Sideboard')}
-                            </ul>
-                        </div>
+                    <div className="left w100 f20 ml12 mt20">
+                        <div className="left w100">{deckName}</div>
+                        <div className="left w100 f14 mt10">Maindeck total cards: {totalMaindeck}</div>
+                        <div className="left w100 f14 mt5">Sideboard total cards: {totalSideboard}</div>
+                    </div>
+                    <div className="left maindeck w70">
+                        {showItems(planeswalkerItems, 'Planeswalkers')}
+                        {showItems(creatureItems, 'Creatures')}
+                        {showItems(instantItems, 'Instants')}
+                        {showItems(sorceryItems, 'Sorceries')}
+                        {showItems(artifactItems, 'Artifacts')}
+                        {showItems(enchantmentItems, 'Enchantments')}
+                        {showItems(landItems, 'Lands')}
+                    </div>
+                    <div className="right sideboard w30">
+                        {showItems(sideItems, 'Sideboard')}
                     </div>
                 </>
             )}

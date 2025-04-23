@@ -1,8 +1,0 @@
-ol {
-    width: 325px;
-    
-    & .deckNameList {
-        height: 65px;
-        list-style: decimal;
-    }
-}
