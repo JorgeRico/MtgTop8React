@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import "./../module.css";
+import "../module.css";
 import HomeIcon from "/src/assets/images/home.png";
-import ImageNoBlankLink from "/src/components/Link/ImageNoBlankLink";
+import ImageLink from "/src/components/Link/ImageLink";
 import endpoints from "/src/services/endpoints.js"
 
 function BreadcrumbLeague(props) {
@@ -14,14 +14,12 @@ function BreadcrumbLeague(props) {
 
     return (
         <>
-            <div className="left w100 pb10 mb10 f14">
-                <div className="left homeIcon">
-                    <ImageNoBlankLink url={endpoints.API_HOME} img={HomeIcon} className="backLink invertColor" />
-                </div>
-                <div className="left ml10">/</div>
-                <div className="left ml10">
-                    {title}
-                </div>
+            <div className="left homeIcon">
+                <ImageLink url={endpoints.API_HOME} img={HomeIcon} className="backLink invertColor" />
+            </div>
+            <div className="left ml10">/</div>
+            <div className="left ml10">
+                {title}
             </div>
         </>
     );

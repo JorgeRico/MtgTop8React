@@ -1,6 +1,6 @@
 import React from "react";
 import endpoints from "/src/services/endpoints.js"
-import Layout from "/src/views/layout";
+import Layout from "/src/views/layout/core";
 import Events from "/src/views/home/events";
 
 function Home() {

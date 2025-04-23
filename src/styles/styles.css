@@ -1,16 +1,19 @@
-.league, .home {
+/* Header */
+.logos {
+    width: 100px;
+}
+
+.topLine {
+    height: 5px;
+    background: black;
+}
+/* Header */
+
+
+.home, .league {
     & li {
         width: 325px;
         height: 35px;
-    }
-
-    & .tournaments {
-        overflow: hidden;
-
-        & li {
-            overflow: hidden;
-            height: auto;
-        }
     }
 
     & .description {
@@ -20,25 +23,33 @@
     }
 }
 
-@media (max-width: 1050px) {
-    & .playerList, & .maindeck {
-        width: 75%;
+@media (max-width: 440px) {
+    .home {
+        & .description {
+            & .format {
+                width: 100%;
+                margin-bottom: 12px;
+            }
+
+            & .separator {
+                display: none;
+            }
+
+            & .name {
+                margin-left: 20px;
+            }
+        }
     }
 }
 
-@media (max-width: 950px) {
-    & .playerList, & .maindeck {
-        width: 100%;
-    }
+.league {
+    & .tournaments {
+        overflow: hidden;
 
-    & .tournamentPlayer > div {
-        padding: 13px 10px !important;
-    }
-}
-
-@media (max-width: 550px) {
-    & .viewDeck {
-        display: none;
+        & li {
+            overflow: hidden;
+            height: auto;
+        }
     }
 }
 
@@ -70,33 +81,7 @@
     }
 }
 
-@media (max-width: 440px) {
-    .home {
-        & .description {
-            & .format {
-                width: 100%;
-                margin-bottom: 12px;
-            }
-
-            & .separator {
-                display: none;
-            }
-
-            & .name {
-                margin-left: 20px;
-            }
-        }
-    }
-}
-
-.color-selected {
-    color: deepskyblue;
-}
-
-.color-copyright {
-    color: #878787;
-}
-
+/* Lists */
 .listItem {
     & .circle {
         border-radius: 30px;
@@ -116,9 +101,4 @@
         border: 1px solid goldenrod;
         background: black;
     }
-}
-
-.topLine {
-    height: 5px;
-    background: black;
 }

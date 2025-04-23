@@ -1,15 +1,14 @@
 import React from 'react';
 import Logos from "/src/assets/images/logos.png";
-import HTag from "/src/components/HTag";
+import Title from "/src/components/HTag/Title";
 import { Link } from 'react-router-dom';
-import "./module.css";
 
 export default function Logo() {
     return (
         <>
             <Link to="../">
-                <HTag Tag="h1" className="logoText f24" text="Stats" />
-                <img src={Logos} alt="" className="f24 logos invertColor" />
+                <Title title="Stats" />
+                <img src={Logos} alt="mtg stats" className="f24 logos invertColor" />
             </Link>
         </>
     );

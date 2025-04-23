@@ -6,8 +6,16 @@ import SocialFooter from "/src/components/Footer/Social";
 export default function Footer() {
     return (
         <>
-            <SocialFooter></SocialFooter>
-            <CopyrightFooter></CopyrightFooter>
+            <div className="footer overflowHidden p20 mt40 bg-footer">
+                <div className="container">
+                    <SocialFooter></SocialFooter>
+                </div>
+            </div>
+            <div className="left w100 copyright f10 bg-footer">
+                <div className="container">
+                    <CopyrightFooter></CopyrightFooter>
+                </div>
+            </div>
         </>
     );
 }

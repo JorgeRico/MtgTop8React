@@ -1,6 +1,6 @@
 import React from "react";
 import ListLink from "/src/components/Blured/FakeLists/Link";
-import "./../module.css";
+import "../module.css";
 
 function BluredBigList() {
 

@@ -11,15 +11,31 @@
 }
 
 h4 {
-     font-weight: 600;
-     background: rgba(135, 135, 135, 0.2);
-     padding: 5px 10px;
-     border-radius: 3px;
-     margin-bottom: 10px;
+    font-weight: 600;
+    background: rgba(135, 135, 135, 0.2);
+    padding: 5px 10px;
+    border-radius: 3px;
+    margin-bottom: 10px;
 }
 
 .cardItem {
     padding: 5px 10px;
+}
+
+@media (max-width: 1050px) {
+    & .playerList, & .maindeck {
+        width: 75%;
+    }
+}
+
+@media (max-width: 950px) {
+    & .playerList, & .maindeck {
+        width: 100%;
+    }
+
+    & .tournamentPlayer > div {
+        padding: 13px 10px !important;
+    }
 }
 
 @media (max-width: 800px) {
@@ -31,5 +47,11 @@ h4 {
 @media (max-width: 640px) {
     .maindeck, .sideboard {
         width: 100%;
+    }
+}
+
+@media (max-width: 550px) {
+    & .viewDeck {
+        display: none;
     }
 }

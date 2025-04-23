@@ -1,10 +1,10 @@
 import React from "react";
 import { useParams } from 'react-router-dom';
-import Layout from "/src/views/layout";
+import Layout from "/src/views/layout/core";
+import Template from "/src/views/layout/template";
 import TournamentPlayers from "/src/views/tournament/players";
 import TournamentStats from "/src/views/tournament/stats";
 import TournamentTitle from "/src/views/tournament/title";
-
 
 function Tournament() {
     const { id } = useParams();
@@ -12,11 +12,11 @@ function Tournament() {
     return (
         <>
             <Layout name="tournaments">
-                <TournamentTitle id={id}></TournamentTitle>
-                <div className="left w100">
-                    <TournamentPlayers id={id}></TournamentPlayers>
-                    <TournamentStats id={id}></TournamentStats>
-                </div>
+                <Template
+                    breadcrumb={<TournamentTitle id={id}></TournamentTitle>}
+                    tournament={<TournamentPlayers id={id}></TournamentPlayers>}
+                    stats={<TournamentStats id={id}></TournamentStats>}
+                />                    
             </Layout>
         </>
     );

@@ -3,7 +3,7 @@ import endpoints from "/src/services/endpoints.js"
 import { useApi } from '/src/hooks/use-api.js';
 import TournamentList from "/src/components/List/Tournament";
 import BluredBigList from "/src/components/Blured/FakeLists/BigList";
-import HTag from "/src/components/HTag";
+import SubTitle from "/src/components/HTag/SubTitle";
 
 function LeagueTournament(props) {
     const api                                  = useApi();
@@ -40,8 +40,8 @@ function LeagueTournament(props) {
                 ) : (
                 <>
                     <div className="left w100 mb30">
-                        <HTag Tag="h1" text={"Tournaments"} className="left f24 mb5" />
-                        <div className="left w100 f14">Format: Legacy</div>
+                        <SubTitle title={"Tournaments"}/>
+                        <div className="left w100 f14 mt5">Format: Legacy</div>
                     </div>
                     {renderElements != null && (
                         <div className="left w100">

@@ -3,17 +3,16 @@ import Header from "/src/components/Header";
 import Footer from "/src/components/Footer";
 import React, { useRef, useEffect } from "react";
 function Layout(props) {
-    const effectRan = useRef(false);
+    // const effectRan = useRef(false);
 
-    useEffect(() => {
-        if (!effectRan.current) {
-            var height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-            // console.log(height)
-        }
+    // useEffect(() => {
+    //     if (!effectRan.current) {
+    //         var height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+    //     }
         
-        return () => effectRan.current = true;
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    //     return () => effectRan.current = true;
+    //     // eslint-disable-next-line react-hooks/exhaustive-deps
+    // }, []);
 
     return (
         (

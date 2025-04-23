@@ -1,6 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
 import StatsBox from "/src/components/Stats/League";
-import Title from "/src/components/HTag/Title";
 import BluredBigList from "/src/components/Blured/FakeLists/BigList";
 
 function LeagueStats(props) {
@@ -19,17 +18,12 @@ function LeagueStats(props) {
 
     return (
         <>
-            <div className="left w100 mt30">
-                <Title title="Season Stats" />
-            </div>
-            <div className="left w100 mt10">
-                {showElements === false ? (
-                        <BluredBigList></BluredBigList>
-                    ) : (
-                        <StatsBox id={id}></StatsBox>
-                    )
-                }
-            </div>
+            {showElements === false ? (
+                    <BluredBigList></BluredBigList>
+                ) : (
+                    <StatsBox id={id}></StatsBox>
+                )
+            }
         </>
     )
 }

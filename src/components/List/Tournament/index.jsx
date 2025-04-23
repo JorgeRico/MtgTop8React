@@ -11,6 +11,34 @@ export default function TournamentList(props) {
         items : PropTypes.array
     };
 
+    const tournamentItem = (item) => {
+        return (
+            <>
+                <div className="left line description">
+                    <div className="left">
+                        <div className="circle orangeCircle"></div>
+                        {item.date}
+                    </div>
+                    <div className="left ml15">
+                        |
+                    </div>
+                    <div className="left ml15">
+                        {item.name}
+                    </div>
+                    <div className="left ml15 separator">
+                        |
+                    </div>
+                    <div className="left ml15 players">
+                        {item.players} players
+                    </div>
+                    <div className="left ml40 color-selected f14 viewOption">
+                        view tournament
+                    </div>
+                </div>
+            </>
+        )
+    }
+
     return (
         <>
             <div className="tournaments">
@@ -18,14 +46,7 @@ export default function TournamentList(props) {
                     items.map((item) => (
                         <div key={uuidv4()} className="left w100 listItem pointer title mb20">
                             <Link key={Math.random()} to={url + item.id}>
-                                <div className="left line description">
-                                    <div className="left"><div className="circle orangeCircle"></div>{item.date}</div>
-                                    <div className="left ml15"> | </div>
-                                    <div className="left ml15">{item.name}</div>
-                                    <div className="left ml15 separator"> | </div>
-                                    <div className="left ml15 players">{item.players} players</div>
-                                    <div className="left ml40 color-selected f14 viewOption">view tournament</div>
-                                </div>
+                                {tournamentItem(item)}
                             </Link>
                         </div>
                     ))

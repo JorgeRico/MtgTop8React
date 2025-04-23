@@ -264,3 +264,15 @@ ul {
       opacity: 0;
     }
 }
+
+.color-selected {
+    color: deepskyblue;
+}
+
+.bg-footer {
+    background: #202020;
+}
+
+.color-copyright {
+    color: #878787;
+}

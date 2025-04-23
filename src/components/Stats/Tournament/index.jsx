@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import StatsList from "/src/components/List/Stats";
 import statsTypes from "/src/services/statsTypes.js"
 import BluredBigList from "/src/components/Blured/FakeLists/BigList";
-import "./../module.css";
+import "../module.css";
 import CardStats from "/src/components/Stats/Cards";
 import endpoints from "/src/services/endpoints.js"
 

@@ -1,7 +1,7 @@
 import React from "react";
 import HTag from "/src/components/HTag";
 import { useApi } from '/src/hooks/use-api.js';
-import "./../module.css";
+import "../module.css";
 
 export default function StatsBox(props) {
     const { id, text, cardType, setLoading, setRenderElements, endpoint } = props;

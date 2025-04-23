@@ -1,6 +1,5 @@
 
 .footer {
-    background: #202020;
     margin-bottom: 2px;
 
     & .links {
@@ -11,8 +10,6 @@
 }
 
 .copyright {
-    background: #202020;
-
     & .container {
         padding: 5px 0 20px 0;
 

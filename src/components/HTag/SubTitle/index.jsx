@@ -2,18 +2,18 @@ import React from "react";
 import HTag from "/src/components/HTag";
 import PropTypes from 'prop-types';
 
-function Title(props) {
+function SubTitle(props) {
     const { title } = props; 
    
-    Title.propTypes = {
+    SubTitle.propTypes = {
         title : PropTypes.string,
     };
 
     return (
         <>
-            <HTag Tag="h1" className="f24" text={title} />
+            <HTag Tag="h2" text={title} className="left mb15 f24" />
         </>
     );
 }
 
-export default Title;
+export default SubTitle;
