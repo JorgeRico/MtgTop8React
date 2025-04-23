@@ -2,6 +2,7 @@ import React from "react";
 import { v4 as uuidv4 } from "uuid";
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import HTag from "/src/components/HTag";
 
 export default function TournamentList(props) {
     const { url, items } = props;
@@ -13,23 +14,28 @@ export default function TournamentList(props) {
 
     return (
         <>
-            <ul className="tournaments">
+            <div className="tournaments">
+                <div className="left w100 mb30">
+                    <HTag Tag="h2" text={"Tournaments"} className="left f24 mb5" />
+                    <div className="left w100 f14">Format: Legacy</div>
+                </div>
                 {(items.length > 0) && (
                     items.map((item) => (
-                        <li key={uuidv4()} className="listItem pointer title mb20">
+                        <div key={uuidv4()} className="left w100 listItem pointer title mb20">
                             <Link key={Math.random()} to={url + item.id}>
                                 <div className="left line">
-                                    <div className="left w100 item"><div className="circle orangeCircle"></div>{item.name}</div>
-                                </div>
-                                <div className="left line ml40">
-                                    <div className="left w100 mt5">Date: {item.date}</div>
-                                    <div className="left w100 mt5">Players: {item.players}</div>
+                                    <div className="left"><div className="circle orangeCircle"></div>{item.date}</div>
+                                    <div className="left ml15"> | </div>
+                                    <div className="left ml15">{item.name}</div>
+                                    <div className="left ml15"> | </div>
+                                    <div className="left ml15">{item.players} players</div>
+                                    <div className="left ml40 color-selected f14">view tournament</div>
                                 </div>
                             </Link>
-                        </li>
+                        </div>
                     ))
                 )}
-            </ul>
+            </div>
         </>
     )
 }

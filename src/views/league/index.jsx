@@ -12,8 +12,10 @@ function League() {
         <>
             <Layout name="league">
                 <LeagueBreadcrumb id={id}></LeagueBreadcrumb>
-                 <div className="left w100 mt10">
+                <div className="left w100 mt10">
                     <LeagueTournament id={id}></LeagueTournament>
+                </div>
+                <div className="left w100 mt10">
                     <LeagueStats id={id}></LeagueStats>
                 </div>
             </Layout>

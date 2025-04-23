@@ -4,7 +4,7 @@ import "/src/components/List/Deck/module.css"
 export default function BluredDeck() {
     return (
         <>
-            <div className="left w100 f20 ml12 mt20 blured">
+            <div className="left w100 f24 ml12 mt20 blured">
                 <div className="left w100">Fake Text</div>
                 <div className="left w100 f14 mt10">Maindeck total cards: XXX</div>
                 <div className="left w100 f14 mt5">Sideboard total cards: XXX</div>

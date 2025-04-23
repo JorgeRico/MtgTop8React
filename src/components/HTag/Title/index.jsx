@@ -11,7 +11,7 @@ function Title(props) {
 
     return (
         <>
-            <HTag Tag="h2" text={title} className="left mb15 f20" />
+            <HTag Tag="h2" text={title} className="left mb15 f24" />
         </>
     );
 }

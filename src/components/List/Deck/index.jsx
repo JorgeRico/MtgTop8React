@@ -113,7 +113,7 @@ export default function Deck(props) {
         <>
             {items.length > 0 && (
                 <>
-                    <div className="left w100 f20 ml12 mt20">
+                    <div className="left w100 f24 ml12 mt20">
                         <div className="left w100">{deckName}</div>
                         <div className="left w100 f14 mt10">Maindeck total cards: {totalMaindeck}</div>
                         <div className="left w100 f14 mt5">Sideboard total cards: {totalSideboard}</div>

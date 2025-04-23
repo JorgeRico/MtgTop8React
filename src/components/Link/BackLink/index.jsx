@@ -13,7 +13,7 @@ export default function BackLink(props) {
         <>
             <div className="left w100 titleSection">
                 <div className="left">
-                    <HTag Tag="h1" text={props.title} className="f20" />
+                    <HTag Tag="h1" text={props.title} className="f24" />
                 </div>
             </div>
         </>

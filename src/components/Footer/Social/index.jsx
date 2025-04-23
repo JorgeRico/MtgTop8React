@@ -21,7 +21,7 @@ export default function SocialFooter() {
                             <div className="left w100 mt10 color-copyright">Legacy Catalan Tournaments Stats</div>
                             <div className="left w100 mt10 color-copyright">Website to keep alive the memory of the tournaments in our area</div>
                             <div className="left w100">
-                                <HTag Tag="h2" className="f20" text="Follow us" />
+                                <HTag Tag="h2" className="f24" text="Follow us" />
                             </div>
                         </div>
                         <div className="left w100 links ml30 mb15">

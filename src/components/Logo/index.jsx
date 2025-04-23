@@ -9,7 +9,7 @@ export default function Logo() {
         <>
             <Link to="../">
                 <HTag Tag="h1" className="logoText f24" text="Stats" />
-                <img src={Logos} alt="" className="f20 logos invertColor" />
+                <img src={Logos} alt="" className="f24 logos invertColor" />
             </Link>
         </>
     );
