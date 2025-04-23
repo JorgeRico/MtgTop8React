@@ -20,6 +20,34 @@
     }
 }
 
+@media (max-width: 680px) {
+    .league {
+        & .description {
+            & .viewOption {
+                margin-left: 20px;
+                margin-top: 12px;
+                width: 100%;;
+            }
+        }
+    }
+}
+
+@media (max-width: 440px) {
+    .league {
+        & .description {
+            & .players {
+                margin-left: 20px;
+                margin-top: 12px;
+                width: 100%;
+            }
+
+            & .separator {
+                display: none;
+            }
+        }
+    }
+}
+
 @media (max-width: 440px) {
     .home {
         & .description {
@@ -35,7 +63,6 @@
             & .name {
                 margin-left: 20px;
             }
-
         }
     }
 }
