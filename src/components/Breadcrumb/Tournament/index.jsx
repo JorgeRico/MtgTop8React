@@ -16,7 +16,7 @@ function BreadcrumbTournament(props) {
 
     return (
         <>
-            <div className="left w100 pb10 mt20 f14">
+            <div className="left w100 pb10 mb10 f14">
                 <div className="left homeIcon">
                     <ImageNoBlankLink url={endpoints.API_HOME} img={HomeIcon} className="backLink invertColor" />
                 </div>

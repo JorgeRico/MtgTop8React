@@ -3,6 +3,7 @@ import endpoints from "/src/services/endpoints.js"
 import { useApi } from '/src/hooks/use-api.js';
 import PlayerList from "/src/components/List/Player";
 import BluredBigList from "/src/components/Blured/FakeLists/BigList";
+import HTag from "/src/components/HTag";
 
 function TournamentPlayers(props) {
     const api                                = useApi();
@@ -38,6 +39,9 @@ function TournamentPlayers(props) {
                         <BluredBigList></BluredBigList>
                     ) : (
                         <>
+                            <div className="left w100 mt20">
+                                <HTag Tag="h2" text={"Top Players"} className="left f24" />
+                            </div>
                             {renderPlayers.length > 0 && (
                                 <PlayerList items={renderPlayers} />
                             )}

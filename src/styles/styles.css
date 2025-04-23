@@ -44,5 +44,6 @@
 }
 
 .topLine {
-    border-bottom: 2px solid #202020;
+    height: 5px;
+    background: black;
 }

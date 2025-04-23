@@ -52,7 +52,7 @@ function TournamentTitle(props) {
                 <>
                     <div className="left w100 mt20 pb0">
                         <div className="left">
-                            <HTag Tag="h1" text={tournament.name} className="f24" />
+                            <HTag Tag="h1" text={tournament.name} className="left f24 mb5" />
                         </div>
                         <div className="left w100">
                             <div className="left">Legacy</div>
