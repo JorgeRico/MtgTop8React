@@ -20,6 +20,29 @@
     }
 }
 
+@media (max-width: 1050px) {
+    & .playerList, & .maindeck {
+        width: 75%;
+    }
+}
+
+@media (max-width: 950px) {
+    & .playerList, & .maindeck {
+        width: 100%;
+    }
+
+    & .tournamentPlayer > div {
+        padding: 13px 10px !important;
+    }
+}
+
+@media (max-width: 550px) {    
+    & .tournamentPlayer > div {
+        padding: 13px 5px !important;
+        font-size: 14px;
+    }
+}
+
 @media (max-width: 680px) {
     .league {
         & .description {
