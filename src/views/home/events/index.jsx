@@ -35,7 +35,9 @@ function Events(props) {
 
     return (
         <>
-            <Title title={title} />
+            <div className="left w100 mb15">
+                <Title title={title} />
+            </div>
             {showElements === true ? (
                     <BluredSmallList></BluredSmallList>
                 ) : (

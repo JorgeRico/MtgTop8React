@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import "./module.css";
 
 export default function StatsCardLink(props) {
     const { url, items }                  = props;
@@ -16,14 +17,14 @@ export default function StatsCardLink(props) {
     useEffect(() => {
         if (!effectRan.current) {
             setRenderItems(items?.map((item) => (
-                <li key={uuidv4()} className="listItem pointer title mb10">
+                <div key={uuidv4()} className="leagueListItem listItem pointer title mb15 overflowHidden">
                     <Link to={url + item.id}>
-                        <div className="left line w100">
+                        <div className="left line w100 mb10">
                             <div className="circle orangeCircle"></div>
                             {item.name}
                         </div>
                     </Link>
-                </li>
+                </div>
             )));
         }
         
@@ -33,11 +34,11 @@ export default function StatsCardLink(props) {
 
     return (
         <>
-            <ul className="left w100 overflowHidden">
+            <div className="left w100 overflowHidden">
                 {(items.length > 0) && (
                     renderItems
                 )}
-            </ul>
+            </div>
         </>
     )
 }
