@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
-import endpoints from "/src/services/endpoints.js"
+import endpoints from "/src/services/endpoints.js";
 import { useApi } from '/src/hooks/use-api.js';
 import ListLeague from "/src/components/List/League";
 import BluredSmallList from "/src/components/Blured/FakeLists/SmallList";

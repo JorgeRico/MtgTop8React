@@ -1,16 +1,17 @@
 import React, { useRef, useState, useEffect } from "react";
-import endpoints from "/src/services/endpoints.js"
+import endpoints from "/src/services/endpoints.js";
 import { useApi } from '/src/hooks/use-api.js';
 import PlayerList from "/src/components/List/Player";
 import BluredBigList from "/src/components/Blured/FakeLists/BigList";
 import HTag from "/src/components/HTag";
+import Title from "/src/views/tournament/title";
 
 function TournamentPlayers(props) {
     const api                                = useApi();
     const effectRan                          = useRef(false);
     const [ renderPlayers, setRenderPlayers] = useState([]);
     const [ showPlayers, setShowPlayers ]    = useState(false)
-    const { id }                             = props;
+    const { id, tournament, loading }        = props;
 
     async function apiCall() {
         await api.getAxiosEndpoint(endpoints.API_TOURNAMENT_PLAYERS.replace('{id}', id))
@@ -34,7 +35,8 @@ function TournamentPlayers(props) {
 
     return (
         <>
-            <div className="left w70 playerList">
+            <Title loading={loading} tournament={tournament}></Title>
+            <div className="left w70 playerList mb20">
                 {showPlayers === false ? (
                         <BluredBigList></BluredBigList>
                     ) : (

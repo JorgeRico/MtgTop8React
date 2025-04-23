@@ -4,8 +4,8 @@ import { useApi } from '/src/hooks/use-api.js';
 import "../module.css";
 
 export default function StatsBox(props) {
-    const { id, text, cardType, setLoading, setRenderElements, endpoint } = props;
-    const api                                                             = useApi();
+    const { text, cardType, setLoading, setRenderElements, endpoint } = props;
+    const api                                                         = useApi();
 
     // api call
     async function apiCardTypeCall() {
