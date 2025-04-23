@@ -36,10 +36,9 @@
     }
 }
 
-@media (max-width: 550px) {    
-    & .tournamentPlayer > div {
-        padding: 13px 5px !important;
-        font-size: 14px;
+@media (max-width: 550px) {
+    & .viewDeck {
+        display: none;
     }
 }
 

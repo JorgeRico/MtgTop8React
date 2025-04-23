@@ -86,7 +86,7 @@ export default function TournamentPlayerItem(props) {
                 <div className="left alignLeft w30">
                     {item.deckName}
                 </div>
-                <div className="left center w20 pointer color-selected f14" onClick={() => handleCards((index+1), item.idDeck)}>
+                <div className="left center w20 pointer color-selected f14 viewDeck" onClick={() => handleCards((index+1), item.idDeck)}>
                     view deck
                 </div>
             </div>
