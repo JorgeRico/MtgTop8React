@@ -14,8 +14,6 @@ function League() {
                 <LeagueBreadcrumb id={id}></LeagueBreadcrumb>
                 <div className="left w100 mt20">
                     <LeagueTournament id={id}></LeagueTournament>
-                </div>
-                <div className="left w100 mt10">
                     <LeagueStats id={id}></LeagueStats>
                 </div>
             </Layout>

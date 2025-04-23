@@ -19,7 +19,7 @@ function TournamentStats(props) {
 
     return (
         <>
-            <div className="left w100 mt20">
+            <div className="left w100 mt40">
                 <Title title="Tournament Stats" />
             </div>
             <div className="left w100 mt10">

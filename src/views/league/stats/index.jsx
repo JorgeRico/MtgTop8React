@@ -19,7 +19,9 @@ function LeagueStats(props) {
 
     return (
         <>
-            <Title title="Season Stats" /> 
+            <div className="left w100 mt30">
+                <Title title="Season Stats" />
+            </div>
             <div className="left w100 mt10">
                 {showElements === false ? (
                         <BluredBigList></BluredBigList>

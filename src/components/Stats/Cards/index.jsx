@@ -38,12 +38,12 @@ export default function StatsBox(props) {
 
     return (
         <>
-            <li className="listItem left line w100 cardsList" id={cardType} onClick={() => handleClickCardTypes()}>
+            <div className="listItem left line w100 cardsList" id={cardType} onClick={() => handleClickCardTypes()}>
                 <div className="left line w100">
                     <div className="circle orangeCircle"></div>
                     <HTag Tag="p" text={text} className="left wAuto pointer" />
                 </div>
-            </li>
+            </div>
         </>
     )
 }
