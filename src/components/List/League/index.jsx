@@ -19,8 +19,11 @@ export default function StatsCardLink(props) {
                 <div key={uuidv4()} className="leagueListItem listItem pointer title mb15 pb10 overflowHidden">
                     <Link to={url + item.id}>
                         <div className="left line w100 mb10">
-                            <div className="circle orangeCircle"></div>
-                            {item.name}
+                            <div className="left"><div className="circle orangeCircle"></div>Legacy</div>
+                            <div className="left ml15"> | </div>
+                            <div className="left ml15" style={{width: '135px'}}>{item.name}</div>
+                            <div className="left ml15"> | </div>
+                            <div className="left ml25 color-selected f14">view league</div>
                         </div>
                     </Link>
                 </div>
