@@ -6,7 +6,7 @@ import Twitch from "/src/assets/images/twitch.png";
 import LinkImage from "/src/components/Link/Image";
 import "../module.css";
 import LogoImage from "/src/components/Logo/Images";
-import Subtitle from 'components/HTag/Subtitle';
+import Subtitle from 'components/HTag/SubTitle';
 
 export default function SocialFooter() {
     return (
