@@ -5,15 +5,15 @@ import Youtube from "/src/assets/images/youtube.png";
 import Twitch from "/src/assets/images/twitch.png";
 import LinkImage from "/src/components/Link/Image";
 import "../module.css";
-import Logo from "/src/components/Logo";
+import LogoImage from "/src/components/Logo/Images";
 import Subtitle from 'components/HTag/Subtitle';
 
 export default function SocialFooter() {
     return (
         <>
             <div className="social ml40">
-                <div className="left w100 mt10">
-                    <Logo></Logo>
+                <div className="left w100 mt30">
+                    <LogoImage></LogoImage>
                 </div>
                 <div className="left mt10">
                     <div className="left w100 mt10 color-copyright">Legacy Catalan Tournaments Stats</div>

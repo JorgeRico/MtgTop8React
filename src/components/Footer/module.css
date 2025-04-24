@@ -18,3 +18,18 @@
         }
     }
 }
+
+@media (max-width: 580px) {
+    .footer {
+        text-align: center;
+
+        & h2 {
+            float: none;
+        }
+
+        & .social {
+            margin-left: 0;
+        }
+    }
+
+}
