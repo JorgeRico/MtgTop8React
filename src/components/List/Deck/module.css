@@ -32,10 +32,6 @@ h4 {
     & .playerList, & .maindeck {
         width: 100%;
     }
-
-    & .tournamentPlayer > div {
-        padding: 13px 10px !important;
-    }
 }
 
 @media (max-width: 800px) {
