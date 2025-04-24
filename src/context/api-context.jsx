@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect } from "react";
 import PropTypes from 'prop-types';
 import axios from 'axios';
+import statsTypes from "/src/services/statsTypes.js"; 
 
 export const ApiContext = createContext({ undefined });
 
@@ -21,6 +22,15 @@ export const ApiProvider = (props) => {
             { headers: headers }
         );
     }
+
+    function getFormat(format) {
+        if (format === 1) {
+            return statsTypes.LEGACY;
+        }
+        if (format === 0) {
+            return statsTypes.VINTAGE;
+        }
+    } 
     
     useEffect(() => {
         
@@ -30,6 +40,7 @@ export const ApiProvider = (props) => {
         <ApiContext.Provider
             value={{
                 getAxiosEndpoint,
+                getFormat
             }}
         >
             {children}

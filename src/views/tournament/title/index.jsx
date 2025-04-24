@@ -16,7 +16,7 @@ function TournamentTitle(props) {
                             <HTag Tag="h1" text={tournament.name} className="left f24 mb5" />
                         </div>
                         <div className="left w100">
-                            <div className="left">Legacy</div>
+                            <div className="left">{tournament.format}</div>
                             <div className="left ml10"> | </div>
                             <div className="left ml10">{tournament.players} players</div>
                             <div className="left ml10"> | </div>

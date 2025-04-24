@@ -1,4 +1,4 @@
-const statsTypes = {
+export const statsTypes = {
     TOP          : "top",
     MAINBOARD    : "mainboard",
     SIDEBOARD    : "sideboard",
@@ -11,7 +11,9 @@ const statsTypes = {
     LAND         : "land",
     PLAYERS      : "players",
     MD           : "md",
-    SB           : "sb"
+    SB           : "sb",
+    LEGACY       : "Legacy",
+    VINTAGE      : "Vintage"
 }
 
 export default statsTypes;

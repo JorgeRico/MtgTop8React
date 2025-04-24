@@ -14,12 +14,14 @@ function League() {
     const effectRan                             = useRef(false);
     const [ leagueName, setLeagueName]          = useState(null);
     const [ showLeagueName, setShowLeagueName ] = useState(false);
-        
+    const [ leagueFormat, setLeagueFormat]      = useState(null);
+
     // api call
     async function apiCall() {
         await api.getAxiosEndpoint(endpoints.API_LEAGUE_ID.replace('{id}', id))
             .then((response) => {
                 setLeagueName(response.data.name);
+                setLeagueFormat(api.getFormat(response.data.isLegacy));
                 setShowLeagueName(true);
             })
             .catch((err) => { 
@@ -50,6 +52,7 @@ function League() {
                     tournament={
                         <LeagueTournament 
                             id={id}
+                            format={leagueFormat}
                         />
                     }
                     stats={

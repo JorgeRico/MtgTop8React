@@ -22,9 +22,10 @@ function Tournament() {
             setTournament(prevState => ({
                 ...prevState,
                 'idLeague': response.data.idLeague,
-                'name': response.data.name,
-                'date': response.data.date,
-                'players' : response.data.players
+                'name'    : response.data.name,
+                'date'    : response.data.date,
+                'players' : response.data.players,
+                'format'  : api.getFormat(response.data.format)
             }));
             setLoading(true);
         })

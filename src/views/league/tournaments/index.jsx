@@ -9,7 +9,7 @@ function LeagueTournament(props) {
     const api                                  = useApi();
     const effectRan                            = useRef(false);
     const [ renderElements, setRenderElements] = useState(null);
-    const { id }                               = props;
+    const { id, format }                       = props;
     const [ showElements, setShowElements ]    = useState(false);
     
     // api call
@@ -41,7 +41,7 @@ function LeagueTournament(props) {
                 <>
                     <div className="left w100 mb30">
                         <SubTitle title={"Tournaments"}/>
-                        <div className="left w100 f14 mt5">Format: Legacy</div>
+                        <div className="left w100 f14 mt5">Format: {format}</div>
                     </div>
                     {renderElements != null && (
                         <div className="left w100">
