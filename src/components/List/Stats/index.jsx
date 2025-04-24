@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import PropTypes from 'prop-types';
+import "./module.css"
 
 export default function StatsList(props) {
     const { items }                       = props;
@@ -14,9 +15,10 @@ export default function StatsList(props) {
     useEffect(() => {
         if (!effectRan.current) {
             setRenderItems(items?.map((item) => (
-                <li key={uuidv4()}>
-                    <span className="left total center">{item.num}</span>  <span className="left ml15">{item.name}</span>
-                </li>   
+                <div className="left w100 item" key={uuidv4()}>
+                    <span className="left ml25">{item.num}</span>
+                    <span className="left ml25">{item.name}</span>
+                </div>   
             )));
         }
         
@@ -26,15 +28,15 @@ export default function StatsList(props) {
 
     return (
         <>
-            <ul>
-                <li className="titleStats">
-                    <span className="left total center color-selected">Total</span>
-                    <span className="left ml15 color-selected">Name</span>
-                </li>
-                {(items.length > 0) && (
-                    renderItems
-                )}
-            </ul>
+            <div className="left w100">
+                <div className="top overflowHidden">
+                    <span className="left ml15">Total</span>
+                    <span className="left ml15">Name</span>
+                </div>
+            </div>
+            {(items.length > 0) && (
+                renderItems
+            )}
         </>
     )
 }

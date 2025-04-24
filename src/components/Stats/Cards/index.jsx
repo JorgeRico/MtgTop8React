@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import HTag from "/src/components/HTag";
 import { useApi } from '/src/hooks/use-api.js';
 import "../module.css";
+import StatsList from "/src/components/List/Stats";
+import BluredSmallList from "/src/components/Blured/FakeLists/SmallList";
 
 export default function StatsBox(props) {
-    const { text, cardType, setLoading, setRenderElements, endpoint } = props;
-    const api                                                         = useApi();
+    const { text, cardType, endpoint }          = props;
+    const api                                   = useApi();
+    const [ loading, setLoading ]               = useState(false);
+    const [ renderElements, setRenderElements ] = useState([]);
 
     // api call
     async function apiCardTypeCall() {
@@ -20,28 +24,37 @@ export default function StatsBox(props) {
     }
 
     const handleClickCardTypes = () => {
-        playersUnselected();
+        hidePlayers();
         setLoading(true);
         setRenderElements(null);
-        playerSelected();
+        showPlayer();
         apiCardTypeCall()
     }
 
-    function playersUnselected() {
-        const elems = Array.from(document.querySelectorAll('.cardsList'));
-        elems.forEach(elem => elem.classList.remove('color-selected'));
+    function hidePlayers() {
+        const elems = Array.from(document.querySelectorAll('.cardStats'));
+        elems.forEach(elem => elem.classList.add('none'));
     }
     
-    function playerSelected() {
-        document.querySelector('#' + cardType).classList.add('color-selected');
+    function showPlayer() {
+        document.querySelector('#' + cardType).classList.remove('none');
     }
 
     return (
         <>
-            <div className="listItem left line w100 cardsList" id={cardType} onClick={() => handleClickCardTypes()}>
+            <div className="listItem left w100 cardsList" onClick={() => handleClickCardTypes()}>
                 <div className="left line w100">
                     <div className="circle orangeCircle"></div>
                     <HTag Tag="p" text={text} className="left wAuto pointer" />
+                    <div className="right color-selected f14 mr20 pointer">view stats</div>
+                </div>
+                <div className="left ml15 mt10 mb30 overflowHidden cardStats none" id={cardType}>
+                    {loading === true &&
+                        <BluredSmallList></BluredSmallList>
+                    }    
+                    {renderElements &&
+                        <StatsList items={renderElements} />
+                    }
                 </div>
             </div>
         </>

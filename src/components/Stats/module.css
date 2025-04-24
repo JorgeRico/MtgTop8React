@@ -1,16 +1,12 @@
 .statsBox {
     width: 325px;
 
-    & ul {
-        overflow: hidden;
-    }
-
     & p {
         margin: 0;
     }
     
     & .line {
-        height: 35px;
+        height: 40px;
 
         & p {
             text-decoration: none !important;
@@ -26,14 +22,17 @@
     & .total {
         width: 50px;
     }
-
-    ul {
-        margin-top: 10px;
-    }
 }
 
 @media (max-width: 600px) {
     .showStatsCards {
         width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    .statsBox {
+        width: 100%;
+
     }
 }

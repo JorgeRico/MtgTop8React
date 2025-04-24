@@ -1,5 +1,5 @@
 import React from "react";
-import Title from "/src/components/HTag/Title";
+import SubTitle from "/src/components/HTag/SubTitle";
 
 function League(props) {
     const { breadcrumb, tournament, stats, title } = props;
@@ -11,8 +11,8 @@ function League(props) {
             </div>
             <div className="left w100 mt20">
                 {tournament}
-                <div className="left w100 mt30">
-                    <Title title={title} />
+                <div className="left w100 mt20">
+                    <SubTitle title={title} />
                 </div>
                 <div className="left w100 mt10">
                     {stats}
