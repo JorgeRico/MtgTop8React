@@ -49,9 +49,3 @@ h4 {
         width: 100%;
     }
 }
-
-@media (max-width: 550px) {
-    & .viewDeck {
-        display: none;
-    }
-}
