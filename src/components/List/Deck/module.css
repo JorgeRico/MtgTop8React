@@ -23,25 +23,21 @@ h4 {
 }
 
 @media (max-width: 1050px) {
-    & .playerList, & .maindeck {
-        width: 75%;
+    .playerList, .maindeck {
+        width: 70%;
+    }
+
+    .sideboard {
+        width: 29%;
     }
 }
 
 @media (max-width: 950px) {
-    & .playerList, & .maindeck {
+    .playerList, .maindeck {
         width: 100%;
     }
-}
-
-@media (max-width: 800px) {
-    .playerList {
-        width: 100%;
-    }
-}
-
-@media (max-width: 640px) {
-    .maindeck, .sideboard {
+    
+    .sideboard {
         width: 100%;
     }
 }
