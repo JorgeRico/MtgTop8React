@@ -7,6 +7,12 @@
     height: 5px;
     background: black;
 }
+
+.header {
+    .send {
+        width: 25px;
+    }
+}
 /* Header */
 
 
@@ -100,11 +106,5 @@
     & .blueCircle {
         border: 1px solid goldenrod;
         background: black;
-    }
-}
-
-.header {
-    .send {
-        width: 25px;
     }
 }
