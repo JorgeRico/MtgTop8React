@@ -1,9 +1,8 @@
 import React, { useRef, useState, useEffect } from "react";
 import endpoints from "/src/services/endpoints.js";
 import { useApi } from '/src/hooks/use-api.js';
-import TournamentList from "/src/components/List/Tournament";
-import BluredBigList from "/src/components/Blured/FakeLists/BigList";
-import SubTitle from "/src/components/HTag/SubTitle";
+import BluredTournamentList from "/src/components/Blured/FakeLists/TournamentList";
+import LeagueTournamentItem from "/src/views/league/tournaments/item";
 
 function LeagueTournament(props) {
     const api                                  = useApi();
@@ -36,19 +35,13 @@ function LeagueTournament(props) {
     return (
         <>
             {showElements === false ? (
-                    <BluredBigList></BluredBigList>
+                    <BluredTournamentList></BluredTournamentList>
                 ) : (
-                <>
-                    <div className="left w100 mb30">
-                        <SubTitle title={"Tournaments"}/>
-                        <div className="left w100 f14 mt5">Format: {format}</div>
-                    </div>
-                    {renderElements != null && (
-                        <div className="left w100">
-                            <TournamentList url={endpoints.API_TOURNAMENT} items={renderElements}/>
-                        </div>
-                    )}
-                </>
+                    <LeagueTournamentItem
+                        format         = {format}
+                        renderElements = {renderElements}
+                        url            = {endpoints.API_TOURNAMENT}
+                    />
             )}
         </>
     )
