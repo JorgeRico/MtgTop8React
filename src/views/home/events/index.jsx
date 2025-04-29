@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import endpoints from "/src/services/endpoints.js";
 import { useApi } from '/src/hooks/use-api.js';
 import ListLeague from "/src/components/List/League";
-import BluredSmallList from "/src/components/Blured/FakeLists/SmallList";
+import LeagueList from "/src/components/Blured/FakeLists/LeagueList";
 import Title from "components/HTag/Title";
 
 function Events(props) {
@@ -39,7 +39,7 @@ function Events(props) {
                 <Title title={title} />
             </div>
             {showElements === true ? (
-                    <BluredSmallList></BluredSmallList>
+                    <LeagueList></LeagueList>
                 ) : (
                     <>
                         {renderElements != null && (
