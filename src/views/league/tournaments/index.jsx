@@ -40,7 +40,7 @@ function LeagueTournament(props) {
                     <LeagueTournamentItem
                         format         = {format}
                         renderElements = {renderElements}
-                        url            = {endpoints.API_TOURNAMENT}
+                        url            = {endpoints.HTTP_TOURNAMENT}
                     />
             )}
         </>

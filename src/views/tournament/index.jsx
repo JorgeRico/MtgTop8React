@@ -50,7 +50,7 @@ function Tournament() {
                     breadcrumb={
                         <BreadcrumbTournament 
                             title={tournament.name} 
-                            endpoint={endpoints.API_LEAGUE + tournament.idLeague} 
+                            endpoint={endpoints.HTTP_LEAGUE + tournament.idLeague} 
                             loading={loading}
                         />
                     }

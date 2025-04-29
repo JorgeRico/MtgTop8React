@@ -1,0 +1,32 @@
+input, textarea, button {
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+input, button {
+    padding: 10px 20px;
+}
+
+input {
+    width: 300px;
+}
+
+textarea {
+    padding: 20px;
+}
+
+textarea, .sendImage {
+    height: 200px;
+}
+
+.send, .error {
+    width: 75px;
+}
+
+@media (max-width: 596px) {
+    .contactForm {
+        & input, & textarea {
+            width: 90%;
+        }
+    }
+}

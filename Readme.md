@@ -1,6 +1,6 @@
 # Mtg Tournament website
 
-React
+React + emailjs
 
 ## React on local
 
@@ -16,3 +16,4 @@ React
 
 - <https://fastapi.tiangolo.com/>
 - <https://hub.docker.com/>
+- <https://www.emailjs.com/>

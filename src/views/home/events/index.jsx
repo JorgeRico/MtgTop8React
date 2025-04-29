@@ -43,7 +43,7 @@ function Events(props) {
                 ) : (
                     <>
                         {renderElements != null && (
-                            <ListLeague url={endpoints.API_LEAGUE} items={renderElements} />
+                            <ListLeague url={endpoints.HTTP_LEAGUE} items={renderElements} />
                         )}
                     </>
                 )
