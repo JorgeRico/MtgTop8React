@@ -58,7 +58,6 @@ function Tournament() {
                         <TournamentPlayers 
                             id={id} 
                             tournament={tournament} 
-                            loading={loading}
                         />
                     }
                     stats={

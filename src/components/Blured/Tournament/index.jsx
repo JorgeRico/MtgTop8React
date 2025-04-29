@@ -1,18 +1,18 @@
 import React from "react";
-import HTag from "/src/components/HTag";
+import Title from "/src/views/tournament/title";
 
 function TournamentTitleBlured() {
+    const tournament = {
+        name    : 'Fake Tournament',
+        format  : 'Legacy',
+        players : '35',
+        date    : '22/10/2025'
+    }
+    
     return (
         <>
-            <div className="left w100 mt20 pb0 blured">
-                <div className="left">
-                    <HTag Tag="h1" text="Fake tournament name" className="f24" />
-                </div>
-                <div className="left w100">Date: 22/10/2025</div>
-                <div className="left w100">Players: 30</div>
-                <div className="left w100 mt20">
-                    <HTag Tag="h2" text={"Top Players"} className="left f24" />
-                </div>
+            <div className="blink blured">
+                <Title tournament={tournament}></Title>
             </div>
         </>
     )
