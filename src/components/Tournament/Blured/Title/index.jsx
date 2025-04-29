@@ -1,5 +1,5 @@
 import React from "react";
-import Title from "/src/views/tournament/title";
+import Title from "/src/components/Tournament/Title";
 
 function TournamentTitleBlured() {
     const tournament = {

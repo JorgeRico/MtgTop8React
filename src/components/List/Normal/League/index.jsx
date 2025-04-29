@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import PropTypes from 'prop-types';
-import LeagueItem from "/src/components/List/League/Item";
+import LeagueItem from "/src/components/List/Normal/League/Item";
 
 export default function LeagueList(props) {
     const { url, items }                  = props;

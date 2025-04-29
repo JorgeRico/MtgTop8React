@@ -1,10 +1,9 @@
 import React from "react";
 import HTag from "/src/components/HTag";
 import { v4 as uuidv4 } from "uuid";
+import options from "/src/fakeData/statsOptionsList.js";
 
 export default function LoadingOptions() {
-    const items = [ 'Top Planeswalkers', 'Top Instants', 'Top Sorceries', 'Top Creatures', 'Top Lands', 'Top Artifacts' ];    
-
     const itemBox = (text) => {
         return (
             <>
@@ -21,7 +20,7 @@ export default function LoadingOptions() {
         <>
             <div className='left w100 mt10 blink blured'>
                 <div className="left w25 mb20 statsBox">
-                    {items?.map((item) => (
+                    {options?.map((item) => (
                         <div className="listItem left w100 cardsList" key={uuidv4()}>
                             {itemBox(item)}
                         </div>

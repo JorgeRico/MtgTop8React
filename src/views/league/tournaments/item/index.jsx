@@ -1,5 +1,5 @@
 import React from "react";
-import TournamentList from "/src/components/List/Tournament";
+import TournamentList from "/src/components/List/Normal/Tournament";
 import SubTitle from "/src/components/HTag/SubTitle";
 
 function LeagueTournamentItem(props) {

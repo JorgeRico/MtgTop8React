@@ -1,8 +1,8 @@
 import React, { useRef, useState, useEffect } from "react";
 import endpoints from "/src/services/endpoints.js";
 import { useApi } from '/src/hooks/use-api.js';
-import ListLeague from "/src/components/List/League";
-import LeagueList from "/src/components/Blured/FakeLists/LeagueList";
+import ListLeague from "/src/components/List/Normal/League";
+import LeagueList from "/src/components/List/Fake/LeagueList";
 import Title from "components/HTag/Title";
 
 function Events(props) {

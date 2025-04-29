@@ -3,8 +3,8 @@ import "../module.css";
 import { useApi } from '/src/hooks/use-api.js';
 import endpoints from "/src/services/endpoints.js";
 import PropTypes from "prop-types";
-import Deck from "/src/components/List/Deck";
-import BluredDeck from "/src/components/Blured/FakeLists/DeckList";
+import Deck from "/src/components/List/Normal/Deck";
+import BluredDeck from "/src/components/List/Fake/DeckList";
 
 export default function TournamentPlayerItem(props) {
     const { item, index }                         = props;
@@ -53,32 +53,12 @@ export default function TournamentPlayerItem(props) {
         setLoading(true);
         apiCall(idDeck)
     }
-
-    function indexConversionToText(num) {
-        if (num == 1) {
-            // add blank spaces
-            return "1st\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0";
-        }
-        if (num == 2) {
-            // add blank spaces
-            return "2nd\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0";
-        }
-        if (num == 3 || num == 4) {
-            return "3rd-4th";
-        }
-        if (num >= 5 && num <= 8) {
-            return "5th-8th";
-        }
-        if (num >= 9 || num <= 16) {
-            return "9th-16th";
-        }
-    }
     
     return (
         <>
             <div className="left w100 tournamentPlayer" id={'player-'+(index+1)}>
                 <div className="left alignLeft index">
-                    {indexConversionToText(index+1)}
+                    {api.indexConversionToText(index+1)}
                 </div>
                 <div className="left alignLeft w30">
                     {item.name}
@@ -93,9 +73,7 @@ export default function TournamentPlayerItem(props) {
             <div className="left w100 none decklists" id={'deck-'+(index+1)}>
                 <div className="deck overflowHidden">
                     {loading === true &&
-                        <div className="bluredDeck">
-                            <BluredDeck></BluredDeck>
-                        </div>
+                        <BluredDeck></BluredDeck>
                     }
                     {renderDeckItems && (
                         <Deck items={renderDeckItems} deckName={item.deckName} />

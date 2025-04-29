@@ -1,11 +1,11 @@
 import React, { useRef, useState, useEffect } from "react";
 import endpoints from "/src/services/endpoints.js";
 import { useApi } from '/src/hooks/use-api.js';
-import PlayerList from "/src/components/List/Player";
-import BluredBigList from "/src/components/Blured/FakeLists/BigList";
+import PlayerList from "/src/components/List/Normal/Player";
+import PlayersBlured from "/src/components/List/Fake/PlayersList";
 import HTag from "/src/components/HTag";
-import Title from "/src/views/tournament/title";
-import TournamentTitleBlured from "/src/components/Blured/Tournament";
+import Title from "/src/components/Tournament/Title";
+import TournamentTitleBlured from "/src/components/Tournament/Blured/Title";
 
 function TournamentPlayers(props) {
     const api                                = useApi();
@@ -46,7 +46,7 @@ function TournamentPlayers(props) {
             </div>
             <div className="left w70 playerList mb20">
                 {showPlayers === false ? (
-                        <BluredBigList></BluredBigList>
+                        <PlayersBlured></PlayersBlured>
                     ) : (
                         <>
                             {renderPlayers.length > 0 && (

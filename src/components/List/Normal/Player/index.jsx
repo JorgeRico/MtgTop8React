@@ -2,7 +2,7 @@ import React from "react";
 import { v4 as uuidv4 } from "uuid";
 import PropTypes from 'prop-types';
 import "./module.css";
-import PlayerItem from "/src/components/List/Player/Item";
+import PlayerItem from "/src/components/List/Normal/Player/Item";
 
 export default function TournamentPlayers(props) {
     const { items } = props;

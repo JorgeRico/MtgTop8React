@@ -30,7 +30,27 @@ export const ApiProvider = (props) => {
         if (format === 0) {
             return statsTypes.VINTAGE;
         }
-    } 
+    }
+
+    function indexConversionToText(num) {
+        if (num == 1) {
+            // add blank spaces
+            return "1st\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0";
+        }
+        if (num == 2) {
+            // add blank spaces
+            return "2nd\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0";
+        }
+        if (num == 3 || num == 4) {
+            return "3rd-4th";
+        }
+        if (num >= 5 && num <= 8) {
+            return "5th-8th";
+        }
+        if (num >= 9 || num <= 16) {
+            return "9th-16th";
+        }
+    }
     
     useEffect(() => {
         
@@ -40,7 +60,8 @@ export const ApiProvider = (props) => {
         <ApiContext.Provider
             value={{
                 getAxiosEndpoint,
-                getFormat
+                getFormat,
+                indexConversionToText
             }}
         >
             {children}

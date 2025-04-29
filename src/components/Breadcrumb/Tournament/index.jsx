@@ -5,7 +5,7 @@ import HomeIcon from "/src/assets/images/home.png";
 import { Link } from 'react-router-dom';
 import ImageLink from "/src/components/Link/ImageLink";
 import endpoints from "/src/services/endpoints.js";
-import BluredBreadcrumb from "/src/components/Blured/Breadcrumb";
+import BluredBreadcrumb from "/src/components/Breadcrumb/Blured";
 
 function BreadcrumbTournament(props) {
     const { title, endpoint, loading } = props; 

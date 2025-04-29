@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import StatsBox from "/src/components/Stats";
-import LoadingOptions from "/src/components/Blured/FakeLists/StatsList/LoadingOptions";
+import LoadingOptions from "/src/components/List/Fake/StatsList/LoadingOptions";
 
 function LeagueStats(props) {
     const { id, isLeague, endpoint, endpointCards } = props;

@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
 import Layout from "/src/views/layout/core";
 import Template from "/src/views/layout/template";
-import TournamentPlayers from "/src/views/tournament/players";
+import TournamentPlayers from "/src/components/Tournament/Players";
 import Stats from "/src/views/stats";
 import BreadcrumbTournament from "components/Breadcrumb/Tournament";
 import endpoints from "/src/services/endpoints.js";

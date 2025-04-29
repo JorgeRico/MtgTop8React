@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import HTag from "/src/components/HTag";
 import { useApi } from '/src/hooks/use-api.js';
 import "../module.css";
-import StatsList from "/src/components/List/Stats";
-import LoadingCards from "/src/components/Blured/FakeLists/StatsList/LoadingCards";
+import StatsList from "/src/components/List/Normal/Stats";
+import LoadingCards from "/src/components/List/Fake/StatsList/LoadingCards";
 
 export default function StatsBox(props) {
     const { text, cardType, endpoint }          = props;
