@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import StatsBox from "/src/components/Stats";
-import BluredBigList from "/src/components/Blured/FakeLists/BigList";
+import LoadingOptions from "/src/components/Blured/FakeLists/StatsList/LoadingOptions";
 
 function LeagueStats(props) {
     const { id, isLeague, endpoint, endpointCards } = props;
@@ -19,13 +19,13 @@ function LeagueStats(props) {
     return (
         <>
             {showElements === false ? (
-                    <BluredBigList></BluredBigList>
+                    <LoadingOptions></LoadingOptions>
                 ) : (
                     <StatsBox 
-                        id={id} 
-                        isLeague={isLeague} 
-                        endpoint={endpoint} 
-                        endpointCards={endpointCards}
+                        id            = {id} 
+                        isLeague      = {isLeague} 
+                        endpoint      = {endpoint} 
+                        endpointCards = {endpointCards}
                     />
                 )
             }

@@ -3,7 +3,7 @@ import HTag from "/src/components/HTag";
 import { useApi } from '/src/hooks/use-api.js';
 import "../module.css";
 import StatsList from "/src/components/List/Stats";
-import BluredSmallList from "/src/components/Blured/FakeLists/SmallList";
+import LoadingCards from "/src/components/Blured/FakeLists/StatsList/LoadingCards";
 
 export default function StatsBox(props) {
     const { text, cardType, endpoint }          = props;
@@ -50,7 +50,7 @@ export default function StatsBox(props) {
                 </div>
                 <div className="left ml15 mt10 mb30 overflowHidden cardStats none" id={cardType}>
                     {loading === true &&
-                        <BluredSmallList></BluredSmallList>
+                        <LoadingCards></LoadingCards>
                     }    
                     {renderElements &&
                         <StatsList items={renderElements} />
