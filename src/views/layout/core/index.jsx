@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import Header from "/src/components/Header";
 import Footer from "/src/components/Footer";
 import React, { useRef, useEffect } from "react";
+import { Analytics } from "@vercel/analytics/react"
 function Layout(props) {
     // const effectRan = useRef(false);
 
@@ -29,6 +30,7 @@ function Layout(props) {
                     </div>
                 </div>
                 <Footer></Footer>
+                <Analytics></Analytics>
             </>
         )
     );
