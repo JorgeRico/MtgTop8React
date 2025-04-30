@@ -5,8 +5,7 @@ import Tournament from "./views/tournament";
 import Contact from "./views/contact";
 import * as React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import {  } from 'react-router-dom';
-import { MobileProvider } from 'context/mobile-context';
+import { MobileProvider } from './context/mobile-context';
 
 export default function App() {
     return (

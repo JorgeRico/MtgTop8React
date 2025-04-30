@@ -3,7 +3,7 @@ import endpoints from "/src/services/endpoints.js";
 import { useApi } from '/src/hooks/use-api.js';
 import ListLeague from "/src/components/List/Normal/League";
 import LeagueList from "/src/components/List/Fake/LeagueList";
-import Title from "components/HTag/Title";
+import Title from "/src/components/HTag/Title";
 
 function Events(props) {
     const api                                  = useApi();

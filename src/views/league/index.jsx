@@ -6,7 +6,7 @@ import LeagueTournament from "/src/views/league/tournaments";
 import Stats from "/src/views/stats";
 import endpoints from "/src/services/endpoints.js";
 import { useApi } from '/src/hooks/use-api.js';
-import BreadcrumbLeague from "components/Breadcrumb/League";
+import BreadcrumbLeague from "/src/components/Breadcrumb/League";
 
 function League() {
     const { id }                                = useParams();

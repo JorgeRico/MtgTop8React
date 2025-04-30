@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { send } from 'emailjs-com';
 import "./module.css";
-import Subtitle from 'components/HTag/SubTitle';
+import Subtitle from '/src/components/HTag/SubTitle';
 import Success from "/src/components/Contact/Success";
 import Error from "/src/components/Contact/Error";
 

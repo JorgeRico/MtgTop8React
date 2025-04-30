@@ -4,7 +4,7 @@ import Layout from "/src/views/layout/core";
 import Template from "/src/views/layout/template";
 import TournamentPlayers from "/src/components/Tournament/Players";
 import Stats from "/src/views/stats";
-import BreadcrumbTournament from "components/Breadcrumb/Tournament";
+import BreadcrumbTournament from "/src/components/Breadcrumb/Tournament";
 import endpoints from "/src/services/endpoints.js";
 import { useApi } from '/src/hooks/use-api.js';
 
