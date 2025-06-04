@@ -4,16 +4,14 @@ import Footer from "/src/components/Footer";
 import React, { useRef, useEffect } from "react";
 import { Analytics } from "@vercel/analytics/react"
 function Layout(props) {
-    // const effectRan = useRef(false);
-
-    // useEffect(() => {
-    //     if (!effectRan.current) {
-    //         var height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-    //     }
-        
-    //     return () => effectRan.current = true;
-    //     // eslint-disable-next-line react-hooks/exhaustive-deps
-    // }, []);
+    // load cookie banner
+    if (import.meta.VITE_APP_ENV === 'production') {
+        const script = document.createElement('script');
+        script.id    = "cookieyes"
+        script.src   = 'https://cdn-cookieyes.com/client_data/fa039951ac4a85e556944902/script.js';
+        script.async = true;
+        document.body.appendChild(script);
+    }
 
     return (
         (

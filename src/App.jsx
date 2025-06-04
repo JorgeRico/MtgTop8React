@@ -5,11 +5,11 @@ import Tournament from "./views/tournament";
 import Contact from "./views/contact";
 import * as React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { MobileProvider } from './context/mobile-context';
+import { CheckBotProvider } from './context/bot-context';
 
 export default function App() {
     return (
-        <MobileProvider>
+        <CheckBotProvider>
             <ApiProvider>
                 <BrowserRouter
                     future={{
@@ -25,6 +25,6 @@ export default function App() {
                     </Routes>
                 </BrowserRouter>
             </ApiProvider>
-        </MobileProvider>
+        </CheckBotProvider>
     );
 }
