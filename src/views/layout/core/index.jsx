@@ -5,7 +5,7 @@ import React, { useRef, useEffect } from "react";
 import { Analytics } from "@vercel/analytics/react"
 function Layout(props) {
     // load cookie banner
-    if (import.meta.VITE_APP_ENV === 'production') {
+    if (import.meta.env.VITE_APP_ENV === 'production') {
         const script = document.createElement('script');
         script.id    = "cookieyes"
         script.src   = 'https://cdn-cookieyes.com/client_data/fa039951ac4a85e556944902/script.js';
