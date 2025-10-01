@@ -108,3 +108,8 @@
         background: black;
     }
 }
+
+.cardImgUrl {
+    height: 27px;
+    width: 20px;
+}

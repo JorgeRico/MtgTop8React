@@ -48,6 +48,7 @@ export default function Deck(props) {
                 itemsList.push(
                     <div className="cardItem" key={uuidv4()}>
                         {deck[i].num} {deck[i].name}
+                        <img src={deck[i].imgUrl} className="cardImgUrl right"></img>
                     </div>
                 )
             }
@@ -65,6 +66,7 @@ export default function Deck(props) {
                 itemsList.push(
                     <div className="cardItem" key={uuidv4()}>
                         {deck[i].num} {deck[i].name}
+                        <img src={deck[i].imgUrl} className="cardImgUrl right"></img>
                     </div>
                 )
             }

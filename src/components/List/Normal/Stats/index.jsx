@@ -12,12 +12,43 @@ export default function StatsList(props) {
         items : PropTypes.array
     };
 
+    const playerStats = (item) => {
+        return (
+            <>
+                <span className="left ml15">
+                    <img src={item.imgUrl} className="cardImgUrl"></img>
+                </span>
+                <span className="left ml15 center w-15">{item.num}</span>
+                <span className="left ml40">
+                    {item.name}
+                </span>
+            </>
+        )
+    }
+
+    const cardStats = (item) => {
+        return (
+            <>
+                <span className="left ml25">
+                    &nbsp;
+                </span>
+                <span className="left ml20 center w-15">{item.num}</span>
+                <span className="left ml40">
+                    {item.name}
+                </span>
+            </>
+        )
+    }
+
     useEffect(() => {
         if (!effectRan.current) {
             setRenderItems(items?.map((item) => (
                 <div className="left w100 item" key={uuidv4()}>
-                    <span className="left ml25">{item.num}</span>
-                    <span className="left ml25">{item.name}</span>
+                    {(item.imgUrl !== undefined && item.imgUrl != null) ? (
+                        playerStats(item)
+                    ) : (
+                        cardStats(item)
+                    )}
                 </div>   
             )));
         }
@@ -30,8 +61,9 @@ export default function StatsList(props) {
         <>
             <div className="left w100">
                 <div className="top overflowHidden">
-                    <span className="left ml15">Total</span>
-                    <span className="left ml15">Name</span>
+                    <span className="left ml15">&nbsp;</span>
+                    <span className="left ml25">Total</span>
+                    <span className="left ml25">Name</span>
                 </div>
             </div>
             {(items.length > 0) && (
