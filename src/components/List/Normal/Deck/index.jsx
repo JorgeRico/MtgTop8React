@@ -2,7 +2,8 @@ import React, { useRef, useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import PropTypes from 'prop-types';
 import "./module.css";
-import statsTypes from "/src/services/statsTypes.js"
+import statsTypes from "/src/services/statsTypes.js";
+import Modal from "/src/components/Modal";
 
 export default function Deck(props) {
     const { items, deckName }                         = props;
@@ -48,7 +49,9 @@ export default function Deck(props) {
                 itemsList.push(
                     <div className="cardItem" key={uuidv4()}>
                         {deck[i].num} {deck[i].name}
-                        <img src={deck[i].imgUrl} className="cardImgUrl right"></img>
+                        <span className="modalImg">
+                            <Modal img={deck[i].imgUrl}/>
+                        </span>
                     </div>
                 )
             }
@@ -66,7 +69,9 @@ export default function Deck(props) {
                 itemsList.push(
                     <div className="cardItem" key={uuidv4()}>
                         {deck[i].num} {deck[i].name}
-                        <img src={deck[i].imgUrl} className="cardImgUrl right"></img>
+                        <span className="modalImg">
+                            <Modal img={deck[i].imgUrl}/>
+                        </span>
                     </div>
                 )
             }
@@ -101,7 +106,7 @@ export default function Deck(props) {
             <>
                 {(items.length > 0) && (
                     <>
-                        <div className="deckItems">
+                        <div className="deckItems mb10">
                             <h4>{text}</h4>
                             {items}
                         </div>
@@ -118,9 +123,9 @@ export default function Deck(props) {
                     <div className="left w100 f24 ml12 mt20">
                         <div className="left w100">{deckName}</div>
                         <div className="left w100 f14 mt10">Maindeck total cards: {totalMaindeck}</div>
-                        <div className="left w100 f14 mt5">Sideboard total cards: {totalSideboard}</div>
+                        <div className="left w100 f14 mt5 mb10">Sideboard total cards: {totalSideboard}</div>
                     </div>
-                    <div className="left maindeck w70">
+                    <div className="left maindeck w100">
                         {showItems(planeswalkerItems, 'Planeswalkers')}
                         {showItems(creatureItems, 'Creatures')}
                         {showItems(instantItems, 'Instants')}
@@ -129,7 +134,7 @@ export default function Deck(props) {
                         {showItems(enchantmentItems, 'Enchantments')}
                         {showItems(landItems, 'Lands')}
                     </div>
-                    <div className="right sideboard w30">
+                    <div className="right sideboard w100">
                         {showItems(sideItems, 'Sideboard')}
                     </div>
                 </>

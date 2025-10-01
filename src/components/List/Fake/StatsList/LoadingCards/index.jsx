@@ -9,7 +9,7 @@ function LoadingCards() {
                 <ul>
                     {stats.map(item =>
                         <li key={uuidv4()} className="listItem pointer title blured">
-                            <div className="left line">
+                            <div className="left line w100">
                                 {item.num} - {item.name}
                             </div>
                         </li>

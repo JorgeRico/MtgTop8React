@@ -6,10 +6,10 @@ import StatsList from "/src/components/List/Normal/Stats";
 import LoadingCards from "/src/components/List/Fake/StatsList/LoadingCards";
 
 export default function StatsBox(props) {
-    const { text, cardType, endpoint }          = props;
-    const api                                   = useApi();
-    const [ loading, setLoading ]               = useState(false);
-    const [ renderElements, setRenderElements ] = useState([]);
+    const { text, cardType, endpoint, isPlayer } = props;
+    const api                                    = useApi();
+    const [ loading, setLoading ]                = useState(false);
+    const [ renderElements, setRenderElements ]  = useState([]);
 
     // api call
     async function apiCardTypeCall() {
@@ -42,18 +42,18 @@ export default function StatsBox(props) {
 
     return (
         <>
-            <div className="listItem left w100 cardsList" onClick={() => handleClickCardTypes()}>
+            <div className="listItem left w100 cardsList" >
                 <div className="left line w100">
                     <div className="circle orangeCircle"></div>
                     <HTag Tag="p" text={text} className="left wAuto pointer" />
-                    <div className="right color-selected f14 mr20 pointer">view stats</div>
+                    <div className="right color-selected f14 mr20 pointer" onClick={() => handleClickCardTypes()}>view stats</div>
                 </div>
                 <div className="left ml15 mt10 mb30 overflowHidden cardStats none" id={cardType}>
                     {loading === true &&
                         <LoadingCards></LoadingCards>
                     }    
                     {renderElements &&
-                        <StatsList items={renderElements} />
+                        <StatsList items={renderElements} isPlayer={isPlayer}/>
                     }
                 </div>
             </div>

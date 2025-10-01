@@ -15,7 +15,6 @@
 }
 /* Header */
 
-
 .home, .league {
     & li {
         width: 325px;
@@ -112,4 +111,29 @@
 .cardImgUrl {
     height: 27px;
     width: 20px;
+    margin-top: -8px;
+}
+
+button.cardButton, button.cardButton:focus, button.cardButton:active, button.cardButton:hover {
+    border: none !important;
+    background-color: none !important;
+    box-shadow: none !important;
+}
+
+.btn-secondary .btn-secondary:focus, .btn-secondary:active, .btn-secondary:hover {
+    background: none !important;
+    border-color: none !important;
+    border: none !important;
+    background-color: none !important;
+    box-shadow: none !important;
+}
+
+.radius-50 {
+    border-radius: 50px;
+}
+
+@media (max-width: 780px) {
+    .container, .container-sm {
+        max-width: 680px;
+    }
 }

@@ -9,3 +9,7 @@
 .item {
     padding: 5px 10px;
 }
+
+button.cardButton, button.cardButton:focus, button.cardButton:active, button.cardButton:hover {
+    padding: 0 10px 0 20px !important;
+}

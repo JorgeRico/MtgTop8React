@@ -1,0 +1,12 @@
+.cardButton {
+    background: none;
+    border: none;
+}
+
+.bg-black {
+    background-color: rgba(0,0,0,0.9) !important;
+}
+
+.modal-body {
+    padding: 0;
+}

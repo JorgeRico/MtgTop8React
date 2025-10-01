@@ -6,8 +6,8 @@
   
 .maindeck > .deckItems {
     padding: 0 10px;
-    flex-grow: 3;
-    flex: 1 1 45%;
+    flex-grow: 2;
+    flex: 1 1 50%;
 }
 
 h4 {
@@ -25,14 +25,6 @@ h4 {
 @media (max-width: 1050px) {
     .playerList {
         width: 80%;
-    } 
-
-    .maindeck {
-        width: 70%;
-    }
-
-    .sideboard {
-        width: 29%;
     }
 }
 
@@ -44,4 +36,20 @@ h4 {
     .sideboard {
         width: 100%;
     }
+}
+
+@media (max-width: 620px) {
+    .maindeck > .deckItems {
+        flex: 1 1 100%;
+    }
+}
+
+.modalImg {
+    padding: 0;
+    float: right;
+    text-align: center;
+}
+
+button.cardButton, button.cardButton:focus, button.cardButton:active, button.cardButton:hover {
+    padding: 0px !important;
 }

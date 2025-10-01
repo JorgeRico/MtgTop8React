@@ -8,7 +8,7 @@ export default function Header() {
     return (
         <>
             <div className="left w100 overflowHidden header">
-                <div className="left p20">
+                <div className="left pBody">
                     <Logo></Logo>
                 </div>
                 <div className="right p20 mt30 pointer">
