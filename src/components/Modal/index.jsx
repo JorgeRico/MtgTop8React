@@ -9,10 +9,12 @@ function PopupExample(args) {
 
     return (
         <div>
-            <Button onClick={toggle} className="cardButton">
+            <Button 
+            // onClick={toggle}
+             className="cardButton">
                 <img src={args.img} className="cardImgUrl"></img>
             </Button>
-            <Modal isOpen={modal} toggle={toggle} {...args}>
+            {/* <Modal isOpen={modal} toggle={toggle} {...args}>
                 <ModalBody className="bg-black">
                     <img src={args.img} className="w100 radius-50"></img>
                 </ModalBody>
@@ -21,7 +23,7 @@ function PopupExample(args) {
                         Close
                     </Button>
                 </ModalFooter>
-            </Modal>
+            </Modal> */}
         </div>
     );
 }

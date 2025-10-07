@@ -95,7 +95,7 @@ export default function StatsBox(props) {
     return (
         <>
             <div className='left w100 mt10'>
-                <div className="left w25 mb20 statsBox">
+                <div className="left w-350 mb20">
                     {cardStats()}
                 </div>
             </div>

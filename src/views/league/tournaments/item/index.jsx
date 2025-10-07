@@ -7,9 +7,9 @@ function LeagueTournamentItem(props) {
 
     return (
         <>
-            <div className="left w100 mb30">
+            <div className="left w100 mb40">
                 <SubTitle title={"Tournaments"}/>
-                <div className="left w100 f14 mt5">Format: {format}</div>
+                <div className="left w100 f14">Format: {format}</div>
             </div>
             {renderElements != null && (
                 <div className="left w100">

@@ -2,40 +2,30 @@ import React from "react";
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { useApi } from '/src/hooks/use-api.js';
+import cupIcon from '/src/assets/images/cup.png';
+import Block from "/src/components/List/Block/LeagueTournament";
 
 export default function LeagueList(props) {
     const { url, item } = props;
     const api           = useApi();
 
     LeagueList.propTypes = {
-        url   : PropTypes.string,
+        url  : PropTypes.string,
         item : PropTypes.array
     };
 
     return (
         <>
-            <div className="listItem pointer title mb15 pb10 overflowHidden">
+            <section className="listItem pointer title mb15 overflowHidden">
                 <Link to={url + item.id}>
-                    <div className="left line w100 mb10 description">
-                        <div className="left format">
-                            <div className="circle orangeCircle"></div>
-                            {api.getFormat(item.isLegacy)}
-                        </div>
-                        <div className="left ml15 separator">
-                            | 
-                        </div>
-                        <div className="left ml15 name">
-                            {item.name}
-                        </div>
-                        <div className="left ml15">
-                            |
-                        </div>
-                        <div className="left ml25 color-selected f14">
-                            view league
-                        </div>
-                    </div>
+                    <Block
+                        icon       = {cupIcon}
+                        text1      = {item.name}
+                        text2      = {`Format: ${api.getFormat(item.isLegacy)}`}
+                        buttonText = "View league"
+                    />
                 </Link>
-            </div>
+            </section>
         </>
     )
 }

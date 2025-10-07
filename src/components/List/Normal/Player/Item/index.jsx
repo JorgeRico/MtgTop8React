@@ -5,6 +5,7 @@ import endpoints from "/src/services/endpoints.js";
 import PropTypes from "prop-types";
 import Deck from "/src/components/List/Normal/Deck";
 import BluredDeck from "/src/components/List/Fake/DeckList";
+import Button from "/src/components/List/Button";
 
 export default function TournamentPlayerItem(props) {
     const { item, index }                         = props;
@@ -56,20 +57,20 @@ export default function TournamentPlayerItem(props) {
     
     return (
         <>
-            <div className="left w100 tournamentPlayer" id={'player-'+(index+1)}>
-                <div className="left alignLeft index">
-                    {api.indexConversionToText(index+1)}
+            <section className="left w100 tournamentPlayer grey-bottom" id={'player-'+(index+1)}>
+                <div className="left p15 w-20">
+                    {index+1}
                 </div>
-                <div className="left alignLeft w30">
+                <div className="left p15 w-200">
                     {item.name}
                 </div>
-                <div className="left alignLeft w30">
+                <div className="left p15 w-150 deckName">
                     {item.deckName}
                 </div>
-                <div className="left center w20 pointer color-selected f14 viewDeck" onClick={() => handleCards((index+1), item.idDeck)}>
-                    view deck
+                <div className="left viewDeck" onClick={() => handleCards((index+1), item.idDeck)}>
+                    <Button buttonText="View Deck" />
                 </div>
-            </div>
+            </section>
             <div className="left w100 none decklists" id={'deck-'+(index+1)}>
                 <div className="deck overflowHidden">
                     {loading === true &&

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import HTag from "/src/components/HTag";
 import { useApi } from '/src/hooks/use-api.js';
 import "../module.css";
 import StatsList from "/src/components/List/Normal/Stats";
 import LoadingCards from "/src/components/List/Fake/StatsList/LoadingCards";
+import Block from "/src/components/List/Block/Stats";
 
 export default function StatsBox(props) {
     const { text, cardType, endpoint, isPlayer } = props;
@@ -43,12 +43,10 @@ export default function StatsBox(props) {
     return (
         <>
             <div className="listItem left w100 cardsList" >
-                <div className="left line w100">
-                    <div className="circle orangeCircle"></div>
-                    <HTag Tag="p" text={text} className="left wAuto pointer" />
-                    <div className="right color-selected f14 mr20 pointer" onClick={() => handleClickCardTypes()}>view stats</div>
-                </div>
-                <div className="left ml15 mt10 mb30 overflowHidden cardStats none" id={cardType}>
+                <span onClick={() => handleClickCardTypes()}>
+                    <Block text={text}  />
+                </span>
+                <div className="left mt10 mb30 overflowHidden cardStats none" id={cardType}>
                     {loading === true &&
                         <LoadingCards></LoadingCards>
                     }    

@@ -13,6 +13,19 @@ export default function TournamentPlayers(props) {
 
     return (
         <>
+            <section>
+                <div className="playersListHeader grey-bottom bg-footer">
+                    <div className="padTournamentBox w-20">
+                        #
+                    </div>
+                    <div className="padTournamentBox w-200">
+                        Player
+                    </div>
+                    <div className="padTournamentBox w-150 headerDeckName">
+                        Deck
+                    </div>
+                </div>
+            </section>
             {(items.length > 0) && (
                 items.map((item, index) => (
                     <PlayerItem item={item} index={index} key={uuidv4()}></PlayerItem>

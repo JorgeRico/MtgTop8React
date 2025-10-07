@@ -1,35 +1,11 @@
-.tournamentPlayer {
-    border-bottom: 1px solid rgba(135, 135, 135, 0.2);
+.playersListHeader {
+    display: flex;
+    justify-items: center;
 }
 
-.tournamentPlayer > div {
-    padding: 13px 20px;
-}
-
-.deck {
-    margin: 10px 0 20px 0;
-}
-
-@media (max-width: 950px) {
-    & .playerList, & .maindeck {
-        width: 100%;
-    }
-
-    & .tournamentPlayer > div {
-        padding: 13px 10px !important;
-    }
-}
-
-@media (max-width: 550px) {
-    .tournamentPlayer {
-        font-size: 12px;
-
-        & .index {
-            width: 20px;
-        }
-    }
-
-    & .tournamentPlayer > div {
-        padding: 13px 5px !important;
+.viewDeck {
+    & button {
+        font-size: 10px;
+        margin-top: 9px;
     }
 }
