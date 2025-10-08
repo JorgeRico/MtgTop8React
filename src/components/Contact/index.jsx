@@ -46,6 +46,7 @@ function Contact() {
                             placeholder='Your name'
                             value={toSend.name}
                             onChange={handleChange}
+                            required
                         />
                     </div>
                     <div className="left mb20 w100">
@@ -55,6 +56,7 @@ function Contact() {
                             placeholder='Your email'
                             value={toSend.reply_to}
                             onChange={handleChange}
+                            required
                         />
                     </div>
                     <div className="left mb20 w100">
@@ -65,6 +67,7 @@ function Contact() {
                             placeholder='Your message'
                             value={toSend.message}
                             onChange={handleChange}
+                            required
                         />
                     </div>
                     

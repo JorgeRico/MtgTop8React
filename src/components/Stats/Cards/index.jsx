@@ -51,7 +51,7 @@ export default function StatsBox(props) {
                         <LoadingCards></LoadingCards>
                     }    
                     {renderElements &&
-                        <StatsList items={renderElements} isPlayer={isPlayer}/>
+                        <StatsList items={renderElements} isPlayer={isPlayer} text={text} />
                     }
                 </div>
             </div>

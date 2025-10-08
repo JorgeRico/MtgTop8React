@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 import PropTypes from 'prop-types';
 import "./module.css";
 import statsTypes from "/src/services/statsTypes.js";
-import Modal from "/src/components/Modal";
+import ModalPopUp from "/src/components/Modal";
 
 export default function Deck(props) {
     const { items, deckName }                         = props;
@@ -50,7 +50,7 @@ export default function Deck(props) {
                     <div className="cardItem" key={uuidv4()}>
                         {deck[i].num} {deck[i].name}
                         <span className="modalImg">
-                            <Modal img={deck[i].imgUrl}/>
+                            <ModalPopUp img={deck[i].imgUrl} name={deck[i].name} modalType={`deck-${deck[i].id}`} />
                         </span>
                     </div>
                 )
@@ -70,7 +70,7 @@ export default function Deck(props) {
                     <div className="cardItem" key={uuidv4()}>
                         {deck[i].num} {deck[i].name}
                         <span className="modalImg">
-                            <Modal img={deck[i].imgUrl}/>
+                            <ModalPopUp img={deck[i].imgUrl} name={deck[i].name} modalType={`deck-${deck[i].id}`} />
                         </span>
                     </div>
                 )
@@ -125,7 +125,7 @@ export default function Deck(props) {
                         <div className="left w100 f14 mt10">Maindeck total cards: {totalMaindeck}</div>
                         <div className="left w100 f14 mt5 mb10">Sideboard total cards: {totalSideboard}</div>
                     </div>
-                    <div className="left maindeck w100">
+                    <div className="left maindeck">
                         {showItems(planeswalkerItems, 'Planeswalkers')}
                         {showItems(creatureItems, 'Creatures')}
                         {showItems(instantItems, 'Instants')}
@@ -134,7 +134,7 @@ export default function Deck(props) {
                         {showItems(enchantmentItems, 'Enchantments')}
                         {showItems(landItems, 'Lands')}
                     </div>
-                    <div className="right sideboard w100">
+                    <div className="left sideboard">
                         {showItems(sideItems, 'Sideboard')}
                     </div>
                 </>

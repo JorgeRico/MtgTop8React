@@ -39,6 +39,8 @@ export default function TournamentPlayerItem(props) {
 
     function handleCards(index, idDeck) {
         const elem = document.querySelector('#deck-'+index);
+
+        // console.log('close ddjdjdj')
         
         hideDeckLists();
         if ( hideElement === true ) {
@@ -57,7 +59,7 @@ export default function TournamentPlayerItem(props) {
     
     return (
         <>
-            <section className="left w100 tournamentPlayer grey-bottom" id={'player-'+(index+1)}>
+            <section className={`left w100 tournamentPlayer grey-bottom ${(index % 2 == 0) ? 'odd' : 'even'}`} id={'player-'+(index+1)}>
                 <div className="left p15 w-20">
                     {index+1}
                 </div>
@@ -71,7 +73,7 @@ export default function TournamentPlayerItem(props) {
                     <Button buttonText="View Deck" />
                 </div>
             </section>
-            <div className="left w100 none decklists" id={'deck-'+(index+1)}>
+            <div className="left w100 none decklists mb20" id={'deck-'+(index+1)}>
                 <div className="deck overflowHidden">
                     {loading === true &&
                         <BluredDeck></BluredDeck>

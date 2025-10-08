@@ -51,6 +51,18 @@ export const ApiProvider = (props) => {
             return "9th-16th";
         }
     }
+
+    function createModalLink(name, modalType) {
+        name = 'modal-' + modalType + '-' + name
+
+        name = name.replace(/\s+/g, '-').toLowerCase();
+        name = name.replace(' ', '-').toLowerCase();
+        name = name.replace('\'', '-').toLowerCase();
+        name = name.replace(',', '-').toLowerCase();
+        name = name.replace('--', '-').toLowerCase();
+
+        return name;
+    }
     
     useEffect(() => {
         
@@ -61,7 +73,8 @@ export const ApiProvider = (props) => {
             value={{
                 getAxiosEndpoint,
                 getFormat,
-                indexConversionToText
+                indexConversionToText,
+                createModalLink
             }}
         >
             {children}

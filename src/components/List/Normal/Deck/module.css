@@ -2,12 +2,17 @@
     display: flex;
     align-items: stretch;
     flex-wrap: wrap;
+    width: 60%;
+}
+
+.sideboard {
+    width: 35%;
 }
   
-.maindeck > .deckItems {
+.maindeck > .deckItems, .sideboard > .deckItems {
     padding: 0 10px;
-    flex-grow: 2;
-    flex: 1 1 50%;
+    flex: 1 1 40%;
+    max-width: 350px;
 }
 
 h4 {
@@ -20,12 +25,6 @@ h4 {
 
 .cardItem {
     padding: 5px 10px;
-}
-
-@media (max-width: 1050px) {
-    .playerList {
-        width: 80%;
-    }
 }
 
 @media (max-width: 950px) {
@@ -46,10 +45,7 @@ h4 {
 
 .modalImg {
     padding: 0;
-    float: right;
+    float: left;
     text-align: center;
-}
-
-button.cardButton, button.cardButton:focus, button.cardButton:active, button.cardButton:hover {
-    padding: 0px !important;
+    margin-right: 15px;
 }

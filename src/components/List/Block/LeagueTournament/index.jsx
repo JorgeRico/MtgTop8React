@@ -22,7 +22,7 @@ export default function BlockItem(props) {
                     <div className="left format wAuto ml25">
                         <strong>{text1}</strong>
                         <br></br>
-                        <span className="left f12 mt5">
+                        <span className="left f12 mt5" style={{whiteSpace: 'pre-wrap'}}>
                             {text2}
                         </span>
                     </div>

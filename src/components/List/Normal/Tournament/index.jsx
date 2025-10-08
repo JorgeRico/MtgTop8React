@@ -19,7 +19,7 @@ export default function TournamentList(props) {
                 <Block
                     icon       = {cupIcon}
                     text1      = {item.name}
-                    text2      = {`${item.date} | ${item.players} players`}
+                    text2      = {`Date: ${item.date}   |   ${item.players} players`}
                     buttonText = "View Tournament"
                 />
             </>

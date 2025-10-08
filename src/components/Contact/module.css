@@ -9,6 +9,7 @@ input, button {
 
 input {
     width: 300px;
+    border: 1px solid #3e3535;
 }
 
 textarea {

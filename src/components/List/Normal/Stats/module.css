@@ -1,15 +1,10 @@
 .top {
     font-weight: 600;
     background: rgba(135, 135, 135, 0.2);
-    padding: 5px 10px;
     border-radius: 3px;
     margin-bottom: 10px;
 }
 
-.item {
-    padding: 5px 10px;
-}
-
-button.cardButton, button.cardButton:focus, button.cardButton:active, button.cardButton:hover {
-    padding: 0 10px 0 20px !important;
+.cardItem {
+    overflow: hidden
 }
