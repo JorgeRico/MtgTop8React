@@ -1,17 +1,20 @@
 import React from "react";
-import HTag from "/src/components/HTag";
 import { v4 as uuidv4 } from "uuid";
 import options from "/src/fakeData/statsOptionsList.js";
+import CardStats from "/src/components/Stats/Cards";
 
 export default function LoadingOptions() {
-    const itemBox = (text) => {
+    const itemBox = (item) => {
+        // print fake data
         return (
             <>
-                <div className="left line w100">
-                    <div className="circle orangeCircle"></div>
-                    <HTag Tag="p" text={text} className="left wAuto pointer" />
-                    <div className="right color-selected f14 mr20 pointer">view stats</div>
-                </div>
+                <CardStats
+                    id={uuidv4()}
+                    text={item}
+                    endpoint={""}
+                    cardType={item}
+                    isPlayer={true}
+                />
             </>
         )
     }
