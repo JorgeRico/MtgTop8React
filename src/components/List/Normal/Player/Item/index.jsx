@@ -3,8 +3,8 @@ import "../module.css";
 import { useApi } from '/src/hooks/use-api.js';
 import endpoints from "/src/services/endpoints.js";
 import PropTypes from "prop-types";
-import Deck from "/src/components/List/Normal/Deck";
-import BluredDeck from "/src/components/List/Fake/DeckList";
+import Deck from "/src/components/List/Deck/Normal";
+import BluredDeck from "/src/components/List/Deck/Fake";
 import Button from "/src/components/List/Button";
 
 export default function TournamentPlayerItem(props) {
@@ -39,8 +39,6 @@ export default function TournamentPlayerItem(props) {
 
     function handleCards(index, idDeck) {
         const elem = document.querySelector('#deck-'+index);
-
-        // console.log('close ddjdjdj')
         
         hideDeckLists();
         if ( hideElement === true ) {
@@ -73,16 +71,16 @@ export default function TournamentPlayerItem(props) {
                     <Button buttonText="View Deck" />
                 </div>
             </section>
-            <div className="left w100 none decklists mb20" id={'deck-'+(index+1)}>
+            <section className="left w100 none decklists mb20" id={'deck-'+(index+1)}>
                 <div className="deck overflowHidden">
                     {loading === true &&
                         <BluredDeck></BluredDeck>
                     }
                     {renderDeckItems && (
-                        <Deck items={renderDeckItems} deckName={item.deckName} />
+                        <Deck items={renderDeckItems} deckName={item.deckName} isBlured={false} />
                     )}
                 </div>
-            </div>
+            </section>
         </>
     )
 }
