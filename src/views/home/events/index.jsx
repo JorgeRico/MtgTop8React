@@ -1,8 +1,8 @@
 import React, { useRef, useState, useEffect } from "react";
 import endpoints from "/src/services/endpoints.js";
 import { useApi } from '/src/hooks/use-api.js';
-import ListLeague from "/src/components/List/Normal/League";
-import LeagueList from "/src/components/List/Fake/LeagueList";
+import ListLeague from "/src/components/List/League/Normal";
+import BluredListLeague from "/src/components/List/League/Fake";
 import SubTitle from "/src/components/HTag/SubTitle";
 
 function Events(props) {
@@ -39,7 +39,7 @@ function Events(props) {
                 <SubTitle title={title} />
             </div>
             {showElements === true ? (
-                    <LeagueList></LeagueList>
+                    <BluredListLeague></BluredListLeague>
                 ) : (
                     <>
                         {renderElements != null && (

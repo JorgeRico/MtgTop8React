@@ -16,8 +16,4 @@ function BluredTournamentList() {
     )
 }
 
-export default BluredTournamentList;
-
-
-
- 
+export default BluredTournamentList; 
