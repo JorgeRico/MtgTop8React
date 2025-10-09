@@ -1,8 +1,8 @@
 import React, { useRef, useState, useEffect } from "react";
 import endpoints from "/src/services/endpoints.js";
 import { useApi } from '/src/hooks/use-api.js';
-import PlayerList from "/src/components/List/Normal/Player";
-import PlayersBlured from "/src/components/List/Fake/PlayersList";
+import PlayerList from "/src/components/List/Player/Normal";
+import PlayersBlured from "/src/components/List/Player/Fake";
 import HTag from "/src/components/HTag";
 import Title from "/src/components/Tournament/Title";
 import TournamentTitleBlured from "/src/components/Tournament/Blured/Title";
@@ -50,7 +50,7 @@ function TournamentPlayers(props) {
                     ) : (
                         <>
                             {renderPlayers.length > 0 && (
-                                <PlayerList items={renderPlayers} />
+                                <PlayerList items={renderPlayers} isBlured={false} />
                             )}
                         </>
                     )
