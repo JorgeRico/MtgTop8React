@@ -4,7 +4,7 @@ import Layout from "/src/views/layout/core";
 import Template from "/src/views/layout/template";
 import TournamentPlayers from "/src/components/Tournament/Players";
 import Stats from "/src/views/stats";
-import BreadcrumbTournament from "/src/components/Breadcrumb/Tournament";
+import Breadcrumb from "/src/components/Breadcrumb";
 import endpoints from "/src/services/endpoints.js";
 import { useApi } from '/src/hooks/use-api.js';
 
@@ -48,10 +48,11 @@ function Tournament() {
             <Layout name="tournaments">
                 <Template
                     breadcrumb={
-                        <BreadcrumbTournament 
+                        <Breadcrumb
                             title={tournament.name} 
                             endpoint={endpoints.HTTP_LEAGUE + tournament.idLeague} 
                             loading={loading}
+                            isLeague={false}
                         />
                     }
                     tournament={

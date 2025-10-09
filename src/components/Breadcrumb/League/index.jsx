@@ -1,34 +1,20 @@
-import React from "react";
 import PropTypes from 'prop-types';
-import "../module.css";
-import HomeIcon from "/src/assets/images/home.png";
-import ImageLink from "/src/components/Link/ImageLink";
-import endpoints from "/src/services/endpoints.js";
-import BluredBreadcrumb from "/src/components/Breadcrumb/Blured";
+import HomeItemBreadcrumb from "/src/components/Breadcrumb/Items/Home";
+import TitleItemBreadcrumb from "/src/components/Breadcrumb/Items/Title";
+import DashItemBreadcrumb from "/src/components/Breadcrumb/Items/Dash";
 
 function BreadcrumbLeague(props) {
-    const { title, loading } = props; 
+    const { title } = props; 
    
     BreadcrumbLeague.propTypes = {
-        title   : PropTypes.string,
-        loading : PropTypes.bool
+        title : PropTypes.string,
     };
 
     return (
         <>
-            {loading === false ? (
-                <BluredBreadcrumb></BluredBreadcrumb>
-            ) : (
-                <>
-                    <div className="left homeIcon">
-                        <ImageLink url={endpoints.API_HOME} img={HomeIcon} className="backLink invertColor" />
-                    </div>
-                    <div className="left ml10">/</div>
-                    <div className="left ml10">
-                        {title}
-                    </div>
-                </>
-            )}
+            <HomeItemBreadcrumb></HomeItemBreadcrumb>
+            <DashItemBreadcrumb></DashItemBreadcrumb>
+            <TitleItemBreadcrumb title={title}></TitleItemBreadcrumb>
         </>
     );
 }

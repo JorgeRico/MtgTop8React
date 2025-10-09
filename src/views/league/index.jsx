@@ -6,7 +6,7 @@ import LeagueTournament from "/src/views/league/tournaments";
 import Stats from "/src/views/stats";
 import endpoints from "/src/services/endpoints.js";
 import { useApi } from '/src/hooks/use-api.js';
-import BreadcrumbLeague from "/src/components/Breadcrumb/League";
+import Breadcrumb from "/src/components/Breadcrumb";
 
 function League() {
     const { id }                                = useParams();
@@ -44,9 +44,11 @@ function League() {
             <Layout name="league">
                 <Template 
                     breadcrumb={
-                        <BreadcrumbLeague 
+                        <Breadcrumb
                             title={leagueName} 
                             loading={showLeagueName}
+                            endpoint={null}
+                            isLeague={true}
                         />
                     }
                     tournament={
