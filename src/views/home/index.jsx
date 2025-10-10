@@ -8,12 +8,12 @@ function Home() {
     return (
         <>
             <Layout name="home">
-                <div className="left w100 mt20">
+                <main className="left w100 mt20">
                     <Title title="Leagues" />
                     <p className="mb40 color-gray">Explore current and past leagues, view standings and decks</p>
                     <Events endpoint={endpoints.API_LEAGUE_CURRENT} title="Current Events"></Events>
                     <Events endpoint={endpoints.API_LEAGUE_PAST} title="Past Events"></Events>
-                </div>
+                </main>
             </Layout>
         </>
     );

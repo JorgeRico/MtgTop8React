@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import endpoints from "/src/services/endpoints.js";
 import { useApi } from '/src/hooks/use-api.js';
 import ListLeague from "/src/components/List/League/Normal";
-import BluredListLeague from "/src/components/List/League/Fake";
+import BluredLeagueList from "/src/components/List/League/Fake";
 import SubTitle from "/src/components/HTag/SubTitle";
 
 function Events(props) {
@@ -35,19 +35,21 @@ function Events(props) {
 
     return (
         <>
-            <div className="left w100 mb20 grey-bottom">
-                <SubTitle title={title} />
-            </div>
-            {showElements === true ? (
-                    <BluredListLeague></BluredListLeague>
-                ) : (
-                    <>
-                        {renderElements != null && (
-                            <ListLeague url={endpoints.HTTP_LEAGUE} items={renderElements} />
-                        )}
-                    </>
-                )
-            }
+            <section>
+                <div className="left w100 mb20 grey-bottom">
+                    <SubTitle title={title} />
+                </div>
+                {showElements === true ? (
+                        <BluredLeagueList></BluredLeagueList>
+                    ) : (
+                        <>
+                            {renderElements != null && (
+                                <ListLeague url={endpoints.HTTP_LEAGUE} items={renderElements} isBlured={false} />
+                            )}
+                        </>
+                    )
+                }
+            </section>
         </>
     );
 }

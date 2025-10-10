@@ -7,14 +7,15 @@ import Button from "/src/components/List/Button";
 import { useApi } from '/src/hooks/use-api.js';
 
 export default function LeagueList(props) {
-    const { url, items }                  = props;
+    const { url, items, isBlured }        = props;
     const effectRan                       = useRef(false);
     const [ renderItems, setRenderItems ] = useState(null);
     const api                             = useApi();
 
     LeagueList.propTypes = {
-        url   : PropTypes.string,
-        items : PropTypes.array
+        url      : PropTypes.string,
+        items    : PropTypes.array,
+        isBlured : PropTypes.bool
     };
 
     const leagueItemBlock = (icon, text1, text2, buttonText) => { 
@@ -41,6 +42,7 @@ export default function LeagueList(props) {
 
     useEffect(() => {
         if (!effectRan.current) {
+            console.log(items)
             if (items?.length > 0) {
                 setRenderItems(items?.map((item) => (
                     <article className="listItem pointer title mb15 overflowHidden" key={uuidv4()}>
@@ -49,7 +51,6 @@ export default function LeagueList(props) {
                         </Link>
                     </article>
                 )));
-                console.log('items')
             }
         }
         
@@ -59,7 +60,7 @@ export default function LeagueList(props) {
 
     return (
         <>
-            <section className="left w100 overflowHidden mb30">
+            <section className={`left w100 overflowHidden mb30 ${isBlured ? 'blink blured' : ''}`}>
                 {(items?.length > 0) && (
                     renderItems
                 )}
