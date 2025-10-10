@@ -1,6 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
-import StatsBox from "/src/components/Stats";
-import LoadingOptions from "/src/components/List/Fake/StatsList/LoadingOptions";
+import StatsBox from "/src/components/List/Stats";
 
 function LeagueStats(props) {
     const { id, isLeague, endpoint, endpointCards } = props;
@@ -18,17 +17,13 @@ function LeagueStats(props) {
 
     return (
         <>
-            {showElements === false ? (
-                    <LoadingOptions></LoadingOptions>
-                ) : (
-                    <StatsBox 
-                        id            = {id} 
-                        isLeague      = {isLeague} 
-                        endpoint      = {endpoint} 
-                        endpointCards = {endpointCards}
-                    />
-                )
-            }
+            <StatsBox 
+                id            = {id} 
+                isLeague      = {isLeague} 
+                endpoint      = {endpoint} 
+                endpointCards = {endpointCards}
+                isBlured      = {showElements === false ? true : false } 
+            />      
         </>
     )
 }

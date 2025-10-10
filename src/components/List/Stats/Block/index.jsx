@@ -2,8 +2,8 @@ import React, { useRef, useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import PropTypes from 'prop-types';
 import "./module.css"
-import TopStatsList from "/src/components/List/Normal/Stats/Top";
-import ContentStatsList from "/src/components/List/Normal/Stats/Content";
+import Header from "/src/components/List/Stats/Block/Header";
+import Content from "/src/components/List/Stats/Block/Content";
 
 export default function StatsList(props) {
     const { items, isPlayer, text }       = props;
@@ -17,9 +17,7 @@ export default function StatsList(props) {
     useEffect(() => {
         if (!effectRan.current) {
             setRenderItems(items?.map((item) => (
-                <div className="left w100 cardItem" key={uuidv4()}>
-                    <ContentStatsList item={item} isPlayer={isPlayer} text={text} />
-                </div>   
+                <Content item={item} isPlayer={isPlayer} text={text} key={uuidv4()} />
             )));
         }
         
@@ -29,9 +27,7 @@ export default function StatsList(props) {
 
     return (
         <>
-            <div className="left w100">
-                <TopStatsList isPlayer={isPlayer} />
-            </div>
+            <Header isPlayer={isPlayer} />
             {(items.length > 0) && (
                 renderItems
             )}

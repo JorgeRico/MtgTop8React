@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { useApi } from '/src/hooks/use-api.js';
-import "../module.css";
-import StatsList from "/src/components/List/Normal/Stats";
-import LoadingCards from "/src/components/List/Fake/StatsList/LoadingCards";
-import Block from "/src/components/List/Block/Stats";
+import StatsListBlock from "/src/components/List/Stats/Block";
+import BluredStatsList from "/src/components/List/Stats/Cards/Fake";
+import Block from "/src/components/List/Stats/Cards/Block"
 
 export default function StatsBox(props) {
     const { text, cardType, endpoint, isPlayer } = props;
@@ -42,19 +41,19 @@ export default function StatsBox(props) {
 
     return (
         <>
-            <div className="listItem left w100 cardsList" >
+            <section className="listItem left w100 cardsList" >
                 <span onClick={() => handleClickCardTypes()}>
-                    <Block text={text}  />
+                    <Block text={text}></Block>
                 </span>
                 <div className="left mt10 mb30 overflowHidden cardStats none" id={cardType}>
-                    {loading === true &&
-                        <LoadingCards></LoadingCards>
-                    }    
-                    {renderElements &&
-                        <StatsList items={renderElements} isPlayer={isPlayer} text={text} />
+                    {loading &&
+                        <BluredStatsList></BluredStatsList>
                     }
+                    {renderElements &&
+                        <StatsListBlock items={renderElements} isPlayer={isPlayer} text={text} />
+                    } 
                 </div>
-            </div>
+            </section>
         </>
     )
 }

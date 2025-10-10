@@ -1,17 +1,11 @@
-import React from "react";
-import PropTypes from 'prop-types';
 import Button from "/src/components/List/Button";
 
-export default function Block(props) {
+export default function StatsBox(props) {
     const { text } = props;
-
-    Block.propTypes = {
-        text : PropTypes.string
-    };
 
     return (
         <>
-            <object className="left w100 mb10 bg-footer radius5">
+            <article className="left w100 mb10 bg-footer radius5">
                 <div className="wAuto overflowHidden">
                     <div className="left wAuto padStatsBox">
                         <strong>{text}</strong>
@@ -20,7 +14,7 @@ export default function Block(props) {
                         <Button buttonText="View Stats"></Button>
                     </div>
                 </div>
-            </object>
+            </article>
         </>
     )
 }

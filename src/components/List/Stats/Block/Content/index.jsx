@@ -30,11 +30,13 @@ export default function ContentStatsList(props) {
 
     return (
         <>
-            {(isPlayer === true) ? (
-                playerStats(item)
-            ) : (
-                cardStats(item)
-            )}
+            <div className="left w100 cardItem">
+                {(isPlayer === true) ? (
+                    playerStats(item)
+                ) : (
+                    cardStats(item)
+                )}
+            </div>
         </>
     )
 }
