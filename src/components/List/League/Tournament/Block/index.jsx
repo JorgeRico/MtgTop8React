@@ -2,17 +2,17 @@ import React from "react";
 import TournamentList from "/src/components/List/Tournament/Normal";
 import SubTitle from "/src/components/HTag/SubTitle";
 
-function LeagueTournamentItem(props) {
-    const { format, renderElements, url } = props;
+function LeagueTournamentBlock(props) {
+    const { format, renderElements, url, isBlured } = props;
 
     return (
         <>
-            <div className="left w100 mb40">
+            <div className={`left w100 mb40 ${isBlured ? 'blink blured' : ''}`}>
                 <SubTitle title={"Tournaments"}/>
                 <div className="left w100 f14">Format: {format}</div>
             </div>
             {renderElements != null && (
-                <div className="left w100">
+                <div className={`left w100 ${isBlured ? 'blink blured' : ''}`}>
                     <TournamentList url={url} items={renderElements}/>
                 </div>
             )}
@@ -20,4 +20,4 @@ function LeagueTournamentItem(props) {
     )
 }
 
-export default LeagueTournamentItem;
+export default LeagueTournamentBlock;

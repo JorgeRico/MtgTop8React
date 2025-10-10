@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
 import Layout from "/src/views/layout/core";
 import Template from "/src/views/layout/template";
-import LeagueTournament from "/src/views/league/tournaments";
+import LeagueTournamentList from "/src/components/List/League/Tournament/List";
 import Stats from "/src/views/stats";
 import endpoints from "/src/services/endpoints.js";
 import { useApi } from '/src/hooks/use-api.js';
@@ -52,7 +52,7 @@ function League() {
                         />
                     }
                     tournament={
-                        <LeagueTournament 
+                        <LeagueTournamentList 
                             id={id}
                             format={leagueFormat}
                         />

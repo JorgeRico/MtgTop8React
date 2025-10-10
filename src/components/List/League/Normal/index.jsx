@@ -42,7 +42,6 @@ export default function LeagueList(props) {
 
     useEffect(() => {
         if (!effectRan.current) {
-            console.log(items)
             if (items?.length > 0) {
                 setRenderItems(items?.map((item) => (
                     <article className="listItem pointer title mb15 overflowHidden" key={uuidv4()}>

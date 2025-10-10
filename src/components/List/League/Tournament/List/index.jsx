@@ -1,8 +1,8 @@
 import React, { useRef, useState, useEffect } from "react";
 import endpoints from "/src/services/endpoints.js";
 import { useApi } from '/src/hooks/use-api.js';
-import BluredTournamentList from "/src/components/List/Tournament/Fake";
-import LeagueTournamentItem from "/src/views/league/tournaments/item";
+import BluredTournamentList from "/src/components/List/League/Tournament/Fake";
+import LeagueTournamentBlock from "/src/components/List/League/Tournament/Block";
 
 function LeagueTournament(props) {
     const api                                  = useApi();
@@ -37,10 +37,11 @@ function LeagueTournament(props) {
             {showElements === false ? (
                     <BluredTournamentList></BluredTournamentList>
                 ) : (
-                    <LeagueTournamentItem
+                    <LeagueTournamentBlock
                         format         = {format}
                         renderElements = {renderElements}
                         url            = {endpoints.HTTP_TOURNAMENT}
+                        isBlured       = {false}
                     />
             )}
         </>
