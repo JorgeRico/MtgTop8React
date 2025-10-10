@@ -5,7 +5,7 @@ import PlayerList from "/src/components/List/Player/Normal";
 import PlayersBlured from "/src/components/List/Player/Fake";
 import HTag from "/src/components/HTag";
 import Title from "/src/components/Tournament/Title";
-import TournamentTitleBlured from "/src/components/Tournament/Blured/Title";
+import TournamentTitleBlured from "/src/components/Tournament/Fake";
 
 function TournamentPlayers(props) {
     const api                                = useApi();
@@ -39,7 +39,7 @@ function TournamentPlayers(props) {
             {showPlayers === false ? (
                 <TournamentTitleBlured></TournamentTitleBlured>
             ) : (
-                <Title tournament={tournament}></Title>
+                <Title tournament={tournament} isBlured={false}></Title>
             )}
             <div className="left w100 mt20">
                 <HTag Tag="h2" text={"Top Players"} className="left f24" />

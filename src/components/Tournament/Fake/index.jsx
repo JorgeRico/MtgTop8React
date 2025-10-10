@@ -11,9 +11,7 @@ function TournamentTitleBlured() {
     
     return (
         <>
-            <div className="blink blured">
-                <Title tournament={tournament}></Title>
-            </div>
+            <Title tournament={tournament} isBlured={true}></Title>
         </>
     )
 }
