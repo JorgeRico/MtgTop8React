@@ -95,7 +95,7 @@ export default function StatsBox(props) {
     return (
         <>
             <section className={`left w100 mt10 ${isBlured ? 'blink blured' : ''}`}>
-                <div className="left w-350 mb20">
+                <div className="left w-350 mb20 statsBoxContent">
                     {cardStats()}
                 </div>
             </section>

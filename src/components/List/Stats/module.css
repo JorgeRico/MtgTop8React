@@ -36,3 +36,18 @@
 
     }
 }
+
+@media (max-width: 420px) {
+    .statsBoxContent {
+        width: 100% !important;
+    }
+
+    .statsButton {
+        float: left;
+        width: 94%;
+
+        & button {
+            margin: 0 auto;
+        }
+    }
+}

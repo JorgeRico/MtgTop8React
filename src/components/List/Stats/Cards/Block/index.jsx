@@ -10,7 +10,7 @@ export default function StatsBox(props) {
                     <div className="left wAuto padStatsBox">
                         <strong>{text}</strong>
                     </div>
-                    <div className="right wAuto p10">
+                    <div className="right wAuto p10 statsButton">
                         <Button buttonText="View Stats"></Button>
                     </div>
                 </div>
