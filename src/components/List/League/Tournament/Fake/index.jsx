@@ -10,6 +10,7 @@ function BluredTournamentList() {
                 renderElements = {tournament.items}
                 url            = {tournament.url}
                 isBlured       = {true}
+                numPlayers     = {9999}
             />
         </>
     )

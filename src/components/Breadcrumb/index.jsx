@@ -26,7 +26,7 @@ function Breadcrumb(props) {
 
     return (
         <>
-            <section className={`left w100 pb10 f14 ${loading === false ? 'blink blured' : ''}`}>
+            <section className={`left w100 f14 ${loading === false ? 'blink blured' : ''}`}>
                 {isLeague ? league() : tournament() }
             </section>
         </>

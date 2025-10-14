@@ -10,6 +10,8 @@ function LeagueTournament(props) {
     const [ renderElements, setRenderElements] = useState(null);
     const { id, format }                       = props;
     const [ showElements, setShowElements ]    = useState(false);
+    const [ numPlayers, setNumplayers ]        = useState(0);
+
     
     // api call
     async function apiCall() {
@@ -17,10 +19,25 @@ function LeagueTournament(props) {
             .then((response) => {
                 setRenderElements(response.data);
                 setShowElements(true);
+                countPlayers(response.data)
             })
             .catch((err) => { 
                 console.log('error league tournament')
             });
+    }
+
+    function countPlayers(data) {
+        var totalPlayers = 0;
+        var numTournaments = data.length;
+        data.map((item) => (
+            // console.log(item.players)
+            totalPlayers += item.players
+        ))
+
+        console.log(totalPlayers)
+        console.log(numTournaments)
+        console.log(Math.ceil(totalPlayers/numTournaments))
+        setNumplayers(Math.ceil(totalPlayers/numTournaments))
     }
 
     useEffect(() => {
@@ -42,6 +59,7 @@ function LeagueTournament(props) {
                         renderElements = {renderElements}
                         url            = {endpoints.HTTP_TOURNAMENT}
                         isBlured       = {false}
+                        numPlayers     = {numPlayers}
                     />
             )}
         </>

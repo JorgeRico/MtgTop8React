@@ -6,7 +6,7 @@ function League(props) {
 
     return (
         <>
-            <div className="left w100 pb10 mb10 f14">
+            <div className="left w100 pb10 f14">
                 {breadcrumb}
             </div>
             <div className="left w100 mt20">
