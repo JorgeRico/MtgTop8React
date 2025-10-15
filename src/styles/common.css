@@ -12,6 +12,7 @@ body {
 
 :root {
     --background:  #151414;
+    --background-black: black;
     --background-footer: #202020;
     --background-even: #112230;
     --background-blue: rgba(25, 25, 112, 0.8);

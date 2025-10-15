@@ -4,7 +4,7 @@
 
 .topLine {
     height: 5px;
-    background: black;
+    background: var(--background-black);
 }
 
 .header {
