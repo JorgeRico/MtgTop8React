@@ -9,7 +9,7 @@ export default function HeaderContact() {
                 <div className="left">
                     <img src={Mail} alt="" className="send invertColor" />
                 </div>
-                <div className="left ml10 mt1 contactus">
+                <div className="left ml10 contactus">
                     <Link to={endpoints.HTTP_CONTACT}>
                         Contact us
                     </Link>

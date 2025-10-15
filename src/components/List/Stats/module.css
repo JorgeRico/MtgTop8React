@@ -4,18 +4,6 @@
     & p {
         margin: 0;
     }
-    
-    & .line {
-        height: 40px;
-
-        & p {
-            text-decoration: none !important;
-        }
-
-        & p:hover {
-            color: deepskyblue;
-        }
-    }
 }
 
 .showStatsCards {
@@ -33,7 +21,6 @@
 @media (max-width: 500px) {
     .statsBox {
         width: 100%;
-
     }
 }
 

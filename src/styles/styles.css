@@ -25,10 +25,13 @@
     padding: 15px 20px;
 }
 
-@media (max-width: 468px) {
+@media (max-width: 480px) {
+    .tournamentDescription {
+        margin-bottom: 20px;
+    }
+
     .listButton {
         width: 100%;
-        margin-top: 20px;
     }
 
     .contactus {
@@ -57,7 +60,7 @@
 }
 
 .tournamentPlayer.even {
-    background: #112230;
+    background: var(--background-even);
 }
 
 @media (max-width: 620px) {
