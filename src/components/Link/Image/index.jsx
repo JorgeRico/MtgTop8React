@@ -10,7 +10,7 @@ export default function LinkImage(props) {
     }
 
     return (
-        <Link to={props.url} className={props.className} target="_blank">
+        <Link to={props.url} className={props.className} target="_blank" rel="noopener noreferrer">
             <>
                 <img src={props.img} alt="" />
             </>
