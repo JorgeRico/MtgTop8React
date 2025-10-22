@@ -26,7 +26,7 @@ export default function LeagueList(props) {
                         <div className="cupBox border-grey left radius5 bg-blue p5 w-25">
                             <img src={icon} alt="Cup Champion" className="cupIcon w-15" />
                         </div>
-                        <div className="left format wAuto ml25">
+                        <div className="left format wAuto ml25 tournamentDescription">
                             <strong>{text1}</strong>
                             <br></br>
                             <span className="left f12 mt5" style={{whiteSpace: 'pre-wrap'}}>
