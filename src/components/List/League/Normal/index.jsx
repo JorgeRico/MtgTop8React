@@ -24,7 +24,7 @@ export default function LeagueList(props) {
                 <div className="left w100 mb10 bg-footer radius5">
                     <div className="wAuto padBox overflowHidden">
                         <div className="cupBox border-grey left radius5 bg-blue p5 w-25">
-                            <img src={icon} alt="Cup Champion" className="cupIcon w-15" />
+                            <img src={icon} width="15" height="14" alt="Cup Champion" className="cupIcon w-15" />
                         </div>
                         <div className="left format wAuto ml25 tournamentDescription">
                             <strong>{text1}</strong>
