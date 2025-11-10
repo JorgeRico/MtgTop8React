@@ -5,6 +5,7 @@ const endpoints = {
     API_HEALTH                : host_url + 'health',
 
     API_LEAGUE_ID             : host_url + 'leagues/{id}',
+    API_LEAGUE_HOME           : host_url + 'leagues/home',
     API_LEAGUE_CURRENT        : host_url + 'leagues/current',
     API_LEAGUE_PAST           : host_url + 'leagues/past',
     API_LEAGUE_TOURNAMENTS    : host_url + 'leagues/{id}/tournaments',

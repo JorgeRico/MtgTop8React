@@ -1,37 +1,11 @@
-import React, { useRef, useState, useEffect } from "react";
+import React from "react";
 import endpoints from "/src/services/endpoints.js";
-import { useApi } from '/src/hooks/use-api.js';
 import ListLeague from "/src/components/List/League/Normal";
 import BluredLeagueList from "/src/components/List/League/Fake";
 import SubTitle from "/src/components/HTag/SubTitle";
 
 function Events(props) {
-    const api                                  = useApi();
-    const effectRan                            = useRef(false);
-    const [ renderElements, setRenderElements] = useState(null);
-    const [ showElements, setShowElements ]    = useState(true);
-    const { title, endpoint }                  = props;
-
-    // api call
-    async function apiCall() {
-        await api.getAxiosEndpoint(endpoint)
-        .then((response) => {
-            setRenderElements(response.data);
-            setShowElements(false);
-        })
-        .catch((err) => { 
-            console.log('Error' + title)
-        });
-    }
-
-    useEffect(() => {
-        if (!effectRan.current) {
-            apiCall();
-        }
-        
-        return () => effectRan.current = true;
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [renderElements]);
+    const { elements, title, showElements } = props;
 
     return (
         <>
@@ -43,8 +17,8 @@ function Events(props) {
                         <BluredLeagueList></BluredLeagueList>
                     ) : (
                         <>
-                            {renderElements != null && (
-                                <ListLeague url={endpoints.HTTP_LEAGUE} items={renderElements} isBlured={false} />
+                            {elements != null && (
+                                <ListLeague url={endpoints.HTTP_LEAGUE} items={elements} isBlured={false} />
                             )}
                         </>
                     )
