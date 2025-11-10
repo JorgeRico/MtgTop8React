@@ -7,6 +7,7 @@ import Stats from "/src/views/stats";
 import Breadcrumb from "/src/components/Breadcrumb";
 import endpoints from "/src/services/endpoints.js";
 import { useApi } from '/src/hooks/use-api.js';
+import SeoTags from "/src/hooks/use-seo.js";
 
 function Tournament() {
     const { id }                       = useParams();
@@ -44,7 +45,10 @@ function Tournament() {
     }, []);
 
     return (
-        <>
+        <>  
+            {tournament.name != '' &&
+                <SeoTags page="TOURNAMENT" id={id} name={tournament.name + ' - ' + tournament.date}></SeoTags>
+            }
             <Layout name="tournaments">
                 <Template
                     breadcrumb={

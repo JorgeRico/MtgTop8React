@@ -3,10 +3,12 @@ import endpoints from "/src/services/endpoints.js";
 import Layout from "/src/views/layout/core";
 import Events from "/src/views/home/events";
 import Title from "/src/components/HTag/Title";
+import SeoTags from "/src/hooks/use-seo.js";
 
 function Home() {
     return (
         <>
+            <SeoTags page="HOME" id={null} name=""></SeoTags>
             <Layout name="home">
                 <main className="left w100 mt20">
                     <Title title="Leagues" />

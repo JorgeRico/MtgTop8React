@@ -7,6 +7,7 @@ import Stats from "/src/views/stats";
 import endpoints from "/src/services/endpoints.js";
 import { useApi } from '/src/hooks/use-api.js';
 import Breadcrumb from "/src/components/Breadcrumb";
+import SeoTags from "/src/hooks/use-seo.js";
 
 function League() {
     const { id }                                = useParams();
@@ -41,6 +42,9 @@ function League() {
 
     return (
         <>
+            {leagueName &&
+                <SeoTags page="LEAGUE" id={id} name={leagueName}></SeoTags>
+            }
             <Layout name="league">
                 <Template 
                     breadcrumb={
