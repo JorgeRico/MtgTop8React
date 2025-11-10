@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "/src/views/layout/core";
 import ContactForm from "/src/components/Contact";
-import SeoTags from "/src/hooks/use-seo.js";
+import SeoTags from "/src/hooks/use-seo.jsx";
 
 function Contact() {
     return (

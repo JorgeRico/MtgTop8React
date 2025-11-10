@@ -7,7 +7,7 @@ import Stats from "/src/views/stats";
 import Breadcrumb from "/src/components/Breadcrumb";
 import endpoints from "/src/services/endpoints.js";
 import { useApi } from '/src/hooks/use-api.js';
-import SeoTags from "/src/hooks/use-seo.js";
+import SeoTags from "/src/hooks/use-seo.jsx";
 
 function Tournament() {
     const { id }                       = useParams();

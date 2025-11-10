@@ -7,7 +7,7 @@ import Stats from "/src/views/stats";
 import endpoints from "/src/services/endpoints.js";
 import { useApi } from '/src/hooks/use-api.js';
 import Breadcrumb from "/src/components/Breadcrumb";
-import SeoTags from "/src/hooks/use-seo.js";
+import SeoTags from "/src/hooks/use-seo.jsx";
 
 function League() {
     const { id }                                = useParams();

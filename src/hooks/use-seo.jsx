@@ -67,7 +67,6 @@ function SeoTags(props) {
     }
 
     const LeagueSeoTags = () => {
-        console.log('------ '+name)
         return (
             <>
                 <Helmet>
