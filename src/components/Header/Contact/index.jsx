@@ -7,7 +7,7 @@ export default function HeaderContact() {
         <>
             <div className="right p20 mt30 pointer">
                 <div className="left">
-                    <img src={Mail} alt="" className="send invertColor" />
+                    <img src={Mail} alt="Contact us - mtg legacy" className="send invertColor" width="25" height="25" />
                 </div>
                 <div className="left ml10 contactus">
                     <Link to={endpoints.HTTP_CONTACT}>

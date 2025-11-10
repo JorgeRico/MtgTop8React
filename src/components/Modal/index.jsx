@@ -38,7 +38,7 @@ function ModalPopUp(props) {
     return (
         <>  
             <div className="pointer" onClick={() => handleClick()}>
-                <img src={img} className="cardImgUrl" />
+                <img src={img} className="cardImgUrl" height="27" width="20" />
             </div>
             <div id={api.createModalLink(name, modalType)} className="modal">
                 <div className="modal-content">
