@@ -1,17 +1,17 @@
 {
   "type": "module",
   "engines": {
-    "node": "19 || 20 || 21 || 22",
+    "node": "18 || 19 || 20 || 21 || 22",
     "npm": ">=6"
   },
   "dependencies": {
+    "@dr.pogodin/react-helmet": "^3.0.4",
+    "@emailjs/browser": "^4.4.1",
     "@vercel/analytics": "^1.5.0",
     "@vitejs/plugin-react": "^5.1.0",
-    "emailjs-com": "^3.2.0",
     "prop-types": "15.8.1",
     "react": "19.2.0",
     "react-dom": "19.2.0",
-    "react-helmet": "^6.1.0",
     "react-router-dom": "^7.9.5",
     "reactstrap": "^9.2.3",
     "uuid": "^13.0.0",

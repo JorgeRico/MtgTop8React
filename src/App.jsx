@@ -6,24 +6,27 @@ import Contact from "./views/contact";
 import * as React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { CheckBotProvider } from './context/bot-context';
+import { HelmetProvider } from '@dr.pogodin/react-helmet';
 
 export default function App() {
     return (
         <CheckBotProvider>
             <ApiProvider>
-                <BrowserRouter
-                    future={{
-                        v7_startTransition: true,
-                        v7_relativeSplatPath: true,
-                    }}
-                >
-                    <Routes>
-                        <Route path="/" element={<Home />} />
-                        <Route path="leagues/:id" element={<League />} />
-                        <Route path="tournaments/:id" element={<Tournament />} />
-                        <Route path="contact" element={<Contact />} />
-                    </Routes>
-                </BrowserRouter>
+                <HelmetProvider>
+                    <BrowserRouter
+                        future={{
+                            v7_startTransition: true,
+                            v7_relativeSplatPath: true,
+                        }}
+                    >
+                        <Routes>
+                            <Route path="/" element={<Home />} />
+                            <Route path="leagues/:id" element={<League />} />
+                            <Route path="tournaments/:id" element={<Tournament />} />
+                            <Route path="contact" element={<Contact />} />
+                        </Routes>
+                    </BrowserRouter>
+                </HelmetProvider>
             </ApiProvider>
         </CheckBotProvider>
     );

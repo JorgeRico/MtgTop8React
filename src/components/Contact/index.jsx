@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { send } from 'emailjs-com';
+import React, { useState, useRef } from "react";
+import emailjs from '@emailjs/browser';
 import "./module.css";
 import Subtitle from '/src/components/HTag/SubTitle';
 import Success from "/src/components/Contact/Success";
@@ -13,12 +13,13 @@ function Contact() {
     const mail_service                    = import.meta.env.VITE_APP_MAIL_SERVICE_ID;
     const mail_template                   = import.meta.env.VITE_APP_MAIL_TEMPLATE;
     const mail_public_key                 = import.meta.env.VITE_APP_MAIL_PUBLIC_ID;
+    const form                            = useRef();
 
     const onSubmit = (e) => {
         e.preventDefault();
         setShowButton(false);
 
-        send(mail_service, mail_template, toSend, mail_public_key)
+        emailjs.sendForm(mail_service, mail_template, form.current, mail_public_key)
             .then((response) => {
                 // console.log('SUCCESS!', response.status, response.text);
                 setShowSuccess(true);
@@ -35,10 +36,10 @@ function Contact() {
         setToSend({ ...toSend, [e.target.name]: e.target.value });
     };
 
-    const form = () => {
+    const formulary = () => {
         return (
             <>
-                <form onSubmit={onSubmit}>
+                <form ref={form} onSubmit={onSubmit}>
                     <div className="left mb20 w100">
                         <input
                             type='text'
@@ -62,7 +63,6 @@ function Contact() {
                     <div className="left mb20 w100">
                         <textarea
                             className="left w70"
-                            type='text'
                             name='message'
                             placeholder='Your message'
                             value={toSend.message}
@@ -99,7 +99,7 @@ function Contact() {
                     ) : (
                         <>
                             <div className="left w100 mb40 overflowHidden contactForm">
-                                {form()}
+                                {formulary()}
                             </div>
                         </>
                     )}
