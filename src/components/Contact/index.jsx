@@ -36,55 +36,6 @@ function Contact() {
         setToSend({ ...toSend, [e.target.name]: e.target.value });
     };
 
-    const formulary = () => {
-        return (
-            <>
-                <form ref={form} onSubmit={onSubmit}>
-                    <div className="left mb20 w100">
-                        <input
-                            type='text'
-                            name='name'
-                            placeholder='Your name'
-                            value={toSend.name}
-                            onChange={handleChange}
-                            required
-                        />
-                    </div>
-                    <div className="left mb20 w100">
-                        <input
-                            type='text'
-                            name='reply_to'
-                            placeholder='Your email'
-                            value={toSend.reply_to}
-                            onChange={handleChange}
-                            required
-                        />
-                    </div>
-                    <div className="left mb20 w100">
-                        <textarea
-                            className="left w70"
-                            name='message'
-                            placeholder='Your message'
-                            value={toSend.message}
-                            onChange={handleChange}
-                            required
-                        />
-                    </div>
-                    
-                    {showButton == true &&
-                        <div className="left w100">
-                            <button className="pointer" type='submit'>Submit</button>
-                        </div>
-                    }
-                    
-                    {showError == true &&
-                        <Error></Error>
-                    }
-                </form>
-            </>
-        )
-    }
-
     return (
         <>
             <div className="left w100">
@@ -99,7 +50,48 @@ function Contact() {
                     ) : (
                         <>
                             <div className="left w100 mb40 overflowHidden contactForm">
-                                {formulary()}
+                                <form ref={form} onSubmit={onSubmit}>
+                                    <div className="left mb20 w100">
+                                        <input
+                                            type='text'
+                                            name='name'
+                                            placeholder='Your name'
+                                            value={toSend.name}
+                                            onChange={handleChange}
+                                            required
+                                        />
+                                    </div>
+                                    <div className="left mb20 w100">
+                                        <input
+                                            type='text'
+                                            name='reply_to'
+                                            placeholder='Your email'
+                                            value={toSend.reply_to}
+                                            onChange={handleChange}
+                                            required
+                                        />
+                                    </div>
+                                    <div className="left mb20 w100">
+                                        <textarea
+                                            className="left w70"
+                                            name='message'
+                                            placeholder='Your message'
+                                            value={toSend.message}
+                                            onChange={handleChange}
+                                            required
+                                        />
+                                    </div>
+                                    
+                                    {showButton == true &&
+                                        <div className="left w100">
+                                            <button className="pointer" type='submit'>Submit</button>
+                                        </div>
+                                    }
+                                    
+                                    {showError == true &&
+                                        <Error></Error>
+                                    }
+                                </form>
                             </div>
                         </>
                     )}
