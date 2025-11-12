@@ -122,6 +122,34 @@ function SeoTags(props) {
         )
     }
 
+    const DecklistSeoTags = () => {
+        return (
+            <>
+                <Helmet>
+                    <meta charSet="utf-8" />
+                    <title>MTG Legacy stats - CAT Legacy - Decklist</title>
+                    <link rel="canonical" href="https://mtg-stats.vercel.app/decklist" />
+                    <meta name="description" content="Decklist - Catalan MTG Legacy leagues, tournaments, players and cards"/>
+
+                    <meta property="og:url" content="https://mtg-stats.vercel.app/decklist"/>
+                    <meta property="og:type" content="website"/>
+                    <meta property="og:title" content="Mtg Stats - Decklist"/>
+                    <meta property="og:description" content="Decklist - Catalan MTG Legacy leagues, tournaments, players and cards"/>
+                    <meta property="og:image" content="https://mtg-stats.vercel.app/statistics-bars-with-arrow.jpg"/>
+                    <meta property="og:image:width" content="1000"/>
+                    <meta property="og:image:height" content="829"/>
+
+                    <meta name="twitter:card" content="summary_large_image"/>
+                    <meta property="twitter:domain" content="mtg-stats.vercel.app"/>
+                    <meta property="twitter:url" content="https://mtg-stats.vercel.app/decklist"/>
+                    <meta name="twitter:title" content="Mtg Stats - Decklist"/>
+                    <meta name="twitter:description" content="Decklist - Catalan MTG Legacy leagues, tournaments, players and cards"/>
+                    <meta name="twitter:image" content="https://mtg-stats.vercel.app/statistics-bars-with-arrow.jpg"/>
+                </Helmet>
+            </>
+        )
+    }
+
     
     if (page == 'HOME') {
         return (<HomeSeoTags></HomeSeoTags>);
@@ -137,6 +165,10 @@ function SeoTags(props) {
 
     if (page == 'TOURNAMENT') {
         return (<TournamentSeoTags></TournamentSeoTags>);
+    }
+
+    if (page == 'DECKLIST') {
+        return (<DecklistSeoTags></DecklistSeoTags>);
     }
 }
 

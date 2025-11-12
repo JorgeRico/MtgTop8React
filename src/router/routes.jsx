@@ -4,6 +4,7 @@ import Home from "../views/home";
 import League from "../views/league";
 import Tournament from "../views/tournament";
 import Contact from "../views/contact";
+import Decklist from "../views/decklist";
 
 const Router = () => (
     <BrowserRouter
@@ -17,6 +18,7 @@ const Router = () => (
             <Route path="leagues/:id" element={<League />} />
             <Route path="tournaments/:id" element={<Tournament />} />
             <Route path="contact" element={<Contact />} />
+            <Route path="decklist" element={<Decklist />} />
         </Routes>
     </BrowserRouter>
 );

@@ -24,7 +24,8 @@ const endpoints = {
 
     HTTP_LEAGUE               : '/leagues/',
     HTTP_TOURNAMENT           : '/tournaments/',
-    HTTP_CONTACT              : '/contact'
+    HTTP_CONTACT              : '/contact',
+    HTTP_DECKLIST             : '/decklist'
 }
 
 export default endpoints;
