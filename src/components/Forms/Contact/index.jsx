@@ -52,33 +52,7 @@ function Contact() {
                         <>
                             <form ref={form} onSubmit={onSubmit} className="left w100 mb40 overflowHidden form contact">
                                 <InputForm name="name" type="text" placeholder='Your name' label="Name" value={toSend.name} handleChange={handleChange}></InputForm>
-                                
-                                {/* <div className="left mb20 w100">
-                                    <label className="left w100 mb15">Name</label>
-                                    <input
-                                        className="w-300 pad"
-                                        type='text'
-                                        name='name'
-                                        placeholder='Your name'
-                                        value={toSend.name}
-                                        onChange={handleChange}
-                                        required
-                                    />
-                                </div> */}
                                 <InputForm name="reply_to" type="email" placeholder='Your email' label="E-mail" value={toSend.reply_to} handleChange={handleChange}></InputForm>
-
-                                {/* <div className="left mb20 w100">
-                                    <label className="left w100 mb15">E-mail</label>
-                                    <input
-                                        className="w-300 pad"
-                                        type='email'
-                                        name='reply_to'
-                                        placeholder='Your email'
-                                        value={toSend.reply_to}
-                                        onChange={handleChange}
-                                        required
-                                    />
-                                </div> */}
                                 <div className="left mb20 w100">
                                     <label className="left w100 mb15">Message</label>
                                     <textarea
