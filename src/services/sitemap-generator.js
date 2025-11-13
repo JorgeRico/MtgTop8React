@@ -18,6 +18,7 @@ const generateSitemap = (sm, leagueResults, tournamentResults) => {
     // Add static pages
     sm.write({ url: '/', changefreq: 'monthly', priority: 0.8 });
     sm.write({ url: '/contact', changefreq: 'yearly', priority: 0.6 });
+    sm.write({ url: '/decklist', changefreq: 'yearly', priority: 0.6 });
     // Add leagues
     leagueResults?.forEach(element => {
         sm.write({ url: sitemapUrl('leagues', element.id), changefreq: 'yearly', priority: 0.6 });
