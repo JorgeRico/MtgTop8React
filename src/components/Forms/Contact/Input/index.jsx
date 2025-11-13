@@ -1,0 +1,22 @@
+function InputForm(props) {
+    const { name, type, placeholder, label, value, handleChange } = props;
+
+    return (
+        <>
+            <div className="left mb20 w100">
+                <label className="left w100 mb15">{label}</label>
+                <input
+                    className="w-300 pad"
+                    type={type}
+                    name={name}
+                    placeholder={placeholder}
+                    value={value}
+                    onChange={handleChange}
+                    required
+                />
+            </div>
+        </>
+    );
+}
+
+export default InputForm;

@@ -1,13 +1,13 @@
 import React from "react";
-import "../module.css";
-import Mail from "/src/assets/images/mail.png";
+import "./../module.css";
+import Mail from "/src/assets/images/mail_big.png";
 
-function Contact() {
+function SuccessMessage() {
     return (
         <>
             <div className="left w100 mb40 sendImage">
                 <div className="left">
-                    <img src={Mail} alt="" className="send invertColor" />
+                    <img src={Mail} alt="legacy mtg cat mail" className="alert invertColor mt10" />
                 </div>
                 <div className="left mt15 ml25 w50">
                     <div className="left w100 mb20">Thank you for contacting us,</div>
@@ -18,4 +18,4 @@ function Contact() {
     )
 }
 
-export default Contact;
+export default SuccessMessage;

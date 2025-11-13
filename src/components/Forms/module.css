@@ -1,0 +1,64 @@
+input, textarea, button {
+    border-radius: 5px;
+    border: 1px solid var(--color-gray);
+}
+
+.pad {
+    padding: 10px 20px;
+}
+
+textarea {
+    padding: 20px;
+    height: 200px;
+}
+
+.decklistPdf {
+    border: 1px solid var(--border-pdf);
+    
+    & img {
+        max-height: 520px;
+    }
+}
+
+.sendImage {
+    height: 200px;
+}
+
+.alert {
+    width: 75px;
+}
+
+@media (max-width: 780px) {
+    .decklistForm {
+        & .w-350 {
+            width: 48%;
+        }
+    }
+}
+
+@media (max-width: 596px) {
+    .contact {
+        & input, & textarea {
+            width: 90%;
+        }
+    }
+
+    .decklistForm {
+        & .w-350 {
+            width: 100%;
+            margin-left: 0;
+        }
+
+        & input, & textarea {
+            width: 90%;
+        }
+
+        & .pdf {
+            display: none;
+        }
+    }
+
+    button { 
+        width: 100%;
+    }
+}
