@@ -213,8 +213,8 @@ function Contact() {
                             <TextareaForm name="mainboard" placeholder='Your mainboard cards' label="Mainboard cards" value={toSend.mainboard} handleChange={handleChange}></TextareaForm>
                             <TextareaForm name="sideboard" placeholder='Your sideboard cards' label="Sideboard cards" value={toSend.sideboard} handleChange={handleChange}></TextareaForm>
                         </div>
-                        <div className="left mb20 w-350 ml20 mt35 pdf">
-                            <img src={DeckListImage} alt="" className="decklistPdf w80 pad radius5 cursorAuto" />
+                        <div className="left mb20 w-350 mt35 pdf">
+                            <img src={DeckListImage} alt="decklist pdf - mtg legacy cat" className="decklistPdf w80 pad radius5 cursorAuto" />
                         </div>
                     </article>
                     
