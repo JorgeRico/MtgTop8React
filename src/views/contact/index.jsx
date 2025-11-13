@@ -2,13 +2,18 @@ import React from "react";
 import Layout from "/src/views/layout/core";
 import ContactForm from "/src/components/Forms/Contact";
 import SeoTags from "/src/hooks/use-seo.jsx";
+import Title from "/src/components/HTag/Title";
 
 function Contact() {
     return (
         <>
             <SeoTags page="CONTACT" id={null} name=""></SeoTags>
             <Layout name="contact">
-                <ContactForm></ContactForm>
+                <main className="left w100 mt20">
+                    <Title title="Contact us" />
+                    <p className="mb40 color-gray">Ask for information about leagues, classifications or what you want . . .</p>
+                    <ContactForm></ContactForm>
+                </main>
             </Layout>
         </>
     );

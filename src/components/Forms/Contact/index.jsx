@@ -1,7 +1,6 @@
 import React, { useState, useRef } from "react";
 import emailjs from '@emailjs/browser';
 import "./../module.css";
-import Subtitle from '/src/components/HTag/SubTitle';
 import Success from "/src/components/Forms/Success";
 import Error from "/src/components/Forms/Error";
 import InputForm from "/src/components/Forms/Contact/Input";
@@ -40,44 +39,39 @@ function Contact() {
     return (
         <>
             <section className="left w100">
-                <div className="left w100 mb20">
-                    <Subtitle title="Contact us" />
-                </div>
-                <div className="left w100 mb20">
-                    {showSuccess == true ? (
-                        <>
-                            <Success></Success>
-                        </>
-                    ) : (
-                        <>
-                            <form ref={form} onSubmit={onSubmit} className="left w100 mb40 overflowHidden form contact">
-                                <InputForm name="name" type="text" placeholder='Your name' label="Name" value={toSend.name} handleChange={handleChange}></InputForm>
-                                <InputForm name="reply_to" type="email" placeholder='Your email' label="E-mail" value={toSend.reply_to} handleChange={handleChange}></InputForm>
-                                <div className="left mb20 w100">
-                                    <label className="left w100 mb15">Message</label>
-                                    <textarea
-                                        className="left w70"
-                                        name='message'
-                                        placeholder='Your message'
-                                        value={toSend.message}
-                                        onChange={handleChange}
-                                        required
-                                    />
+                {showSuccess == true ? (
+                    <>
+                        <Success></Success>
+                    </>
+                ) : (
+                    <>
+                        <form ref={form} onSubmit={onSubmit} className="left w100 mb40 overflowHidden form contact">
+                            <InputForm name="name" type="text" placeholder='Your name' label="Name" value={toSend.name} handleChange={handleChange}></InputForm>
+                            <InputForm name="reply_to" type="email" placeholder='Your email' label="E-mail" value={toSend.reply_to} handleChange={handleChange}></InputForm>
+                            <div className="left mb20 w100">
+                                <label className="left w100 mb15">Message</label>
+                                <textarea
+                                    className="left w70 mb10"
+                                    name='message'
+                                    placeholder='Your message'
+                                    value={toSend.message}
+                                    onChange={handleChange}
+                                    required
+                                />
+                            </div>
+                            
+                            {showButton == true &&
+                                <div className="left w100">
+                                    <button className="pointer pad" type='submit'>Submit</button>
                                 </div>
-                                
-                                {showButton == true &&
-                                    <div className="left w100 mt10">
-                                        <button className="pointer pad" type='submit'>Submit</button>
-                                    </div>
-                                }
-                                
-                                {showError == true &&
-                                    <Error message="Please, fill all data fields."></Error>
-                                }
-                            </form>
-                        </>
-                    )}
-                </div>
+                            }
+                            
+                            {showError == true &&
+                                <Error message="Please, fill all data fields."></Error>
+                            }
+                        </form>
+                    </>
+                )}
             </section>
         </>
     );

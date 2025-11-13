@@ -40,7 +40,7 @@
         width: 100%;
     }
 
-    .contactus {
+    .headerRight {
         display: none;
     }
 }
@@ -88,4 +88,8 @@
     .headerDeckName{
         display: none;
     }
+}
+
+button { 
+    padding: 10px 20px; 
 }

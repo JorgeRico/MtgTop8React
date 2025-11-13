@@ -1,6 +1,5 @@
 import React, { useState, useRef } from "react";
 import "../module.css";
-import Subtitle from '/src/components/HTag/SubTitle';
 import Error from "/src/components/Forms/Error";
 import { degrees, PDFDocument, StandardFonts } from 'pdf-lib';
 import downloadjs from "downloadjs";
@@ -196,44 +195,39 @@ function Contact() {
     };
 
     return (
-        <>
-            <section className="left w100">
-                <div className="left w100 mb20">
-                    <Subtitle title="Decklist Generator" />
-                </div>
-                <div className="left w100 mb20">
-                    <form ref={form} onSubmit={onSubmit} className="left w100 mb40 overflowHidden pointer form decklistForm">
-                        <article className="left w100">
-                            <InputForm name="name" placeholder='Your name' label="Name" value={toSend.name} handleChange={handleChange}></InputForm>
-                            <InputForm name="surname" placeholder='Your surnamename' label="Surname" value={toSend.surname} handleChange={handleChange}></InputForm>
-                        </article>
+        <>   
+            <section className="left w100 mb20">
+                <form ref={form} onSubmit={onSubmit} className="left w100 mb40 overflowHidden pointer form decklistForm">
+                    <article className="left w100">
+                        <InputForm name="name" placeholder='Your name' label="Name" value={toSend.name} handleChange={handleChange}></InputForm>
+                        <InputForm name="surname" placeholder='Your surnamename' label="Surname" value={toSend.surname} handleChange={handleChange}></InputForm>
+                    </article>
 
-                        <article className="left w100">
-                            <InputForm name="event" placeholder='Event name' label="Event name" value={toSend.event} handleChange={handleChange}></InputForm>
-                            <InputForm name="deckName" placeholder='Your Deck name' label="Deck name" value={toSend.deckName} handleChange={handleChange}></InputForm>
-                        </article>   
-                        
-                        <article className="left w100">
-                            <div className="left mb20 w-350">
-                                <TextareaForm name="mainboard" placeholder='Your mainboard cards' label="Mainboard cards" value={toSend.mainboard} handleChange={handleChange}></TextareaForm>
-                                <TextareaForm name="sideboard" placeholder='Your sideboard cards' label="Sideboard cards" value={toSend.sideboard} handleChange={handleChange}></TextareaForm>
-                            </div>
-                            <div className="left mb20 w-350 ml20 mt35 pdf">
-                                <img src={DeckListImage} alt="" className="decklistPdf w80 pad radius5 cursorAuto" />
-                            </div>
-                        </article>
-                        
-                        {showButton == true &&
-                            <div className="left w100 mt10">
-                                <button className="pointer pad" type='submit'>Generate Decklist pdf</button>
-                            </div>
-                        }
-                        
-                        {showError == true &&
-                            <Error message={errorMessage}></Error>
-                        }
-                    </form>
-                </div>
+                    <article className="left w100">
+                        <InputForm name="event" placeholder='Event name' label="Event name" value={toSend.event} handleChange={handleChange}></InputForm>
+                        <InputForm name="deckName" placeholder='Your Deck name' label="Deck name" value={toSend.deckName} handleChange={handleChange}></InputForm>
+                    </article>   
+                    
+                    <article className="left w100">
+                        <div className="left mb20 w-350">
+                            <TextareaForm name="mainboard" placeholder='Your mainboard cards' label="Mainboard cards" value={toSend.mainboard} handleChange={handleChange}></TextareaForm>
+                            <TextareaForm name="sideboard" placeholder='Your sideboard cards' label="Sideboard cards" value={toSend.sideboard} handleChange={handleChange}></TextareaForm>
+                        </div>
+                        <div className="left mb20 w-350 ml20 mt35 pdf">
+                            <img src={DeckListImage} alt="" className="decklistPdf w80 pad radius5 cursorAuto" />
+                        </div>
+                    </article>
+                    
+                    {showButton == true &&
+                        <div className="left w100">
+                            <button className="pointer pad" type='submit'>Generate Decklist pdf</button>
+                        </div>
+                    }
+                    
+                    {showError == true &&
+                        <Error message={errorMessage}></Error>
+                    }
+                </form>
             </section>
         </>
     );
