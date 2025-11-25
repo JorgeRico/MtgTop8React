@@ -62,7 +62,7 @@
 
 .cupIcon {
     filter: invert(1);
-    opacity: 0.6;
+    /* opacity: 0.6; */
 }
 
 .tournamentPlayer.even {
