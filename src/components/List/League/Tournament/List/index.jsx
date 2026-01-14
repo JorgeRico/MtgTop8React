@@ -56,7 +56,11 @@ function LeagueTournament(props) {
         <>
             {showElements === false ? (
                     (noResults === true) ? (
-                        <>Sorry, now we don't have tournaments registered for this league</>
+                        <>
+                            <div class="radius5 cardsList bg-footer padStatsBox">
+                                Sorry, now we don't have tournaments registered for this league
+                            </div>
+                        </>
                     ) : (
                         <BluredTournamentList></BluredTournamentList>
                     )
