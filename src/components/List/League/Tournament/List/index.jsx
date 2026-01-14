@@ -11,8 +11,8 @@ function LeagueTournament(props) {
     const { id, format }                       = props;
     const [ showElements, setShowElements ]    = useState(false);
     const [ numPlayers, setNumplayers ]        = useState(0);
+    const [ noResults, setNoResults ]          = useState(false);
 
-    
     // api call
     async function apiCall() {
         await api.getAxiosEndpoint(endpoints.API_LEAGUE_TOURNAMENTS.replace('{id}', id))
@@ -22,7 +22,9 @@ function LeagueTournament(props) {
                 countPlayers(response.data)
             })
             .catch((err) => { 
-                console.log(err);
+                if (err.status === 404) { 
+                    setNoResults(true);
+                }
                 console.log('error league tournament')
             });
     }
@@ -35,9 +37,9 @@ function LeagueTournament(props) {
             totalPlayers += item.players
         ))
 
-        console.log(totalPlayers)
-        console.log(numTournaments)
-        console.log(Math.ceil(totalPlayers/numTournaments))
+        // console.log(totalPlayers)
+        // console.log(numTournaments)
+        // console.log(Math.ceil(totalPlayers/numTournaments))
         setNumplayers(Math.ceil(totalPlayers/numTournaments))
     }
 
@@ -53,7 +55,11 @@ function LeagueTournament(props) {
     return (
         <>
             {showElements === false ? (
-                    <BluredTournamentList></BluredTournamentList>
+                    (noResults === true) ? (
+                        <>Sorry, now we don't have tournaments registered for this league</>
+                    ) : (
+                        <BluredTournamentList></BluredTournamentList>
+                    )
                 ) : (
                     <LeagueTournamentBlock
                         format         = {format}
