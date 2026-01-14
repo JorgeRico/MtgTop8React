@@ -50,7 +50,7 @@ export default function StatsBox(props) {
                     <Block text={text}></Block>
                 </span>
                 <div className="left mt10 mb30 overflowHidden cardStats none" id={cardType}>
-                    {loading &&
+                    {!renderElements ? (
                         (noResults === true) ? (
                             <>
                                 <div class="radius5 cardsList bg-footer padStatsBox">
@@ -60,10 +60,10 @@ export default function StatsBox(props) {
                         ) : (
                             <BluredStatsList></BluredStatsList>
                         )
-                    }
-                    {renderElements &&
+                    ) : (
                         <StatsListBlock items={renderElements} isPlayer={isPlayer} text={text} />
-                    } 
+
+                    )}
                 </div>
             </section>
         </>
