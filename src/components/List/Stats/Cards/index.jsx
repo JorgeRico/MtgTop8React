@@ -9,6 +9,7 @@ export default function StatsBox(props) {
     const api                                    = useApi();
     const [ loading, setLoading ]                = useState(false);
     const [ renderElements, setRenderElements ]  = useState([]);
+    const [ noResults, setNoResults ]            = useState(false);
 
     // api call
     async function apiCardTypeCall() {
@@ -18,6 +19,9 @@ export default function StatsBox(props) {
                 setTimeout(() => {setRenderElements(response.data.stats)}, 1000);
             })
             .catch((err) => { 
+                if (err.status === 404) { 
+                    setNoResults(true);
+                }
                 console.log('error League card stats')
             });
     }
@@ -47,7 +51,15 @@ export default function StatsBox(props) {
                 </span>
                 <div className="left mt10 mb30 overflowHidden cardStats none" id={cardType}>
                     {loading &&
-                        <BluredStatsList></BluredStatsList>
+                        (noResults === true) ? (
+                            <>
+                                <div class="radius5 cardsList bg-footer padStatsBox">
+                                    Sorry, now we don't have tournaments registered for this league
+                                </div>
+                            </>
+                        ) : (
+                            <BluredStatsList></BluredStatsList>
+                        )
                     }
                     {renderElements &&
                         <StatsListBlock items={renderElements} isPlayer={isPlayer} text={text} />
