@@ -1,4 +1,3 @@
-import React from "react";
 import endpoints from "/src/services/endpoints.js";
 import ListLeague from "/src/components/List/League/Normal";
 import BluredLeagueList from "/src/components/List/League/Fake";
