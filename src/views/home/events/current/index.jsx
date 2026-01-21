@@ -3,7 +3,7 @@ import BluredLeagueList from "/src/components/List/League/Fake";
 import SubTitle from "/src/components/HTag/SubTitle";
 import endpoints from "/src/services/endpoints.jsx";
 import { useState, useEffect } from "react";
-import { useApi } from '/src/hooks/use-api.jsx';
+import { useApi } from '/src/hooks/useApi.jsx';
 
 function Events(props) {
     const { title }                                       = props;

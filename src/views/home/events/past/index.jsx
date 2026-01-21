@@ -3,7 +3,7 @@ import BluredLeagueList from "/src/components/List/League/Fake";
 import SubTitle from "/src/components/HTag/SubTitle";
 import endpoints from "/src/services/endpoints.jsx";
 import { useState, useEffect } from "react";
-import { useApi } from '/src/hooks/use-api.jsx';
+import { useApi } from '/src/hooks/useApi.jsx';
 import Pagination from "/src/components/List/Pagination";
 
 function PastEvents(props) {
@@ -17,9 +17,9 @@ function PastEvents(props) {
            
     useEffect(() => {
         async function apiCallPast() {
-            console.log(`${endpoints.API_LEAGUE_PAST}?limit=${numItems}&page=${currentPage}`)
             setShowPastElements(false);
-            setPastLeagues(null)
+            setPastLeagues(null);
+
             await api.getAxiosEndpoint(`${endpoints.API_LEAGUE_PAST}?limit=${numItems}&page=${currentPage}`)
             .then((response) => {
                 setPastLeagues(response.data.leagues);

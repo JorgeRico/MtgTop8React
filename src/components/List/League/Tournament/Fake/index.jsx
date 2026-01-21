@@ -1,6 +1,6 @@
 import React from "react";
 import LeagueTournamentBlock from "/src/components/List/League/Tournament/Block";
-import tournament from "/src/fakeData/tournament.js";
+import tournament from "/src/fakeData/tournament.jsx";
 
 function BluredTournamentList() {
     return (

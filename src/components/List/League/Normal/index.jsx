@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import cupIcon from '/src/assets/images/cup.png';
 import Button from "/src/components/List/Button";
-import { useApi } from '/src/hooks/use-api.jsx';
+import { useApi } from '/src/hooks/useApi.jsx';
 
 export default function LeagueList(props) {
     const { url, items, isBlured }        = props;

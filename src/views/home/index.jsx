@@ -2,7 +2,7 @@ import Layout from "/src/views/layout/core";
 import CurrentEvents from "/src/views/home/events/current";
 import PastEvents from "/src/views/home/events/past";
 import Title from "/src/components/HTag/Title";
-import SeoTags from "/src/hooks/use-seo.jsx";
+import SeoTags from "/src/hooks/useSeo.jsx";
 
 function Home() {
     

@@ -5,9 +5,9 @@ import Template from "/src/views/layout/template";
 import LeagueTournamentList from "/src/components/List/League/Tournament/List";
 import Stats from "/src/views/stats";
 import endpoints from "/src/services/endpoints.jsx";
-import { useApi } from '/src/hooks/use-api.jsx';
+import { useApi } from '/src/hooks/useApi.jsx';
 import Breadcrumb from "/src/components/Breadcrumb";
-import SeoTags from "/src/hooks/use-seo.jsx";
+import SeoTags from "/src/hooks/useSeo.jsx";
 
 function League() {
     const { id }                                = useParams();

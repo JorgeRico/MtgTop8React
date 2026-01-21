@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "/src/views/layout/core";
 import DecklistForm from "/src/components/Forms/Decklist";
-import SeoTags from "/src/hooks/use-seo.jsx";
+import SeoTags from "/src/hooks/useSeo.jsx";
 import Title from "/src/components/HTag/Title";
 
 function Decklist() {
