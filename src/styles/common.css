@@ -16,6 +16,7 @@ body {
     --background-footer: #202020;
     --background-even: #112230;
     --background-blue: rgba(25, 25, 112, 0.8);
+    --background-red: rgba(169, 54, 10, 1);
     --background-cardType-header: rgba(135, 135, 135, 0.2);
     --background-modal-block: rgba(0,0,0,0.4);
     --background-modal-content: rgb(3 20 32 / 90%);
@@ -33,7 +34,7 @@ body {
 }
 
 .bg-blue {
-    background: var(--background-blue);
+    background: var(--background-red);
 }
 
 .color-copyright {
