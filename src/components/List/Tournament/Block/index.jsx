@@ -1,15 +1,8 @@
-import PropTypes from 'prop-types';
 import cupIcon from '/src/assets/images/cup.png';
 import Button from "/src/components/List/Button";
 
 export default function TournamentItem(props) {
     const { name, description, buttonText } = props;
-
-    TournamentItem.propTypes = {
-        name       : PropTypes.string, 
-        description : PropTypes.string, 
-        buttonText  : PropTypes.string
-    };
 
     return (
         <>

@@ -1,12 +1,7 @@
 import React from "react";
-import PropTypes from 'prop-types';
 
 export default function Button(props) {
     const { buttonText } = props;
-
-    Button.propTypes = {
-        buttonText : PropTypes.string,
-    };
 
     return (
         <>

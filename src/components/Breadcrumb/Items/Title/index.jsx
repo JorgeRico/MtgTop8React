@@ -1,11 +1,5 @@
-import PropTypes from 'prop-types';
-
 function TitleItemBreadcrumb(props) {
-    const { title } = props; 
-   
-    TitleItemBreadcrumb.propTypes = {
-        title: PropTypes.string
-    };
+    const { title } = props;
 
     return (
         <>

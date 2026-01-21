@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
-import PropTypes from 'prop-types';
 import statsTypes from "/src/services/statsTypes.jsx";
 import CardTypeList from "/src/components/List/Deck/Normal/CardTypeList";
 import DeckCard from "/src/components/List/Deck/Normal/Card";
@@ -8,10 +7,6 @@ import DeckCard from "/src/components/List/Deck/Normal/Card";
 export default function DeckSideboard(props) {
     const { items }                   = props;
     const [ sideItems, setSideItems ] = useState([]);
-
-    DeckSideboard.propTypes = {
-        items : PropTypes.array
-    };
 
     function getSideboard(deck) {
         let itemsList = [];

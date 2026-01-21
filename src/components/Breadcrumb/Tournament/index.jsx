@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import HomeItemBreadcrumb from "/src/components/Breadcrumb/Items/Home";
 import TitleItemBreadcrumb from "/src/components/Breadcrumb/Items/Title";
 import DashItemBreadcrumb from "/src/components/Breadcrumb/Items/Dash";
@@ -6,11 +5,6 @@ import TournamentItemBreadcrumb from "/src/components/Breadcrumb/Items/Tournamen
 
 function BreadcrumbTournament(props) {
     const { title, endpoint } = props; 
-   
-    BreadcrumbTournament.propTypes = {
-        title    : PropTypes.string,
-        endpoint : PropTypes.string,
-    };
                     
     return (
         <>

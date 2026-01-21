@@ -1,5 +1,4 @@
-import { createContext, useContext, useEffect, useState } from "react";
-import PropTypes from 'prop-types';
+import { createContext, useContext, useEffect } from "react";
 export const CheckBotContext = createContext({ undefined });
 
 export const CheckBotProvider = (props) => {
@@ -45,10 +44,6 @@ export const CheckBotProvider = (props) => {
             {children}
         </CheckBotContext.Provider>
     );
-};
-
-CheckBotProvider.propTypes = {
-    children: PropTypes.node
 };
 
 export const CheckBotContextConsumer = CheckBotContext.Consumer;

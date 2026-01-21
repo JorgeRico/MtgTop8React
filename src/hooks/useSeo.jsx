@@ -1,15 +1,8 @@
 import { Helmet } from '@dr.pogodin/react-helmet';
-import PropTypes from 'prop-types';
 
 function SeoTags(props) {
     const { title, canonical, description } = props;
     const [ url, setUrl ]                   = "https://mtg-stats.vercel.app/";
-   
-    SeoTags.propTypes = {
-        title       : PropTypes.string,
-        canonical   : PropTypes.string,
-        description : PropTypes.string
-    };
 
     return (
         <>

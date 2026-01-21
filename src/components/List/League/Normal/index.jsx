@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import cupIcon from '/src/assets/images/cup.png';
 import Button from "/src/components/List/Button";
@@ -10,12 +9,6 @@ export default function LeagueList(props) {
     const { url, items, isBlured }        = props;
     const [ renderItems, setRenderItems ] = useState(null);
     const api                             = useApi();
-
-    LeagueList.propTypes = {
-        url      : PropTypes.string,
-        items    : PropTypes.array,
-        isBlured : PropTypes.bool
-    };
 
     const leagueItemBlock = (icon, text1, text2, buttonText) => { 
         return (

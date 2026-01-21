@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
-import PropTypes from 'prop-types';
 import "./module.css"
 import Header from "/src/components/List/Stats/Block/Header";
 import Content from "/src/components/List/Stats/Block/Content";
@@ -8,10 +7,6 @@ import Content from "/src/components/List/Stats/Block/Content";
 export default function StatsList(props) {
     const { items, isPlayer, text }       = props;
     const [ renderItems, setRenderItems ] = useState(null)
-
-    StatsList.propTypes = {
-        items : PropTypes.array
-    };
 
     useEffect(() => {
         setRenderItems(items?.map((item) => (

@@ -1,5 +1,4 @@
 import { createContext, useContext, useEffect } from "react";
-import PropTypes from 'prop-types';
 import axios from 'axios';
 import statsTypes from "/src/services/statsTypes.jsx"; 
 
@@ -80,10 +79,6 @@ export const ApiProvider = (props) => {
             {children}
         </ApiContext.Provider>
     );
-};
-
-ApiProvider.propTypes = {
-    children: PropTypes.node
 };
 
 export const ApiConsumer = ApiContext.Consumer;

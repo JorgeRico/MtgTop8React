@@ -1,11 +1,5 @@
-import PropTypes from 'prop-types';
-
 export default function TopStatsList(props) {
     const { isPlayer } = props;
-
-    TopStatsList.propTypes = {
-        items : PropTypes.array
-    };
 
     const topPlayerStats = () => {
         return (

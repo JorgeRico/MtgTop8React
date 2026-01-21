@@ -1,12 +1,7 @@
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 function TournamentItemBreadcrumb(props) {
     const { endpoint } = props; 
-   
-    TournamentItemBreadcrumb.propTypes = {
-        endpoint: PropTypes.string
-    };
 
     return (
         <>

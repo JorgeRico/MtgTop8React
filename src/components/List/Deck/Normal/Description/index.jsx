@@ -1,16 +1,10 @@
-import React, { useState, useEffect } from "react";
-import PropTypes from 'prop-types';
+import { useState, useEffect } from "react";
 import statsTypes from "/src/services/statsTypes.jsx";
 
 export default function DeckDescription(props) {
     const { items, deckName }                   = props;
     const [ totalMaindeck, setTotalMaindeck ]   = useState(0);
     const [ totalSideboard, setTotalSideboard ] = useState(0);
-
-    DeckDescription.propTypes = {
-        items    : PropTypes.array,
-        deckName : PropTypes.string
-    };
 
     function countTotalItems(deck) {
         let totalMaindeck  = 0;

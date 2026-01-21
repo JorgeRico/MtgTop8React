@@ -1,7 +1,7 @@
-import PropTypes from "prop-types";
 import Header from "/src/components/Header";
 import Footer from "/src/components/Footer";
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
+
 function Layout(props) {
 
     return (
@@ -24,11 +24,5 @@ function Layout(props) {
         )
     );
 }
-
-// Typechecking props for the Layout
-Layout.propTypes = {
-    children : PropTypes.node.isRequired,
-    name     : PropTypes.string 
-};
 
 export default Layout;

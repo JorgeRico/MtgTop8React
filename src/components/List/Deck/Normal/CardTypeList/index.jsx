@@ -1,12 +1,5 @@
-import PropTypes from 'prop-types';
-
 export default function CardTypeList(props) {
     const { items, text } = props;
-
-    CardTypeList.propTypes = {
-        items : PropTypes.array,
-        text  : PropTypes.string
-    };
 
     return (
         <>

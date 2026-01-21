@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "../module.css";
 import { useApi } from '/src/hooks/useApi.jsx';
 import endpoints from "/src/services/endpoints.jsx";
-import PropTypes from "prop-types";
 import Deck from "/src/components/List/Deck/Normal";
 import BluredDeck from "/src/components/List/Deck/Fake";
 import Button from "/src/components/List/Button";
@@ -14,12 +13,11 @@ export default function TournamentPlayerItem(props) {
     const [ renderDeckItems, setRenderDeckItems ] = useState([]);
     const [ hideElement, setHideElement ]         = useState(true);
 
-    TournamentPlayerItem.propTypes = {
-        items : PropTypes.array
-    };
-
     // api call
     async function apiCall(id) {
+        setRenderDeckItems([]);
+        setLoading(true);
+
         await api.getAxiosEndpoint(endpoints.API_DECK_CARDS.replace('{id}', id))
         .then((response) => {
             setTimeout(() => {setLoading(false)}, 1000);
@@ -44,14 +42,12 @@ export default function TournamentPlayerItem(props) {
         if ( hideElement === true ) {
             elem.classList.remove('none');
             elem.classList.add('block');
-            setHideElement(!hideElement);
         } else {
             elem.classList.remove('block');
             elem.classList.add('none');
         }
+        setHideElement(!hideElement);
 
-        setRenderDeckItems(null);
-        setLoading(true);
         apiCall(idDeck)
     }
     

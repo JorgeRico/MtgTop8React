@@ -1,12 +1,7 @@
-import PropTypes from 'prop-types';
 import ModalPopUp from "/src/components/Modal";
 
 export default function DeckCard(props) {
     const { card } = props;
-
-    DeckCard.propTypes = {
-        card : PropTypes.object
-    };
 
     return (
         <>
