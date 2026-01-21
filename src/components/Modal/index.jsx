@@ -1,5 +1,5 @@
 import "./module.css"
-import { useApi } from '/src/hooks/use-api.js';
+import { useApi } from '/src/hooks/use-api.jsx';
 import React, { useEffect, useState } from 'react';
 
 function ModalPopUp(props) {

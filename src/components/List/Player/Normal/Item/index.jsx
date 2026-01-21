@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../module.css";
-import { useApi } from '/src/hooks/use-api.js';
-import endpoints from "/src/services/endpoints.js";
+import { useApi } from '/src/hooks/use-api.jsx';
+import endpoints from "/src/services/endpoints.jsx";
 import PropTypes from "prop-types";
 import Deck from "/src/components/List/Deck/Normal";
 import BluredDeck from "/src/components/List/Deck/Fake";

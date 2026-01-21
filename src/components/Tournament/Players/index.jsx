@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import endpoints from "/src/services/endpoints.js";
-import { useApi } from '/src/hooks/use-api.js';
+import endpoints from "/src/services/endpoints.jsx";
+import { useApi } from '/src/hooks/use-api.jsx';
 import PlayerList from "/src/components/List/Player/Normal";
 import PlayersBlured from "/src/components/List/Player/Fake";
 import HTag from "/src/components/HTag";

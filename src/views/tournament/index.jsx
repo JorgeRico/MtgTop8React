@@ -5,8 +5,8 @@ import Template from "/src/views/layout/template";
 import TournamentPlayers from "/src/components/Tournament/Players";
 import Stats from "/src/views/stats";
 import Breadcrumb from "/src/components/Breadcrumb";
-import endpoints from "/src/services/endpoints.js";
-import { useApi } from '/src/hooks/use-api.js';
+import endpoints from "/src/services/endpoints.jsx";
+import { useApi } from '/src/hooks/use-api.jsx';
 import SeoTags from "/src/hooks/use-seo.jsx";
 
 function Tournament() {

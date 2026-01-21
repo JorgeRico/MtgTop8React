@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import endpoints from "/src/services/endpoints.js";
-import { useApi } from '/src/hooks/use-api.js';
+import endpoints from "/src/services/endpoints.jsx";
+import { useApi } from '/src/hooks/use-api.jsx';
 import BluredTournamentList from "/src/components/List/League/Tournament/Fake";
 import LeagueTournamentBlock from "/src/components/List/League/Tournament/Block";
 

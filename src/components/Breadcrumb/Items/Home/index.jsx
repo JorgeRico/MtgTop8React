@@ -1,6 +1,6 @@
 import HomeIcon from "/src/assets/images/home.png";
 import ImageLink from "/src/components/Link/ImageLink";
-import endpoints from "/src/services/endpoints.js";
+import endpoints from "/src/services/endpoints.jsx";
 import "./module.css";
 
 function HomeItemBreadcrumb() {

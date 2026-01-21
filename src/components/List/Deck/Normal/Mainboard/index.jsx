@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import PropTypes from 'prop-types';
-import statsTypes from "/src/services/statsTypes.js";
+import statsTypes from "/src/services/statsTypes.jsx";
 import CardTypeList from "/src/components/List/Deck/Normal/CardTypeList";
 import DeckCard from "/src/components/List/Deck/Normal/Card";
 

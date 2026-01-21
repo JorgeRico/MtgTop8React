@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import PropTypes from 'prop-types';
-import statsTypes from "/src/services/statsTypes.js";
+import statsTypes from "/src/services/statsTypes.jsx";
 
 export default function DeckDescription(props) {
     const { items, deckName }                   = props;

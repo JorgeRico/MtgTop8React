@@ -1,4 +1,4 @@
-import endpoints from "/src/services/endpoints.js";
+import endpoints from "/src/services/endpoints.jsx";
 import ListLeague from "/src/components/List/League/Normal";
 import BluredLeagueList from "/src/components/List/League/Fake";
 import SubTitle from "/src/components/HTag/SubTitle";

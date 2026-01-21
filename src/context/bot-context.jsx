@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 export const CheckBotContext = createContext({ undefined });
 
 export const CheckBotProvider = (props) => {
-    const { children }                    = props;
-    const [ isFirstLoad, setIsFirstLoad ] = useState(false);
+    const { children } = props;
     
     const bots = [
         'AdsBot-Google', 'Amazonbot', 'anthropic-ai', 'Applebot', 
@@ -34,10 +33,7 @@ export const CheckBotProvider = (props) => {
     };
 
     useEffect(() => {
-        if (isFirstLoad == false) {
-            checkIsBot();
-            setIsFirstLoad(true);
-        }
+        checkIsBot();
     }, []);
 
     return (

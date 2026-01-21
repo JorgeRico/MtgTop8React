@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useApi } from '/src/hooks/use-api.js';
+import { useApi } from '/src/hooks/use-api.jsx';
 import StatsListBlock from "/src/components/List/Stats/Block";
 import BluredStatsList from "/src/components/List/Stats/Cards/Fake";
 import Block from "/src/components/List/Stats/Cards/Block"

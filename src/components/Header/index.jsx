@@ -2,7 +2,7 @@ import HeaderLogo from "/src/components/Header/Logo";
 import RightBlock from "/src/components/Header/RightBlock";
 import Mail from "/src/assets/images/mail.png";
 import Cards from "/src/assets/images/cards.png";
-import endpoints from "/src/services/endpoints.js";
+import endpoints from "/src/services/endpoints.jsx";
 
 export default function Header() {
     return (

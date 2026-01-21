@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect } from "react";
 import PropTypes from 'prop-types';
 import axios from 'axios';
-import statsTypes from "/src/services/statsTypes.js"; 
+import statsTypes from "/src/services/statsTypes.jsx"; 
 
 export const ApiContext = createContext({ undefined });
 

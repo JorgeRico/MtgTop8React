@@ -30,7 +30,7 @@
     "start": "vite",
     "build": "vite build --base=/",
     "serve": "vite preview",
-    "sitemap": "node ./src/services/sitemap-generator.js"
+    "sitemap": "node ./src/services/sitemap-generator.jsx"
   },
   "browserslist": {
     "production": [

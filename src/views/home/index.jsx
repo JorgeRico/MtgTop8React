@@ -1,10 +1,10 @@
-import endpoints from "/src/services/endpoints.js";
+import endpoints from "/src/services/endpoints.jsx";
 import Layout from "/src/views/layout/core";
 import Events from "/src/views/home/events";
 import Title from "/src/components/HTag/Title";
 import SeoTags from "/src/hooks/use-seo.jsx";
 import { useState, useEffect } from "react";
-import { useApi } from '/src/hooks/use-api.js';
+import { useApi } from '/src/hooks/use-api.jsx';
 
 function Home() {
     const api                                             = useApi();
