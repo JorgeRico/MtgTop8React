@@ -32,32 +32,25 @@ function Pagination(props){
     return ( 
         <>
             <section className="left w100 grey-top">
-                <section className="left padPagination">
+                <section className="left padPagination flex total">
                     Total Past Leagues: {total}
                 </section>
-                <section className="right padPagination">
-                    <article key={uuidv4()} className="left mr-2.5">
-                        Pages: 
+                <section className="right padPagination flex">
+                    <article key={uuidv4()} className="">
+                        <button disabled={firstPage == currentPage} className={firstPage == currentPage ? "arrowButton disabled" : "arrowButton pointer"} onClick={() => handleClickPrevious()}> 
+                            <span>&#171;</span>
+                        </button>
                     </article>
-                    {currentPage > firstPage &&
-                        <article key={uuidv4()} className="left">
-                            <button className="arrowButton pointer" onClick={() => handleClickPrevious()}> 
-                                <span>&#171;</span>
-                            </button>
-                        </article> 
-                    }
                     {pageArray?.map((number) => (
-                        <article key={uuidv4()} className="left">
-                            <button disabled={number == currentPage} className={number != currentPage ? "pagButton pointer" : "pagButton disabled"} onClick={() => handleClick(number)}>{number}</button>
+                        <article key={uuidv4()} className="">
+                            <button disabled={number == currentPage} className={number != currentPage ? "pagButton pointer" : "pagButton current disabled"} onClick={() => handleClick(number)}>{number}</button>
                         </article>      
                     ))}
-                    {currentPage < lastPage &&
-                        <article key={uuidv4()} className="left">
-                            <button className="arrowButton pointer" onClick={() => handleClickNext()}>
-                                <span>&#187;</span>
-                            </button>
-                        </article> 
-                    }
+                    <article key={uuidv4()} className="">
+                        <button className={lastPage == currentPage ? "arrowButton disabled" : "arrowButton pointer" } onClick={() => handleClickNext()}>
+                            <span>&#187;</span>
+                        </button>
+                    </article> 
                 </section>
             </section>
         </>
