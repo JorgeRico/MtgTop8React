@@ -227,6 +227,10 @@ h3 {
     margin-bottom: 40px;
 }
 
+.mr20 {
+    margin-right: 20px;
+}
+
 .radius5 {
     border-radius: 5px;
 }
@@ -314,6 +318,10 @@ h3 {
     50% {
       opacity: 0;
     }
+}
+
+.grey-top {
+    border-top: 1px solid var(--color-grey);
 }
 
 .grey-bottom {

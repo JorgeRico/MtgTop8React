@@ -59,7 +59,7 @@ export default function LeagueList(props) {
 
     return (
         <>
-            <section className={`left w100 overflowHidden mb30 ${isBlured ? 'blink blured' : ''}`}>
+            <section className={`left w100 overflowHidden ${isBlured ? 'blink blured' : ''}`}>
                 {(items?.length > 0) && (
                     renderItems
                 )}

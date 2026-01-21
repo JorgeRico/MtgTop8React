@@ -1,48 +1,11 @@
-import endpoints from "/src/services/endpoints.jsx";
 import Layout from "/src/views/layout/core";
-import Events from "/src/views/home/events";
+import CurrentEvents from "/src/views/home/events/current";
+import PastEvents from "/src/views/home/events/past";
 import Title from "/src/components/HTag/Title";
 import SeoTags from "/src/hooks/use-seo.jsx";
-import { useState, useEffect } from "react";
-import { useApi } from '/src/hooks/use-api.jsx';
 
 function Home() {
-    const api                                             = useApi();
-    const [ currentLeagues, setCurrentLeagues ]           = useState(null);
-    const [ pastLeagues, setPastLeagues ]                 = useState(null);
-    const [ showCurrentElements, setShowCurrentElements ] = useState(false);
-    const [ showPastElements, setShowPastElements ]       = useState(false);
-
-    useEffect(() => {
-        async function apiCallCurrent() {
-            await api.getAxiosEndpoint(endpoints.API_LEAGUE_CURRENT)
-            .then((response) => {
-                setCurrentLeagues(response.data);
-                setShowCurrentElements(true);
-            })
-            .catch((err) => { 
-                console.log('Error')
-            });
-        }
-
-        apiCallCurrent();
-    }, []);
-       
-    useEffect(() => {
-        async function apiCallPast() {
-            await api.getAxiosEndpoint(endpoints.API_LEAGUE_PAST)
-            .then((response) => {
-                setPastLeagues(response.data);
-                setShowPastElements(true);
-            })
-            .catch((err) => { 
-                console.log('Error')
-            });
-        }
-        
-        apiCallPast();
-    }, []);
-
+    
     return (
         <>
             <SeoTags 
@@ -54,8 +17,8 @@ function Home() {
                 <main className="left w100 mt20">
                     <Title title="Leagues" />
                     <p className="mb40 color-gray">Explore current and past leagues, view standings and decks</p>
-                    <Events elements={currentLeagues} showElements={showCurrentElements} title="Current Events"></Events>
-                    <Events elements={pastLeagues} showElements={showPastElements} title="Past Events"></Events>
+                    <CurrentEvents title="Current Leagues"></CurrentEvents>
+                    <PastEvents title="Past Leagues"></PastEvents>
                 </main>
             </Layout>
         </>
