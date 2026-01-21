@@ -1,10 +1,9 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from 'prop-types';
 import statsTypes from "/src/services/statsTypes.jsx";
 
 export default function DeckDescription(props) {
     const { items, deckName }                   = props;
-    const effectRan                             = useRef(false);
     const [ totalMaindeck, setTotalMaindeck ]   = useState(0);
     const [ totalSideboard, setTotalSideboard ] = useState(0);
 
@@ -31,14 +30,9 @@ export default function DeckDescription(props) {
     }
 
     useEffect(() => {
-        if (!effectRan.current) {
-            if (items.length > 0) {
-                countTotalItems(items);
-            }
+        if (items.length > 0) {
+            countTotalItems(items);
         }
-        
-        return () => effectRan.current = true;
-        // eslint-disable-next-line
     }, [items.length > 0]);
 
     return (

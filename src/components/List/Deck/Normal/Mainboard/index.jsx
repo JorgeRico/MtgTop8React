@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import PropTypes from 'prop-types';
 import statsTypes from "/src/services/statsTypes.jsx";
@@ -7,7 +7,6 @@ import DeckCard from "/src/components/List/Deck/Normal/Card";
 
 export default function DeckMainboard(props) {
     const { items }                                   = props;
-    const effectRan                                   = useRef(false);
     const [ creatureItems, setCreatureItems ]         = useState([]);
     const [ instantItems, setInstantItems ]           = useState([]);
     const [ sorceryItems, setSorceryItems ]           = useState([]);
@@ -44,14 +43,9 @@ export default function DeckMainboard(props) {
     }
 
     useEffect(() => {
-        if (!effectRan.current) {
-            if (items.length > 0) {
-                setOptions(items)
-            }
+        if (items.length > 0) {
+            setOptions(items)
         }
-        
-        return () => effectRan.current = true;
-        // eslint-disable-next-line
     }, [items.length > 0]);
 
     return (

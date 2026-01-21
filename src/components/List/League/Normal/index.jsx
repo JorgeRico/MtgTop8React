@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
@@ -8,7 +8,6 @@ import { useApi } from '/src/hooks/use-api.jsx';
 
 export default function LeagueList(props) {
     const { url, items, isBlured }        = props;
-    const effectRan                       = useRef(false);
     const [ renderItems, setRenderItems ] = useState(null);
     const api                             = useApi();
 
@@ -41,20 +40,15 @@ export default function LeagueList(props) {
     }
 
     useEffect(() => {
-        if (!effectRan.current) {
-            if (items?.length > 0) {
-                setRenderItems(items?.map((item) => (
-                    <article className="listItem pointer title mb15 overflowHidden" key={uuidv4()}>
-                        <Link to={url + item.id}>
-                            {leagueItemBlock(cupIcon, item.name, `Format: ${api.getFormat(item.isLegacy)}`, "View league")}
-                        </Link>
-                    </article>
-                )));
-            }
+        if (items?.length > 0) {
+            setRenderItems(items?.map((item) => (
+                <article className="listItem pointer title mb15 overflowHidden" key={uuidv4()}>
+                    <Link to={url + item.id}>
+                        {leagueItemBlock(cupIcon, item.name, `Format: ${api.getFormat(item.isLegacy)}`, "View league")}
+                    </Link>
+                </article>
+            )));
         }
-        
-        return () => effectRan.current = true;
-        // eslint-disable-next-line
     }, []);
 
     return (

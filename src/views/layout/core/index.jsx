@@ -1,19 +1,8 @@
 import PropTypes from "prop-types";
 import Header from "/src/components/Header";
 import Footer from "/src/components/Footer";
-import React, { useRef, useEffect } from "react";
 import { Analytics } from "@vercel/analytics/react"
 function Layout(props) {
-    // const effectRan = useRef(false);
-
-    // useEffect(() => {
-    //     if (!effectRan.current) {
-    //         var height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-    //     }
-        
-    //     return () => effectRan.current = true;
-    //     // eslint-disable-next-line react-hooks/exhaustive-deps
-    // }, []);
 
     return (
         (
@@ -38,8 +27,8 @@ function Layout(props) {
 
 // Typechecking props for the Layout
 Layout.propTypes = {
-    children  : PropTypes.node.isRequired,
-    name      : PropTypes.string 
+    children : PropTypes.node.isRequired,
+    name     : PropTypes.string 
 };
 
 export default Layout;
