@@ -7,27 +7,41 @@ import { useState, useEffect } from "react";
 import { useApi } from '/src/hooks/use-api.js';
 
 function Home() {
-    const api                                   = useApi();
-    const [ currentLeagues, setCurrentLeagues ] = useState(null);
-    const [ pastLeagues, setPastLeagues ]       = useState(null);
-    const [ showElements, setShowElements ]     = useState(true);
+    const api                                             = useApi();
+    const [ currentLeagues, setCurrentLeagues ]           = useState(null);
+    const [ pastLeagues, setPastLeagues ]                 = useState(null);
+    const [ showCurrentElements, setShowCurrentElements ] = useState(false);
+    const [ showPastElements, setShowPastElements ]       = useState(false);
 
     useEffect(() => {
-        async function apiCall() {
-            await api.getAxiosEndpoint(endpoints.API_LEAGUE_HOME)
+        async function apiCallCurrent() {
+            await api.getAxiosEndpoint(endpoints.API_LEAGUE_CURRENT)
             .then((response) => {
-                setCurrentLeagues(response.data.current);
-                setPastLeagues(response.data.past);
-                setShowElements(false);
+                setCurrentLeagues(response.data);
+                setShowCurrentElements(true);
+            })
+            .catch((err) => { 
+                console.log('Error')
+            });
+        }
+
+        apiCallCurrent();
+    }, []);
+       
+    useEffect(() => {
+        async function apiCallPast() {
+            await api.getAxiosEndpoint(endpoints.API_LEAGUE_PAST)
+            .then((response) => {
+                setPastLeagues(response.data);
+                setShowPastElements(true);
             })
             .catch((err) => { 
                 console.log('Error')
             });
         }
         
-        apiCall();
+        apiCallPast();
     }, []);
-
 
     return (
         <>
@@ -40,8 +54,8 @@ function Home() {
                 <main className="left w100 mt20">
                     <Title title="Leagues" />
                     <p className="mb40 color-gray">Explore current and past leagues, view standings and decks</p>
-                    <Events elements={currentLeagues} showElements={showElements} title="Current Events"></Events>
-                    <Events elements={pastLeagues} showElements={showElements} title="Past Events"></Events>
+                    <Events elements={currentLeagues} showElements={showCurrentElements} title="Current Events"></Events>
+                    <Events elements={pastLeagues} showElements={showPastElements} title="Past Events"></Events>
                 </main>
             </Layout>
         </>

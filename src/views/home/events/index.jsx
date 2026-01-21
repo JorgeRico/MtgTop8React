@@ -12,7 +12,7 @@ function Events(props) {
                 <div className="left w100 mb20 grey-bottom">
                     <SubTitle title={title} />
                 </div>
-                {showElements === true ? (
+                {showElements === false ? (
                         <BluredLeagueList></BluredLeagueList>
                     ) : (
                         <>
