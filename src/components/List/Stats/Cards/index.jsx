@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useApi } from '/src/hooks/useApi.jsx';
 import StatsListBlock from "/src/components/List/Stats/Block";
 import BluredStatsList from "/src/components/List/Stats/Cards/Fake";

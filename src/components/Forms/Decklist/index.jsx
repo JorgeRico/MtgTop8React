@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import { useState, useRef } from "react";
 import "../module.css";
 import Error from "/src/components/Forms/Error";
 import { degrees, PDFDocument, StandardFonts } from 'pdf-lib';

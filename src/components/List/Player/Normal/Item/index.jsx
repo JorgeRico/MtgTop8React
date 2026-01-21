@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "../module.css";
 import { useApi } from '/src/hooks/useApi.jsx';
 import endpoints from "/src/services/endpoints.jsx";
