@@ -220,7 +220,7 @@ function Contact() {
                     
                     {showButton == true &&
                         <div className="left w100">
-                            <button className="pointer pad" type='submit'>Generate Decklist pdf</button>
+                            <button className="pointer pad bg-red color-white" type='submit'>Generate Decklist pdf</button>
                         </div>
                     }
                     
