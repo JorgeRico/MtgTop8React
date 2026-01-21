@@ -5,7 +5,7 @@ export default function Button(props) {
 
     return (
         <>
-            <button className="listButton right bg-blue border-grey radius5 color-white f14 pointer">
+            <button className="listButton right bg-red border-grey radius5 color-white f14 pointer">
                 {buttonText}
             </button>
         </>
