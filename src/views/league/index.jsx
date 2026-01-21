@@ -43,7 +43,11 @@ function League() {
     return (
         <>
             {leagueName &&
-                <SeoTags page="LEAGUE" id={id} name={leagueName}></SeoTags>
+                <SeoTags
+                    title={`Mtg Stats - Legacy League: ${leagueName}`}
+                    canonical={`leagues/${id}`}
+                    description="League - Catalan MTG Legacy leagues, tournaments, players and cards">
+                </SeoTags>
             }
             <Layout name="league">
                 <Template 

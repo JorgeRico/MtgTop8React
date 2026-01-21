@@ -7,7 +7,11 @@ import Title from "/src/components/HTag/Title";
 function Contact() {
     return (
         <>
-            <SeoTags page="CONTACT" id={null} name=""></SeoTags>
+            <SeoTags 
+                title="MTG Legacy stats - CAT Legacy - Contact"
+                canonical="contact"
+                description="Contact - Catalan MTG Legacy leagues, tournaments, players and cards">
+            </SeoTags>
             <Layout name="contact">
                 <main className="left w100 mt20">
                     <Title title="Contact us" />

@@ -7,7 +7,11 @@ import Title from "/src/components/HTag/Title";
 function Decklist() {
     return (
         <>
-            <SeoTags page="DECKLIST" id={null} name=""></SeoTags>
+            <SeoTags
+                title="MTG Legacy stats - CAT Legacy - Decklist"
+                canonical="decklist"
+                description="Decklist - Catalan MTG Legacy leagues, tournaments, players and cards">
+            </SeoTags>
             <Layout name="decklist">
                 <main className="left w100 mt20">
                     <Title title="Decklist generator" />

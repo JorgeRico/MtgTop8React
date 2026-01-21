@@ -38,7 +38,11 @@ function Home() {
 
     return (
         <>
-            <SeoTags page="HOME" id={null} name=""></SeoTags>
+            <SeoTags 
+                title="MTG Legacy stats - CAT Legacy"
+                canonical=""
+                description="Catalan MTG Legacy leagues, tournaments, players and cards">
+            </SeoTags>
             <Layout name="home">
                 <main className="left w100 mt20">
                     <Title title="Leagues" />

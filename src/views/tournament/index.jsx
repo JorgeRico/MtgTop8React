@@ -47,7 +47,11 @@ function Tournament() {
     return (
         <>  
             {tournament.name != '' &&
-                <SeoTags page="TOURNAMENT" id={id} name={tournament.name + ' - ' + tournament.date}></SeoTags>
+                <SeoTags
+                    title={`Mtg Stats - Legacy Tournament: ${tournament.name} - ${tournament.date}`}
+                    canonical={`tournaments/${id}`}
+                    description="Tournament - Catalan MTG Legacy leagues, tournaments, players and cards">
+                </SeoTags>
             }
             <Layout name="tournaments">
                 <Template
