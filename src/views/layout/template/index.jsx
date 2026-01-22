@@ -11,7 +11,7 @@ function League(props) {
             </div>
             <div className="left w100 mt20">
                 {tournament}
-                <div className="left w100 mt20">
+                <div className="left w100 mt50">
                     <SubTitle title={title} />
                 </div>
                 <div className="left w100 mt10">

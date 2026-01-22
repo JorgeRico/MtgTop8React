@@ -4,8 +4,9 @@
 }
 
 .viewDeck {
+    padding: 12px 0px;
+    
     & button {
-        font-size: 10px;
-        margin-top: 9px;
+        padding: 7px 15px;
     }
 }

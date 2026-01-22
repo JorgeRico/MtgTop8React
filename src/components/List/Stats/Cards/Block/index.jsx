@@ -7,11 +7,11 @@ export default function StatsBox(props) {
         <>
             <article className="left w100 mb10 bg-footer radius5">
                 <div className="wAuto overflowHidden">
-                    <div className="left wAuto padStatsBox">
+                    <div className="left wAuto paddingStatsBox f14">
                         <strong>{text}</strong>
                     </div>
-                    <div className="right wAuto p10 statsButton">
-                        <Button buttonText="View Stats"></Button>
+                    <div className="right wAuto p10 statsButton f12">
+                        <Button buttonText="View"></Button>
                     </div>
                 </div>
             </article>

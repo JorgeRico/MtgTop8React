@@ -18,6 +18,7 @@ export default function StatsBox(props) {
                         isPlayer={true}
                     />
                 }
+
                 <CardBlockStats
                     id={id}
                     text="Top Cards" 
@@ -25,20 +26,7 @@ export default function StatsBox(props) {
                     cardType={statsTypes.TOP}
                     isPlayer={false}
                 />
-                <CardBlockStats
-                    id={id}
-                    text="Top Mainboard Cards" 
-                    endpoint={endpoint.replace('{id}', id).replace('{option}', statsTypes.MAINBOARD)}
-                    cardType={statsTypes.MAINBOARD}
-                    isPlayer={false}
-                />
-                <CardBlockStats
-                    id={id}
-                    text="Top Sideboard Cards" 
-                    endpoint={endpoint.replace('{id}', id).replace('{option}', statsTypes.SIDEBOARD)}
-                    cardType={statsTypes.SIDEBOARD}
-                    isPlayer={false}
-                />
+
                 <CardBlockStats
                     id={id}
                     text="Top Creatures" 
@@ -46,6 +34,7 @@ export default function StatsBox(props) {
                     cardType={statsTypes.CREATURE}
                     isPlayer={false}
                 />
+
                 <CardBlockStats
                     id={id}
                     text="Top Instants" 
@@ -53,6 +42,7 @@ export default function StatsBox(props) {
                     cardType={statsTypes.INSTANT}
                     isPlayer={false}
                 />
+
                 <CardBlockStats
                     id={id}
                     text="Top Sorceries" 
@@ -60,6 +50,7 @@ export default function StatsBox(props) {
                     cardType={statsTypes.SORCERY}
                     isPlayer={false}
                 />
+
                 <CardBlockStats
                     id={id}
                     text="Top Artifacts" 
@@ -67,6 +58,7 @@ export default function StatsBox(props) {
                     cardType={statsTypes.ARTIFACT}
                     isPlayer={false}
                 />
+
                 <CardBlockStats
                     id={id}
                     text="Top Enchantments" 
@@ -74,6 +66,7 @@ export default function StatsBox(props) {
                     cardType={statsTypes.ENCHANTMENT}
                     isPlayer={false}
                 />
+                
                 <CardBlockStats
                     id={id}
                     text="Top Planeswalkers" 
@@ -81,11 +74,28 @@ export default function StatsBox(props) {
                     cardType={statsTypes.PLANESWALKER}
                     isPlayer={false}
                 />
+                
                 <CardBlockStats
                     id={id}
                     text="Top Lands" 
                     endpoint={endpointCards.replace('{id}', id).replace('{cardType}', statsTypes.LAND)}
                     cardType={statsTypes.LAND}
+                    isPlayer={false}
+                />
+
+                <CardBlockStats
+                    id={id}
+                    text="Top Mainboard Cards" 
+                    endpoint={endpoint.replace('{id}', id).replace('{option}', statsTypes.MAINBOARD)}
+                    cardType={statsTypes.MAINBOARD}
+                    isPlayer={false}
+                />
+
+                <CardBlockStats
+                    id={id}
+                    text="Top Sideboard Cards" 
+                    endpoint={endpoint.replace('{id}', id).replace('{option}', statsTypes.SIDEBOARD)}
+                    cardType={statsTypes.SIDEBOARD}
                     isPlayer={false}
                 />
             </>
@@ -94,10 +104,10 @@ export default function StatsBox(props) {
 
     return (
         <>
-            <section className={`left w100 mt10 ${isBlured ? 'blink blured' : ''}`}>
-                <div className="left w-350 mb20 statsBoxContent">
+            <section className={`left mt10 w100 ${isBlured ? 'blink blured' : ''}`}>
+                <article className="mb20 statsBoxContent flex-container">
                     {cardStats()}
-                </div>
+                </article>
             </section>
         </>
     );

@@ -45,7 +45,7 @@ export default function StatsBox(props) {
 
     return (
         <>
-            <section className="listItem left w100 cardsList" >
+            <section className="listItem flex-item cardsList" >
                 <span onClick={() => handleClickCardTypes()}>
                     <Block text={text}></Block>
                 </span>
@@ -62,7 +62,6 @@ export default function StatsBox(props) {
                         )
                     ) : (
                         <StatsListBlock items={renderElements} isPlayer={isPlayer} text={text} />
-
                     )}
                 </div>
             </section>
