@@ -1,7 +1,7 @@
 export default function TournamentHeaderPlayers() {
     return (
         <>
-            <section className="playersListHeader grey-bottom bg-footer">
+            <section className="playersListHeader grey-bottom bg-footer items">
                 <div className="padTournamentBox w-20">
                     #
                 </div>

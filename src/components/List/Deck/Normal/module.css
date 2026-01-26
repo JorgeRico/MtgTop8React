@@ -17,7 +17,7 @@
 
 h4 {
     font-weight: 600;
-    background: var(--background-cardType-header);
+    background: var(--background-red);
     padding: 5px 10px;
     border-radius: 3px;
     margin-bottom: 10px;
@@ -25,10 +25,6 @@ h4 {
 
 .cardItem {
     padding: 5px 10px;
-}
-
-.playerList {
-    max-width: 36em;
 }
 
 @media (max-width: 950px) {

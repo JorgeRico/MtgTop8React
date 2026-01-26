@@ -1,12 +1,62 @@
 .playersListHeader {
     display: flex;
     justify-items: center;
+    max-width: 36.7em;
+}
+
+.items {
+    padding: 0 20px 0 0;
+}
+
+.tournamentPlayer.even {
+    background: var(--background-even);
 }
 
 .viewDeck {
-    padding: 12px 0px;
+    padding: 11px 15px 10px 15px;
     
     & button {
         padding: 7px 15px;
+    }
+}
+
+
+@media (max-width: 680px) {
+    .viewDeck {
+        margin-left: 3.3em;
+    }
+}
+
+@media (max-width: 620px) {
+    .viewDeck, .deckName {
+        width: 100% !important;
+        padding-top: 0;
+        float: left;
+    }
+
+    .deckName {
+        margin-left: 50px;
+    }
+
+    .viewDeck button {
+        margin-left: 15px;
+        float: left;
+        margin-top: 0;
+        margin-bottom: 20px;
+        width: auto !important;
+    }
+    
+    .viewDeck {
+        padding: 10px;
+        margin-left: 2em;
+        margin-bottom: 10px;
+    }
+
+    .headerDeckName{
+        display: none;
+    }
+
+    .w-200 {
+        width: auto;
     }
 }

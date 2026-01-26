@@ -69,31 +69,6 @@
     /* opacity: 0.6; */
 }
 
-.tournamentPlayer.even {
-    background: var(--background-even);
-}
-
-@media (max-width: 620px) {
-    .viewDeck, .deckName {
-        width: 100% !important;
-        margin-left: 50px;
-        padding-top: 0;
-        float: left;
-    }
-
-    .viewDeck button {
-        margin-left: 15px;
-        float: left;
-        margin-top: 0;
-        margin-bottom: 20px;
-        width: auto !important;
-    }
-
-    .headerDeckName{
-        display: none;
-    }
-}
-
 button { 
     padding: 10px 20px; 
 }

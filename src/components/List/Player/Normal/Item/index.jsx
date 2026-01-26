@@ -53,20 +53,23 @@ export default function TournamentPlayerItem(props) {
     
     return (
         <>
-            <section className={`left w100 tournamentPlayer grey-bottom ${(index % 2 == 0) ? 'odd' : 'even'}`} id={'player-'+(index+1)}>
-                <div className="left p15 w-20">
-                    {index+1}
-                </div>
-                <div className="left p15 w-200">
-                    {item.name}
-                </div>
-                <div className="left p15 w-150 deckName">
-                    {item.deckName}
-                </div>
-                <div className="left viewDeck" onClick={() => handleCards((index+1), item.idDeck)}>
-                    <Button buttonText="View Deck" />
+            <section className={`left tournamentPlayer grey-bottom ${(index % 2 == 0) ? 'odd' : 'even'}`} id={'player-'+(index+1)}>
+                <div className="items">
+                    <div className="left p15 w-20">
+                        {index+1}
+                    </div>
+                    <div className="left p15 w-200 deckName">
+                        {item.name}
+                    </div>
+                    <div className="left p15 w-150 deckName">
+                        {item.deckName}
+                    </div>
+                    <div className="left viewDeck" onClick={() => handleCards((index+1), item.idDeck)}>
+                        <Button buttonText="View Deck" />
+                    </div>
                 </div>
             </section>
+            <section className="left w100 clear"></section>
             <section className="left w100 none decklists mb20" id={'deck-'+(index+1)}>
                 <div className="deck overflowHidden">
                     {loading === true &&
