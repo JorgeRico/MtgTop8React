@@ -51,7 +51,7 @@ function Contact() {
                             <div className="left mb20 w100">
                                 <label className="left w100 mb15">Message</label>
                                 <textarea
-                                    className="left w70 mb10"
+                                    className="left w70 mb10 pad"
                                     name='message'
                                     placeholder='Your message'
                                     value={toSend.message}
