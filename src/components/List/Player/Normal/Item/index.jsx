@@ -11,7 +11,6 @@ export default function TournamentPlayerItem(props) {
     const api                                     = useApi();
     const [ loading, setLoading ]                 = useState(false);
     const [ renderDeckItems, setRenderDeckItems ] = useState([]);
-    const [ hideElement, setHideElement ]         = useState(true);
 
     // api call
     async function apiCall(id) {
@@ -20,35 +19,34 @@ export default function TournamentPlayerItem(props) {
 
         await api.getAxiosEndpoint(endpoints.API_DECK_CARDS.replace('{id}', id))
         .then((response) => {
-            setTimeout(() => {setLoading(false)}, 1000);
-            setTimeout(() => {setRenderDeckItems(response.data)}, 1000);
+            setTimeout(() => { setLoading(false) }, 1000);
+            setTimeout(() => { setRenderDeckItems(response.data) }, 1000);
         })
         .catch((err) => { 
             console.log('error loading deck')
         });
     }
 
-    function hideDeckLists() {
+    function hideDeckLists(id) {
         const elems = Array.from(document.querySelectorAll('.decklists'));
-        elems.forEach(elem => elem.classList.remove('block'));
-        elems.forEach(elem => elem.classList.add('none'));
-        setHideElement(true);
+        elems.forEach(elem => elem.id !== 'deck-'+id ? elem.classList.add('none') : null);
     }
 
     function handleCards(index, idDeck) {
-        const elem = document.querySelector('#deck-'+index);
+        const element = document.querySelector('#deck-'+index);
+        const button  = document.querySelector('#button-deck-'+index);
+        button.setAttribute('disabled', 'true');
         
-        hideDeckLists();
-        if ( hideElement === true ) {
-            elem.classList.remove('none');
-            elem.classList.add('block');
-        } else {
-            elem.classList.remove('block');
-            elem.classList.add('none');
-        }
-        setHideElement(!hideElement);
+        hideDeckLists(index);
+        element.classList.toggle('none');
 
-        apiCall(idDeck)
+        if (!element.classList.contains('none')) {
+            apiCall(idDeck);
+            setTimeout(() => { button.removeAttribute('disabled') }, 1000);
+        } else {
+            button.removeAttribute('disabled');
+        }
+        
     }
     
     return (
@@ -65,7 +63,7 @@ export default function TournamentPlayerItem(props) {
                         {item.deckName}
                     </div>
                     <div className="left viewDeck" onClick={() => handleCards((index+1), item.idDeck)}>
-                        <Button buttonText="View Deck" />
+                        <Button buttonText="View Deck" id={'button-deck-'+(index+1)}/>
                     </div>
                 </div>
             </section>

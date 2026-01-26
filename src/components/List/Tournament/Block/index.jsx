@@ -6,8 +6,8 @@ export default function TournamentItem(props) {
 
     return (
         <>
-            <div className="left w100 mb10 bg-footer border-red">
-                <div className="wAuto padBox overflowHidden">
+            <div className="left w100 mb10 bg-footer">
+                <div className="wAuto padBox overflowHidden border-red">
                     <div className="cupBox border-grey left radius5 bg-red p5 w-25">
                         <img src={cupIcon} width="15" height="14" alt="Cup Champion" className="cupIcon w-15" />
                     </div>

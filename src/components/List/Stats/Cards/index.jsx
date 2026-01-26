@@ -27,20 +27,20 @@ export default function StatsBox(props) {
     }
 
     const handleClickCardTypes = () => {
-        hidePlayers();
+        hideStats();
         setLoading(true);
         setRenderElements(null);
-        showPlayer();
+        showStats();
         apiCardTypeCall()
     }
 
-    function hidePlayers() {
+    function hideStats() {
         const elems = Array.from(document.querySelectorAll('.cardStats'));
-        elems.forEach(elem => elem.classList.add('none'));
+        elems.forEach(elem => elem.id !== cardType ? elem.classList.add('none') : null);
     }
     
-    function showPlayer() {
-        document.querySelector('#' + cardType).classList.remove('none');
+    function showStats() {
+        document.querySelector('#' + cardType).classList.toggle('none');
     }
 
     return (
