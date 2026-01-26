@@ -5,24 +5,22 @@ import BluredTournamentList from "/src/components/List/League/Tournament/Fake";
 import LeagueTournamentBlock from "/src/components/List/League/Tournament/Block";
 
 function LeagueTournament(props) {
-    const api                                  = useApi();
-    const [ renderElements, setRenderElements] = useState(null);
-    const { id, format }                       = props;
-    const [ showElements, setShowElements ]    = useState(false);
-    const [ numPlayers, setNumplayers ]        = useState(0);
-    const [ noResults, setNoResults ]          = useState(false);
+    const api                                   = useApi();
+    const [ renderElements, setRenderElements]  = useState(null);
+    const { id, format }                        = props;
+    const [ showElements, setShowElements ]     = useState(false);
+    const [ numPlayers, setNumplayers ]         = useState(0);
+    const [ noResults, setNoResults ]           = useState(false);
+    const [ classification, setClassification ] = useState(null);
 
     function countPlayers(data) {
         var totalPlayers = 0;
         var numTournaments = data.length;
+
         data.map((item) => (
-            // console.log(item.players)
             totalPlayers += item.players
         ))
 
-        // console.log(totalPlayers)
-        // console.log(numTournaments)
-        // console.log(Math.ceil(totalPlayers/numTournaments))
         setNumplayers(Math.ceil(totalPlayers/numTournaments))
     }
 
@@ -32,7 +30,8 @@ function LeagueTournament(props) {
                 .then((response) => {
                     setRenderElements(response.data);
                     setShowElements(true);
-                    countPlayers(response.data)
+                    countPlayers(response.data);
+                    // setClassification('pppp');
                 })
                 .catch((err) => { 
                     if (err.status === 404) { 
@@ -64,6 +63,7 @@ function LeagueTournament(props) {
                         url            = {endpoints.HTTP_TOURNAMENT}
                         isBlured       = {false}
                         numPlayers     = {numPlayers}
+                        classification = {classification}
                     />
             )}
         </>
