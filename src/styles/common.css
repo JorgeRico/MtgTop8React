@@ -27,6 +27,12 @@ body {
     --color-grey: #3e3535;
     --border-modal: rgb(3 20 32);
     --border-pdf: darkgoldenrod;
+    --border-red: #562a1d;
+}
+
+.border-red {
+    border: 1px solid var(--border-red);
+    border-radius: 5px;
 }
 
 .bg-footer {

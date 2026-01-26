@@ -5,7 +5,7 @@ export default function StatsBox(props) {
 
     return (
         <>
-            <article className="left w100 mb10 bg-footer radius5">
+            <article className="left w100 mb10 bg-footer border-red">
                 <div className="wAuto overflowHidden">
                     <div className="left wAuto paddingStatsBox f14">
                         <strong>{text}</strong>
