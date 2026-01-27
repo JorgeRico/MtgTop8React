@@ -27,26 +27,25 @@ export default function TournamentPlayerItem(props) {
         });
     }
 
-    function hideDeckLists(id) {
+    function hideDeckLists() {
         const elems = Array.from(document.querySelectorAll('.decklists'));
-        elems.forEach(elem => elem.id !== 'deck-'+id ? elem.classList.add('none') : null);
+        elems.forEach(elem => elem.classList.add('none'));
     }
 
     function handleCards(index, idDeck) {
         const element = document.querySelector('#deck-'+index);
         const button  = document.querySelector('#button-deck-'+index);
         button.setAttribute('disabled', 'true');
-        
-        hideDeckLists(index);
-        element.classList.toggle('none');
 
-        if (!element.classList.contains('none')) {
+        if (element.classList.contains('none')) {
+            hideDeckLists();
             apiCall(idDeck);
-            setTimeout(() => { button.removeAttribute('disabled') }, 1000);
+            element.classList.toggle('none');
         } else {
-            button.removeAttribute('disabled');
+            element.classList.toggle('none');
         }
-        
+
+        setTimeout(() => { button.removeAttribute('disabled') }, 1000);
     }
     
     return (
@@ -56,7 +55,7 @@ export default function TournamentPlayerItem(props) {
                     <div className="left p15 w-20">
                         {index+1}
                     </div>
-                    <div className="left p15 w-200 deckName">
+                    <div className="left p15 w-200">
                         {item.name}
                     </div>
                     <div className="left p15 w-150 deckName">

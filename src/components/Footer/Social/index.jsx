@@ -7,7 +7,7 @@ export default function SocialFooter() {
         <>
             <section className="footer overflowHidden p20 mt40 bg-footer">
                 <article className="container">
-                    <div className="social ml40">
+                    <div className="social ml20 overflowHidden">
                         <SocialLogoFooter></SocialLogoFooter>
                         <SocialDescriptionFooter></SocialDescriptionFooter>
                         <SocialLinksFooter></SocialLinksFooter>

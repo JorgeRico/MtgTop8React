@@ -254,14 +254,12 @@ h3 {
     filter: brightness(0) invert(1);
 }
 
-.p20, .pBody {
+.p20 {
     padding: 20px;
 }
 
-@media (max-width: 1360px) {
-    .pBody{
-        padding: 20px 30px;
-    }
+.pBody{
+    padding: 20px 35px;
 }
 
 .p5 {
