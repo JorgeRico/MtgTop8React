@@ -15,6 +15,17 @@ export default function Deck(props) {
                         <DeckMainboard items={items}></DeckMainboard>
                         <DeckSideboard items={items}></DeckSideboard>
                     </div>
+                    <article className="left w100">
+                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9482818665347681" crossOrigin="anonymous"></script>
+                        <ins className="adsbygoogle"
+                            style={{display:'block'}}
+                            data-ad-format="autorelaxed"
+                            data-ad-client="ca-pub-9482818665347681"
+                            data-ad-slot="2151511143"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </article>
                 </>
             )}
         </>
