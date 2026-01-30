@@ -1,4 +1,5 @@
 User-agent: *
+Allow: /ads.txt
 Disallow: 
 Disallow: /cgi-bin/
 Sitemap: https://mtg-stats.vercel.app/sitemap.xml
