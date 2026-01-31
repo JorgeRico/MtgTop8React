@@ -1,4 +1,3 @@
-import React from "react";
 import Layout from "/src/views/layout/core";
 import DecklistForm from "/src/components/Forms/Decklist";
 import SeoTags from "/src/hooks/useSeo.jsx";

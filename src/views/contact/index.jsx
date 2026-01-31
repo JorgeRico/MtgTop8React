@@ -1,4 +1,3 @@
-import React from "react";
 import Layout from "/src/views/layout/core";
 import ContactForm from "/src/components/Forms/Contact";
 import SeoTags from "/src/hooks/useSeo.jsx";
