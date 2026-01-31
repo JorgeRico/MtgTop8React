@@ -9,7 +9,7 @@ function SeoTags(props) {
             <meta charSet="utf-8" />
             <title>{title}</title>
             <link rel="canonical" href={url+canonical} />
-            <meta property="description" content={description} />
+            <meta name="description" content={description} />
 
             <meta property="og:url" content={url+canonical}/>
             <meta property="og:type" content="website"/>
