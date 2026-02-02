@@ -70,7 +70,7 @@ export default function StatsBox(props) {
                             adClient="ca-pub-9482818665347681" // Replace with your publisher ID
                             adSlot="8033219754" // Replace with your banner ad slot ID
                             adFormat="auto" // Fixed-size banner
-                            style={{display:'block', textAlign:'center'}}
+                            fullWidthResponsive={true}
                         />
                     </div>
                 </div>
