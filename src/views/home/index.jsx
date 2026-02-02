@@ -19,7 +19,7 @@ function Home() {
                     <Title title="Leagues" />
                     <p className="mb40 color-gray">Explore current and past leagues, view standings and decks</p>
                     <CurrentEvents title="Current Leagues"></CurrentEvents>
-                    <div className="left w100 mb20">
+                    <div className="left w100 mb20 ad-container">
                         <AdSenseAd 
                             adClient="ca-pub-9482818665347681" // Replace with your publisher ID
                             adSlot="8133691484" // Replace with your banner ad slot ID

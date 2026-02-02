@@ -19,7 +19,7 @@ function Layout(props) {
                         </div>
                     </div>
                 </div>
-                <div className={`overflowHidden container ${props.name}`}>
+                <div className={`overflowHidden container ${props.name} ad-container`}>
                     <AdSenseAd 
                         adClient="ca-pub-9482818665347681" // Replace with your publisher ID
                         adSlot="7691872894" // Replace with your banner ad slot ID

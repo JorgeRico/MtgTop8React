@@ -346,6 +346,6 @@ h3 {
 }
 
 .ad-container {
-    max-width: 800px; /* Prevent ads from exceeding container width */
+    max-width: 100%; /* Prevent ads from exceeding container width */
     margin: 20px auto;
 }

@@ -65,7 +65,7 @@ export default function StatsBox(props) {
                     ) : (
                         <StatsListBlock items={renderElements} isPlayer={isPlayer} text={text} />
                     )}
-                    <div className="left w100">
+                    <div className="left w100 ad-container">
                         <AdSenseAd 
                             adClient="ca-pub-9482818665347681" // Replace with your publisher ID
                             adSlot="8033219754" // Replace with your banner ad slot ID

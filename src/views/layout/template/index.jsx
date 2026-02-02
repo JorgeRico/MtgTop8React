@@ -15,7 +15,7 @@ function League(props) {
                 <div className="left w100 mt50">
                     <SubTitle title={title} />
                 </div>
-                <div className="left w100 mt10">
+                <div className="left w100 mt10 ad-container">
                     <AdSenseAd 
                         adClient="ca-pub-9482818665347681" // Replace with your publisher ID
                         adSlot="8739796769" // Replace with your banner ad slot ID
