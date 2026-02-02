@@ -1,6 +1,7 @@
 import Header from "/src/components/Header";
 import Footer from "/src/components/Footer";
 import { Analytics } from "@vercel/analytics/react";
+import AdSenseAd from "/src/components/Adsense";
 
 function Layout(props) {
 
@@ -19,16 +20,12 @@ function Layout(props) {
                     </div>
                 </div>
                 <div className={`overflowHidden container ${props.name}`}>
-                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9482818665347681" crossOrigin="anonymous"></script>
-                    <ins className="adsbygoogle"
-                        style={{display:'block'}}
-                        data-ad-client="ca-pub-9482818665347681"
-                        data-ad-slot="7691872894"
-                        data-ad-format="auto"
-                        data-full-width-responsive="true"></ins>
-                    <script>
-                        (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>    
+                    <AdSenseAd 
+                        adClient="ca-pub-9482818665347681" // Replace with your publisher ID
+                        adSlot="7691872894" // Replace with your banner ad slot ID
+                        adFormat="auto" // Fixed-size banner
+                        fullWidthResponsive={true} 
+                    />
                 </div>
                 <Footer></Footer>
                 <Analytics></Analytics>

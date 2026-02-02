@@ -2,6 +2,8 @@ import "./module.css";
 import DeckSideboard from "/src/components/List/Deck/Normal/Sideboard";
 import DeckMainboard from "/src/components/List/Deck/Normal/Mainboard";
 import DeckDescription from "/src/components/List/Deck/Normal/Description";
+import AdSenseAd from "/src/components/Adsense";
+
 
 export default function Deck(props) {
     const { items, deckName, isBlured } = props;
@@ -16,15 +18,12 @@ export default function Deck(props) {
                         <DeckSideboard items={items}></DeckSideboard>
                     </div>
                     <article className="left w100">
-                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9482818665347681" crossOrigin="anonymous"></script>
-                        <ins className="adsbygoogle"
-                            style={{display:'block'}}
-                            data-ad-format="autorelaxed"
-                            data-ad-client="ca-pub-9482818665347681"
-                            data-ad-slot="2151511143"></ins>
-                        <script>
-                            (adsbygoogle = window.adsbygoogle || []).push({});
-                        </script>
+                        <AdSenseAd 
+                            adClient="ca-pub-9482818665347681" // Replace with your publisher ID
+                            adSlot="2151511143" // Replace with your banner ad slot ID
+                            adFormat="auto" // Fixed-size banner
+                            fullWidthResponsive={true} 
+                        />
                     </article>
                 </>
             )}

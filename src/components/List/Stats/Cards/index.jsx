@@ -2,7 +2,9 @@ import { useState } from "react";
 import { useApi } from '/src/hooks/useApi.jsx';
 import StatsListBlock from "/src/components/List/Stats/Block";
 import BluredStatsList from "/src/components/List/Stats/Cards/Fake";
-import Block from "/src/components/List/Stats/Cards/Block"
+import Block from "/src/components/List/Stats/Cards/Block";
+import AdSenseAd from "/src/components/Adsense";
+
 
 export default function StatsBox(props) {
     const { text, cardType, endpoint, isPlayer } = props;
@@ -64,16 +66,12 @@ export default function StatsBox(props) {
                         <StatsListBlock items={renderElements} isPlayer={isPlayer} text={text} />
                     )}
                     <div className="left w100">
-                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9482818665347681" crossOrigin="anonymous"></script>
-                        <ins className="adsbygoogle"
+                        <AdSenseAd 
+                            adClient="ca-pub-9482818665347681" // Replace with your publisher ID
+                            adSlot="8033219754" // Replace with your banner ad slot ID
+                            adFormat="fluid" // Fixed-size banner
                             style={{display:'block', textAlign:'center'}}
-                            data-ad-layout="in-article"
-                            data-ad-format="fluid"
-                            data-ad-client="ca-pub-9482818665347681"
-                            data-ad-slot="8033219754"></ins>
-                        <script>
-                            (adsbygoogle = window.adsbygoogle || []).push({});
-                        </script>
+                        />
                     </div>
                 </div>
             </section>
