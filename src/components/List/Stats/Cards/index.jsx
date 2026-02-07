@@ -17,8 +17,8 @@ export default function StatsBox(props) {
     async function apiCardTypeCall() {
         await api.getAxiosEndpoint(endpoint)
             .then((response) => {
-                setTimeout(() => {setLoading(false)}, 1000);
-                setTimeout(() => {setRenderElements(response.data.stats)}, 1000);
+                setLoading(false);
+                setRenderElements(response.data.stats);
             })
             .catch((err) => { 
                 if (err.status === 404) { 

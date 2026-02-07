@@ -6,7 +6,7 @@ function LeagueStats(props) {
     const [ showElements, setShowElements ]         = useState(false);
 
     useEffect(() => {
-        setTimeout(() => {setShowElements(true)}, 1000);
+        setTimeout(() => {setShowElements(true)}, 500);
     }, []);
 
     return (

@@ -19,8 +19,8 @@ export default function TournamentPlayerItem(props) {
 
         await api.getAxiosEndpoint(endpoints.API_DECK_CARDS.replace('{id}', id))
         .then((response) => {
-            setTimeout(() => { setLoading(false) }, 1000);
-            setTimeout(() => { setRenderDeckItems(response.data) }, 1000);
+            setLoading(false);
+            setRenderDeckItems(response.data);
         })
         .catch((err) => { 
             console.log('error loading deck')
