@@ -43,8 +43,9 @@ function ModalPopUp(props) {
             <div id={api.createModalLink(name, modalType)} className="modal">
                 <div className="modal-content">
                     <div className="modal-header">
-                        <span className="close pointer" onClick={() => handleCloseClick()}>Close</span>
+                        <span className="close pointer bg-red" onClick={() => handleCloseClick()}>Close</span>
                     </div>
+
                     <div className="modal-body">
                         <img src={img} className="left" />
                     </div>

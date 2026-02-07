@@ -47,14 +47,14 @@
 }
 
 .close {
-    background: space;
     text-align: center;
     text-decoration: none;
     float: right;
     border: 1px solid var(--color-gray);
-    padding: 5px 10px;
+    padding: 5px 10px 7px 10px;
     border-radius: 5px;
     margin: 15px 0 10px 0;
+    background: var(--background-red);
 }
 
 .close:hover,
