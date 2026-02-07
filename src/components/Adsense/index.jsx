@@ -28,7 +28,7 @@ const AdSenseAd = ({ adClient, adSlot, adFormat = "auto", fullWidthResponsive = 
         <ins 
             ref={adContainerRef} // Attach ref to track the container
             className="adsbygoogle"
-            style={{ display: 'block', width: '100%' }} 
+            style={{ display: 'block', width: '100%', minWidth: '300px' }} // Ensure the ad takes full width and has a minimum width
             data-ad-client={adClient}
             data-ad-slot={adSlot}
             data-ad-format={adFormat}

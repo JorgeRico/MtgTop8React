@@ -12,9 +12,6 @@ function League(props) {
             </div>
             <div className="left w100 mt20">
                 {tournament}
-                <div className="left w100 mt50">
-                    <SubTitle title={title} />
-                </div>
                 <div className="left w100 mt10 ad-container">
                     <AdSenseAd 
                         adClient="ca-pub-9482818665347681" // Replace with your publisher ID
@@ -22,6 +19,9 @@ function League(props) {
                         adFormat="auto" // Fixed-size banner
                         fullWidthResponsive={true} 
                     />
+                </div>
+                <div className="left w100 mt50">
+                    <SubTitle title={title} />
                 </div>
                 <div className="left w100 mt10">
                     {stats}

@@ -3,8 +3,6 @@ import { useApi } from '/src/hooks/useApi.jsx';
 import StatsListBlock from "/src/components/List/Stats/Block";
 import BluredStatsList from "/src/components/List/Stats/Cards/Fake";
 import Block from "/src/components/List/Stats/Cards/Block";
-import AdSenseAd from "/src/components/Adsense";
-
 
 export default function StatsBox(props) {
     const { text, cardType, endpoint, isPlayer } = props;
@@ -65,14 +63,6 @@ export default function StatsBox(props) {
                     ) : (
                         <StatsListBlock items={renderElements} isPlayer={isPlayer} text={text} />
                     )}
-                    <div className="left w100 ad-container">
-                        <AdSenseAd 
-                            adClient="ca-pub-9482818665347681" // Replace with your publisher ID
-                            adSlot="8033219754" // Replace with your banner ad slot ID
-                            adFormat="auto" // Fixed-size banner
-                            fullWidthResponsive={true}
-                        />
-                    </div>
                 </div>
             </section>
         </>
