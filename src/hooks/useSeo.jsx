@@ -1,8 +1,6 @@
-import { useState } from "react";
-
 function SeoTags(props) {
-    const { title, canonical, description } = props;
-    const [ url, setUrl ]                   = useState("https://mtg-stats.vercel.app/");
+    const { title, canonical, description } = props;    
+    const url                               = import.meta.env.VITE_APP_BASE_WEBSITE_URL;
 
     return (
         <>
