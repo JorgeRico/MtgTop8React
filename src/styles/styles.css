@@ -49,6 +49,14 @@
     }
 }
 
+@media (max-width: 350px) {
+    .tournamentDescription {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 15px;
+    }
+}
+
 .cardImgUrl {
     height: 27px;
     width: 20px;

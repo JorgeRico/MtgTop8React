@@ -37,6 +37,10 @@
         margin-left: 50px;
     }
 
+    .w-200 {
+        width: auto;
+    }
+
     .viewDeck button {
         margin-left: 15px;
         float: left;
