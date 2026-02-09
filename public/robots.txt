@@ -1,4 +1,6 @@
 User-agent: *
+User-agent: Googlebot
+Allow: /
 Allow: /ads.txt
 Disallow: 
 Disallow: /cgi-bin/
