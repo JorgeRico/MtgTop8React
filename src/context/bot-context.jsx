@@ -4,14 +4,23 @@ export const CheckBotContext = createContext({ undefined });
 export const CheckBotProvider = (props) => {
     const { children } = props;
     
+    // const bots = [
+    //     'AdsBot-Google', 'Amazonbot', 'anthropic-ai', 'Applebot', 
+    //     'AwarioRssBot', 'AwarioSmartBot', 'Bytespider', 'CCBot', 
+    //     'ChatGPT', 'ChatGPT-User', 'Claude-Web', 'ClaudeBot', 
+    //     'cohere-ai', 'DataForSeoBot', 'Diffbot', 'FacebookBot', 
+    //     'FacebookBot', 'Google-Extended', 'GPTBot', 'ImagesiftBot', 
+    //     'magpie-crawler', 'omgili', 'Omgilibot', 'peer39_crawler', 
+    //     'PerplexityBot', 'YouBot'
+    // ];
     const bots = [
-        'AdsBot-Google', 'Amazonbot', 'anthropic-ai', 'Applebot', 
-        'AwarioRssBot', 'AwarioSmartBot', 'Bytespider', 'CCBot', 
+        'anthropic-ai', 
+        'CCBot', 
         'ChatGPT', 'ChatGPT-User', 'Claude-Web', 'ClaudeBot', 
-        'cohere-ai', 'DataForSeoBot', 'Diffbot', 'FacebookBot', 
-        'FacebookBot', 'Google-Extended', 'GPTBot', 'ImagesiftBot', 
+        'cohere-ai', 
+        'GPTBot', 'ImagesiftBot', 
         'magpie-crawler', 'omgili', 'Omgilibot', 'peer39_crawler', 
-        'PerplexityBot', 'YouBot'
+        'PerplexityBot'
     ];
     
     function checkIsBot() {
