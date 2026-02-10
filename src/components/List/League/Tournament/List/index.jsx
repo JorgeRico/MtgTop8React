@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
 import endpoints from "/src/services/endpoints.jsx";
-import { useApi } from '/src/hooks/useApi.jsx';
+import { getAxiosEndpoint } from '/src/hooks/useApi.jsx';
 import BluredTournamentList from "/src/components/List/League/Tournament/Fake";
 import LeagueTournamentBlock from "/src/components/List/League/Tournament/Block";
 
 function LeagueTournament(props) {
-    const api                                   = useApi();
     const [ renderElements, setRenderElements]  = useState(null);
     const { id, format }                        = props;
     const [ showElements, setShowElements ]     = useState(false);
@@ -26,7 +25,7 @@ function LeagueTournament(props) {
 
     useEffect(() => {
         async function apiCall() {
-            await api.getAxiosEndpoint(endpoints.API_LEAGUE_TOURNAMENTS.replace('{id}', id))
+            await getAxiosEndpoint(endpoints.API_LEAGUE_TOURNAMENTS.replace('{id}', id))
                 .then((response) => {
                     setRenderElements(response.data);
                     setShowElements(true);

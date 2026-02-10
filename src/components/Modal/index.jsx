@@ -1,10 +1,10 @@
 import "./module.css"
-import { useApi } from '/src/hooks/useApi.jsx';
+import { createModalLink } from '/src/hooks/useCommon.jsx';
 import { useEffect, useState } from 'react';
 
 function ModalPopUp(props) {
     const { img, name, modalType } = props;
-    const api                      = useApi();
+    // const api                      = useApi();
     const [ modalId, setModalId ]  = useState(null);
 
     function handleClick () {
@@ -27,7 +27,7 @@ function ModalPopUp(props) {
     document.addEventListener('mousedown', handleCloseClick);
 
     useEffect(() => {
-        setModalId(api.createModalLink(name, modalType));
+        setModalId(createModalLink(name, modalType));
         
         // Cleanup the event listener on component unmount
         return () => {
@@ -40,7 +40,7 @@ function ModalPopUp(props) {
             <div className="pointer" onClick={() => handleClick()}>
                 <img src={img} className="cardImgUrl" height="27" width="20" />
             </div>
-            <div id={api.createModalLink(name, modalType)} className="modal">
+            <div id={createModalLink(name, modalType)} className="modal">
                 <div className="modal-content">
                     <div className="modal-header">
                         <span className="close pointer bg-red" onClick={() => handleCloseClick()}>Close</span>

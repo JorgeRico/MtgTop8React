@@ -6,18 +6,18 @@ import TournamentPlayers from "/src/components/Tournament/Players";
 import Stats from "/src/views/stats";
 import Breadcrumb from "/src/components/Breadcrumb";
 import endpoints from "/src/services/endpoints.jsx";
-import { useApi } from '/src/hooks/useApi.jsx';
+import { getAxiosEndpoint } from '/src/hooks/useApi.jsx';
+import { getFormat } from '/src/hooks/useCommon.jsx';
 import SeoTags from "/src/hooks/useSeo.jsx";
 
 function Tournament() {
     const { id }                       = useParams();
-    const api                          = useApi();
     const [ tournament, setTournament] = useState({idLeague: '', name:'', date:'', players: ''});
     const [ loading, setLoading ]      = useState(false);
 
     useEffect(() => {
         async function apiCall() {
-            await api.getAxiosEndpoint(endpoints.API_TOURNAMENT_DATA.replace('{id}', id))
+            await getAxiosEndpoint(endpoints.API_TOURNAMENT_DATA.replace('{id}', id))
             .then((response) => {
                 setTournament(prevState => ({
                     ...prevState,
@@ -25,7 +25,7 @@ function Tournament() {
                     'name'    : response.data.name,
                     'date'    : response.data.date,
                     'players' : response.data.players,
-                    'format'  : api.getFormat(response.data.format)
+                    'format'  : getFormat(response.data.format)
                 }));
                 setLoading(true);
             })

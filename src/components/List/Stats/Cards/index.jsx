@@ -1,21 +1,18 @@
 import { useState } from "react";
-import { useApi } from '/src/hooks/useApi.jsx';
+import { getAxiosEndpoint } from '/src/hooks/useApi.jsx';
 import StatsListBlock from "/src/components/List/Stats/Block";
 import BluredStatsList from "/src/components/List/Stats/Cards/Fake";
 import Block from "/src/components/List/Stats/Cards/Block";
 
 export default function StatsBox(props) {
     const { text, cardType, endpoint, isPlayer } = props;
-    const api                                    = useApi();
-    const [ loading, setLoading ]                = useState(false);
     const [ renderElements, setRenderElements ]  = useState([]);
     const [ noResults, setNoResults ]            = useState(false);
 
     // api call
     async function apiCardTypeCall() {
-        await api.getAxiosEndpoint(endpoint)
+        await getAxiosEndpoint(endpoint)
             .then((response) => {
-                setLoading(false);
                 setRenderElements(response.data.stats);
             })
             .catch((err) => { 
@@ -28,7 +25,7 @@ export default function StatsBox(props) {
 
     const handleClickCardTypes = () => {
         hideStats();
-        setLoading(true);
+        // setLoading(true);
         setRenderElements(null);
         showStats();
         apiCardTypeCall()

@@ -3,17 +3,16 @@ import BluredLeagueList from "/src/components/List/League/Fake";
 import SubTitle from "/src/components/HTag/SubTitle";
 import endpoints from "/src/services/endpoints.jsx";
 import { useState, useEffect } from "react";
-import { useApi } from '/src/hooks/useApi.jsx';
+import { getAxiosEndpoint } from '/src/hooks/useApi.jsx';
 
 function Events(props) {
     const { title }                                       = props;
-    const api                                             = useApi();
     const [ currentLeagues, setCurrentLeagues ]           = useState(null);
     const [ showCurrentElements, setShowCurrentElements ] = useState(false);
 
     useEffect(() => {
         async function apiCallCurrent() {
-            await api.getAxiosEndpoint(endpoints.API_LEAGUE_CURRENT)
+            await getAxiosEndpoint(endpoints.API_LEAGUE_CURRENT)
             .then((response) => {
                 setCurrentLeagues(response.data);
                 setShowCurrentElements(true);

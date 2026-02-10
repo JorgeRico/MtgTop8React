@@ -1,4 +1,16 @@
-import { useContext } from 'react';
-import { ApiContext } from './../context/api-context';
+import axios from 'axios';
 
-export const useApi = () => useContext(ApiContext);
+ // axios
+const headers = {
+    'Content-Type'                 : 'application/json',
+    'Access-Control-Allow-Origin'  : '*',
+    'Access-Control-Allow-Headers' : 'Content-Type',
+    'Access-Control-Allow-Methods' : 'GET',
+}
+
+export function getAxiosEndpoint(endpoint) {
+    return axios.get(
+        endpoint,
+        { headers: headers }
+    );
+}

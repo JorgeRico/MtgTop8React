@@ -5,23 +5,23 @@ import Template from "/src/views/layout/template";
 import LeagueTournamentList from "/src/components/List/League/Tournament/List";
 import Stats from "/src/views/stats";
 import endpoints from "/src/services/endpoints.jsx";
-import { useApi } from '/src/hooks/useApi.jsx';
+import { getAxiosEndpoint } from '/src/hooks/useApi.jsx';
+import { getFormat } from '/src/hooks/useCommon.jsx';
 import Breadcrumb from "/src/components/Breadcrumb";
 import SeoTags from "/src/hooks/useSeo.jsx";
 
 function League() {
     const { id }                                = useParams();
-    const api                                   = useApi();
     const [ leagueName, setLeagueName]          = useState(null);
     const [ showLeagueName, setShowLeagueName ] = useState(false);
     const [ leagueFormat, setLeagueFormat]      = useState(null);
 
     useEffect(() => {
         async function apiCall() {
-            await api.getAxiosEndpoint(endpoints.API_LEAGUE_ID.replace('{id}', id))
+            await getAxiosEndpoint(endpoints.API_LEAGUE_ID.replace('{id}', id))
                 .then((response) => {
                     setLeagueName(response.data.name);
-                    setLeagueFormat(api.getFormat(response.data.isLegacy));
+                    setLeagueFormat(getFormat(response.data.isLegacy));
                     setShowLeagueName(true);
                 })
                 .catch((err) => { 

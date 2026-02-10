@@ -3,12 +3,11 @@ import { v4 as uuidv4 } from "uuid";
 import { Link } from 'react-router-dom';
 import cupIcon from '/src/assets/images/cup.png';
 import Button from "/src/components/List/Button";
-import { useApi } from '/src/hooks/useApi.jsx';
+import { getFormat } from '/src/hooks/useCommon.jsx';
 
 export default function LeagueList(props) {
     const { url, items, isBlured }        = props;
     const [ renderItems, setRenderItems ] = useState(null);
-    const api                             = useApi();
 
     const leagueItemBlock = (icon, text1, text2, buttonText) => { 
         return (
@@ -37,7 +36,7 @@ export default function LeagueList(props) {
             setRenderItems(items?.map((item) => (
                 <article className="listItem pointer title mb15 overflowHidden" key={uuidv4()}>
                     <Link to={url + item.id}>
-                        {leagueItemBlock(cupIcon, item.name, `Format: ${api.getFormat(item.isLegacy)}`, "View league")}
+                        {leagueItemBlock(cupIcon, item.name, `Format: ${getFormat(item.isLegacy)}`, "View league")}
                     </Link>
                 </article>
             )));

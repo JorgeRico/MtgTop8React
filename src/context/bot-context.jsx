@@ -1,9 +1,7 @@
 import { createContext, useContext, useEffect } from "react";
-export const CheckBotContext = createContext({ undefined });
+export const CheckBotContext = createContext();
 
-export const CheckBotProvider = (props) => {
-    const { children } = props;
-    
+export const CheckBotProvider = ({ children }) => {    
     // const bots = [
     //     'AdsBot-Google', 'Amazonbot', 'anthropic-ai', 'Applebot', 
     //     'AwarioRssBot', 'AwarioSmartBot', 'Bytespider', 'CCBot', 
@@ -13,6 +11,7 @@ export const CheckBotProvider = (props) => {
     //     'magpie-crawler', 'omgili', 'Omgilibot', 'peer39_crawler', 
     //     'PerplexityBot', 'YouBot'
     // ];
+
     const bots = [
         'anthropic-ai', 
         'CCBot', 
@@ -40,21 +39,15 @@ export const CheckBotProvider = (props) => {
         }
     };
 
-    useEffect(() => {
-        checkIsBot();
-    }, []);
-
     return (
-        <CheckBotContext.Provider
+        <CheckBotContext
             value={{
                 checkIsBot
             }}
         >
             {children}
-        </CheckBotContext.Provider>
+        </CheckBotContext>
     );
 };
-
-export const CheckBotContextConsumer = CheckBotContext.Consumer;
 
 export const useCheckBotContext = () => useContext(CheckBotContext);
