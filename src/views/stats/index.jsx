@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import StatsBox from "/src/components/List/Stats";
+import endpoints from "/src/services/endpoints.jsx";
 
-function LeagueStats({ id, isLeague, endpoint, endpointCards }) {
+function LeagueStats({ id, isLeague }) {
     const [ showElements, setShowElements ] = useState(false);
 
     useEffect(() => {
@@ -14,8 +15,8 @@ function LeagueStats({ id, isLeague, endpoint, endpointCards }) {
                 <StatsBox 
                     id            = {id} 
                     isLeague      = {isLeague} 
-                    endpoint      = {endpoint} 
-                    endpointCards = {endpointCards}
+                    endpoint      = {isLeague ? endpoints.API_LEAGUE_STATS : endpoints.API_TOURNAMENT_STATS} 
+                    endpointCards = {isLeague ? endpoints.API_LEAGUE_CARD_STATS : endpoints.API_TOURNAMENT_CARD_STATS}
                     isBlured      = {showElements === false ? true : false } 
                 />
             </section>   

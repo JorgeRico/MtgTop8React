@@ -61,10 +61,8 @@ function Tournament() {
                     }
                     stats={
                         <Stats 
-                            id            = {id}
-                            isLeague      = {false} 
-                            endpoint      = {endpoints.API_TOURNAMENT_STATS} 
-                            endpointCards = {endpoints.API_TOURNAMENT_CARD_STATS}
+                            id       = {id}
+                            isLeague = {false}
                         />
                     }
                     title="Tournament Stats"

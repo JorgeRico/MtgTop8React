@@ -57,10 +57,8 @@ function League() {
                     }
                     stats={
                         <Stats 
-                            id            = {id}
-                            isLeague      = {true} 
-                            endpoint      = {endpoints.API_LEAGUE_STATS} 
-                            endpointCards = {endpoints.API_LEAGUE_CARD_STATS}
+                            id       = {id}
+                            isLeague = {true}
                         />
                     }
                     title="Season Stats"
