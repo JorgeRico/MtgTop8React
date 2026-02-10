@@ -8,7 +8,6 @@ import Breadcrumb from "/src/components/Breadcrumb";
 import endpoints from "/src/services/endpoints.jsx";
 import { getAxiosEndpoint } from '/src/hooks/useApi.jsx';
 import { getFormat } from '/src/hooks/useCommon.jsx';
-import SeoTags from "/src/hooks/useSeo.jsx";
 
 function Tournament() {
     const { id }                       = useParams();
@@ -38,36 +37,34 @@ function Tournament() {
     }, []);
 
     return (
-        <>  
-            {tournament.name != '' &&
-                <SeoTags
-                    title={`Mtg Stats - Legacy Tournament: ${tournament.name} - ${tournament.date}`}
-                    canonical={`tournaments/${id}`}
-                    description="Tournament - Catalan MTG Legacy leagues, tournaments, players and cards">
-                </SeoTags>
-            }
-            <Layout name="tournaments">
+        <> 
+            <Layout 
+                name        = "tournaments"
+                title       = {`Mtg Stats - Legacy Tournament: ${tournament.name} - ${tournament.date}`}
+                canonical   = {`tournaments/${id}`}
+                description = "Tournament - Catalan MTG Legacy leagues, tournaments, players and cards"
+            >
                 <Template
                     breadcrumb={
                         <Breadcrumb
-                            title={tournament.name} 
-                            endpoint={endpoints.HTTP_LEAGUE + tournament.idLeague} 
-                            loading={loading}
-                            isLeague={false}
+                            title    = {tournament.name} 
+                            endpoint = {endpoints.HTTP_LEAGUE + tournament.idLeague} 
+                            loading  = {loading}
+                            isLeague = {false}
                         />
                     }
                     tournament={
                         <TournamentPlayers 
-                            id={id} 
-                            tournament={tournament} 
+                            id         = {id} 
+                            tournament = {tournament} 
                         />
                     }
                     stats={
                         <Stats 
-                            id={id}
-                            isLeague={false} 
-                            endpoint={endpoints.API_TOURNAMENT_STATS} 
-                            endpointCards={endpoints.API_TOURNAMENT_CARD_STATS}
+                            id            = {id}
+                            isLeague      = {false} 
+                            endpoint      = {endpoints.API_TOURNAMENT_STATS} 
+                            endpointCards = {endpoints.API_TOURNAMENT_CARD_STATS}
                         />
                     }
                     title="Tournament Stats"

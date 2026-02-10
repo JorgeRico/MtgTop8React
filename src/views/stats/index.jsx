@@ -11,13 +11,15 @@ function LeagueStats(props) {
 
     return (
         <>
-            <StatsBox 
-                id            = {id} 
-                isLeague      = {isLeague} 
-                endpoint      = {endpoint} 
-                endpointCards = {endpointCards}
-                isBlured      = {showElements === false ? true : false } 
-            />      
+            <section className="left w100 mt10">
+                <StatsBox 
+                    id            = {id} 
+                    isLeague      = {isLeague} 
+                    endpoint      = {endpoint} 
+                    endpointCards = {endpointCards}
+                    isBlured      = {showElements === false ? true : false } 
+                />
+            </section>   
         </>
     )
 }

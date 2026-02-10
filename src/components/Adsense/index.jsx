@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react';
  
-const AdSenseAd = ({ adClient, adSlot, adFormat = "auto", fullWidthResponsive = true, adClassNameStyles }) => {
+const AdSenseAd = ({ adClient, adSlot, adFormat = "auto", fullWidthResponsive = true, adClassNameStyles = "" }) => {
     const scriptLoaded   = useRef(false);
-    const adContainerRef = useRef(null); // Ref to the ad container
+    const adContainerRef = useRef(null);
     
     // Load AdSense script (once)
     useEffect(() => {
@@ -25,7 +25,7 @@ const AdSenseAd = ({ adClient, adSlot, adFormat = "auto", fullWidthResponsive = 
     }, [adSlot]); // Re-run if adSlot changes (e.g., different ad units)
     
     return (
-        <div className={adClassNameStyles}>
+        <div className={`left w100 ${adClassNameStyles} ad-container`}>
             <ins 
                 ref={adContainerRef} // Attach ref to track the container
                 className="adsbygoogle"

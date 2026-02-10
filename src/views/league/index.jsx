@@ -8,7 +8,6 @@ import endpoints from "/src/services/endpoints.jsx";
 import { getAxiosEndpoint } from '/src/hooks/useApi.jsx';
 import { getFormat } from '/src/hooks/useCommon.jsx';
 import Breadcrumb from "/src/components/Breadcrumb";
-import SeoTags from "/src/hooks/useSeo.jsx";
 
 function League() {
     const { id }                                = useParams();
@@ -35,35 +34,33 @@ function League() {
 
     return (
         <>
-            {leagueName &&
-                <SeoTags
-                    title={`Mtg Stats - Legacy League: ${leagueName}`}
-                    canonical={`leagues/${id}`}
-                    description="League - Catalan MTG Legacy leagues, tournaments, players and cards">
-                </SeoTags>
-            }
-            <Layout name="league">
+            <Layout 
+                name        = "league"
+                title       = {`Mtg Stats - Legacy League: ${leagueName}`}
+                canonical   = {`leagues/${id}`}
+                description = "League - Catalan MTG Legacy leagues, tournaments, players and cards"
+            >
                 <Template 
                     breadcrumb={
                         <Breadcrumb
-                            title={leagueName} 
-                            loading={showLeagueName}
-                            endpoint={null}
-                            isLeague={true}
+                            title    = {leagueName} 
+                            loading  = {showLeagueName}
+                            endpoint = {null}
+                            isLeague = {true}
                         />
                     }
                     tournament={
                         <LeagueTournamentList 
-                            id={id}
-                            format={leagueFormat}
+                            id     = {id}
+                            format = {leagueFormat}
                         />
                     }
                     stats={
                         <Stats 
-                            id={id}
-                            isLeague={true} 
-                            endpoint={endpoints.API_LEAGUE_STATS} 
-                            endpointCards={endpoints.API_LEAGUE_CARD_STATS}
+                            id            = {id}
+                            isLeague      = {true} 
+                            endpoint      = {endpoints.API_LEAGUE_STATS} 
+                            endpointCards = {endpoints.API_LEAGUE_CARD_STATS}
                         />
                     }
                     title="Season Stats"
