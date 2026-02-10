@@ -12,14 +12,13 @@ function League(props) {
             </div>
             <div className="left w100 mt20">
                 {tournament}
-                <div className="left w100 mt10 ad-container">
-                    <AdSenseAd 
-                        adClient="ca-pub-9482818665347681" // Replace with your publisher ID
-                        adSlot="8739796769" // Replace with your banner ad slot ID
-                        adFormat="auto" // Fixed-size banner
-                        fullWidthResponsive={true} 
-                    />
-                </div>
+                <AdSenseAd 
+                    adClassNameStyles="left w100 mt10 ad-container"
+                    adClient="ca-pub-9482818665347681" // Replace with your publisher ID
+                    adSlot="8739796769" // Replace with your banner ad slot ID
+                    adFormat="auto" // Fixed-size banner
+                    fullWidthResponsive={true} 
+                />
                 <div className="left w100 mt50">
                     <SubTitle title={title} />
                 </div>

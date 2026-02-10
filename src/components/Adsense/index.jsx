@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
  
-const AdSenseAd = ({ adClient, adSlot, adFormat = "auto", fullWidthResponsive = true }) => {
+const AdSenseAd = ({ adClient, adSlot, adFormat = "auto", fullWidthResponsive = true, adClassNameStyles }) => {
     const scriptLoaded   = useRef(false);
     const adContainerRef = useRef(null); // Ref to the ad container
     
@@ -25,16 +25,18 @@ const AdSenseAd = ({ adClient, adSlot, adFormat = "auto", fullWidthResponsive = 
     }, [adSlot]); // Re-run if adSlot changes (e.g., different ad units)
     
     return (
-        <ins 
-            ref={adContainerRef} // Attach ref to track the container
-            className="adsbygoogle"
-            style={{ display: 'block', width: '100%', minWidth: '300px' }} // Ensure the ad takes full width and has a minimum width
-            data-ad-client={adClient}
-            data-ad-slot={adSlot}
-            data-ad-format={adFormat}
-            data-full-width-responsive={fullWidthResponsive}
-            // data-adtest="on"
-        />
+        <div className={adClassNameStyles}>
+            <ins 
+                ref={adContainerRef} // Attach ref to track the container
+                className="adsbygoogle"
+                style={{ display: 'block', width: '100%', minWidth: '300px' }} // Ensure the ad takes full width and has a minimum width
+                data-ad-client={adClient}
+                data-ad-slot={adSlot}
+                data-ad-format={adFormat}
+                data-full-width-responsive={fullWidthResponsive}
+                // data-adtest="on"
+            />
+        </div>
     );
 };
  

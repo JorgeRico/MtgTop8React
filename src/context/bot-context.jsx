@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect } from "react";
+import { createContext, useContext } from "react";
 export const CheckBotContext = createContext();
 
 export const CheckBotProvider = ({ children }) => {    

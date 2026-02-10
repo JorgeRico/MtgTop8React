@@ -17,14 +17,13 @@ export default function Deck(props) {
                         <DeckMainboard items={items}></DeckMainboard>
                         <DeckSideboard items={items}></DeckSideboard>
                     </div>
-                    <article className="left w100 ad-container">
-                        <AdSenseAd 
-                            adClient="ca-pub-9482818665347681" // Replace with your publisher ID
-                            adSlot="2151511143" // Replace with your banner ad slot ID
-                            adFormat="auto" // Fixed-size banner
-                            fullWidthResponsive={true} 
-                        />
-                    </article>
+                    <AdSenseAd 
+                        adClassNameStyles="left w100 ad-container"
+                        adClient="ca-pub-9482818665347681" // Replace with your publisher ID
+                        adSlot="2151511143" // Replace with your banner ad slot ID
+                        adFormat="auto" // Fixed-size banner
+                        fullWidthResponsive={true} 
+                    />
                 </>
             )}
         </>
