@@ -1,8 +1,6 @@
 import HTag from "/src/components/HTag";
 
-function SubTitle(props) {
-    const { title } = props; 
-
+function SubTitle({ title }) {
     return (
         <>
             <HTag Tag="h2" text={title} className="left mb15 f20" />

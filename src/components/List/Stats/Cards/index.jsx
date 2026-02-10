@@ -4,10 +4,9 @@ import StatsListBlock from "/src/components/List/Stats/Block";
 import BluredStatsList from "/src/components/List/Stats/Cards/Fake";
 import Block from "/src/components/List/Stats/Cards/Block";
 
-export default function StatsBox(props) {
-    const { text, cardType, endpoint, isPlayer } = props;
-    const [ renderElements, setRenderElements ]  = useState([]);
-    const [ noResults, setNoResults ]            = useState(false);
+export default function StatsBox({ text, cardType, endpoint, isPlayer }) {
+    const [ renderElements, setRenderElements ] = useState([]);
+    const [ noResults, setNoResults ]           = useState(false);
 
     // api call
     async function apiCardTypeCall() {
@@ -25,7 +24,6 @@ export default function StatsBox(props) {
 
     const handleClickCardTypes = () => {
         hideStats();
-        // setLoading(true);
         setRenderElements(null);
         showStats();
         apiCardTypeCall()

@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 
-export default function LinkImage(props) {
+export default function LinkImage({url, className, img}) {
 
     return (
-        <Link to={props.url} className={props.className}>
-            <img src={props.img} alt="" />
+        <Link to={url} className={className}>
+            <img src={img} alt="" />
         </Link>
     );
 }

@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
 import StatsBox from "/src/components/List/Stats";
 
-function LeagueStats(props) {
-    const { id, isLeague, endpoint, endpointCards } = props;
-    const [ showElements, setShowElements ]         = useState(false);
+function LeagueStats({ id, isLeague, endpoint, endpointCards }) {
+    const [ showElements, setShowElements ] = useState(false);
 
     useEffect(() => {
         setTimeout(() => {setShowElements(true)}, 500);

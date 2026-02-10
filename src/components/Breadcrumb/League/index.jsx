@@ -2,9 +2,7 @@ import HomeItemBreadcrumb from "/src/components/Breadcrumb/Items/Home";
 import TitleItemBreadcrumb from "/src/components/Breadcrumb/Items/Title";
 import DashItemBreadcrumb from "/src/components/Breadcrumb/Items/Dash";
 
-function BreadcrumbLeague(props) {
-    const { title } = props; 
-
+function BreadcrumbLeague({ title }) {
     return (
         <>
             <HomeItemBreadcrumb></HomeItemBreadcrumb>

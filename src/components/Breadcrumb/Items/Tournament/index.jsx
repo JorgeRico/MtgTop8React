@@ -1,8 +1,6 @@
 import { Link } from 'react-router-dom';
 
-function TournamentItemBreadcrumb(props) {
-    const { endpoint } = props; 
-
+function TournamentItemBreadcrumb({ endpoint }) {
     return (
         <>
             <div className="left ml10">

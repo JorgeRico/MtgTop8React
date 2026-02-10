@@ -1,6 +1,4 @@
-function InputForm(props) {
-    const { name, placeholder, label, value, handleChange } = props;
-
+function InputForm({ name, placeholder, label, value, handleChange }) {
     return (
         <>
             <div className="left mb20 w-350">

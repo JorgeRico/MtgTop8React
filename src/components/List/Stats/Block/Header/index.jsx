@@ -1,6 +1,4 @@
-export default function TopStatsList(props) {
-    const { isPlayer } = props;
-
+export default function TopStatsList({ isPlayer }) {
     const topPlayerStats = () => {
         return (
             <>

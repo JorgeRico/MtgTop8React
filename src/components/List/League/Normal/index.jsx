@@ -5,8 +5,7 @@ import cupIcon from '/src/assets/images/cup.png';
 import Button from "/src/components/List/Button";
 import { getFormat } from '/src/hooks/useCommon.jsx';
 
-export default function LeagueList(props) {
-    const { url, items, isBlured }        = props;
+export default function LeagueList({ url, items, isBlured }) {
     const [ renderItems, setRenderItems ] = useState(null);
 
     const leagueItemBlock = (icon, text1, text2, buttonText) => { 

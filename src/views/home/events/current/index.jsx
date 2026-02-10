@@ -5,8 +5,7 @@ import endpoints from "/src/services/endpoints.jsx";
 import { useState, useEffect } from "react";
 import { getAxiosEndpoint } from '/src/hooks/useApi.jsx';
 
-function Events(props) {
-    const { title }                                       = props;
+function Events({ title }) {
     const [ currentLeagues, setCurrentLeagues ]           = useState(null);
     const [ showCurrentElements, setShowCurrentElements ] = useState(false);
 

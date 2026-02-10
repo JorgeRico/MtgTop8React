@@ -4,8 +4,7 @@ import statsTypes from "/src/services/statsTypes.jsx";
 import CardTypeList from "/src/components/List/Deck/Normal/CardTypeList";
 import DeckCard from "/src/components/List/Deck/Normal/Card";
 
-export default function DeckSideboard(props) {
-    const { items }                   = props;
+export default function DeckSideboard({ items }) {
     const [ sideItems, setSideItems ] = useState([]);
 
     function getSideboard(deck) {

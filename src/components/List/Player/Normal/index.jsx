@@ -3,9 +3,7 @@ import "./module.css";
 import PlayerItem from "/src/components/List/Player/Normal/Item";
 import TournamentHeaderPlayers from "/src/components/List/Player/Normal/Header";
 
-export default function TournamentPlayers(props) {
-    const { items, isBlured } = props;
-
+export default function TournamentPlayers({ items, isBlured }) {
     return (
         <>
             <section className={isBlured ? "blink blured" : ""}>

@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 
-export default function LinkImage(props) {
+export default function LinkImage({url, className, title, img, width}) {
     return (
-        <Link to={props.url} className={props.className} target="_blank" rel="noopener noreferrer" title={props.title}>
-            <img src={props.img} alt={props.title} title={props.title} width={props.width} height={props.width}/>
+        <Link to={url} className={className} target="_blank" rel="noopener noreferrer" title={title}>
+            <img src={img} alt={title} title={title} width={width} height={width}/>
         </Link>
     );
 }

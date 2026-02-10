@@ -1,8 +1,6 @@
 import Button from "/src/components/List/Button";
 
-export default function StatsBox(props) {
-    const { text } = props;
-
+export default function StatsBox({ text }) {
     return (
         <>
             <article className="left w100 mb10 bg-footer">

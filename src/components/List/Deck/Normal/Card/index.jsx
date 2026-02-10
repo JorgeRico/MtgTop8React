@@ -1,8 +1,6 @@
 import ModalPopUp from "/src/components/Modal";
 
-export default function DeckCard(props) {
-    const { card } = props;
-
+export default function DeckCard({ card }) {
     return (
         <>
             <article className="cardItem">

@@ -2,9 +2,7 @@ import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import "./module.css"
 
-function Pagination(props){
-    const { total, itemsPerPage, currentPage, setCurrentPage } = props;
-
+function Pagination({ total, itemsPerPage, currentPage, setCurrentPage }){
     const [ firstPage ]               = useState(1);
     const [ lastPage ]                = useState(Math.ceil(total / itemsPerPage));
     const [ pageArray, setPageArray ] = useState([]) 

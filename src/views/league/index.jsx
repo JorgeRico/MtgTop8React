@@ -5,7 +5,7 @@ import Template from "/src/views/layout/template";
 import LeagueTournamentList from "/src/components/List/League/Tournament/List";
 import Stats from "/src/views/stats";
 import endpoints from "/src/services/endpoints.jsx";
-import { getAxiosEndpoint } from '/src/hooks/useApi.jsx';
+import { getAxiosEndpoint, replaceUrlIdParam } from '/src/hooks/useApi.jsx';
 import { getFormat } from '/src/hooks/useCommon.jsx';
 import Breadcrumb from "/src/components/Breadcrumb";
 
@@ -17,7 +17,7 @@ function League() {
 
     useEffect(() => {
         async function apiCall() {
-            await getAxiosEndpoint(endpoints.API_LEAGUE_ID.replace('{id}', id))
+            await getAxiosEndpoint(replaceUrlIdParam(endpoints.API_LEAGUE_ID, id))
                 .then((response) => {
                     setLeagueName(response.data.name);
                     setLeagueFormat(getFormat(response.data.isLegacy));

@@ -1,6 +1,4 @@
-export default function HTag(props) {
-    const { Tag, className, text } = props;
-
+export default function HTag({ Tag, className, text }) {
     return (
         <Tag className={className}>
             {text}

@@ -1,6 +1,4 @@
-function TextareaForm(props) {
-    const { name, placeholder, label, value, handleChange } = props;
-
+function TextareaForm({ name, placeholder, label, value, handleChange }) {
     return (
         <>
             <label className="left w100 mb15">{label}</label>

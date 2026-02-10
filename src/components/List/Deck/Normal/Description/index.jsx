@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import statsTypes from "/src/services/statsTypes.jsx";
 
-export default function DeckDescription(props) {
-    const { items, deckName }                   = props;
+export default function DeckDescription({ items, deckName }) {
     const [ totalMaindeck, setTotalMaindeck ]   = useState(0);
     const [ totalSideboard, setTotalSideboard ] = useState(0);
 

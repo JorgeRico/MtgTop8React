@@ -1,9 +1,7 @@
 import React from "react";
 import HTag from "/src/components/HTag";
 
-function TournamentTitle(props) {
-    const { tournament, isBlured } = props
-
+function TournamentTitle({ tournament, isBlured }) {
     return (
         <>
             <div className={`left w100 mt20 pb0 ${isBlured ? "blink blured" : ""}`}>

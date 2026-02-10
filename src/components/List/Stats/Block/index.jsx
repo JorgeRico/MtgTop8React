@@ -4,8 +4,7 @@ import "./module.css"
 import Header from "/src/components/List/Stats/Block/Header";
 import Content from "/src/components/List/Stats/Block/Content";
 
-export default function StatsList(props) {
-    const { items, isPlayer, text }       = props;
+export default function StatsList({ items, isPlayer, text }) {
     const [ renderItems, setRenderItems ] = useState(null)
 
     useEffect(() => {

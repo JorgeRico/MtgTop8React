@@ -4,9 +4,7 @@ import DeckMainboard from "/src/components/List/Deck/Normal/Mainboard";
 import DeckDescription from "/src/components/List/Deck/Normal/Description";
 // import AdSenseAd from "/src/components/Adsense";
 
-export default function Deck(props) {
-    const { items, deckName, isBlured } = props;
-
+export default function Deck({ items, deckName, isBlured }) {
     return (
         <>
             {items.length > 0 && (

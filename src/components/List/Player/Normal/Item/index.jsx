@@ -1,13 +1,12 @@
 import { useState } from "react";
 import "../module.css";
-import { getAxiosEndpoint } from '/src/hooks/useApi.jsx';
+import { getAxiosEndpoint, replaceUrlIdParam } from '/src/hooks/useApi.jsx';
 import endpoints from "/src/services/endpoints.jsx";
 import Deck from "/src/components/List/Deck/Normal";
 import BluredDeck from "/src/components/List/Deck/Fake";
 import Button from "/src/components/List/Button";
 
-export default function TournamentPlayerItem(props) {
-    const { item, index }                         = props;
+export default function TournamentPlayerItem({ item, index }) {
     const [ loading, setLoading ]                 = useState(false);
     const [ renderDeckItems, setRenderDeckItems ] = useState([]);
 
@@ -16,7 +15,7 @@ export default function TournamentPlayerItem(props) {
         setRenderDeckItems([]);
         setLoading(true);
 
-        await getAxiosEndpoint(endpoints.API_DECK_CARDS.replace('{id}', id))
+        await getAxiosEndpoint(replaceUrlIdParam(endpoints.API_DECK_CARDS, id))
         .then((response) => {
             setLoading(false);
             setRenderDeckItems(response.data);

@@ -2,9 +2,7 @@ import { v4 as uuidv4 } from "uuid";
 import { Link } from 'react-router-dom';
 import TournamentItem from "/src/components/List/Tournament/Block";
 
-export default function TournamentList(props) {
-    const { url, items } = props;
-
+export default function TournamentList({ url, items }) {
     return (
         <>
             <section className="tournaments">

@@ -2,9 +2,7 @@ import React from "react";
 import SubTitle from "/src/components/HTag/SubTitle";
 // import AdSenseAd from "/src/components/Adsense";
 
-function TemplateLayout(props) {
-    const { breadcrumb, tournament, stats, title } = props;
-
+function TemplateLayout({ breadcrumb, tournament, stats, title }) {
     // const AdSenseBox = () => {
     //     return (
     //         <AdSenseAd 

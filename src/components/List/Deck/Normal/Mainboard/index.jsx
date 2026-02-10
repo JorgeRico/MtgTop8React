@@ -4,8 +4,7 @@ import statsTypes from "/src/services/statsTypes.jsx";
 import CardTypeList from "/src/components/List/Deck/Normal/CardTypeList";
 import DeckCard from "/src/components/List/Deck/Normal/Card";
 
-export default function DeckMainboard(props) {
-    const { items }                                   = props;
+export default function DeckMainboard({ items }) {
     const [ creatureItems, setCreatureItems ]         = useState([]);
     const [ instantItems, setInstantItems ]           = useState([]);
     const [ sorceryItems, setSorceryItems ]           = useState([]);

@@ -2,9 +2,7 @@ import React from "react";
 import TournamentList from "/src/components/List/Tournament/Normal";
 import SubTitle from "/src/components/HTag/SubTitle";
 
-function LeagueTournamentBlock(props) {
-    const { format, renderElements, url, isBlured, numPlayers, classification } = props;
-
+function LeagueTournamentBlock({ format, renderElements, url, isBlured, numPlayers, classification }) {
     return (
         <>
             <div className={`left w100 mb40 ${isBlured ? 'blink blured' : ''}`}>

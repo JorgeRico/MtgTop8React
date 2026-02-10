@@ -1,6 +1,5 @@
-function SeoTags(props) {
-    const { title, canonical, description } = props;    
-    const url                               = import.meta.env.VITE_APP_BASE_WEBSITE_URL;
+function SeoTags({ title, canonical, description }) {
+    const url = import.meta.env.VITE_APP_BASE_WEBSITE_URL;
 
     return (
         <>

@@ -1,6 +1,4 @@
-export default function CardTypeList(props) {
-    const { items, text } = props;
-
+export default function CardTypeList({ items, text }) {
     return (
         <>
             {(items.length > 0) && (

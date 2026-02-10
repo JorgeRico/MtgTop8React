@@ -1,6 +1,4 @@
-function TitleItemBreadcrumb(props) {
-    const { title } = props;
-
+function TitleItemBreadcrumb({ title }) {
     return (
         <>
             <div className="left ml10">

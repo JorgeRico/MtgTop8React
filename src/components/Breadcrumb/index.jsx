@@ -1,9 +1,7 @@
 import BreadcrumbLeague from "/src/components/Breadcrumb/League";
 import BreadcrumbTournament from "/src/components/Breadcrumb/Tournament";
 
-function Breadcrumb(props) {
-    const { title, loading, isLeague, endpoint } = props; 
-
+function Breadcrumb({ title, loading, isLeague, endpoint }) {
     const league = () => {
         return (
             <BreadcrumbLeague title={title}></BreadcrumbLeague>

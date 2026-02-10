@@ -1,20 +1,19 @@
 import { useState, useEffect } from "react";
 import endpoints from "/src/services/endpoints.jsx";
-import { getAxiosEndpoint } from '/src/hooks/useApi.jsx';
+import { getAxiosEndpoint, replaceUrlIdParam } from '/src/hooks/useApi.jsx';
 import PlayerList from "/src/components/List/Player/Normal";
 import PlayersBlured from "/src/components/List/Player/Fake";
 import HTag from "/src/components/HTag";
 import Title from "/src/components/Tournament/Title";
 import TournamentTitleBlured from "/src/components/Tournament/Fake";
 
-function TournamentPlayers(props) {
+function TournamentPlayers({ id, tournament }) {
     const [ renderPlayers, setRenderPlayers] = useState([]);
     const [ showPlayers, setShowPlayers ]    = useState(false)
-    const { id, tournament }                 = props;
 
     useEffect(() => {
         async function apiCall() {
-            await getAxiosEndpoint(endpoints.API_TOURNAMENT_PLAYERS.replace('{id}', id))
+            await getAxiosEndpoint(replaceUrlIdParam(endpoints.API_TOURNAMENT_PLAYERS, id))
             .then((response) => {
                 setRenderPlayers(response.data);
                 setShowPlayers(true);

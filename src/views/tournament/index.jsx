@@ -6,7 +6,7 @@ import TournamentPlayers from "/src/components/Tournament/Players";
 import Stats from "/src/views/stats";
 import Breadcrumb from "/src/components/Breadcrumb";
 import endpoints from "/src/services/endpoints.jsx";
-import { getAxiosEndpoint } from '/src/hooks/useApi.jsx';
+import { getAxiosEndpoint, replaceUrlIdParam } from '/src/hooks/useApi.jsx';
 import { getFormat } from '/src/hooks/useCommon.jsx';
 
 function Tournament() {
@@ -16,7 +16,7 @@ function Tournament() {
 
     useEffect(() => {
         async function apiCall() {
-            await getAxiosEndpoint(endpoints.API_TOURNAMENT_DATA.replace('{id}', id))
+            await getAxiosEndpoint(replaceUrlIdParam(endpoints.API_TOURNAMENT_DATA, id))
             .then((response) => {
                 setTournament(prevState => ({
                     ...prevState,

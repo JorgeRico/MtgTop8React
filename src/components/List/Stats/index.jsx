@@ -3,9 +3,7 @@ import statsTypes from "/src/services/statsTypes.jsx"
 import "./module.css";
 import CardBlockStats from "/src/components/List/Stats/Cards";
 
-export default function StatsBox(props) {
-    const { id, isLeague, endpoint, endpointCards, isBlured } = props;
-
+export default function StatsBox({ id, isLeague, endpoint, endpointCards, isBlured }) {
     const cardStats = () => {
         return (
             <>

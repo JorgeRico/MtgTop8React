@@ -2,9 +2,7 @@ import "./module.css"
 import { createModalLink } from '/src/hooks/useCommon.jsx';
 import { useEffect, useState } from 'react';
 
-function ModalPopUp(props) {
-    const { img, name, modalType } = props;
-    // const api                      = useApi();
+function ModalPopUp({ img, name, modalType }) {
     const [ modalId, setModalId ]  = useState(null);
 
     function handleClick () {

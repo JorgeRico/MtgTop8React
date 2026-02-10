@@ -1,8 +1,6 @@
 import ModalPopUp from "/src/components/Modal";
 
-export default function ContentStatsList(props) {
-    const { item, isPlayer, text } = props;
-
+export default function ContentStatsList({ item, isPlayer, text }) {
     const playerStats = (item) => {
         return (
             <>

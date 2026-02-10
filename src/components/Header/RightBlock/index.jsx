@@ -1,8 +1,6 @@
 import { Link } from 'react-router-dom';
 
-export default function HeaderRightBlock(props) {
-    const { image, text, endpoint } = props;
-
+export default function HeaderRightBlock({ image, text, endpoint }) {
     return (
         <>
             <div className="right p20 mt30 pointer">

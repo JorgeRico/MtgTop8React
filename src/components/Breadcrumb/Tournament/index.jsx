@@ -3,9 +3,7 @@ import TitleItemBreadcrumb from "/src/components/Breadcrumb/Items/Title";
 import DashItemBreadcrumb from "/src/components/Breadcrumb/Items/Dash";
 import TournamentItemBreadcrumb from "/src/components/Breadcrumb/Items/Tournament";
 
-function BreadcrumbTournament(props) {
-    const { title, endpoint } = props; 
-                    
+function BreadcrumbTournament({ title, endpoint }) {                    
     return (
         <>
             <HomeItemBreadcrumb></HomeItemBreadcrumb>
