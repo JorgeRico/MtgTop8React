@@ -1,4 +1,3 @@
-import React from "react";
 import "./../module.css";
 import Mail from "/src/assets/images/mail_big.png";
 

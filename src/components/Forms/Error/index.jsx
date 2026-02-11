@@ -1,4 +1,3 @@
-import React from "react";
 import "./../module.css";
 import ErrorMail from "/src/assets/images/error-mail.png";
 

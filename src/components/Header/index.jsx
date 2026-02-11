@@ -10,7 +10,7 @@ export default function Header({ classNameStyles }) {
             <section className={classNameStyles}>
                 <article className="left w100 overflowHidden header">
                     <HeaderLogo></HeaderLogo>
-                    <RightBlock image={Mail} text="Contact us" endpoint={endpoints.HTTP_CONTACT}></RightBlock>
+                    <RightBlock image={Mail} text="Contact us" endpoint={endpoints.HTTP_CONTACT} styleClasses="mr20"></RightBlock>
                     <RightBlock image={Cards} text="Decklist" endpoint={endpoints.HTTP_DECKLIST}></RightBlock>
                 </article>
             </section>

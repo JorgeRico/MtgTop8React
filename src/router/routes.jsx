@@ -1,5 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
+import LoadingLayout from "../views/layout/loading";
+
 const Home       = lazy(() => import("../views/home"));
 const League     = lazy(() => import("../views/league"));
 const Tournament = lazy(() => import("../views/tournament"));
@@ -8,7 +10,7 @@ const Decklist   = lazy(() => import("../views/decklist"));
 const NotFound   = lazy(() => import("../views/notfound"));
 
 const Router = () => (  
-    <Suspense fallback={<p>Loading . . .</p>}>
+    <Suspense fallback={<LoadingLayout name="loading"><p>Loading data . . .</p></LoadingLayout>}>
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="leagues/:id" element={<League />} />

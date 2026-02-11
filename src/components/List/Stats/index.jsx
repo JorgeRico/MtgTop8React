@@ -1,4 +1,3 @@
-import React from "react";
 import statsTypes from "/src/services/statsTypes.jsx"
 import "./module.css";
 import CardBlockStats from "/src/components/List/Stats/Cards";

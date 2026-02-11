@@ -1,4 +1,3 @@
-import React from "react";
 import Title from "/src/components/Tournament/Title";
 
 function TournamentTitleBlured() {

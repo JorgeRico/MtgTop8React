@@ -1,10 +1,9 @@
-import React from "react";
 import HTag from "/src/components/HTag";
 
 function TournamentTitle({ tournament, isBlured }) {
     return (
         <>
-            <div className={`left w100 mt20 pb0 ${isBlured ? "blink blured" : ""}`}>
+            <div className={`left w100 mt40 pb0 ${isBlured ? "blink blured" : ""}`}>
                 <div className="left">
                     <HTag Tag="h1" text={tournament.name} className="left f24 mb5" />
                 </div>

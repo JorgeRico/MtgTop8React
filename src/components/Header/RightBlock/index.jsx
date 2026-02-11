@@ -1,15 +1,15 @@
 import { Link } from 'react-router-dom';
 
-export default function HeaderRightBlock({ image, text, endpoint }) {
+export default function HeaderRightBlock({ image, text, endpoint, styleClasses }) {
     return (
         <>
-            <div className="right p20 mt30 pointer">
+            <div className={`${styleClasses} right p20 mt30 pointer`}>
                 <Link to={endpoint}>
                     <div className="left">
                         <img src={image} alt={text + " - mtg legacy"} className="send invertColor" width="25" height="25" />
                     </div>
                     <div className="left ml10 headerRight">
-                            {text}
+                        {text}
                     </div>
                 </Link>
             </div>

@@ -146,7 +146,7 @@ a:link, a:visited, a:hover, a:active {
     width: auto;
 }
 
-h1 {
+h1, h5 {
     margin: 0 0 10px 0;
 }
 

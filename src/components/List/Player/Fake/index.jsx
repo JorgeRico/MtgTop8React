@@ -1,4 +1,3 @@
-import React from "react";
 import PlayerList from "/src/components/List/Player/Normal";
 import players from "/src/fakeData/playerList.jsx";
 

@@ -1,4 +1,3 @@
-import React from "react";
 import SubTitle from "/src/components/HTag/SubTitle";
 // import AdSenseAd from "/src/components/Adsense";
 

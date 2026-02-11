@@ -1,4 +1,3 @@
-import React from "react";
 import Deck from "/src/components/List/Deck/Normal";
 import decklist from "/src/fakeData/decklist.jsx";
 
