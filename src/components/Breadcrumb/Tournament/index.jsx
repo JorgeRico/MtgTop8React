@@ -1,16 +1,16 @@
 import HomeItemBreadcrumb from "/src/components/Breadcrumb/Items/Home";
 import TitleItemBreadcrumb from "/src/components/Breadcrumb/Items/Title";
 import DashItemBreadcrumb from "/src/components/Breadcrumb/Items/Dash";
-import TournamentItemBreadcrumb from "/src/components/Breadcrumb/Items/Tournament";
+import TitleLinkItemBreadcrumb from "/src/components/Breadcrumb/Items/TitleLink";
 
-function BreadcrumbTournament({ title, endpoint }) {                    
+function BreadcrumbTournament({ title, date, endpoint }) {         
     return (
         <>
             <HomeItemBreadcrumb></HomeItemBreadcrumb>
             <DashItemBreadcrumb></DashItemBreadcrumb>
-            <TournamentItemBreadcrumb endpoint={endpoint}></TournamentItemBreadcrumb>
+            <TitleLinkItemBreadcrumb title={title} endpoint={endpoint}></TitleLinkItemBreadcrumb>
             <DashItemBreadcrumb></DashItemBreadcrumb>
-            <TitleItemBreadcrumb title={title}></TitleItemBreadcrumb>
+            <TitleItemBreadcrumb title={date}></TitleItemBreadcrumb>
         </>
     );
 }

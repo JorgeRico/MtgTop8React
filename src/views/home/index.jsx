@@ -3,6 +3,7 @@ import CurrentEvents from "/src/views/home/events/current";
 import PastEvents from "/src/views/home/events/past";
 import Title from "/src/components/HTag/Title";
 // import AdSenseAd from "/src/components/Adsense";
+import SimpleBreadcrumb from "/src/components/Breadcrumb/Simple";
 
 function Home() {
     
@@ -13,7 +14,8 @@ function Home() {
                 title       = "MTG Legacy stats - CAT Legacy"
                 description = "Catalan MTG Legacy leagues, tournaments, players and cards"
             >
-                <main className="left w100 mt20">
+                <main className="left w100">
+                    <SimpleBreadcrumb isHome={true} />
                     <Title title="Leagues" />
                     <p className="mb40 color-gray">Explore current and past leagues, view standings and decks</p>
                     <CurrentEvents title="Current Leagues"></CurrentEvents>

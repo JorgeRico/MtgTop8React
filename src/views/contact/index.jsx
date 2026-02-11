@@ -1,6 +1,7 @@
 import Layout from "/src/views/layout/core";
 import ContactForm from "/src/components/Forms/Contact";
 import Title from "/src/components/HTag/Title";
+import SimpleBreadcrumb from "/src/components/Breadcrumb/Simple";
 
 function Contact() {
     return (
@@ -11,7 +12,8 @@ function Contact() {
                 canonical   = "contact"
                 description = "Contact - Catalan MTG Legacy leagues, tournaments, players and cards"
             >
-                <main className="left w100 mt20">
+                <main className="left w100">
+                    <SimpleBreadcrumb title="contact" />
                     <Title title="Contact us" />
                     <p className="mb40 color-gray">Ask for information about leagues, classifications or what you want . . .</p>
                     <ContactForm></ContactForm>

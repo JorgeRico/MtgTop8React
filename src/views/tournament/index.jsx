@@ -5,6 +5,7 @@ import Template from "/src/views/layout/template";
 import TournamentPlayers from "/src/components/Tournament/Players";
 import Stats from "/src/views/stats";
 import Breadcrumb from "/src/components/Breadcrumb";
+import TournamentBreadcrumb from "/src/components/Breadcrumb/Tournament";
 import endpoints from "/src/services/endpoints.jsx";
 import { getAxiosEndpoint, replaceUrlIdParam } from '/src/hooks/useApi.jsx';
 import { getFormat } from '/src/hooks/useCommon.jsx';
@@ -46,11 +47,9 @@ function Tournament() {
             >
                 <Template
                     breadcrumb={
-                        <Breadcrumb
-                            title    = {tournament.name} 
-                            endpoint = {endpoints.HTTP_LEAGUE + tournament.idLeague} 
-                            loading  = {loading}
-                            isLeague = {false}
+                        <Breadcrumb 
+                            loading   = {loading}
+                            component = {<TournamentBreadcrumb title={tournament.name} date={tournament.date} endpoint={endpoints.HTTP_LEAGUE + tournament.idLeague} />}
                         />
                     }
                     tournament={

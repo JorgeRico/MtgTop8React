@@ -18,7 +18,7 @@ function TemplateLayout({ breadcrumb, tournament, stats, title }) {
     return (
         <>
             {breadcrumb}
-            <section className="left w100 mt20">
+            <section className="left w100">
                 {tournament}
                 {/* <AdSenseBox></AdSenseBox> */}
                 <div className="left w100 mt50">

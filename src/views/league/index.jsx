@@ -8,6 +8,7 @@ import endpoints from "/src/services/endpoints.jsx";
 import { getAxiosEndpoint, replaceUrlIdParam } from '/src/hooks/useApi.jsx';
 import { getFormat } from '/src/hooks/useCommon.jsx';
 import Breadcrumb from "/src/components/Breadcrumb";
+import SimpleBreadcrumb from "/src/components/Breadcrumb/Simple";
 
 function League() {
     const { id }                                = useParams();
@@ -42,11 +43,9 @@ function League() {
             >
                 <Template 
                     breadcrumb={
-                        <Breadcrumb
-                            title    = {leagueName} 
-                            loading  = {showLeagueName}
-                            endpoint = {null}
-                            isLeague = {true}
+                        <Breadcrumb 
+                            loading   = {showLeagueName}
+                            component = {<SimpleBreadcrumb title={leagueName} />}
                         />
                     }
                     tournament={

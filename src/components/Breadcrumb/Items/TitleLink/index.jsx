@@ -1,15 +1,15 @@
 import { Link } from 'react-router-dom';
 
-function TournamentItemBreadcrumb({ endpoint }) {
+function TitleLinkItemBreadcrumb({ endpoint, title }) {
     return (
         <>
             <div className="left ml10">
                 <Link to={endpoint}>
-                    Tournaments
+                    {title}
                 </Link>
             </div>
         </>
     );
 }
 
-export default TournamentItemBreadcrumb;
+export default TitleLinkItemBreadcrumb;
