@@ -36,7 +36,7 @@ function TournamentPlayers({ id, tournament }) {
             <div className="left w100 mt20">
                 <HTag Tag="h2" text={"Top Players"} className="left f24" />
             </div>
-            <div className="left w100 playerList mb20">
+            <div className="left w100 mb20">
                 {showPlayers === false ? (
                         <PlayersBlured></PlayersBlured>
                     ) : (

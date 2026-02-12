@@ -1,16 +1,15 @@
+import BlockLine from "/src/components/List/Player/Normal/BlockLine";
+
 export default function TournamentHeaderPlayers() {
     return (
         <>
-            <section className="playersListHeader grey-bottom bg-footer items">
-                <div className="padTournamentBox w-20">
-                    #
-                </div>
-                <div className="padTournamentBox w-200">
-                    Player
-                </div>
-                <div className="padTournamentBox w-150 headerDeckName">
-                    Deck
-                </div>
+            <section className="item left mb10 bg-footer border-red overflowHidden playersBoxHeader">
+                <BlockLine
+                    position = "#"
+                    player   = "Player"
+                    deck     = "Deck"
+                    isHeader = {true}
+                />
             </section>
         </>
     )

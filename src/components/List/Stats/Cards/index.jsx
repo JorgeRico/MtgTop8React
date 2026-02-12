@@ -48,7 +48,7 @@ export default function StatsBox({ text, cardType, endpoint, isPlayer }) {
                     {!renderElements ? (
                         (noResults === true) ? (
                             <>
-                                <div class="radius5 cardsList bg-footer padStatsBox">
+                                <div className="radius5 cardsList bg-footer padStatsBox">
                                     Sorry, now we don't have tournaments registered for this league
                                 </div>
                             </>

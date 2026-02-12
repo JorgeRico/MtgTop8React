@@ -1,61 +1,55 @@
-.playersListHeader {
-    display: flex;
-    justify-items: center;
-    max-width: 36.7em;
+.playersBoxHeader, .playersBox {
+    width: 38em;
 }
 
-.items {
-    padding: 0 20px 0 0;
-}
-
-.tournamentPlayer.even {
+.playersBoxHeader{
     background: var(--background-even);
 }
 
+.item {
+    display: flex;
+    justify-items: flex-start;
+    padding: 0 20px 0 0;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
 .viewDeck {
-    padding: 11px 15px 10px 15px;
+    padding: 7px 15px 6px 15px;
     
     & button {
         padding: 7px 15px;
     }
 }
 
-@media (max-width: 680px) {
-    .viewDeck {
-        margin-left: 3.3em;
+@media (max-width: 691px) {
+    .playersBoxHeader {
+        display: none;
     }
-}
+    
+    .playersBox {
+        width: 96%;
+    }
 
-@media (max-width: 620px) {
-    .viewDeck, .deckName {
-        width: auto !important;
-        float: left;
+    .viewDeck {
+        width: 100%;
+        margin: 1px 48px 10px 48px;
+
+        & button {
+            width: 100%;
+            max-width: 200px;
+            float: left;
+        }
     }
 
     .deckName {
-        width: 80% !important;
-        margin-left: 50px;
+        width: 100%;
+        margin: 0 48px;
     }
+}
 
-    .w-200 {
+@media (max-width: 400px) {
+    .player {
         width: auto;
-    }
-
-    .viewDeck button {
-        margin-left: 15px;
-        float: left;
-        margin-top: 0;
-        margin-bottom: 20px;
-        width: auto !important;
-    }
-    
-    .viewDeck {
-        padding: 10px;
-        margin-left: 2.3em;
-        width: 80% !important;
-    }
-
-    .headerDeckName{
-        display: none;
     }
 }

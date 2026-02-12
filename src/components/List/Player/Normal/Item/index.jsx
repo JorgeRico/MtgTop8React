@@ -5,6 +5,7 @@ import endpoints from "/src/services/endpoints.jsx";
 import Deck from "/src/components/List/Deck/Normal";
 import BluredDeck from "/src/components/List/Deck/Fake";
 import Button from "/src/components/List/Button";
+import BlockLine from "/src/components/List/Player/Normal/BlockLine";
 
 export default function TournamentPlayerItem({ item, index }) {
     const [ loading, setLoading ]                 = useState(false);
@@ -48,32 +49,28 @@ export default function TournamentPlayerItem({ item, index }) {
     
     return (
         <>
-            <section className={`left tournamentPlayer grey-bottom ${(index % 2 == 0) ? 'odd' : 'even'}`} id={'player-'+(index+1)}>
-                <div className="items">
-                    <div className="left p15 w-20">
-                        {index+1}
-                    </div>
-                    <div className="left p15 w-200">
-                        {item.name}
-                    </div>
-                    <div className="left p15 w-150 deckName">
-                        {item.deckName}
-                    </div>
-                    <div className="left viewDeck" onClick={() => handleCards((index+1), item.idDeck)}>
-                        <Button buttonText="View Deck" id={'button-deck-'+(index+1)}/>
-                    </div>
+            <section className="item left mb10 bg-footer border-red overflowHidden playersBox" id={'player-'+(index+1)}>
+                <BlockLine
+                    position = {index+1}
+                    player   = {item.name}
+                    deck     = {item.deckName}
+                />
+                <div className="left viewDeck" onClick={() => handleCards((index+1), item.idDeck)}>
+                    <Button buttonText="View Deck" id={'button-deck-'+(index+1)}/>
                 </div>
             </section>
+
             <section className="left w100 clear"></section>
+
             <section className="left w100 none decklists mb20" id={'deck-'+(index+1)}>
-                <div className="deck overflowHidden">
+                <article className="deck overflowHidden">
                     {loading === true &&
                         <BluredDeck></BluredDeck>
                     }
                     {renderDeckItems && (
                         <Deck items={renderDeckItems} deckName={item.deckName} isBlured={false} />
                     )}
-                </div>
+                </article>
             </section>
         </>
     )
