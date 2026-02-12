@@ -9,11 +9,11 @@ export default function Deck({ items, deckName, isBlured }) {
         <>
             {items.length > 0 && (
                 <>
-                    <div className={isBlured ? "blink blured" : ""}>
+                    <article className={isBlured ? "blink blured" : ""}>
                         <DeckDescription items={items} deckName={deckName}></DeckDescription>
                         <DeckMainboard items={items}></DeckMainboard>
                         <DeckSideboard items={items}></DeckSideboard>
-                    </div>
+                    </article>
                     {/* <AdSenseAd 
                         adClient            = "ca-pub-9482818665347681" // Replace with your publisher ID
                         adSlot              = "2151511143" // Replace with your banner ad slot ID
