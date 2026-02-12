@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
-import Layout from "/src/views/layout/core";
 import Template from "/src/views/layout/template";
 import LeagueTournamentList from "/src/components/List/League/Tournament/List";
 import Stats from "/src/views/stats";
@@ -35,34 +34,31 @@ function League() {
 
     return (
         <>
-            <Layout 
+            <Template 
                 name        = "league"
                 title       = {`Mtg Stats - Legacy League: ${leagueName}`}
                 canonical   = {`leagues/${id}`}
                 description = "League - Catalan MTG Legacy leagues, tournaments, players and cards"
-            >
-                <Template 
-                    breadcrumb={
-                        <Breadcrumb 
-                            loading   = {showLeagueName}
-                            component = {<SimpleBreadcrumb title={leagueName} />}
-                        />
-                    }
-                    tournament={
-                        <LeagueTournamentList 
-                            id     = {id}
-                            format = {leagueFormat}
-                        />
-                    }
-                    stats={
-                        <Stats 
-                            id       = {id}
-                            isLeague = {true}
-                        />
-                    }
-                    title="Season Stats"
-                />                    
-            </Layout>
+                breadcrumb  = {
+                    <Breadcrumb 
+                        loading   = {showLeagueName}
+                        component = {<SimpleBreadcrumb title={leagueName} />}
+                    />
+                }
+                tournament  = {
+                    <LeagueTournamentList 
+                        id     = {id}
+                        format = {leagueFormat}
+                    />
+                }
+                stats = {
+                    <Stats 
+                        id       = {id}
+                        isLeague = {true}
+                    />
+                }
+                templateTitle = "Season Stats"
+            />                    
         </>
     );
 }                        

@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
-import Layout from "/src/views/layout/core";
 import Template from "/src/views/layout/template";
 import TournamentPlayers from "/src/components/Tournament/Players";
 import Stats from "/src/views/stats";
@@ -38,35 +37,32 @@ function Tournament() {
     }, []);
 
     return (
-        <> 
-            <Layout 
+        <>
+            <Template
                 name        = "tournaments"
                 title       = {`Mtg Stats - Legacy Tournament: ${tournament.name} - ${tournament.date}`}
                 canonical   = {`tournaments/${id}`}
                 description = "Tournament - Catalan MTG Legacy leagues, tournaments, players and cards"
-            >
-                <Template
-                    breadcrumb={
-                        <Breadcrumb 
-                            loading   = {loading}
-                            component = {<TournamentBreadcrumb title={tournament.name} date={tournament.date} endpoint={endpoints.HTTP_LEAGUE + tournament.idLeague} />}
-                        />
-                    }
-                    tournament={
-                        <TournamentPlayers 
-                            id         = {id} 
-                            tournament = {tournament} 
-                        />
-                    }
-                    stats={
-                        <Stats 
-                            id       = {id}
-                            isLeague = {false}
-                        />
-                    }
-                    title="Tournament Stats"
-                />                    
-            </Layout>
+                breadcrumb  = {
+                    <Breadcrumb 
+                        loading   = {loading}
+                        component = {<TournamentBreadcrumb title={tournament.name} date={tournament.date} endpoint={endpoints.HTTP_LEAGUE + tournament.idLeague} />}
+                    />
+                }
+                tournament  = {
+                    <TournamentPlayers 
+                        id         = {id} 
+                        tournament = {tournament} 
+                    />
+                }
+                stats = {
+                    <Stats 
+                        id       = {id}
+                        isLeague = {false}
+                    />
+                }
+                templateTitle = "Tournament Stats"
+            />                    
         </>
     );
 }                        
