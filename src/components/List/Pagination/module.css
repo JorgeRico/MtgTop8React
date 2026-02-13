@@ -7,6 +7,8 @@
     margin-left: 10px;
     background: none;
     float: left;
+    border: 1px solid var(--color-gray);
+    border-radius: 3px;
 }
 
 .arrowButton {
@@ -24,7 +26,6 @@
 
 .current {
     background: var(--background-red);
-    border: 1px solid var(--color-gray);
 }
 
 .padPagination {
