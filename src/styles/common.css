@@ -146,7 +146,7 @@ a:link, a:visited, a:hover, a:active {
     width: auto;
 }
 
-h1, h5 {
+h1 {
     margin: 0 0 10px 0;
 }
 
@@ -156,6 +156,10 @@ h1, h2 {
 
 h3 {
     margin-bottom: 0px;
+}
+
+.mt0 {
+    margin-top: 0;
 }
 
 .mt3 {
