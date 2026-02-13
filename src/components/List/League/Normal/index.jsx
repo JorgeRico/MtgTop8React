@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { Link } from 'react-router-dom';
 import cupIcon from '/src/assets/images/cup.png';
@@ -6,8 +5,6 @@ import Button from "/src/components/List/Button";
 import { getFormat } from '/src/hooks/useCommon.jsx';
 
 export default function LeagueList({ url, items, isBlured }) {
-    const [ renderItems, setRenderItems ] = useState(null);
-
     const leagueItemBlock = (icon, text1, text2, buttonText) => { 
         return (
             <>
@@ -30,23 +27,17 @@ export default function LeagueList({ url, items, isBlured }) {
         )
     }
 
-    useEffect(() => {
-        if (items?.length > 0) {
-            setRenderItems(items?.map((item) => (
-                <article className="listItem pointer title mb15 overflowHidden" key={uuidv4()}>
-                    <Link to={url + item.id}>
-                        {leagueItemBlock(cupIcon, item.name, `Format: ${getFormat(item.isLegacy)}`, "View league")}
-                    </Link>
-                </article>
-            )));
-        }
-    }, []);
-
     return (
         <>
             <section className={`left w100 overflowHidden ${isBlured ? 'blink blured' : ''}`}>
                 {(items?.length > 0) && (
-                    renderItems
+                    items?.map((item) => (
+                        <article className="listItem pointer title mb15 overflowHidden" key={uuidv4()}>
+                            <Link to={url + item.id}>
+                                {leagueItemBlock(cupIcon, item.name, `Format: ${getFormat(item.isLegacy)}`, "View league")}
+                            </Link>
+                        </article>
+                    ))
                 )}
             </section>
         </>
