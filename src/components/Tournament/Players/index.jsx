@@ -3,9 +3,10 @@ import endpoints from "/src/services/endpoints.jsx";
 import { getAxiosEndpoint, replaceUrlIdParam } from '/src/hooks/useApi.jsx';
 import PlayerList from "/src/components/List/Player/Normal";
 import PlayersBlured from "/src/components/List/Player/Fake";
-import HTag from "/src/components/HTag";
 import Title from "/src/components/Tournament/Title";
 import TournamentTitleBlured from "/src/components/Tournament/Fake";
+import SubTitle from "/src/components/HTag/SubTitle";
+import ListImage from "/src/components/Icons/List";
 
 function TournamentPlayers({ id, tournament }) {
     const [ renderPlayers, setRenderPlayers] = useState([]);
@@ -33,8 +34,14 @@ function TournamentPlayers({ id, tournament }) {
             ) : (
                 <Title tournament={tournament} isBlured={false}></Title>
             )}
-            <section className="left w100 mt20 mb10">
-                <HTag Tag="h2" text={`Top Players - ${tournament.name}`} className="left f24" />
+            <section className="left w100 mt40 mb10">
+                <SubTitle title={
+                        <>
+                            <ListImage></ListImage>
+                            <span className="left ml10 mt3">{`Top Players ${tournament.name ? '- ' + tournament.name : ''}`}</span>
+                        </>
+                    } 
+                />
             </section>
             <section className="left w100 mb20">
                 {showPlayers === false ? (

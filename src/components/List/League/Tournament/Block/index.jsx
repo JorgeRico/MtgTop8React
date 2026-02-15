@@ -12,6 +12,7 @@ function LeagueTournamentBlock({ leagueName, format, renderElements, url, isBlur
                 </div>
                 <div className="left w100 f14">Format: {format}</div>
                 <div className="left w100 f14 mt5">Average Players: {numPlayers}</div>
+                {/* <div className="left w100 f14 mt5">Location: location</div> */}
                 {classification != null && (
                     <div className="left w100 f14 mt5">Classification: {classification}</div>
                 )}

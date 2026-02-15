@@ -298,6 +298,10 @@ h3 {
     padding-bottom: 10px;
 }
 
+.pt6 {
+    padding-top: 6px;
+}
+
 .overflowHidden {
     overflow: hidden;
 }
