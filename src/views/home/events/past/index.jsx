@@ -36,8 +36,9 @@ function PastEvents({ title }) {
     return (
         <>
             <section>
-                <div className="left w100 mb20 mt20 grey-bottom">
+                <div className="left w100 mt20 mb20 grey-bottom">
                     <SubTitle title={title} />
+                    <p className="left w100 mt0 color-gray">Explore past leagues, view standings and decks</p>
                 </div>
                 {showPastElements === false ? (
                         <BluredLeagueList></BluredLeagueList>
@@ -50,7 +51,7 @@ function PastEvents({ title }) {
                     )
                 }
                 {totalPastLeagues > 0 &&
-                    <Pagination total={totalPastLeagues} itemsPerPage={numItems} currentPage={currentPage} setCurrentPage={setCurrentPage}></Pagination>
+                    <Pagination text="Past Leagues" total={totalPastLeagues} itemsPerPage={numItems} currentPage={currentPage} setCurrentPage={setCurrentPage}></Pagination>
                 }
             </section>
         </>

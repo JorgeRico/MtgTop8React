@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import "./module.css"
 
-function Pagination({ total, itemsPerPage, currentPage, setCurrentPage }){
+function Pagination({ text, total, itemsPerPage, currentPage, setCurrentPage, isDisabled = false }){
     const [ firstPage ]               = useState(1);
     const [ lastPage ]                = useState(Math.ceil(total / itemsPerPage));
     const [ pageArray, setPageArray ] = useState([]) 
@@ -31,25 +31,27 @@ function Pagination({ total, itemsPerPage, currentPage, setCurrentPage }){
         <>
             <section className="left w100 grey-top">
                 <section className="left padPagination flex total">
-                    Total Past Leagues: {total}
+                    Total {text}: {total}
                 </section>
-                <section className="right padPagination flex">
-                    <article key={uuidv4()} className="">
-                        <button disabled={firstPage == currentPage} className={firstPage == currentPage ? "arrowButton disabled" : "arrowButton pointer"} onClick={() => handleClickPrevious()}> 
-                            <span>&#171;</span>
-                        </button>
-                    </article>
-                    {pageArray?.map((number) => (
+                {!isDisabled &&
+                    <section className="right padPagination flex">
                         <article key={uuidv4()} className="">
-                            <button disabled={number == currentPage} className={number != currentPage ? "pagButton pointer" : "pagButton current disabled"} onClick={() => handleClick(number)}>{number}</button>
-                        </article>      
-                    ))}
-                    <article key={uuidv4()} className="">
-                        <button className={lastPage == currentPage ? "arrowButton disabled" : "arrowButton pointer" } onClick={() => handleClickNext()}>
-                            <span>&#187;</span>
-                        </button>
-                    </article> 
-                </section>
+                            <button disabled={firstPage == currentPage} className={firstPage == currentPage ? "arrowButton disabled" : "arrowButton pointer"} onClick={() => handleClickPrevious()}> 
+                                <span>&#171;</span>
+                            </button>
+                        </article>
+                        {pageArray?.map((number) => (
+                            <article key={uuidv4()} className="">
+                                <button disabled={number == currentPage} className={number != currentPage ? "pagButton pointer" : "pagButton current disabled"} onClick={() => handleClick(number)}>{number}</button>
+                            </article>      
+                        ))}
+                        <article key={uuidv4()} className="">
+                            <button className={lastPage == currentPage ? "arrowButton disabled" : "arrowButton pointer" } onClick={() => handleClickNext()}>
+                                <span>&#187;</span>
+                            </button>
+                        </article> 
+                    </section>
+                }
             </section>
         </>
     );

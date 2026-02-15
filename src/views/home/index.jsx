@@ -16,9 +16,9 @@ function Home() {
             >
                 <main className="left w100">
                     <SimpleBreadcrumb isHome={true} />
-                    <Title title="Leagues" />
-                    <p className="mb40 color-gray">Explore current and past leagues, view standings and decks</p>
-                    <CurrentEvents title="Current Leagues"></CurrentEvents>
+                    <Title title="MTG Leagues - Legacy" />
+                    <p className="color-gray mb40">Magic The Gathering Catalan Tournaments</p>
+                    <CurrentEvents title="Current Leagues- Legacy"></CurrentEvents>
                     {/* <AdSenseAd 
                         adClassNameStyles   = "mb20"
                         adClient            = "ca-pub-9482818665347681" // Replace with your publisher ID
@@ -26,7 +26,7 @@ function Home() {
                         adFormat            = "auto" // Fixed-size banner
                         fullWidthResponsive = {true} 
                     /> */}
-                    <PastEvents title="Past Leagues"></PastEvents>
+                    <PastEvents title="Past Leagues - Legacy"></PastEvents>
                 </main>
             </Layout>
         </>
