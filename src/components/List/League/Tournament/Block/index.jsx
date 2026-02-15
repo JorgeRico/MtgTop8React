@@ -1,12 +1,14 @@
 import TournamentList from "/src/components/List/Tournament/Normal";
 import HTag from "/src/components/HTag";
 
-function LeagueTournamentBlock({ format, renderElements, url, isBlured, numPlayers, classification }) {
+function LeagueTournamentBlock({ leagueName, format, renderElements, url, isBlured, numPlayers, classification }) {
     return (
         <>
             <div className={`left w100 mb40 ${isBlured ? 'blink blured' : ''}`}>
                 <div className="left">
-                    <HTag Tag="h1" text="Tournaments" className="left f24 mb5" />
+                    {leagueName &&
+                        <HTag Tag="h1" text={`Tournaments - ${leagueName}`} className="left f24 mb5" />
+                    }
                 </div>
                 <div className="left w100 f14">Format: {format}</div>
                 <div className="left w100 f14 mt5">Average Players: {numPlayers}</div>
@@ -14,11 +16,9 @@ function LeagueTournamentBlock({ format, renderElements, url, isBlured, numPlaye
                     <div className="left w100 f14 mt5">Classification: {classification}</div>
                 )}
             </div>
-            {renderElements != null && (
-                <div className={`left w100 ${isBlured ? 'blink blured' : ''}`}>
-                    <TournamentList url={url} items={renderElements}/>
-                </div>
-            )}
+            <div className={`left w100 mb10 ${isBlured ? 'blink blured' : ''}`}>
+                <TournamentList url={url} items={renderElements}/>
+            </div>
         </>    
     )
 }

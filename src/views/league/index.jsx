@@ -47,17 +47,18 @@ function League() {
                 }
                 tournament  = {
                     <LeagueTournamentList 
-                        id     = {id}
-                        format = {leagueFormat}
+                        id         = {id}
+                        format     = {leagueFormat}
+                        leagueName = {leagueName}
                     />
                 }
                 stats = {
                     <Stats 
-                        id       = {id}
-                        isLeague = {true}
+                        id         = {id}
+                        isLeague   = {true}
                     />
                 }
-                templateTitle = "Season Stats"
+                templateTitle = {`Season Stats - ${leagueName}`}
             />                    
         </>
     );

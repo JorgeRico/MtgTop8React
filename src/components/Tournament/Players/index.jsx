@@ -34,7 +34,7 @@ function TournamentPlayers({ id, tournament }) {
                 <Title tournament={tournament} isBlured={false}></Title>
             )}
             <section className="left w100 mt20 mb10">
-                <HTag Tag="h2" text={"Top Players"} className="left f24" />
+                <HTag Tag="h2" text={`Top Players - ${tournament.name}`} className="left f24" />
             </section>
             <section className="left w100 mb20">
                 {showPlayers === false ? (

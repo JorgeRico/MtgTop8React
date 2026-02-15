@@ -61,7 +61,7 @@ function Tournament() {
                         isLeague = {false}
                     />
                 }
-                templateTitle = "Tournament Stats"
+                templateTitle = {`Tournament Stats - ${tournament.name}`}
             />                    
         </>
     );
