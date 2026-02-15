@@ -2,7 +2,7 @@ import SubTitle from "/src/components/HTag/SubTitle";
 // import AdSenseAd from "/src/components/Adsense";
 import Layout from "/src/views/layout/core";
 
-function TemplateLayout({ name, title, canonical, description, breadcrumb, tournament, stats, templateTitle }) {
+function TemplateLayout({ name, title, canonical, description, breadcrumb, tournament, stats }) {
     // const AdSenseBox = () => {
     //     return (
     //         <AdSenseAd 
@@ -27,9 +27,6 @@ function TemplateLayout({ name, title, canonical, description, breadcrumb, tourn
                 <section className="left w100">
                     {tournament}
                     {/* <AdSenseBox></AdSenseBox> */}
-                    <div className="left w100 mt50">
-                        <SubTitle title={templateTitle} />
-                    </div>
                     {stats}
                 </section>
             </Layout>

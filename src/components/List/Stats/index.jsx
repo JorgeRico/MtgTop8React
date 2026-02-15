@@ -1,21 +1,44 @@
 import statsTypes from "/src/services/statsTypes.jsx"
 import "./module.css";
 import CardBlockStats from "/src/components/List/Stats/Cards";
+import SubTitle from "/src/components/HTag/SubTitle";
+import HTag from "/src/components/HTag";
+import StatsImage from "/src/components/Icons/Stats";
 
-export default function StatsBox({ id, isLeague, endpoint, endpointCards, isBlured }) {
+export default function StatsBox({ id, title, isLeague, endpoint, endpointCards, isBlured }) {
     const cardStats = () => {
         return (
             <>
                 {isLeague === true &&
-                    <CardBlockStats
-                        id={id}
-                        text="Top Players" 
-                        endpoint={endpoint.replace('{id}', id).replace('{option}', statsTypes.PLAYERS)}
-                        cardType={statsTypes.PLAYERS}
-                        isPlayer={true}
-                    />
+                    <>
+                        <div className="left w100 grey-bottom">
+                            <SubTitle title={
+                                    <>
+                                        <StatsImage></StatsImage>
+                                        <span className="left ml5">Player Stats</span>
+                                    </>
+                                } 
+                            />
+                        </div>
+                        <CardBlockStats
+                            id={id}
+                            text="Top Players" 
+                            endpoint={endpoint.replace('{id}', id).replace('{option}', statsTypes.PLAYERS)}
+                            cardType={statsTypes.PLAYERS}
+                            isPlayer={true}
+                        />
+                    </>
                 }
 
+                <div className="left w100 grey-bottom">
+                    <SubTitle title={
+                            <>
+                                <StatsImage></StatsImage>
+                                <span className="left ml5">Card Stats</span>
+                            </>
+                        } 
+                    />
+                </div>
                 <CardBlockStats
                     id={id}
                     text="Top Cards" 
@@ -79,7 +102,16 @@ export default function StatsBox({ id, isLeague, endpoint, endpointCards, isBlur
                     cardType={statsTypes.LAND}
                     isPlayer={false}
                 />
-
+                
+                <div className="left w100 grey-bottom">
+                    <SubTitle title={
+                            <>
+                                <StatsImage></StatsImage>
+                                <span className="left ml5">Deck Stats</span>
+                            </>
+                        } 
+                    />
+                </div>
                 <CardBlockStats
                     id={id}
                     text="Top Mainboard Cards" 
@@ -103,6 +135,16 @@ export default function StatsBox({ id, isLeague, endpoint, endpointCards, isBlur
         <>
             <section className={`left mt10 w100 ${isBlured ? 'blink blured' : ''}`}>
                 <article className="mb20 statsBoxContent flex-container">
+                    <div className="left mt50 mb10 overflowHidden">
+                        <HTag 
+                            Tag       = "h2" 
+                            className = "left f24 mb0" 
+                            text      = "Stats"
+                        />
+                        <p className="left w100 color-gray mb0">{title}</p>
+                        <p className="left w100 color-gray mb0">All tournament stats.</p>
+                        <p className="left w100 color-gray mb0">Most played cards and main deck and sideboard card stats.</p>
+                    </div>
                     {cardStats()}
                 </article>
             </section>

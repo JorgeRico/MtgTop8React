@@ -5,7 +5,7 @@ import Button from "/src/components/List/Button";
 import { getFormat } from '/src/hooks/useCommon.jsx';
 
 export default function LeagueList({ url, items, isBlured }) {
-    const leagueItemBlock = (icon, text1, text2, buttonText) => { 
+    const leagueItemBlock = (icon, name, format, buttonText) => { 
         return (
             <>
                 <div className="left w100 mb10 bg-footer">
@@ -14,10 +14,10 @@ export default function LeagueList({ url, items, isBlured }) {
                             <img src={icon} width="15" height="14" alt="Cup Champion" className="cupIcon w-15" />
                         </div>
                         <div className="left format wAuto ml25 tournamentDescription">
-                            <strong>{text1}</strong>
+                            <strong>{name}</strong>
                             <br></br>
                             <span className="left f12 mt5" style={{whiteSpace: 'pre-wrap'}}>
-                                {text2}
+                                {format}
                             </span>
                         </div>
                         <Button buttonText={buttonText}></Button>

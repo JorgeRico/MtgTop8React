@@ -54,11 +54,11 @@ function League() {
                 }
                 stats = {
                     <Stats 
-                        id         = {id}
-                        isLeague   = {true}
+                        id       = {id}
+                        isLeague = {true}
+                        title    = {`Season Stats ${leagueName ? ' - ' + leagueName : ''}`}
                     />
                 }
-                templateTitle = {`Season Stats - ${leagueName}`}
             />                    
         </>
     );

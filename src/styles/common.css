@@ -198,6 +198,10 @@ h3 {
     margin-top: 50px;
 }
 
+.ml5 {
+    margin-left: 5px;
+}
+
 .ml10 {
     margin-left: 10px;
 }
@@ -224,6 +228,10 @@ h3 {
 
 .ml40 {
     margin-left: 40px;
+}
+
+.mb0 {
+    margin-bottom: 0px;
 }
 
 .mb5 {

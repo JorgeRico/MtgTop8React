@@ -52,16 +52,16 @@ function Tournament() {
                 tournament  = {
                     <TournamentPlayers 
                         id         = {id} 
-                        tournament = {tournament} 
+                        tournament = {tournament}
                     />
                 }
                 stats = {
                     <Stats 
                         id       = {id}
                         isLeague = {false}
+                        title    = {`Tournament Stats - ${tournament.name}`}
                     />
                 }
-                templateTitle = {`Tournament Stats - ${tournament.name}`}
             />                    
         </>
     );
