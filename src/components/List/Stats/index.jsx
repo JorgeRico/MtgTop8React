@@ -138,12 +138,17 @@ export default function StatsBox({ id, title, isLeague, endpoint, endpointCards,
                     <div className="left mt50 mb10 overflowHidden">
                         <HTag 
                             Tag       = "h2" 
-                            className = "left f24 mb0" 
-                            text      = "Stats"
+                            className = "left f24 mb5" 
+                            text      = {
+                                <>
+                                    <StatsImage></StatsImage>
+                                    <span className="left ml5">Stats</span>
+                                </>
+                            } 
                         />
-                        <p className="left w100 color-gray mb0">{title}</p>
-                        <p className="left w100 color-gray mb0">All tournament stats</p>
-                        <p className="left w100 color-gray mb0">Most played cards and main deck and sideboard card stats</p>
+                        <p className="left w100 color-gray mb0 ml10">{title}</p>
+                        <p className="left w100 color-gray mb0 ml10">All tournament stats</p>
+                        <p className="left w100 color-gray mb0 ml10">Most played cards and main deck and sideboard card stats</p>
                     </div>
                     {cardStats()}
                 </article>
