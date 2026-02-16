@@ -18,7 +18,6 @@ function Tournament() {
         async function apiCall() {
             await getAxiosEndpoint(replaceUrlIdParam(endpoints.API_TOURNAMENT_DATA, id))
             .then((response) => {
-                                    console.log(response.data)
                 setTournament(prevState => ({
                     ...prevState,
                     'idLeague'   : response.data.idLeague,
