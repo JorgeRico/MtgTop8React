@@ -40,7 +40,7 @@ export default function StatsBox({ text, cardType, endpoint, isPlayer }) {
 
     return (
         <>
-            <section className="listItem flex-item cardsList" >
+            <section className="listItem flex-item cardsList pointer" >
                 <span onClick={() => handleClickCardTypes()}>
                     <Block text={text}></Block>
                 </span>
