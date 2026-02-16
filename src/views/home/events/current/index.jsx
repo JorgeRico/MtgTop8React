@@ -10,7 +10,6 @@ function Events({ title }) {
     const [ currentLeagues, setCurrentLeagues ]           = useState(null);
     const [ showCurrentElements, setShowCurrentElements ] = useState(false);
     const [ totalLeagues, setTotalLeagues ]               = useState(0);
-    const numItems                                        = 5;
     const [ currentPage, setCurrentPage ]                 = useState(1);
 
     useEffect(() => {
@@ -46,7 +45,9 @@ function Events({ title }) {
                         </>
                     )
                 }
-                <Pagination text="Current Leagues" total={totalLeagues} itemsPerPage={numItems} currentPage={currentPage} setCurrentPage={setCurrentPage}></Pagination>
+                {totalLeagues &&
+                    <Pagination text="Current Leagues" total={totalLeagues} itemsPerPage={totalLeagues} currentPage={currentPage} setCurrentPage={setCurrentPage}></Pagination>
+                }
             </section>
         </>
     );

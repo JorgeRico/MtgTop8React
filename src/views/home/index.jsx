@@ -18,7 +18,7 @@ function Home() {
                     <SimpleBreadcrumb isHome={true} />
                     <Title title="MTG Leagues - Legacy" />
                     <p className="color-gray mb40">Magic The Gathering Catalan Tournaments</p>
-                    <CurrentEvents title="Current Leagues- Legacy"></CurrentEvents>
+                    <CurrentEvents title="Current Leagues - Legacy"></CurrentEvents>
                     {/* <AdSenseAd 
                         adClassNameStyles   = "mb20"
                         adClient            = "ca-pub-9482818665347681" // Replace with your publisher ID

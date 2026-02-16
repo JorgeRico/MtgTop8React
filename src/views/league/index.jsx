@@ -13,8 +13,10 @@ function League() {
     const { id }                                = useParams();
     const [ leagueName, setLeagueName]          = useState(null);
     const [ showLeagueName, setShowLeagueName ] = useState(false);
-    const [ leagueFormat, setLeagueFormat]      = useState(null);
-
+    const [ leagueFormat, setLeagueFormat ]     = useState(null);
+    const [ location, setLocation ]             = useState(null);
+    const [ locationName, setLocationName ]     = useState(null);
+    
     useEffect(() => {
         async function apiCall() {
             await getAxiosEndpoint(replaceUrlIdParam(endpoints.API_LEAGUE_ID, id))
@@ -22,6 +24,8 @@ function League() {
                     setLeagueName(response.data.name);
                     setLeagueFormat(getFormat(response.data.isLegacy));
                     setShowLeagueName(true);
+                    setLocation(response.data.location)
+                    setLocationName(response.data.locationName)
                 })
                 .catch((err) => { 
                     console.log(err)
@@ -47,9 +51,11 @@ function League() {
                 }
                 tournament  = {
                     <LeagueTournamentList 
-                        id         = {id}
-                        format     = {leagueFormat}
-                        leagueName = {leagueName}
+                        id           = {id}
+                        format       = {leagueFormat}
+                        leagueName   = {leagueName}
+                        location     = {location}
+                        locationName = {locationName}
                     />
                 }
                 stats = {

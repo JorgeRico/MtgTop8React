@@ -5,7 +5,7 @@ import BluredTournamentList from "/src/components/List/League/Tournament/Fake";
 import LeagueTournamentBlock from "/src/components/List/League/Tournament/Block";
 import Pagination from "/src/components/List/Pagination";
 
-function LeagueTournament({ id, format, leagueName }) {
+function LeagueTournament({ id, format, leagueName, location, locationName }) {
     const [ renderElements, setRenderElements]  = useState(null);
     const [ showElements, setShowElements ]     = useState(false);
     const [ numPlayers, setNumplayers ]         = useState(0);
@@ -68,6 +68,8 @@ function LeagueTournament({ id, format, leagueName }) {
                             isBlured       = {false}
                             numPlayers     = {numPlayers}
                             classification = {classification}
+                            location       = {location}
+                            locationName   = {locationName}
                         />
                         <Pagination text="Tournaments" total={total} itemsPerPage={total} currentPage={currentPage} setCurrentPage={setCurrentPage}></Pagination>
                     </>
