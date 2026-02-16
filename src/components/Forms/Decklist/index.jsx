@@ -6,6 +6,7 @@ import downloadjs from "downloadjs";
 import DeckListImage from "/src/assets/images/decklist.png";
 import InputForm from "/src/components/Forms/Decklist/Input";
 import TextareaForm from "/src/components/Forms/Decklist/Textarea";
+import { useTranslation } from 'react-i18next';
 
 function Contact() {
     const [ showButton, setShowButton ]         = useState(true);
@@ -23,6 +24,7 @@ function Contact() {
     const [ pdfWidth, setPdfWidth ]             = useState(null);
     const [ rightColum, setRightColum ]         = useState(null);
     const [ leftColum, setLeftColum ]           = useState(null);
+    const { t }                                 = useTranslation();
 
     /**
      * Player info - name and surname
@@ -61,8 +63,8 @@ function Contact() {
         })
         
         setTotalMainboard(total);
-        // izquierda hasta el 31
-        // 11 de la columna derecha
+        // left column 31
+        // right column 11
     }
 
     /**
@@ -82,11 +84,11 @@ function Contact() {
         // max items check
         if (total > 15 ) {
             setShowError(true);
-            setErrorMessage('Incorrect sideboard - Maximum 15 cards');
+            setErrorMessage(t('errors.decklist.Incorrect sideboard - Maximum 15 cards'));
             setTimeout(() => {setShowButton(true)}, 2000);
             setTimeout(() => {setShowError(false)}, 2000);
             
-            throw new Error('Incorrect sideboard - Maximum 15 cards');
+            throw new Error(t('errors.decklist.Incorrect sideboard - Maximum 15 cards'));
         } else {
             setTotalSideboard(total);
         }
@@ -122,11 +124,11 @@ function Contact() {
                 card = item.slice(3);
             } else {
                 setShowError(true);
-                setErrorMessage('Incorrect cardlist - card incorrect format');
+                setErrorMessage(t('errors.decklist.Incorrect form - card incorrect format'));
                 setTimeout(() => {setShowButton(true)}, 2000);
                 setTimeout(() => {setShowError(false)}, 2000);
                 
-                throw new Error('Incorrect cardlist - card incorrect format');
+                throw new Error(t('errors.decklist.Incorrect form - card incorrect format'));
             }
 
             items.push({ num: num, card: card });
@@ -182,11 +184,11 @@ function Contact() {
         } catch(err) {
             // console.log('FAILED...', err);
             setShowError(true);
-            setErrorMessage('Incorrect form - fill form correctly');
+            setErrorMessage(t('errors.decklist.Incorrect form - fill form correctly'));
             setTimeout(() => {setShowButton(true)}, 2000);
             setTimeout(() => {setShowError(false)}, 2000);
             
-            throw new Error('Incorrect form - fill form correctly');
+            throw new Error(t('errors.decklist.Incorrect form - fill form correctly'));
         };
     }
 
@@ -199,28 +201,28 @@ function Contact() {
             <section className="left w100 mb20">
                 <form ref={form} onSubmit={onSubmit} className="left w100 mb40 overflowHidden pointer form decklistForm">
                     <article className="left w100">
-                        <InputForm name="name" placeholder='Your name' label="Name" value={toSend.name} handleChange={handleChange}></InputForm>
-                        <InputForm name="surname" placeholder='Your surnamename' label="Surname" value={toSend.surname} handleChange={handleChange}></InputForm>
+                        <InputForm name="name" placeholder={t('form.decklist.Your name')} label={t('form.decklist.Name')} value={toSend.name} handleChange={handleChange}></InputForm>
+                        <InputForm name="surname" placeholder={t('form.decklist.Your surnamename')} label={t('form.decklist.Surname')} value={toSend.surname} handleChange={handleChange}></InputForm>
                     </article>
 
                     <article className="left w100">
-                        <InputForm name="event" placeholder='Event name' label="Event name" value={toSend.event} handleChange={handleChange}></InputForm>
-                        <InputForm name="deckName" placeholder='Your Deck name' label="Deck name" value={toSend.deckName} handleChange={handleChange}></InputForm>
+                        <InputForm name="event" placeholder={t('form.decklist.Event name')} label={t('form.decklist.Event name')} value={toSend.event} handleChange={handleChange}></InputForm>
+                        <InputForm name="deckName" placeholder={t('form.decklist.Your Deck name')} label={t('form.decklist.Deck name')} value={toSend.deckName} handleChange={handleChange}></InputForm>
                     </article>   
                     
                     <article className="left w100">
                         <div className="left mb20 w-350">
-                            <TextareaForm name="mainboard" placeholder='Your mainboard cards' label="Mainboard cards" value={toSend.mainboard} handleChange={handleChange}></TextareaForm>
-                            <TextareaForm name="sideboard" placeholder='Your sideboard cards' label="Sideboard cards" value={toSend.sideboard} handleChange={handleChange}></TextareaForm>
+                            <TextareaForm name="mainboard" placeholder={t('form.decklist.Your mainboard cards')} label={t('form.decklist.Mainboard cards')} value={toSend.mainboard} handleChange={handleChange}></TextareaForm>
+                            <TextareaForm name="sideboard" placeholder={t('form.decklist.Your sideboard cards')} label={t('form.decklist.Sideboard cards')} value={toSend.sideboard} handleChange={handleChange}></TextareaForm>
                         </div>
                         <div className="left mb20 w-350 mt35 pdf">
-                            <img src={DeckListImage} alt="decklist pdf - mtg legacy cat" className="decklistPdf w80 pad radius5 cursorAuto" />
+                            <img src={DeckListImage} alt={t('alt-tags.decklist pdf - mtg legacy cat')} className="decklistPdf w80 pad radius5 cursorAuto" />
                         </div>
                     </article>
                     
                     {showButton == true &&
                         <div className="left w100">
-                            <button className="pointer pad bg-red color-white" type='submit'>Generate Decklist pdf</button>
+                            <button className="pointer pad bg-red color-white" type='submit'>{t('form.decklist.Generate Decklist pdf')}</button>
                         </div>
                     }
                     

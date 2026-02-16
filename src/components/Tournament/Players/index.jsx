@@ -7,10 +7,12 @@ import Title from "/src/components/Tournament/Title";
 import TournamentTitleBlured from "/src/components/Tournament/Fake";
 import SubTitle from "/src/components/HTag/SubTitle";
 import ListImage from "/src/components/Icons/List";
+import { useTranslation } from 'react-i18next';
 
 function TournamentPlayers({ id, tournament }) {
     const [ renderPlayers, setRenderPlayers] = useState([]);
-    const [ showPlayers, setShowPlayers ]    = useState(false)
+    const [ showPlayers, setShowPlayers ]    = useState(false);    
+    const { t }                              = useTranslation();
 
     useEffect(() => {
         async function apiCall() {
@@ -38,7 +40,7 @@ function TournamentPlayers({ id, tournament }) {
                 <SubTitle title={
                         <>
                             <ListImage></ListImage>
-                            <span className="left ml10 mt3">{`Top Players ${tournament.name ? '- ' + tournament.name : ''}`}</span>
+                            <span className="left ml10 mt3">{`${t('tournaments.players.Top Players')} ${tournament.name ? '- ' + tournament.name : ''}`}</span>
                         </>
                     } 
                 />

@@ -1,9 +1,12 @@
 import "./module.css"
 import { createModalLink } from '/src/hooks/useCommon.jsx';
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 function ModalPopUp({ img, name, modalType }) {
-    const [ modalId, setModalId ]  = useState(null);
+    const [ modalId, setModalId ] = useState(null);
+    const { t }                   = useTranslation();
+    
 
     function handleClick () {
         var modal = document.getElementById(modalId);
@@ -41,7 +44,7 @@ function ModalPopUp({ img, name, modalType }) {
             <div id={createModalLink(name, modalType)} className="modal">
                 <div className="modal-content">
                     <div className="modal-header">
-                        <span className="close pointer bg-red" onClick={() => handleCloseClick()}>Close</span>
+                        <span className="close pointer bg-red" onClick={() => handleCloseClick()}>{t("cards.modal.Close")}</span>
                     </div>
 
                     <div className="modal-body">

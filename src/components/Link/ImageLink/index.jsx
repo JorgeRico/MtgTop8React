@@ -4,7 +4,7 @@ export default function LinkImage({url, className, img}) {
 
     return (
         <Link to={url} className={className}>
-            <img src={img} alt="" />
+            <img src={img} alt="mtg legacy image" />
         </Link>
     );
 }

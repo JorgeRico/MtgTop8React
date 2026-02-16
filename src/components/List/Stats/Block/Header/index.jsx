@@ -1,10 +1,14 @@
+import { useTranslation } from 'react-i18next';
+
 export default function TopStatsList({ isPlayer }) {
+    const { t } = useTranslation();
+    
     const topPlayerStats = () => {
         return (
             <>
                 <div className="cardItem overflowHidden bg-red p5 mb10">
-                    <span className="left ml25">Total</span>
-                    <span className="left ml15">Name</span>
+                    <span className="left ml25">{t('stats.Total')}</span>
+                    <span className="left ml15">{t('stats.Name')}</span>
                 </div>
             </>
         )
@@ -15,8 +19,8 @@ export default function TopStatsList({ isPlayer }) {
             <>
                 <div className="cardItem overflowHidden bg-red p5 mb10">
                     <span className="left ml15 w-15">&nbsp;</span>
-                    <span className="left ml15">Total</span>
-                    <span className="left ml15">Name</span>
+                    <span className="left ml15">{t('Total')}</span>
+                    <span className="left ml15">{t('stats.Name')}</span>
                 </div>
             </>
         )

@@ -2,8 +2,11 @@ import TournamentList from "/src/components/List/Tournament/Normal";
 import HTag from "/src/components/HTag";
 import LocationImage from "/src/components/Icons/Location";
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 function LeagueTournamentBlock({ leagueName, format, renderElements, url, isBlured, numPlayers, classification, location, locationName }) {
+    const { t } = useTranslation();
+
     const getLocation = () => {
         return (
             <div className="left w100 f14 mb5">
@@ -12,7 +15,7 @@ function LeagueTournamentBlock({ leagueName, format, renderElements, url, isBlur
                         Tag  = "p" 
                         text = {
                             <>  
-                                <span className="left mr5">Location:</span>
+                                <span className="left mr5">{t('league.tournament.Location')}:</span>
                                 <LocationImage></LocationImage>
                                 <span className="left ml5">{locationName}</span>
                             </>
@@ -27,14 +30,14 @@ function LeagueTournamentBlock({ leagueName, format, renderElements, url, isBlur
             <div className={`left w100 mt40 mb40 ${isBlured ? 'blink blured' : ''}`}>
                 <div className="left">
                     {leagueName &&
-                        <HTag Tag="h1" text={`Tournaments - ${leagueName}`} className="left f24 mb5" />
+                        <HTag Tag="h1" text={`${t('league.tournament.Tournaments')} - ${leagueName}`} className="left f24 mb5" />
                     }
                 </div>
                 {location != null && getLocation()}
-                <div className="left w100 f14">Format: {format}</div>
-                <div className="left w100 f14 mt5">Average Players: {numPlayers}</div>
+                <div className="left w100 f14">{t('league.tournament.Format')}: {format}</div>
+                <div className="left w100 f14 mt5">{t('league.tournament.Average Players')}: {numPlayers}</div>
                 {classification != null && (
-                    <div className="left w100 f14 mt5">Classification: {classification}</div>
+                    <div className="left w100 f14 mt5">{t('league.tournament.Classification')}: {classification}</div>
                 )}
             </div>
             <div className={`left w100 mb10 ${isBlured ? 'blink blured' : ''}`}>

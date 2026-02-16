@@ -8,6 +8,7 @@ import { getAxiosEndpoint, replaceUrlIdParam } from '/src/hooks/useApi.jsx';
 import { getFormat } from '/src/hooks/useCommon.jsx';
 import Breadcrumb from "/src/components/Breadcrumb";
 import BreadcrumbLeague from "/src/components/Breadcrumb/League";
+import { useTranslation } from 'react-i18next';
 
 function League() {
     const { id }                                = useParams();
@@ -17,6 +18,7 @@ function League() {
     const [ location, setLocation ]             = useState(null);
     const [ locationName, setLocationName ]     = useState(null);
     const [ year, setYear ]                     = useState(null);
+    const { t }                                 = useTranslation();
     
     useEffect(() => {
         async function apiCall() {
@@ -42,9 +44,9 @@ function League() {
         <>
             <Template 
                 name        = "league"
-                title       = {`Mtg Stats - Legacy League: ${leagueName}`}
+                title       = {`${t('seo-tags.leagues.title')}: ${leagueName}`}
                 canonical   = {`leagues/${id}`}
-                description = "League - Catalan MTG Legacy leagues, tournaments, players and cards"
+                description = {t('seo-tags.leagues.description')}
                 breadcrumb  = {
                     <Breadcrumb 
                         loading   = {showLeagueName}
@@ -64,7 +66,7 @@ function League() {
                     <Stats 
                         id       = {id}
                         isLeague = {true}
-                        title    = {`Season Stats ${leagueName ? ' - ' + leagueName : ''}`}
+                        title    = {`${t('seo-tags.leagues.stats')} ${leagueName ? ' - ' + leagueName : ''}`}
                     />
                 }
             />                    

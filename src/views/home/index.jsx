@@ -4,21 +4,23 @@ import PastEvents from "/src/views/home/events/past";
 import Title from "/src/components/HTag/Title";
 // import AdSenseAd from "/src/components/Adsense";
 import SimpleBreadcrumb from "/src/components/Breadcrumb/Simple";
+import { useTranslation } from 'react-i18next';
 
 function Home() {
-    
+    const { t } = useTranslation();
+
     return (
         <>
             <Layout 
                 name        = "home"
-                title       = "MTG Legacy stats - CAT Legacy"
-                description = "Catalan MTG Legacy leagues, tournaments, players and cards"
+                title       = {t('seo-tags.home.title')}
+                description = {t('seo-tags.home.description')}
             >
                 <main className="left w100">
                     <SimpleBreadcrumb isHome={true} />
-                    <Title title="MTG Leagues - Legacy" />
-                    <p className="color-gray mb40">Magic The Gathering Catalan Tournaments</p>
-                    <CurrentEvents title="Current Leagues - Legacy"></CurrentEvents>
+                    <Title title={t('home.text-title')} />
+                    <p className="color-gray mb40">{t('seo-tags.home.text-description')}</p>
+                    <CurrentEvents title={t('seo-tags.home.Current Leagues')}></CurrentEvents>
                     {/* <AdSenseAd 
                         adClassNameStyles   = "mb20"
                         adClient            = "ca-pub-9482818665347681" // Replace with your publisher ID
@@ -26,7 +28,7 @@ function Home() {
                         adFormat            = "auto" // Fixed-size banner
                         fullWidthResponsive = {true} 
                     /> */}
-                    <PastEvents title="Past Leagues - Legacy"></PastEvents>
+                    <PastEvents title={t('seo-tags.home.Past Leagues')}></PastEvents>
                 </main>
             </Layout>
         </>

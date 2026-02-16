@@ -1,6 +1,9 @@
 import HTag from "/src/components/HTag";
+import { useTranslation } from 'react-i18next';
 
 function TournamentTitle({ tournament, isBlured }) {
+    const { t } = useTranslation();
+
     return (
         <>
             <div className={`left w100 mt40 pb0 ${isBlured ? "blink blured" : ""}`}>
@@ -10,7 +13,7 @@ function TournamentTitle({ tournament, isBlured }) {
                 <div className="left w100">
                     <div className="left">{tournament.format}</div>
                     <div className="left ml10"> | </div>
-                    <div className="left ml10">{tournament.players} players</div>
+                    <div className="left ml10">{tournament.players} {t("tournaments.title.players")}</div>
                     <div className="left ml10"> | </div>
                     <div className="left ml10">{tournament.date}</div>
                 </div>

@@ -6,10 +6,12 @@ import Deck from "/src/components/List/Deck/Normal";
 import BluredDeck from "/src/components/List/Deck/Fake";
 import Button from "/src/components/List/Button";
 import BlockLine from "/src/components/List/Player/Normal/BlockLine";
+import { useTranslation } from 'react-i18next';
 
 export default function TournamentPlayerItem({ item, index }) {
     const [ loading, setLoading ]                 = useState(false);
     const [ renderDeckItems, setRenderDeckItems ] = useState([]);
+    const { t }                                   = useTranslation();
 
     // api call
     async function apiCall(id) {
@@ -56,7 +58,7 @@ export default function TournamentPlayerItem({ item, index }) {
                     deck     = {item.deckName}
                 />
                 <div className="left viewDeck" onClick={() => handleCards((index+1), item.idDeck)}>
-                    <Button buttonText="View Deck" id={'button-deck-'+(index+1)}/>
+                    <Button buttonText={t('player.View deck')} id={'button-deck-'+(index+1)}/>
                 </div>
             </section>
 

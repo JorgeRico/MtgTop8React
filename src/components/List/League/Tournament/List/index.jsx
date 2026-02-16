@@ -4,6 +4,7 @@ import { getAxiosEndpoint, replaceUrlIdParam } from '/src/hooks/useApi.jsx';
 import BluredTournamentList from "/src/components/List/League/Tournament/Fake";
 import LeagueTournamentBlock from "/src/components/List/League/Tournament/Block";
 import Pagination from "/src/components/List/Pagination";
+import { useTranslation } from 'react-i18next';
 
 function LeagueTournament({ id, format, leagueName, location, locationName }) {
     const [ renderElements, setRenderElements]  = useState(null);
@@ -13,6 +14,7 @@ function LeagueTournament({ id, format, leagueName, location, locationName }) {
     const [ classification, setClassification ] = useState(null);
     const [ total, setTotal ]                   = useState(0);
     const [ currentPage, setCurrentPage ]       = useState(1);
+    const { t }                                 = useTranslation();
 
     function countPlayers(data) {
         var totalPlayers = 0;
@@ -52,7 +54,7 @@ function LeagueTournament({ id, format, leagueName, location, locationName }) {
                     (noResults === true) ? (
                         <>
                             <div className="radius5 cardsList bg-footer padStatsBox">
-                                Sorry, now we don't have tournaments registered for this league
+                                {t("errors.league.Sorry, now we don't have tournaments registered for this league")}
                             </div>
                         </>
                     ) : (
@@ -71,7 +73,7 @@ function LeagueTournament({ id, format, leagueName, location, locationName }) {
                             location       = {location}
                             locationName   = {locationName}
                         />
-                        <Pagination text="Tournaments" total={total} itemsPerPage={total} currentPage={currentPage} setCurrentPage={setCurrentPage}></Pagination>
+                        <Pagination text={t('league.list.Tournaments')} total={total} itemsPerPage={total} currentPage={currentPage} setCurrentPage={setCurrentPage}></Pagination>
                     </>
             )}            
         </>

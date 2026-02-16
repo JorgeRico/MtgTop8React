@@ -5,12 +5,14 @@ import endpoints from "/src/services/endpoints.jsx";
 import { useState, useEffect } from "react";
 import { getAxiosEndpoint } from '/src/hooks/useApi.jsx';
 import Pagination from "/src/components/List/Pagination";
+import { useTranslation } from 'react-i18next';
 
 function Events({ title }) {
     const [ currentLeagues, setCurrentLeagues ]           = useState(null);
     const [ showCurrentElements, setShowCurrentElements ] = useState(false);
     const [ totalLeagues, setTotalLeagues ]               = useState(0);
     const [ currentPage, setCurrentPage ]                 = useState(1);
+    const { t }                                           = useTranslation();
 
     useEffect(() => {
         async function apiCallCurrent() {
@@ -33,7 +35,7 @@ function Events({ title }) {
             <section>
                 <div className="left w100 mb20 grey-bottom">
                     <SubTitle title={title} />
-                    <p className="left w100 mt0 color-gray">Explore current leagues, view standings and decks</p>
+                    <p className="left w100 mt0 color-gray">{t('seo-tags.current-leagues.text-description')}</p>
                 </div>
                 {showCurrentElements === false ? (
                         <BluredLeagueList></BluredLeagueList>
@@ -46,7 +48,7 @@ function Events({ title }) {
                     )
                 }
                 {totalLeagues &&
-                    <Pagination text="Current Leagues" total={totalLeagues} itemsPerPage={totalLeagues} currentPage={currentPage} setCurrentPage={setCurrentPage}></Pagination>
+                    <Pagination text={t('seo-tags.current-leagues.pagination')} total={totalLeagues} itemsPerPage={totalLeagues} currentPage={currentPage} setCurrentPage={setCurrentPage}></Pagination>
                 }
             </section>
         </>

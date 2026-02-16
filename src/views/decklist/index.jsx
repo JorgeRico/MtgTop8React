@@ -2,20 +2,23 @@ import Layout from "/src/views/layout/core";
 import DecklistForm from "/src/components/Forms/Decklist";
 import Title from "/src/components/HTag/Title";
 import SimpleBreadcrumb from "/src/components/Breadcrumb/Simple";
+import { useTranslation } from 'react-i18next';    
 
 function Decklist() {
+    const { t } = useTranslation();
+
     return (
         <>
             <Layout 
                 name        = "decklist"
-                title       = "MTG Legacy stats - CAT Legacy - Decklist"
+                title       = {t('seo-tags.decklist-form.title')}
                 canonical   = "decklist"
-                description = "Decklist - Catalan MTG Legacy leagues, tournaments, players and cards"
+                description = {t('seo-tags.decklist-form.description')}
             >
                 <main className="left w100">
                     <SimpleBreadcrumb title="decklist" />
-                    <Title title="Decklist generator" />
-                    <p className="mb40 color-gray">Print your deck on a tournament pdf stylesheet</p>
+                    <Title title={t('seo-tags.decklist-form.text-title')} />
+                    <p className="mb40 color-gray">{t('seo-tags.decklist-form.text-description')}</p>
                     <DecklistForm></DecklistForm>
                 </main>
             </Layout>

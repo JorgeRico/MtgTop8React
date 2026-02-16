@@ -1,0 +1,23 @@
+.languageBox {
+    display: flex;
+    gap: 10px;
+    padding: 1px;
+    border-radius: 8px;
+    flex-direction: column;
+    width: 110px;
+    margin-bottom: 2px;
+
+    & button {
+        padding: 8px 10px;
+        border-radius: 8px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 14px;
+        font-weight: normal;
+        transition: all 0.2s ease;
+        color: white;
+        border: 0px;
+    }
+}

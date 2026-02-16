@@ -46,14 +46,14 @@ function Contact() {
                 ) : (
                     <>
                         <form ref={form} onSubmit={onSubmit} className="left w100 mb40 overflowHidden form contact">
-                            <InputForm name="name" type="text" placeholder='Your name' label="Name" value={toSend.name} handleChange={handleChange}></InputForm>
-                            <InputForm name="reply_to" type="email" placeholder='Your email' label="E-mail" value={toSend.reply_to} handleChange={handleChange}></InputForm>
+                            <InputForm name="name" type="text" placeholder={t('forms.contact.Your name')} label={t('forms.contact.Name')} value={toSend.name} handleChange={handleChange}></InputForm>
+                            <InputForm name="reply_to" type="email" placeholder={t('forms.contact.Your email')} label={t('forms.contact.E-mail')} value={toSend.reply_to} handleChange={handleChange}></InputForm>
                             <div className="left mb20 w100">
-                                <label className="left w100 mb15">Message</label>
+                                <label className="left w100 mb15">{t('forms.contact.Message')}</label>
                                 <textarea
                                     className="left w70 mb10 pad"
                                     name='message'
-                                    placeholder='Your message'
+                                    placeholder={toSend('forms.contact.Your message')}
                                     value={toSend.message}
                                     onChange={handleChange}
                                     required
@@ -62,12 +62,12 @@ function Contact() {
                             
                             {showButton == true &&
                                 <div className="left w100">
-                                    <button className="pointer pad bg-red color-white" type='submit'>Submit</button>
+                                    <button className="pointer pad bg-red color-white" type='submit'>{t('forms.contact.Submit')}</button>
                                 </div>
                             }
                             
                             {showError == true &&
-                                <Error message="Please, fill all data fields."></Error>
+                                <Error message={t('errors.contact.Please, fill all data fields.')}></Error>
                             }
                         </form>
                     </>

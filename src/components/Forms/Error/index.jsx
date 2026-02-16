@@ -1,7 +1,10 @@
 import "./../module.css";
 import ErrorMail from "/src/assets/images/error-mail.png";
+import { useTranslation } from 'react-i18next';
 
 function ErrorMessage({ message }) {
+    const { t } = useTranslation();
+
     return (
         <>
             <div className="left w100 mb40">
@@ -10,7 +13,7 @@ function ErrorMessage({ message }) {
                 </div>
                 <div className="left mt15 ml25 w50">
                     <div className="left w100 mb20">{message}</div>
-                    <div className="left w100">Pay 3 extra manas and try again.</div>
+                    <div className="left w100">{t('errors.contact.Pay 3 extra manas and try again.')}</div>
                 </div>
             </div>
         </>

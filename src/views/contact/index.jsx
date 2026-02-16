@@ -2,20 +2,23 @@ import Layout from "/src/views/layout/core";
 import ContactForm from "/src/components/Forms/Contact";
 import Title from "/src/components/HTag/Title";
 import SimpleBreadcrumb from "/src/components/Breadcrumb/Simple";
+import { useTranslation } from 'react-i18next';
 
 function Contact() {
+    const { t } = useTranslation();
+
     return (
         <>
             <Layout 
                 name        = "contact"
-                title       = "MTG Legacy stats - CAT Legacy - Contact"
+                title       = {t('seo-tags.contact-form.title')}
                 canonical   = "contact"
-                description = "Contact - Catalan MTG Legacy leagues, tournaments, players and cards"
+                description = {t('seo-tags.contact-form.description')}
             >
                 <main className="left w100">
                     <SimpleBreadcrumb title="contact" />
-                    <Title title="Contact us" />
-                    <p className="mb40 color-gray">Ask for information about leagues, classifications or what you want . . .</p>
+                    <Title title={t('seo-tags.contact-form.text-title')} />
+                    <p className="mb40 color-gray">{t('seo-tags.contact-form.text-description')}</p>
                     <ContactForm></ContactForm>
                 </main>
             </Layout>

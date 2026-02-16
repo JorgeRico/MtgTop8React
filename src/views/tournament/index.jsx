@@ -8,11 +8,13 @@ import TournamentBreadcrumb from "/src/components/Breadcrumb/Tournament";
 import endpoints from "/src/services/endpoints.jsx";
 import { getAxiosEndpoint, replaceUrlIdParam } from '/src/hooks/useApi.jsx';
 import { getFormat } from '/src/hooks/useCommon.jsx';
+import { useTranslation } from 'react-i18next';    
 
 function Tournament() {
     const { id }                       = useParams();
     const [ tournament, setTournament] = useState({idLeague: '', name:'', date:'', players: ''});
     const [ loading, setLoading ]      = useState(false);
+    const { t }                        = useTranslation();
 
     useEffect(() => {
         async function apiCall() {
@@ -43,9 +45,9 @@ function Tournament() {
         <>
             <Template
                 name        = "tournaments"
-                title       = {`Mtg Stats - Legacy Tournament: ${tournament.name} - ${tournament.date}`}
+                title       = {`${t('seo-tags.tournaments.title')}: ${tournament.name} - ${tournament.date}`}
                 canonical   = {`tournaments/${id}`}
-                description = "Tournament - Catalan MTG Legacy leagues, tournaments, players and cards"
+                description = {t('seo-tags.tournaments.description')}
                 breadcrumb  = {
                     <Breadcrumb 
                         loading   = {loading}
@@ -62,7 +64,7 @@ function Tournament() {
                     <Stats 
                         id       = {id}
                         isLeague = {false}
-                        title    = {`Tournament Stats - ${tournament.name}`}
+                        title    = {`${t('seo-tags.tournaments.stats')} - ${tournament.name}`}
                     />
                 }
             />                    

@@ -5,6 +5,7 @@ import endpoints from "/src/services/endpoints.jsx";
 import { useState, useEffect } from "react";
 import { getAxiosEndpoint, addUrlPaginationParams } from '/src/hooks/useApi.jsx';
 import Pagination from "/src/components/List/Pagination";
+import { useTranslation } from 'react-i18next';
 
 function PastEvents({ title }) {
     const [ pastLeagues, setPastLeagues ]           = useState(null);
@@ -12,6 +13,7 @@ function PastEvents({ title }) {
     const [ totalPastLeagues, setTotalPastLeagues ] = useState(0);
     const numItems                                  = 5;
     const [ currentPage, setCurrentPage ]           = useState(1);
+    const { t }                                     = useTranslation();
 
     useEffect(() => {
         async function apiCallPast() {
@@ -38,7 +40,7 @@ function PastEvents({ title }) {
             <section>
                 <div className="left w100 mt20 mb20 grey-bottom">
                     <SubTitle title={title} />
-                    <p className="left w100 mt0 color-gray">Explore past leagues, view standings and decks</p>
+                    <p className="left w100 mt0 color-gray">{t('seo-tags.past-leagues.text-description')}</p>
                 </div>
                 {showPastElements === false ? (
                         <BluredLeagueList></BluredLeagueList>
@@ -51,7 +53,7 @@ function PastEvents({ title }) {
                     )
                 }
                 {totalPastLeagues > 0 &&
-                    <Pagination text="Past Leagues" total={totalPastLeagues} itemsPerPage={numItems} currentPage={currentPage} setCurrentPage={setCurrentPage}></Pagination>
+                    <Pagination text={t('seo-tags.past-leagues.pagination')} total={totalPastLeagues} itemsPerPage={numItems} currentPage={currentPage} setCurrentPage={setCurrentPage}></Pagination>
                 }
             </section>
         </>

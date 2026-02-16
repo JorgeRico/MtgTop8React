@@ -2,20 +2,22 @@ import Layout from "/src/views/layout/core";
 import Title from "/src/components/HTag/Title";
 import AdSenseAd from "/src/components/Adsense";
 import SimpleBreadcrumb from "/src/components/Breadcrumb/Simple";
+import { useTranslation } from 'react-i18next';
 
 function NotFound() {
+    const { t } = useTranslation();
 
     return (
         <>
             <Layout 
                 name        = "notfound"
-                title       = "MTG Legacy stats - CAT Legacy - Page not found"
-                description = "Catalan MTG Legacy leagues, tournaments, players and cards - Page not found"
+                title       = {t('seo-tags.not-found.title')}
+                description = {t('seo-tags.not-found.description')}
             >
                 <main className="left w100">
-                    <SimpleBreadcrumb title="404 page not found" />
-                    <Title title="Error 404 - Page not found" />
-                    <p className="mb40 color-gray">This url does not exist. Please check the address and try again.</p>
+                    <SimpleBreadcrumb title={t('seo-tags.not-found.breadcrumb')} />
+                    <Title title={t('seo-tags.not-found.text-title')} />
+                    <p className="mb40 color-gray">{t('seo-tags.not-found.text-description')}</p>
                     <AdSenseAd 
                         adClassNameStyles   = "mb20"
                         adClient            = "ca-pub-9482818665347681" // Replace with your publisher ID

@@ -3,10 +3,12 @@ import { getAxiosEndpoint } from '/src/hooks/useApi.jsx';
 import StatsListBlock from "/src/components/List/Stats/Block";
 import BluredStatsList from "/src/components/List/Stats/Cards/Fake";
 import Block from "/src/components/List/Stats/Cards/Block";
+import { useTranslation } from 'react-i18next';
 
 export default function StatsBox({ text, cardType, endpoint, isPlayer }) {
     const [ renderElements, setRenderElements ] = useState([]);
     const [ noResults, setNoResults ]           = useState(false);
+    const { t }                                 = useTranslation();
 
     // api call
     async function apiCardTypeCall() {
@@ -49,7 +51,7 @@ export default function StatsBox({ text, cardType, endpoint, isPlayer }) {
                         (noResults === true) ? (
                             <>
                                 <div className="radius5 cardsList bg-footer padStatsBox">
-                                    Sorry, now we don't have tournaments registered for this league
+                                    {t("errors.stats.Sorry, now we don't have tournaments registered for this league")}
                                 </div>
                             </>
                         ) : (
