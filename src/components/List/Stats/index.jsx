@@ -1,4 +1,4 @@
-import statsTypes from "/src/services/statsTypes.jsx"
+import statsTypes from "/src/services/stats-types.jsx"
 import "./module.css";
 import CardBlockStats from "/src/components/List/Stats/Cards";
 import SubTitle from "/src/components/HTag/SubTitle";

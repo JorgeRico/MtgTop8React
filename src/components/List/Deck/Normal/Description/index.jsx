@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import statsTypes from "/src/services/statsTypes.jsx";
+import statsTypes from "/src/services/stats-types.jsx";
 import { useTranslation } from 'react-i18next';
 
 export default function DeckDescription({ items, deckName }) {
