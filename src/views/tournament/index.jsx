@@ -18,13 +18,17 @@ function Tournament() {
         async function apiCall() {
             await getAxiosEndpoint(replaceUrlIdParam(endpoints.API_TOURNAMENT_DATA, id))
             .then((response) => {
+                                    console.log(response.data)
                 setTournament(prevState => ({
                     ...prevState,
-                    'idLeague': response.data.idLeague,
-                    'name'    : response.data.name,
-                    'date'    : response.data.date,
-                    'players' : response.data.players,
-                    'format'  : getFormat(response.data.format)
+                    'idLeague'   : response.data.idLeague,
+                    'name'       : response.data.name,
+                    'date'       : response.data.date,
+                    'players'    : response.data.players,
+                    'format'     : getFormat(response.data.format),
+                    'year'       : response.data.year,
+                    'leagueName' : response.data.leagueName
+
                 }));
                 setLoading(true);
             })
@@ -46,7 +50,7 @@ function Tournament() {
                 breadcrumb  = {
                     <Breadcrumb 
                         loading   = {loading}
-                        component = {<TournamentBreadcrumb title={tournament.name} date={tournament.date} endpoint={endpoints.HTTP_LEAGUE + tournament.idLeague} />}
+                        component = {<TournamentBreadcrumb title={`${tournament.leagueName} ${tournament.year}`} date={tournament.date} endpoint={endpoints.HTTP_LEAGUE + tournament.idLeague} />}
                     />
                 }
                 tournament  = {

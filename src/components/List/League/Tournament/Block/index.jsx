@@ -24,7 +24,7 @@ function LeagueTournamentBlock({ leagueName, format, renderElements, url, isBlur
     }
     return (
         <>
-            <div className={`left w100 mb40 ${isBlured ? 'blink blured' : ''}`}>
+            <div className={`left w100 mt40 mb40 ${isBlured ? 'blink blured' : ''}`}>
                 <div className="left">
                     {leagueName &&
                         <HTag Tag="h1" text={`Tournaments - ${leagueName}`} className="left f24 mb5" />

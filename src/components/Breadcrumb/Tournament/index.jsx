@@ -8,7 +8,11 @@ function BreadcrumbTournament({ title, date, endpoint }) {
         <>
             <HomeItemBreadcrumb></HomeItemBreadcrumb>
             <DashItemBreadcrumb></DashItemBreadcrumb>
+            <TitleItemBreadcrumb title="league"></TitleItemBreadcrumb>
+            <DashItemBreadcrumb></DashItemBreadcrumb>
             <TitleLinkItemBreadcrumb title={title} endpoint={endpoint}></TitleLinkItemBreadcrumb>
+            <DashItemBreadcrumb></DashItemBreadcrumb>
+            <TitleItemBreadcrumb title="tournament"></TitleItemBreadcrumb>
             <DashItemBreadcrumb></DashItemBreadcrumb>
             <TitleItemBreadcrumb title={date}></TitleItemBreadcrumb>
         </>

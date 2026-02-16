@@ -7,7 +7,7 @@ import endpoints from "/src/services/endpoints.jsx";
 import { getAxiosEndpoint, replaceUrlIdParam } from '/src/hooks/useApi.jsx';
 import { getFormat } from '/src/hooks/useCommon.jsx';
 import Breadcrumb from "/src/components/Breadcrumb";
-import SimpleBreadcrumb from "/src/components/Breadcrumb/Simple";
+import BreadcrumbLeague from "/src/components/Breadcrumb/League";
 
 function League() {
     const { id }                                = useParams();
@@ -16,6 +16,7 @@ function League() {
     const [ leagueFormat, setLeagueFormat ]     = useState(null);
     const [ location, setLocation ]             = useState(null);
     const [ locationName, setLocationName ]     = useState(null);
+    const [ year, setYear ]                     = useState(null);
     
     useEffect(() => {
         async function apiCall() {
@@ -24,8 +25,9 @@ function League() {
                     setLeagueName(response.data.name);
                     setLeagueFormat(getFormat(response.data.isLegacy));
                     setShowLeagueName(true);
-                    setLocation(response.data.location)
-                    setLocationName(response.data.locationName)
+                    setLocation(response.data.location);
+                    setLocationName(response.data.locationName);
+                    setYear(response.data.year);
                 })
                 .catch((err) => { 
                     console.log(err)
@@ -46,7 +48,7 @@ function League() {
                 breadcrumb  = {
                     <Breadcrumb 
                         loading   = {showLeagueName}
-                        component = {<SimpleBreadcrumb title={leagueName} />}
+                        component = {<BreadcrumbLeague title={`${leagueName} ${year}`} />}
                     />
                 }
                 tournament  = {

@@ -5,22 +5,22 @@ import Button from "/src/components/List/Button";
 import { getFormat } from '/src/hooks/useCommon.jsx';
 
 export default function LeagueList({ url, items, isBlured }) {
-    const leagueItemBlock = (icon, name, format, buttonText) => { 
+    const leagueItemBlock = (item) => { 
         return (
             <>
                 <div className="left w100 mb10 bg-footer">
                     <div className="wAuto padBox overflowHidden border-red">
                         <div className="cupBox border-grey left radius5 bg-red p5 w-25">
-                            <img src={icon} width="15" height="14" alt="Cup Champion" className="cupIcon w-15" />
+                            <img src={cupIcon} width="15" height="14" alt="Cup Champion" className="cupIcon w-15" />
                         </div>
                         <div className="left format wAuto ml25 tournamentDescription">
-                            <strong>{name}</strong>
+                            <strong>{item.name} {item.year}</strong>
                             <br></br>
                             <span className="left f12 mt5" style={{whiteSpace: 'pre-wrap'}}>
-                                {format}
+                                Format: {getFormat(item.isLegacy)}
                             </span>
                         </div>
-                        <Button buttonText={buttonText}></Button>
+                        <Button buttonText="View league"></Button>
                     </div>
                 </div>
             </>
@@ -34,7 +34,7 @@ export default function LeagueList({ url, items, isBlured }) {
                     items?.map((item) => (
                         <article className="listItem pointer title mb15 overflowHidden" key={uuidv4()}>
                             <Link to={url + item.id}>
-                                {leagueItemBlock(cupIcon, item.name, `Format: ${getFormat(item.isLegacy)}`, "View league")}
+                                {leagueItemBlock(item)}
                             </Link>
                         </article>
                     ))
