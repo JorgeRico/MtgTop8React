@@ -18,7 +18,7 @@ function Home() {
             >
                 <main className="left w100">
                     <SimpleBreadcrumb isHome={true} />
-                    <Title title={t('home.text-title')} />
+                    <Title title={t('seo-tags.home.text-title')} />
                     <p className="color-gray mb40">{t('seo-tags.home.text-description')}</p>
                     <CurrentEvents title={t('seo-tags.home.Current Leagues')}></CurrentEvents>
                     {/* <AdSenseAd 

@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import "./module.css";
+import { useRef } from 'react';
 
 const languages = [
     { 
@@ -17,17 +18,18 @@ const languages = [
 ];
 
 function LanguageSwitcher() {
-    const { i18n } = useTranslation();
+    const { i18n }         = useTranslation();
+    const langContainerRef = useRef(null);
 
     const handleClickButton = () => {
-        const element = document.querySelector('#dropdown');
-        element.classList.toggle('none');
+        const element = langContainerRef;
+        element.current.classList.toggle('none');
     };
 
     const changeLanguage = (languageCode) => {
-        const element = document.querySelector('#dropdown');
+        const element = langContainerRef;
         i18n.changeLanguage(languageCode);
-        element.classList.toggle('none');
+        element.current.classList.toggle('none');
     };
 
     const getLangInfo = (lang) => {
@@ -38,25 +40,22 @@ function LanguageSwitcher() {
 
     return (
         <>
-            <div className="right mt10">
+            <div className="" >
                 <div className="languageBox">
                     <button className="bg-footer" onClick={() => handleClickButton()}>
-                        <span style={{textTransform: 'uppercase'}}>{i18n.language}</span>
+                        <span className="uppercase">{i18n.language}</span>
                         <span> - </span>
                         <span>{getLangInfo(i18n.language)}</span>
                     </button>
                 </div>
-                <div className="languageBox none" id="dropdown" style={{gap: "5px"}}>
+                <div className="languageBox bg-footer none mt10" ref={langContainerRef}>
                     {languages.map((lang) => (
                         <button
-                            className="bg-footer"
+                            className={`${i18n.language === lang.code && "selected"}`}
                             key={lang.code}
                             onClick={() => changeLanguage(lang.code)}
-                            style={{
-                                background: i18n.language === lang.code && "var(--background-even)",
-                            }}
                         >
-                            <span style={{textTransform: 'uppercase'}}>{lang.code}</span>
+                            <span className="uppercase">{lang.code}</span>
                             <span> - </span>
                             <span>{lang.name}</span>
                         </button>

@@ -1,4 +1,4 @@
-import statsTypes from "/src/services/statsTypes.jsx"; 
+import statsTypes from "/src/services/stats-types.jsx"; 
 
 export function getFormat(format) {
     if (format === 1) {
