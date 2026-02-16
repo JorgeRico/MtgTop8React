@@ -142,8 +142,8 @@ export default function StatsBox({ id, title, isLeague, endpoint, endpointCards,
                             text      = "Stats"
                         />
                         <p className="left w100 color-gray mb0">{title}</p>
-                        <p className="left w100 color-gray mb0">All tournament stats.</p>
-                        <p className="left w100 color-gray mb0">Most played cards and main deck and sideboard card stats.</p>
+                        <p className="left w100 color-gray mb0">All tournament stats</p>
+                        <p className="left w100 color-gray mb0">Most played cards and main deck and sideboard card stats</p>
                     </div>
                     {cardStats()}
                 </article>

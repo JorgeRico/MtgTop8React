@@ -2,7 +2,7 @@ function DashItemBreadcrumb() {
 
     return (
         <>
-            <div className="left ml10">/</div>
+            <div className="left ml5">/</div>
         </>
     );
 }
