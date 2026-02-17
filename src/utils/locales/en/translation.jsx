@@ -68,7 +68,9 @@ export default {
                 "All tournament stats" : "All tournament stats",
                 "Most played cards and main deck and sideboard card stats" : "Most played cards and main deck and sideboard card stats",
                 "Total" : "Total",
-                "Name" : "Name"
+                "Name" : "Name",
+                "Player Stats" : "Player Stats",
+                "View" : "View"
             },
             "header" : {
                 "Contact us" : "Contacto",
@@ -195,7 +197,8 @@ export default {
                     "title" : "MTG Legacy stats - CAT Legacy - Contact",
                     "description" : "Contact - Catalan MTG Legacy leagues, tournaments, players and cards",
                     "text-title" : "Contact us",
-                    "text-description" : "Ask for information about leagues, classifications or what you want . . ."
+                    "text-description" : "Ask for information about leagues, classifications or what you want . . .",
+                    "breadcrumb" : "contact"
                 }
             }
         },

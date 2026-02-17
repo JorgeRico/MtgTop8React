@@ -16,7 +16,7 @@ function Contact() {
                 description = {t('seo-tags.contact-form.description')}
             >
                 <main className="left w100">
-                    <SimpleBreadcrumb title="contact" />
+                    <SimpleBreadcrumb title={t('seo-tags.contact-form.breadcrumb')} />
                     <Title title={t('seo-tags.contact-form.text-title')} />
                     <p className="mb40 color-gray">{t('seo-tags.contact-form.text-description')}</p>
                     <ContactForm></ContactForm>

@@ -55,7 +55,7 @@ function Contact() {
                                 <textarea
                                     className="left w70 mb10 pad"
                                     name='message'
-                                    placeholder={toSend('forms.contact.Your message')}
+                                    placeholder={t('forms.contact.Your message')}
                                     value={toSend.message}
                                     onChange={handleChange}
                                     required

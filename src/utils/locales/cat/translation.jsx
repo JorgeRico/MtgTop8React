@@ -68,7 +68,9 @@ export default {
                 "All tournament stats" : "Estadistiques de tots els tornejos",
                 "Most played cards and main deck and sideboard card stats" : "Cartes més jugades y estadistiques de les cartes del main i del sideboard",
                 "Total" : "Total",
-                "Name" : "Nom"
+                "Name" : "Nom",
+                "Player Stats" : "Estadistiques jugadors",
+                "View" : "Veure"
             },
             "header" : {
                 "Contact us" : "Contacte",
@@ -195,7 +197,8 @@ export default {
                     "title" : "MTG Legacy stats - Formulari de Contact - Lligues i Tornejos Magic The Gathering - Legacy - Catalunya - CAT Legacy",
                     "description" : "Contacte - Lligues de magic The Gathering, tornejos de MAgic The Gathering, jugadors i cartes dels tornejos de Catalunya",
                     "text-title" : "Contacta amb nosaltres",
-                    "text-description" : "Consulta informació sobre lligues, clasificacions i tot el que vulguis . . ."
+                    "text-description" : "Consulta informació sobre lligues, clasificacions i tot el que vulguis . . .",
+                    "breadcrumb" : "contacte"
                 }
             }
         },
