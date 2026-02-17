@@ -39,6 +39,10 @@
     width: 225px;
 }
 
+.padheader {
+    padding: 5px 20px;
+}
+
 @media (max-width: 590px) {
     .tournamentDescription {
         margin-bottom: 20px;

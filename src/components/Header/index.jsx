@@ -14,7 +14,7 @@ export default function Header({ classNameStyles }) {
             <section className={classNameStyles}>
                 <article className="left w100 overflowHidden header">
                     <HeaderLogo></HeaderLogo>
-                    <div className="right" style={{padding: '5px 20px'}}>
+                    <div className="right padheader">
                         <div className="right">
                             <Language></Language>
                         </div>
