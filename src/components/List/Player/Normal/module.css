@@ -32,19 +32,38 @@
     }
 
     .viewDeck {
-        width: 100%;
+        width: 200px;
         margin: 1px 48px 10px 48px;
 
         & button {
-            width: 100%;
+            width: 200px;
             max-width: 200px;
-            float: left;
         }
     }
 
     .deckName {
         width: 100%;
         margin: 0 48px;
+    }
+
+    .tournaments {
+        & h2.f20 {
+            font-size: 18px;
+        }
+
+        & h2 {
+            & span {
+                padding-top: 3px;
+            }
+        }
+
+        & h2.f24 {
+            font-size: 20px;
+            
+            & span {
+                padding-top: 1px;
+            }
+        }
     }
 }
 
