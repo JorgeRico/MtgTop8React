@@ -4,6 +4,7 @@ import "./../module.css";
 import Success from "/src/components/Forms/Success";
 import Error from "/src/components/Forms/Error";
 import InputForm from "/src/components/Forms/Contact/Input";
+import { useTranslation } from 'react-i18next';
 
 function Contact() {
     const [ showButton, setShowButton ]   = useState(true);
@@ -14,6 +15,8 @@ function Contact() {
     const mail_template                   = import.meta.env.VITE_APP_MAIL_TEMPLATE;
     const mail_public_key                 = import.meta.env.VITE_APP_MAIL_PUBLIC_ID;
     const form                            = useRef();
+    const { t }                           = useTranslation();
+
 
     const onSubmit = (e) => {
         e.preventDefault();

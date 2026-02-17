@@ -201,19 +201,19 @@ function Contact() {
             <section className="left w100 mb20">
                 <form ref={form} onSubmit={onSubmit} className="left w100 mb40 overflowHidden pointer form decklistForm">
                     <article className="left w100">
-                        <InputForm name="name" placeholder={t('form.decklist.Your name')} label={t('form.decklist.Name')} value={toSend.name} handleChange={handleChange}></InputForm>
-                        <InputForm name="surname" placeholder={t('form.decklist.Your surnamename')} label={t('form.decklist.Surname')} value={toSend.surname} handleChange={handleChange}></InputForm>
+                        <InputForm name="name" placeholder={t('forms.decklist.Your name')} label={t('forms.decklist.Name')} value={toSend.name} handleChange={handleChange}></InputForm>
+                        <InputForm name="surname" placeholder={t('forms.decklist.Your surnamename')} label={t('forms.decklist.Surname')} value={toSend.surname} handleChange={handleChange}></InputForm>
                     </article>
 
                     <article className="left w100">
-                        <InputForm name="event" placeholder={t('form.decklist.Event name')} label={t('form.decklist.Event name')} value={toSend.event} handleChange={handleChange}></InputForm>
-                        <InputForm name="deckName" placeholder={t('form.decklist.Your Deck name')} label={t('form.decklist.Deck name')} value={toSend.deckName} handleChange={handleChange}></InputForm>
+                        <InputForm name="event" placeholder={t('forms.decklist.Event name')} label={t('forms.decklist.Event name')} value={toSend.event} handleChange={handleChange}></InputForm>
+                        <InputForm name="deckName" placeholder={t('forms.decklist.Your Deck name')} label={t('forms.decklist.Deck name')} value={toSend.deckName} handleChange={handleChange}></InputForm>
                     </article>   
                     
                     <article className="left w100">
                         <div className="left mb20 w-350">
-                            <TextareaForm name="mainboard" placeholder={t('form.decklist.Your mainboard cards')} label={t('form.decklist.Mainboard cards')} value={toSend.mainboard} handleChange={handleChange}></TextareaForm>
-                            <TextareaForm name="sideboard" placeholder={t('form.decklist.Your sideboard cards')} label={t('form.decklist.Sideboard cards')} value={toSend.sideboard} handleChange={handleChange}></TextareaForm>
+                            <TextareaForm name="mainboard" placeholder={t('forms.decklist.Your mainboard cards')} label={t('forms.decklist.Mainboard cards')} value={toSend.mainboard} handleChange={handleChange}></TextareaForm>
+                            <TextareaForm name="sideboard" placeholder={t('forms.decklist.Your sideboard cards')} label={t('forms.decklist.Sideboard cards')} value={toSend.sideboard} handleChange={handleChange}></TextareaForm>
                         </div>
                         <div className="left mb20 w-350 mt35 pdf">
                             <img src={DeckListImage} alt={t('alt-tags.decklist pdf - mtg legacy cat')} className="decklistPdf w80 pad radius5 cursorAuto" />
@@ -222,7 +222,7 @@ function Contact() {
                     
                     {showButton == true &&
                         <div className="left w100">
-                            <button className="pointer pad bg-red color-white" type='submit'>{t('form.decklist.Generate Decklist pdf')}</button>
+                            <button className="pointer pad bg-red color-white" type='submit'>{t('forms.decklist.Generate Decklist pdf')}</button>
                         </div>
                     }
                     
