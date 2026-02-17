@@ -38,41 +38,43 @@
 }
 
 @media (max-width: 750px) {
-    .social-container, .description {
-        display: block;
-    }
-
-    .description {
-        float: none;
-    }
-
-    h2 {
-        float: none !important;
-        margin-top: 40px;
-        margin-bottom: 20px !important;
-    }
-
-    .languages {
-        float: none;
-
-        & .languageBox {
-            margin: 0 auto;
+    .footer {
+        & .logos {
+            margin-bottom: 10px;
         }
-    }
 
-    .logos {
-        margin-bottom: 10px;
-    }
+        & button {
+            margin-left: 0px !important;
+        }
 
-    .social-item {
-        text-align: center;
-    }
+        & h2 {
+            float: none !important;
+            margin-top: 40px;
+            margin-bottom: 20px !important;
+        }
 
-    .description-item {
-        margin-bottom: 10px;
-    }
+        & .social-container, & .description {
+            display: block;
+        }
 
-    button {
-        margin-left: 0px !important;
+        & .description {
+            float: none;
+        }
+
+        & .social-item {
+            text-align: center;
+        }
+
+        & .description-item {
+            margin-bottom: 10px;
+        }
+
+        & .languages {
+            float: none;
+
+            & .languageBox {
+                margin: 0 auto;
+            }
+        }
     }
 }

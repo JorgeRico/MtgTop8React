@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-export default function HeaderRightBlock({ image, text, endpoint, styleClasses }) {
+export default function HeaderRightBlock({ image, text, endpoint, styleClasses = '' }) {
     const { t } = useTranslation();
 
     return (

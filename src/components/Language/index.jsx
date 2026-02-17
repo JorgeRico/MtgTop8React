@@ -36,7 +36,7 @@ function LanguageSwitcher() {
             <div className="languageBox bg-footer none mt10" ref={langContainerRef}>
                 {languages.map((lang) => (
                     <button
-                        className={`${i18n.language === lang.code && "selected"}`}
+                        className={`${i18n.language === lang.code ? "selected" : ""}`}
                         key={lang.code}
                         onClick={() => changeLanguage(lang.code)}
                     >

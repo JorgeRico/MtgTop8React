@@ -21,12 +21,12 @@
         border: 1px solid #545151;
         background: none;
     }
-}
 
-.uppercase {
-    text-transform: uppercase;
-}
+    & button.selected {
+        background: var(--background-even);
+    }
 
-.selected {
-    background: var(--background-even);
+    & .uppercase {
+        text-transform: uppercase;
+    }
 }
