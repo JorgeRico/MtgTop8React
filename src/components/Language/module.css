@@ -30,3 +30,10 @@
         text-transform: uppercase;
     }
 }
+
+.header {
+    & .languageBox.dropdown {
+        position: absolute;
+        z-index: 1;
+    } 
+}

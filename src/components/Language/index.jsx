@@ -33,7 +33,7 @@ function LanguageSwitcher() {
                     <span>{getLangInfo(i18n.language)}</span>
                 </button>
             </div>
-            <div className="languageBox bg-footer none mt10" ref={langContainerRef}>
+            <div className="languageBox dropdown bg-footer none mt10" ref={langContainerRef}>
                 {languages.map((lang) => (
                     <button
                         className={`${i18n.language === lang.code ? "selected" : ""}`}

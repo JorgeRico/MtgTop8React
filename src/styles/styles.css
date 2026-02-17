@@ -35,6 +35,10 @@
     }
 }
 
+.headerInfo {
+    width: 225px;
+}
+
 @media (max-width: 590px) {
     .tournamentDescription {
         margin-bottom: 20px;
@@ -46,6 +50,11 @@
 
     .headerRight {
         display: none;
+    }
+
+    .headerInfo {
+        width: auto;
+        margin-right: 25px;
     }
 }
 
