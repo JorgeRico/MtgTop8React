@@ -17,7 +17,6 @@ function Contact() {
     const form                            = useRef();
     const { t }                           = useTranslation();
 
-
     const onSubmit = (e) => {
         e.preventDefault();
         setShowButton(false);

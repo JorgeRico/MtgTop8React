@@ -138,7 +138,9 @@ export default {
                 "check on instagram - mtg - legacy.cat" : "check on instagram - mtg - legacy.cat",
                 "check on x - mtg - legacy.cat" : "check on x - mtg - legacy.cat",
                 "check on youtube channel - mtg - catmagiclegacy" : "check on youtube channel - mtg - catmagiclegacy",
-                "check on twitch channel - mtg - catmagiclegacy" : "check on twitch channel - mtg - catmagiclegacy"
+                "check on twitch channel - mtg - catmagiclegacy" : "check on twitch channel - mtg - catmagiclegacy",
+                "Change language" : "Change language",
+                "Follow us" : "Follow us"
             },
             "alt-tags" : {
                 "decklist pdf - mtg legacy cat" : "decklist pdf - mtg legacy cat",

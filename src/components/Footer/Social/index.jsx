@@ -4,8 +4,11 @@ import SocialLinksFooter from '/src/components/Footer/Social/Links';
 import Language from "/src/components/Language";
 import Subtitle from '/src/components/HTag/SubTitle';
 import HTag from "/src/components/HTag";
+import { useTranslation } from 'react-i18next';
 
 export default function SocialFooter() {
+    const { t } = useTranslation();
+
     return (
         <>
             <section className="footer overflowHidden mt40 bg-footer">
@@ -21,11 +24,11 @@ export default function SocialFooter() {
                         </section>
                         <section className="social-item">
                             <div className="padfooter">
-                                <Subtitle title="Follow us" />
+                                <Subtitle title={t('footer.Follow us')} />
                                 <SocialLinksFooter></SocialLinksFooter>
                             </div>
                             <div className="padfooter">
-                                <HTag Tag="p" text="Change language:" className="left w100"></HTag>
+                                <HTag Tag="p" text={`${t('footer.Change language')}:`} className="left w100"></HTag>
                                 <div className="left languages">
                                     <Language></Language>
                                 </div>
