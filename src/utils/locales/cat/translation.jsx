@@ -104,7 +104,7 @@ export default {
             "forms" : {
                 "decklist" : {
                     "Your name" : "Nom",
-                    "Your surnamename" : "Cognom",
+                    "Your surname" : "Cognom",
                     "Event name" : "Event",
                     "Your Deck name" : "Nom de la baralla",
                     "Your mainboard cards" : "Cartes del mainboard",

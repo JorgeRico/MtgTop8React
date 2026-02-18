@@ -47,7 +47,7 @@ export default {
             },
             "cards" : {
                 "modal" : {
-                    "Close" : "Cerrar"
+                    "Close" : "Close"
                 }
             },
             "stats" : {                                
@@ -104,7 +104,7 @@ export default {
             "forms" : {
                 "decklist" : {
                     "Your name" : "Your name",
-                    "Your surnamename" : "Your surnamename",
+                    "Your surname" : "Your surname",
                     "Event name" : "Event name",
                     "Your Deck name" : "Your Deck name",
                     "Your mainboard cards" : "Your mainboard cards",

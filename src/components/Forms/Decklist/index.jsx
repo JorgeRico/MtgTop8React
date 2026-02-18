@@ -202,7 +202,7 @@ function Contact() {
                 <form ref={form} onSubmit={onSubmit} className="left w100 mb40 overflowHidden pointer form decklistForm">
                     <article className="left w100">
                         <InputForm name="name" placeholder={t('forms.decklist.Your name')} label={t('forms.decklist.Name')} value={toSend.name} handleChange={handleChange}></InputForm>
-                        <InputForm name="surname" placeholder={t('forms.decklist.Your surnamename')} label={t('forms.decklist.Surname')} value={toSend.surname} handleChange={handleChange}></InputForm>
+                        <InputForm name="surname" placeholder={t('forms.decklist.Your surname')} label={t('forms.decklist.Surname')} value={toSend.surname} handleChange={handleChange}></InputForm>
                     </article>
 
                     <article className="left w100">
