@@ -41,7 +41,7 @@ export default {
                 }
             },
             "player" : {
-                "View deck" : "View Veure baralla",
+                "View deck" : "Veure baralla",
                 "Player" : "Jugador",
                 "Deck" : "Baralla"
             },
