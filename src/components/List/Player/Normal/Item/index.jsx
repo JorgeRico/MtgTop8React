@@ -51,7 +51,7 @@ export default function TournamentPlayerItem({ item, index }) {
     
     return (
         <>
-            <section className="item left mb20 bg-footer border-red overflowHidden playersBox" id={'player-'+(index+1)}>
+            <section className="item left mb15 bg-footer border-red overflowHidden playersBox" id={'player-'+(index+1)}>
                 <BlockLine
                     position = {index+1}
                     player   = {item.name}
