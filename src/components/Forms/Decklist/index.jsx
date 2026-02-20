@@ -216,7 +216,7 @@ function Contact() {
                             <TextareaForm name="sideboard" placeholder={t('forms.decklist.Your sideboard cards')} label={t('forms.decklist.Sideboard cards')} value={toSend.sideboard} handleChange={handleChange}></TextareaForm>
                         </div>
                         <div className="left mb20 w-350 mt35 pdf">
-                            <img src={DeckListImage} alt={t('alt-tags.decklist pdf - mtg legacy cat')} className="decklistPdf w80 pad radius5 cursorAuto" />
+                            <img src={DeckListImage} alt={t('alt-tags.decklist pdf - mtg legacy cat')} className="w80 pad radius5 cursorAuto" />
                         </div>
                     </article>
                     

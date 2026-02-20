@@ -12,9 +12,7 @@ textarea {
     height: 200px;
 }
 
-.decklistPdf {
-    border: 1px solid var(--border-pdf);
-    
+.decklistPdf {    
     & img {
         max-height: 520px;
     }

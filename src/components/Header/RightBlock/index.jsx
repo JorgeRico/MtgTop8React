@@ -8,8 +8,8 @@ export default function HeaderRightBlock({ image, text, endpoint }) {
         <>
             <div className="pointer ml20 left">
                 <Link to={endpoint}>
-                    <div className="left">
-                        <img src={image} alt={`${text} - ${t('header.mtg legacy')}`} className="send invertColor" width="25" height="25" />
+                    <div className="left pt2">
+                        <img src={image} alt={`${text} - ${t('header.mtg legacy')}`} className="send invertColor" width="20" height="20" />
                     </div>
                     <div className="left ml10 headerRight">
                         {text}

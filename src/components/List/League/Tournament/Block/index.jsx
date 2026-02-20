@@ -3,6 +3,7 @@ import HTag from "/src/components/HTag";
 import LocationImage from "/src/components/Icons/Location";
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import Trophy from "/src/assets/images/trophy.png";
 
 function LeagueTournamentBlock({ leagueName, format, renderElements, url, isBlured, numPlayers, classification, location, locationName }) {
     const { t } = useTranslation();
@@ -29,6 +30,10 @@ function LeagueTournamentBlock({ leagueName, format, renderElements, url, isBlur
         <>
             <div className={`left w100 mt40 mb40 ${isBlured ? 'blink blured' : ''}`}>
                 <div className="left">
+                    <div className="left mr10">
+                        <img src={Trophy} alt={`${t('league.tournament.Tournaments')} - ${leagueName}`} />
+                    </div>
+                         
                     {leagueName &&
                         <HTag Tag="h1" text={`${t('league.tournament.Tournaments')} - ${leagueName}`} className="left f24 mb5" />
                     }

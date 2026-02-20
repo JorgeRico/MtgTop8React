@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { getAxiosEndpoint, addUrlPaginationParams } from '/src/hooks/useApi.jsx';
 import Pagination from "/src/components/List/Pagination";
 import { useTranslation } from 'react-i18next';
+import Trophy from "/src/assets/images/trophy.png";
 
 function PastEvents({ title }) {
     const [ pastLeagues, setPastLeagues ]           = useState(null);
@@ -39,6 +40,9 @@ function PastEvents({ title }) {
         <>
             <section>
                 <div className="left w100 mt20 mb20 grey-bottom">
+                    <div className="left mt15 mr10">
+                        <img src={Trophy} alt={t('seo-tags.current-leagues.text-description')} />
+                    </div>
                     <SubTitle title={title} />
                     <p className="left w100 mt0 color-gray">{t('seo-tags.past-leagues.text-description')}</p>
                 </div>

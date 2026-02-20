@@ -8,7 +8,7 @@ import TournamentBreadcrumb from "/src/components/Breadcrumb/Tournament";
 import endpoints from "/src/services/endpoints.jsx";
 import { getAxiosEndpoint, replaceUrlIdParam } from '/src/hooks/useApi.jsx';
 import { getFormat } from '/src/hooks/useCommon.jsx';
-import { useTranslation } from 'react-i18next';    
+import { useTranslation } from 'react-i18next';
 
 function Tournament() {
     const { id }                       = useParams();

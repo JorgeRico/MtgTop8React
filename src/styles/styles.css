@@ -7,12 +7,6 @@
     background: var(--background-black);
 }
 
-.header {
-    .send {
-        width: 25px;
-    }
-}
-
 .padBox {
     padding: 15px 20px;
 }
