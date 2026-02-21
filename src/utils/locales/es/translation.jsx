@@ -76,9 +76,6 @@ export default {
                 "Contact us" : "Contacto",
                 "Decklist" : "Decklist",
                 "mtg legacy" : "mtg legacy",
-                "logo" : {
-                    "Stats" : "Stats"
-                },
                 "breadcrumb" : {
                     "tournament" : "torneo",
                     "league" : "liga"

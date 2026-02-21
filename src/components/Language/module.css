@@ -20,6 +20,7 @@
         color: white;
         border: 1px solid #545151;
         background: none;
+        padding: 8px 20px;
     }
 
     & button.selected {

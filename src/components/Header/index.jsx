@@ -19,7 +19,7 @@ export default function Header({ classNameStyles }) {
                             <Language></Language>
                         </div>
                         <br></br>
-                        <div className="right overflowHidden mt15 headerInfo">
+                        <div className="right overflowHidden mt10 headerInfo">
                             <RightBlock image={Mail} text={t('header.Contact us')} endpoint={endpoints.HTTP_CONTACT}></RightBlock>
                             <RightBlock image={Cards} text={t('header.Decklist')} endpoint={endpoints.HTTP_DECKLIST}></RightBlock>
                         </div>

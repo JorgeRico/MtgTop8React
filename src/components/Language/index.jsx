@@ -26,7 +26,7 @@ function LanguageSwitcher() {
 
     return (
         <>
-            <div className="languageBox">
+            <div className="languageBox mt10">
                 <button className="bg-footer" onClick={() => handleClickButton()}>
                     <span className="uppercase">{i18n.language}</span>
                     <span> - </span>

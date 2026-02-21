@@ -18,7 +18,7 @@ export default function SocialFooter() {
                             <div className="padfooter">
                                 <SocialLogoFooter></SocialLogoFooter>
                             </div>
-                            <div className="padfooter">
+                            <div className="overflowHidden padfooter">
                                 <SocialDescriptionFooter></SocialDescriptionFooter>
                             </div>
                         </section>
