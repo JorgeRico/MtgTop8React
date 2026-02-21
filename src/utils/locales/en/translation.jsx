@@ -73,7 +73,7 @@ export default {
                 "View" : "View"
             },
             "header" : {
-                "Contact us" : "Contacto",
+                "Contact us" : "Contact",
                 "Decklist" : "Decklist",
                 "mtg legacy" : "mtg legacy",
                 "breadcrumb" : {
