@@ -36,6 +36,7 @@
     "sitemap": "node ./src/services/sitemap-generator.jsx"
   },
   "reactSnap": {
+    "source": "dist",
     "inlineCss": true
   },
   "browserslist": {
