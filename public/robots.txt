@@ -1,7 +1,3 @@
 User-agent: *
-User-agent: Googlebot
 Allow: /
-Allow: /ads.txt
-Disallow: 
-Disallow: /cgi-bin/
 Sitemap: https://mtg-stats.vercel.app/sitemap.xml
