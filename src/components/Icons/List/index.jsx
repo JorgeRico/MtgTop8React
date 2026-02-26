@@ -1,4 +1,4 @@
-import List from "/src/assets/images/list.png";
+import List from "/src/assets/images/list.webp";
 import { useTranslation } from 'react-i18next';
 
 export default function ListImage() {

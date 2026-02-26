@@ -1,5 +1,5 @@
 import "./../module.css";
-import Mail from "/src/assets/images/mail_big.png";
+import Mail from "/src/assets/images/mail_big.webp";
 import { useTranslation } from 'react-i18next';
 
 function SuccessMessage() {

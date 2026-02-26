@@ -1,7 +1,7 @@
-import Instagram from "/src/assets/images/instagram.png";
-import XImg from "/src/assets/images/x.png";
-import Youtube from "/src/assets/images/youtube.png";
-import Twitch from "/src/assets/images/twitch.png";
+import Instagram from "/src/assets/images/instagram.webp";
+import XImg from "/src/assets/images/x.webp";
+import Youtube from "/src/assets/images/youtube.webp";
+import Twitch from "/src/assets/images/twitch.webp";
 import LinkImage from "/src/components/Link/Image";
 import { useTranslation } from 'react-i18next';
 

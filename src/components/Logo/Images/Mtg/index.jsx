@@ -1,4 +1,4 @@
-import Logos from "/src/assets/images/mtg-logos.png";
+import Logos from "/src/assets/images/mtg-logos.webp";
 import { useTranslation } from 'react-i18next';
 
 export default function LogoImage() {

@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
 import { Link } from 'react-router-dom';
-import cupIcon from '/src/assets/images/cup.png';
+import cupIcon from '/src/assets/images/cup.webp';
 import Button from "/src/components/List/Button";
 import { getFormat } from '/src/hooks/useCommon.jsx';
 import { useTranslation } from 'react-i18next';

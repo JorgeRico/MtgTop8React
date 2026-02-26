@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import { getAxiosEndpoint } from '/src/hooks/useApi.jsx';
 import Pagination from "/src/components/List/Pagination";
 import { useTranslation } from 'react-i18next';
-import Trophy from "/src/assets/images/trophy.png";
+import Trophy from "/src/assets/images/trophy.webp";
 
 function Events({ title }) {
     const [ currentLeagues, setCurrentLeagues ]           = useState(null);
@@ -36,7 +36,7 @@ function Events({ title }) {
             <section>
                 <div className="left w100 mb20 grey-bottom">
                     <div className="left mt15 mr10">
-                        <img src={Trophy} alt={t('seo-tags.current-leagues.text-description')} />
+                        <img src={Trophy} width="32" height="32" alt={t('seo-tags.current-leagues.text-description')} />
                     </div>
                     <SubTitle title={title} />
                     <p className="left w100 mt0 color-gray">{t('seo-tags.current-leagues.text-description')}</p>

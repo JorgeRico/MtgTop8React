@@ -1,4 +1,4 @@
-import Stats from "/src/assets/images/stats.png";
+import Stats from "/src/assets/images/stats.webp";
 import { useTranslation } from 'react-i18next';
 
 export default function StatsImage() {

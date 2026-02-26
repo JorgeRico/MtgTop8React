@@ -1,4 +1,4 @@
-import Location from "/src/assets/images/location.png";
+import Location from "/src/assets/images/location.webp";
 import { useTranslation } from 'react-i18next';
 
 export default function LocationImage() {

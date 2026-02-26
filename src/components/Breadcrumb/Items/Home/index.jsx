@@ -1,4 +1,4 @@
-import HomeIcon from "/src/assets/images/home.png";
+import HomeIcon from "/src/assets/images/home.webp";
 import ImageLink from "/src/components/Link/ImageLink";
 import endpoints from "/src/services/endpoints.jsx";
 import "./module.css";

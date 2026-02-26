@@ -1,5 +1,5 @@
 import "./../module.css";
-import ErrorMail from "/src/assets/images/error-mail.png";
+import ErrorMail from "/src/assets/images/error-mail.webp";
 import { useTranslation } from 'react-i18next';
 
 function ErrorMessage({ message }) {

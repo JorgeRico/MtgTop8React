@@ -1,4 +1,4 @@
-import cupIcon from '/src/assets/images/cup.png';
+import cupIcon from '/src/assets/images/cup.webp';
 import Button from "/src/components/List/Button";
 import { useTranslation } from 'react-i18next';
 

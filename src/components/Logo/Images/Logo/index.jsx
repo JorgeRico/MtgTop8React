@@ -1,4 +1,4 @@
-import Logos from "/src/assets/images/stats-logo.png";
+import Logos from "/src/assets/images/stats-logo.webp";
 import { useTranslation } from 'react-i18next';
 
 export default function LogoImage() {
@@ -6,7 +6,7 @@ export default function LogoImage() {
 
     return (
         <>
-            <img src={Logos} height="25" alt={t('alt-tags.mtg stats')} />
+            <img src={Logos} height="25" width="129" alt={t('alt-tags.mtg stats')} />
         </>
     );
 }

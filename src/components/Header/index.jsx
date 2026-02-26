@@ -1,7 +1,7 @@
 import HeaderLogo from "/src/components/Header/Logo";
 import RightBlock from "/src/components/Header/RightBlock";
-import Mail from "/src/assets/images/mail.png";
-import Cards from "/src/assets/images/cards.png";
+import Mail from "/src/assets/images/mail.webp";
+import Cards from "/src/assets/images/cards.webp";
 import endpoints from "/src/services/endpoints.jsx";
 import Language from "/src/components/Language";
 import { useTranslation } from 'react-i18next';
