@@ -31,8 +31,12 @@
   "scripts": {
     "start": "vite",
     "build": "vite build --base=/",
+    "postbuild": "react-snap",
     "serve": "vite preview",
     "sitemap": "node ./src/services/sitemap-generator.jsx"
+  },
+  "reactSnap": {
+    "inlineCss": true
   },
   "browserslist": {
     "production": [
@@ -47,6 +51,7 @@
     ]
   },
   "devDependencies": {
-    "axios": "^1.13.5"
+    "axios": "^1.13.5",
+    "react-snap": "^1.23.0"
   }
 }
