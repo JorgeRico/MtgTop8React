@@ -8,99 +8,90 @@ import InputForm from "/src/components/Forms/Decklist/Input";
 import TextareaForm from "/src/components/Forms/Decklist/Textarea";
 import { useTranslation } from 'react-i18next';
 
-function Contact() {
-    const [ showButton, setShowButton ]         = useState(true);
-    const [ showError, setShowError ]           = useState(false);
-    const [ toSend, setToSend ]                 = useState({ name: '', surname: '', event: '', deckName: '', mainboard: [], sideboard: [] });
-    const form                                  = useRef();
-    const [ line ]                              = useState(18);
-    const [ cardGap ]                           = useState(43);
-    const [ size ]                              = useState(12);
-    const [ totalMainboard, setTotalMainboard ] = useState(0);
-    const [ totalSideboard, setTotalSideboard ] = useState(0);
-    const [ errorMessage, setErrorMessage ]     = useState(null);
-    const [ fontFamily, setFontFamily ]         = useState(null);
-    const [ pdfHeight, setPdfHeight ]           = useState(null);
-    const [ pdfWidth, setPdfWidth ]             = useState(null);
-    const [ rightColum, setRightColum ]         = useState(null);
-    const [ leftColum, setLeftColum ]           = useState(null);
-    const { t }                                 = useTranslation();
+function DeckListForm() {
+    const [ showButton, setShowButton ]     = useState(true);
+    const [ showError, setShowError ]       = useState(false);
+    const [ toSend, setToSend ]             = useState({ name: '', surname: '', event: '', deckName: '', mainboard: [], sideboard: [] });
+    const form                              = useRef();
+    const [ line ]                          = useState(18);
+    const [ cardGap ]                       = useState(43);
+    const [ size ]                          = useState(12);
+    const [ errorMessage, setErrorMessage ] = useState(null);
+    const { t }                             = useTranslation();
 
     /**
      * Player info - name and surname
      * @param {*} items 
      */
-    const playerName = (items, firstPage) => {
+    const description = (item, firstPage, fontFamily, values) => {
         const xTop = 42;
-        firstPage.drawText(items[0], { x: xTop, y: 250, size: size, font: fontFamily, rotate: degrees(90) })
-        firstPage.drawText(items[1], { x: xTop, y: 70,  size: size, font: fontFamily, rotate: degrees(90) })
-    }
+        firstPage.drawText(item.name, { x: xTop, y: 250, size: size, font: fontFamily, rotate: degrees(90) });
+        firstPage.drawText(item.surname, { x: xTop, y: 70,  size: size, font: fontFamily, rotate: degrees(90) });
 
-    /**
-     * Header info - Event name and Deck name
-     * @param {*} items 
-     */
-    const headerEventDeck = (items, firstPage) => {
         const xMove = 70;
-        firstPage.drawText(items[0], { x: rightColum + xMove, y: pdfHeight-95, size: size, font: fontFamily })
-        firstPage.drawText(items[1], { x: rightColum + xMove, y: pdfHeight-70, size: size, font: fontFamily })
+        firstPage.drawText(item.deckName, { x: values.rightColumn + xMove, y: values.height-95, size: size, font: fontFamily });
+        firstPage.drawText(item.event, { x: values.rightColumn + xMove, y: values.height-70, size: size, font: fontFamily });
     }
 
     /**
      * 
      * @param {*} items 
      */
-    const mainDeck = (items, firstPage) => {
-        const top       = 214.5;
-        const MaindeckY =  pdfHeight / 2 + top
-        let total       = 0;
+    const decklist = (items, firstPage, fontFamily, values) => {
+        const maindeckCards  = cardsList( items.maindeck );
+        const sideboardCards = cardsList( items.sideboard );
 
-        // Maindeck left
-        items.forEach((item, index) => {
-            firstPage.drawText(item.num,  { x: leftColum,           y: MaindeckY - (index*line), size: size, font: fontFamily });
-            firstPage.drawText(item.card, { x: leftColum + cardGap, y: MaindeckY - (index*line), size: size, font: fontFamily });
-            total += parseInt(item.num) ;
-        })
-        
-        setTotalMainboard(total);
-        // left column 31
-        // right column 11
-    }
-
-    /**
-     * Get sideboard cards
-     * @param {*} items 
-     */
-    const sideboardDeck = (items, firstPage) => {
-        const sideBoardY = pdfHeight / 2 - 38;
-        let total        = 0;
-
-        items.forEach((item, index) => {
-            firstPage.drawText(item.num,  { x: rightColum,           y: sideBoardY - (index*line), size: size, font: fontFamily });
-            firstPage.drawText(item.card, { x: rightColum + cardGap, y: sideBoardY - (index*line), size: size, font: fontFamily });
-            total += parseInt(item.num) 
-        })
+        let totalMainboard = getMaindeck(maindeckCards, values, firstPage, fontFamily);
+        let totalSideboard = getSideboard(sideboardCards, values, firstPage, fontFamily)
 
         // max items check
-        if (total > 15 ) {
+        if (totalSideboard > 15 ) {
             setShowError(true);
             setErrorMessage(t('errors.decklist.Incorrect sideboard - Maximum 15 cards'));
             setTimeout(() => {setShowButton(true)}, 2000);
             setTimeout(() => {setShowError(false)}, 2000);
             
             throw new Error(t('errors.decklist.Incorrect sideboard - Maximum 15 cards'));
-        } else {
-            setTotalSideboard(total);
-        }
+        } 
+
+        numberOfCards(totalMainboard, totalSideboard, firstPage, fontFamily, values);
     }
 
-    /**
-     * Print mainboard and sideboard cards
-     * @param {*} rightColNumX 
-     */
-    const numberOfCards = (firstPage) => {
-        firstPage.drawText(totalMainboard.toString(), { x: rightColum-83, y: 27, size: 18, font: fontFamily })
-        firstPage.drawText(totalSideboard.toString(), { x: pdfWidth-70,   y: 81, size: 17, font: fontFamily })
+    function numberOfCards(totalMainboard, totalSideboard, firstPage, fontFamily, values) {
+        firstPage.drawText(totalMainboard.toString(), { x: values.rightColumn - 83, y: 27, size: 18, font: fontFamily });
+        firstPage.drawText(totalSideboard.toString(), { x: values.width - 70,   y: 81, size: 17, font: fontFamily });
+    }
+
+    function getMaindeck(cards, values, firstPage, fontFamily) {
+        const top          = 214.5;
+        const MaindeckY    =  values.height / 2 + top
+        let totalMainboard = 0;
+
+        // Maindeck left
+        cards.forEach((item, index) => {
+            if (item != null) {
+                firstPage.drawText(item.num,  { x: values.leftColumn,           y: MaindeckY - (index*line), size: size, font: fontFamily });
+                firstPage.drawText(item.card, { x: values.leftColumn + cardGap, y: MaindeckY - (index*line), size: size, font: fontFamily });
+                totalMainboard += parseInt(item.num);
+            }
+        })
+
+        return totalMainboard;
+    }
+
+    function getSideboard(cards, values, firstPage, fontFamily) {
+        const sideBoardY   = values.height / 2 - 38;
+        let totalSideboard = 0;
+
+        cards.forEach((item, index) => {
+            if (item != null) {
+                firstPage.drawText(item.num,  { x: values.rightColumn,           y: sideBoardY - (index*line), size: size, font: fontFamily });
+                firstPage.drawText(item.card, { x: values.rightColumn + cardGap, y: sideBoardY - (index*line), size: size, font: fontFamily });
+                totalSideboard += parseInt(item.num) ;
+            }
+        })
+
+        return totalSideboard;
     }
 
     /**
@@ -109,48 +100,37 @@ function Contact() {
      * @returns 
      */
     function cardsList(cards) {
-        const cardsSplitted = cards.split('\n')
+        const cardsSplitted = cards.split('\n');
 
-        let items = []
+        let items = [];
+
         cardsSplitted.forEach(item => {
-            let num  = null;
-            let card = null;
+            if (item.trim() !== '') {
+                let num  = null;
+                let card = null;
 
-            if (item.charAt(1) == ' ') {
-                num = item.slice(0,2);
-                card = item.slice(2);
-            } else if (item.charAt(2) == ' ') {
-                num = item.slice(0,3);
-                card = item.slice(3);
-            } else {
-                setShowError(true);
-                setErrorMessage(t('errors.decklist.Incorrect form - card incorrect format'));
-                setTimeout(() => {setShowButton(true)}, 2000);
-                setTimeout(() => {setShowError(false)}, 2000);
-                
-                throw new Error(t('errors.decklist.Incorrect form - card incorrect format'));
+                if (item.charAt(1) == ' ') {
+                    num = item.slice(0,2);
+                    card = item.slice(2);
+                } else if (item.charAt(2) == ' ') {
+                    num = item.slice(0,3);
+                    card = item.slice(3);
+                } else {
+                    setShowError(true);
+                    setErrorMessage(t('errors.decklist.Incorrect form - card incorrect format'));
+                    setTimeout(() => {setShowButton(true)}, 2000);
+                    setTimeout(() => {setShowError(false)}, 2000);
+                    
+                    throw new Error(t('errors.decklist.Incorrect form - card incorrect format'));
+                }
+
+                if (!Number.isNaN(num) && card != '') {
+                    items.push({ num: num, card: card });
+                }
             }
-
-            items.push({ num: num, card: card });
         })
 
         return items;
-    }
-
-    /**
-     * Pdf config
-     * @param {*} pdfDoc 
-     * @param {*} firstPage 
-     */
-    async function config(pdfDoc, firstPage) {
-        // font family
-        setFontFamily(await pdfDoc.embedFont(StandardFonts.TimesRoman))
-        
-        const { width, height } = firstPage.getSize()
-        setPdfHeight(height);
-        setPdfWidth(width);
-        setRightColum(width / 2 + 46)
-        setLeftColum(80)
     }
 
     const onSubmit = async (e) => {
@@ -163,24 +143,46 @@ function Contact() {
             const existingPdfBytes = await fetch(url).then(res => res.arrayBuffer())
 
             // Load a PDFDocument from the existing PDF bytes
-            const pdfDoc    = await PDFDocument.load(existingPdfBytes)
-            const pages     = pdfDoc.getPages()
-            const firstPage = pages[0]
-            config(pdfDoc, firstPage)
+            const pdfDoc = await PDFDocument.load(existingPdfBytes)
+            if (pdfDoc != null) {
+                const pages = pdfDoc.getPages();
+                const firstPage = pages[0];
+                
+                // await config(pdfDoc, pages[0])
+                // font family
+                const fontFamily        = await pdfDoc.embedFont(StandardFonts.TimesRoman);
+                const { width, height } = firstPage.getSize();
 
-            // get info from form
-            playerName( [ toSend.name, toSend.surname ], firstPage );
-            headerEventDeck( [ toSend.deckName, toSend.event ], firstPage );
-            mainDeck( cardsList( toSend.mainboard ), firstPage );
-            sideboardDeck( cardsList( toSend.sideboard ), firstPage );
-            numberOfCards( firstPage );
-            
-            // Serialize the PDFDocument to bytes (a Uint8Array)
-            const pdfBytes = await pdfDoc.save()
+                const pdfValues = {
+                    'height'      : height,
+                    'width'       : width,
+                    'rightColumn' : (width / 2 + 46),
+                    'leftColumn'  : 80
+                }
 
-            setShowButton(true);
-            // Trigger the browser to download the PDF document
-            downloadjs(pdfBytes, "decklist.pdf", "application/pdf");
+                const descriptionItems = {
+                    'name'     : toSend.name, 
+                    'surname'  : toSend.surname, 
+                    'deckName' : toSend.deckName, 
+                    'event'    : toSend.event
+                }
+
+                const deckItems = {
+                    'maindeck'  : toSend.mainboard,
+                    'sideboard' : toSend.sideboard
+                }
+                
+                if (fontFamily != null) {
+                    // get info from form
+                    description( descriptionItems, firstPage, fontFamily, pdfValues );
+                    decklist( deckItems, firstPage, fontFamily, pdfValues );
+                }
+
+                const pdfBytes = await pdfDoc.save()
+                setShowButton(true);
+                // Trigger the browser to download the PDF document
+                downloadjs(pdfBytes, "decklist.pdf", "application/pdf");
+            }
         } catch(err) {
             // console.log('FAILED...', err);
             setShowError(true);
@@ -235,4 +237,4 @@ function Contact() {
     );
 }
 
-export default Contact;
+export default DeckListForm;
