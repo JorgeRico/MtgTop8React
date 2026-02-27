@@ -34,6 +34,8 @@ export default {
         "/",
         "/contact",
         "/decklist",
+        "/robots.txt",
+        "/sitemap.xml",
         ...leagueSlugs.map((s) => `/leagues/${s}`),
         ...tournamentSlugs.map((s) => `/tournaments/${s}`),
     ],
