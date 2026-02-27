@@ -4,7 +4,7 @@ import SubTitle from "/src/components/HTag/SubTitle";
 import endpoints from "/src/services/endpoints.jsx";
 import { useState, useEffect } from "react";
 import { getAxiosEndpoint } from '/src/hooks/useApi.jsx';
-import Pagination from "/src/components/List/Pagination";
+// import Pagination from "/src/components/List/Pagination";
 import { useTranslation } from 'react-i18next';
 import Trophy from "/src/assets/images/trophy.webp";
 
@@ -12,7 +12,7 @@ function Events({ title }) {
     const [ currentLeagues, setCurrentLeagues ]           = useState(null);
     const [ showCurrentElements, setShowCurrentElements ] = useState(false);
     const [ totalLeagues, setTotalLeagues ]               = useState(0);
-    const [ currentPage, setCurrentPage ]                 = useState(1);
+    // const [ currentPage, setCurrentPage ]                 = useState(1);
     const { t }                                           = useTranslation();
 
     useEffect(() => {
@@ -51,9 +51,9 @@ function Events({ title }) {
                         </>
                     )
                 }
-                {totalLeagues &&
+                {/* {totalLeagues && totalLeagues &&
                     <Pagination text={t('seo-tags.current-leagues.pagination')} total={totalLeagues} itemsPerPage={totalLeagues} currentPage={currentPage} setCurrentPage={setCurrentPage}></Pagination>
-                }
+                } */}
             </section>
         </>
     );
