@@ -46,7 +46,7 @@ export async function prerender(data) {
         // Optionally add additional links that should be
         // prerendered (if they haven't already been)
         links: 
-            [ ...leagueSlugs.map((s) => `/leagues/${s}`) ].concat(Array.from(links)),
+            new Set([ ...leagueSlugs.map((s) => `/leagues/${s}`) ].concat(Array.from(links))),
         
 
         // Optional data to serialize into a script tag for use on the client:
@@ -57,7 +57,7 @@ export async function prerender(data) {
         // the prerendered HTML document
         head: {
             // Sets the "lang" attribute: `<html lang="en">`
-            // lang: 'en',
+            lang: 'en',
 
             // Sets the title for the current page: `<title>My cool page</title>`
             title: 'Mtg Stats - Legacy Tournaments',
@@ -66,7 +66,8 @@ export async function prerender(data) {
             //   <link rel="stylesheet" href="foo.css">
             //   <meta property="og:title" content="Social media title">
             elements: new Set([
-                { type: 'link', props: { rel: 'stylesheet', href: 'foo.css' } },
+                // { type: 'link', props: { rel: 'stylesheet', href: 'foo.css' } },
+                { type: 'meta', props: { name: 'description', content: 'Mtg Stats - Legacy tournaments - Catalan MTG Legacy leagues, tournaments, players and cards' } },
                 { type: 'meta', props: { property: 'og:title', content: 'Mtg Stats - Legacy Tournaments' } },
                 { type: 'meta', props: { property: 'twitter:title', content: 'Mtg Stats - Legacy Tournaments' } },
             ]),
