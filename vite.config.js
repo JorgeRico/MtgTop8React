@@ -8,7 +8,23 @@ export default defineConfig({
     plugins: [
         react(),
         vitePrerenderPlugin({
-            renderTarget: '#app',
+            renderTarget: '#root',
+        }) 
+        // TODO: remove when fixed: https://github.com/preactjs/vite-prerender-plugin/issues/3
+        .concat({
+            name: 'vite-prerender-plugin-react-exit',
+            apply: 'build',
+            closeBundle() {
+                setTimeout(() => {
+                this.warn(
+                    '[vite-prerender-plugin-react-exit] calling process.exit(0) to finish prerender (see: https://github.com/preactjs/vite-prerender-plugin/issues/3)',
+                )
+                this.warn(
+                    '[vite-prerender-plugin-react-exit] if build failed and you see no error, comment process.exit line',
+                )
+                process.exit(0) // comment this line to debug errors
+                }, 5000).unref()
+            },
         }),
         viteTsconfigPaths(),
         svgr({
